@@ -1,0 +1,51 @@
+body {
+    font-size: 0.5rem;
+    font-family: prompt;
+    line-height: 100%;
+  }
+  
+  div {
+    height: 100%;
+  }
+  
+  .left-half {
+    background-color: white;
+    position: absolute;
+    left: 0px;
+    width: 40%;
+  }
+  
+  .right-half {
+    background-color: #61b292;
+    position: absolute;
+    right: 0px;
+    width: 60%;
+  
+  }
+  .box{
+    height: 50%;
+    text-align: center;
+    padding: 10% 0%;
+    position: relative;
+  }
+  .right-white-bg{
+    width: 80%;
+    height: 80%;
+    background-color: white;
+    margin: 5% 5% 0% 10%;
+  }
+  .welcome{
+    margin: 4%;
+  }
+  .head{
+    float: left;
+    font-size: medium;
+    margin: 5% 0% 5% 0%;
+  }
+  .container{
+    width: fit-content;
+  }
+  .button_signin{
+    background-color: #61b292;
+    border: #61b292;
+  }
