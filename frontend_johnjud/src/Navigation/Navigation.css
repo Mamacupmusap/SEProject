@@ -1,0 +1,27 @@
+.Navbar{
+    background-color: white;
+    border-style: dashed;
+    border: groove 0.5px black;
+    font-family: prompt;
+}
+.changeMode{
+    background-color:#8d7966;
+    font-size: 8px;
+    width: max-content;
+    height: min-content;
+}
+.navHead{
+    color: #8d7966;
+}
+.search{
+    font-size: 8px;
+}
+
+.jjicon{
+    height: 20px;
+    width: 30px;
+}
+.manbox{
+    height: 14px;
+    width: 16px;
+}

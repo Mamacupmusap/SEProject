@@ -1,0 +1,27 @@
+.form{
+    background-color: black;
+}
+.button_next{
+    background-color: #61b292;
+    border: #61b292;  
+    text-align: center;
+    margin: auto;
+    display: flex;
+}
+.box_img{
+    text-align: center;
+}
+#box{
+    font-size: 6px;
+}
+.container{
+    width: max-content;
+    height: min-content;
+}
+input::placeholder{
+    font-size: 6px;
+}
+#Date{
+    font-size: 6px;
+}
+

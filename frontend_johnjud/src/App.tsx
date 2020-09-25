@@ -6,6 +6,9 @@ import article from './pages/article/article';
 import Navigation from './Navigation/Navigation';
 import faq from './pages/faq/faq';
 import signin from './pages/signin/signin';
+import signup from './pages/signup/signup';
+import signup2 from './pages/signup/signup2';
+import signup3 from './pages/signup/signup3';
 
 class App extends Component{
   render(){
@@ -14,10 +17,14 @@ class App extends Component{
         <div>
           <Navigation />
             <Switch>
-             <Route path="/" component={home} exact/>
+             <Route path="/home" component={home} exact/>
              <Route path="/article" component={article}/>
              <Route path="/faq" component={faq}/> 
              <Route path="/signin" component={signin}/> 
+
+             <Route path="/signup" component={signup}/> 
+             <Route path="/signup2" component={signup2}/> 
+             <Route path="/signup3" component={signup3}/> 
            </Switch>
         </div> 
       </BrowserRouter>
