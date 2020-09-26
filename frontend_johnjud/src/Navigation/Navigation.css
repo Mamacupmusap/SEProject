@@ -12,16 +12,25 @@
 }
 .navHead{
     color: #8d7966;
+    font-size: 12px;
+    padding-top: 0.5%;
+    padding-left: 2%;
 }
 .search{
     font-size: 8px;
+    padding-top: 1.5%;
+    width: 50%;
 }
 
 .jjicon{
-    height: 20px;
-    width: 30px;
+    height: 60px;
+    width: 170px;
+    padding: 0% 10% 0% 0%;
 }
 .manbox{
-    height: 14px;
-    width: 16px;
+    height: 20px;
+    width: 20px;
+}
+.icon{
+    padding: 0% 1% 0% 1%;
 }

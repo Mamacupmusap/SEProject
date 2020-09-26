@@ -9,6 +9,7 @@ import faq from './../pages/faq/faq';
 import signup from '../pages/signup/signup';
 import signup2 from '../pages/signup/signup2';
 import signup3 from '../pages/signup/signup3';
+import aboutUS from './../pages/aboutUS/aboutUS';
 
 
 export default () => (
@@ -16,6 +17,7 @@ export default () => (
     <Navigation />
     <Route exact path="/home" component={home}/>
     <Route exact path="/article" component={article} />
+    <Route exact path="/aboutUS" component={aboutUS} />
     <Route exact path="/faq" component={faq} />
     <Route exact path="/signin" component={signin} />
     <Route exact path="/signup" component={signup} />

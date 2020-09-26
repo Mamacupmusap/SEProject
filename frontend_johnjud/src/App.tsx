@@ -9,6 +9,7 @@ import signin from './pages/signin/signin';
 import signup from './pages/signup/signup';
 import signup2 from './pages/signup/signup2';
 import signup3 from './pages/signup/signup3';
+import aboutUS from './pages/aboutUS/aboutUS';
 
 class App extends Component{
   render(){
@@ -20,6 +21,8 @@ class App extends Component{
              <Route path="/home" component={home} exact/>
              <Route path="/article" component={article}/>
              <Route path="/faq" component={faq}/> 
+             <Route path="/aboutUS" component={aboutUS}/> 
+             
              <Route path="/signin" component={signin}/> 
 
              <Route path="/signup" component={signup}/> 

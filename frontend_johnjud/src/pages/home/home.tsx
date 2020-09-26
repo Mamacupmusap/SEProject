@@ -1,10 +1,14 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-//import {Button} from 'reactstrap';
+import {Jumbotron} from 'reactstrap';
+import './home.css'
+import head_dog from './img/head_dog.png'
 
 const home = () =>{
   return(
-    <div>This is Homepage!</div>
+    <div>
+        <img src={head_dog} alt='head_dog'/>
+    </div>
   )
 }
 

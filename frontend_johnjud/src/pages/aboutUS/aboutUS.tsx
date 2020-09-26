@@ -2,10 +2,10 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 //import {Button} from 'reactstrap';
 
-const article = () =>{
+const aboutUS = () =>{
   return(
-    <div>This is Article!</div>
+    <div>This is aboutUS!</div>
   )
 }
 
-export default article;
+export default aboutUS;
