@@ -56,3 +56,9 @@
     display: grid;
   }
 
+  .botton_signin{
+    color: black;
+  }
+  #head_box{
+    text-align: left;
+  }

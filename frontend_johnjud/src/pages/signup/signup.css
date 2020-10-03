@@ -3,10 +3,16 @@
 }
 .button_next{
     background-color: #61b292;
-    border: #61b292;  
+    float: right;
+}
+#button_next{
+    background-color: #61b292;
+    display: flex;
     text-align: center;
     margin: auto;
-    display: flex;
+}
+.button_back{
+    float: left;
 }
 .box_img{
     text-align: center;
@@ -25,3 +31,23 @@ input::placeholder{
     font-size: 6px;
 }
 
+.line {
+    width: 100%;
+    text-align: center;
+    border-bottom: 1px solid #000;
+    line-height: 0.1em;
+    margin: 10px 0 20px;
+}
+.line span {
+    background: #fff;
+    padding: 0 10px;
+}
+#bottom_bar{
+    bottom:0;
+    height:50px;
+    width:100%;
+}
+.back_page{
+    float: left;
+    padding-left: 20px;
+}

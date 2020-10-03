@@ -2,12 +2,15 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container ,Form, FormGroup,Label,Input,Button, Col}  from 'reactstrap';
 import jjicon from './component/logojj.png'
+import back from './component/arrow_left.png'
+import next from './component/arrow_right.png'
 import './signup.css'
 import { NavLink } from 'react-router-dom';
 
 const signup = () =>{
   return(
     <div>
+      <NavLink to='/signin'><img src={back} alt='' className='back_page'/></NavLink>
       <Container id='contain'>
         <div className='box_img'>
           <img src={jjicon} alt='test' className='rounded-lg'/>
@@ -25,14 +28,9 @@ const signup = () =>{
               <Input type="password" name="password" id="password" placeholder="password" />
             </FormGroup>
           </Col>
-          <Col>
-            <FormGroup>
-              <Label for="phone">Phone Number*</Label>
-              <Input type="tel" name="phone" id="phone" placeholder="phone number" />
-            </FormGroup>
-          </Col>
-          <NavLink to='/signup'><Button className='secondary'>Back</Button></NavLink>
-          <NavLink to='/signup3'><Button className='button_next'>Next 2</Button></NavLink>
+          <br/><br/>
+          <NavLink to='/signup'><Button className='button_back'><img src={back} alt=''/>Back</Button></NavLink>
+          <NavLink to='/signup3'><Button className='button_next'>Next<img src={next} alt=''/></Button></NavLink>
         </Form>
       </Container>
     </div>

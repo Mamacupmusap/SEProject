@@ -2,12 +2,15 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container ,Form, FormGroup,Label,Input,Button, Col}  from 'reactstrap';
 import jjicon from './component/logojj.png'
+import back from './component/arrow_left.png'
+import next from './component/arrow_right.png'
 import './signup.css'
 import { NavLink } from 'react-router-dom';
 
 const signup = () =>{
   return(
     <div>
+      <NavLink to='/signin'><img src={back} alt='' className='back_page'/></NavLink>
       <Container id='contain'>
         <div className='box_img'>
           <img src={jjicon} alt='test' className='rounded-lg'/>
@@ -25,13 +28,19 @@ const signup = () =>{
               <Input type="text" name="Surname" id="Surname" placeholder="surname" />
             </FormGroup>
           </Col>
-          <Col md=''>
+          <Col>
+            <FormGroup>
+              <Label for="phone">Phone Number*</Label>
+              <Input type="tel" name="phone" id="phone" placeholder="phone number" />
+            </FormGroup>
+          </Col>
+          <Col>
             <FormGroup>
               <Label for="Date">Birth Date*</Label>
               <Input type="date" name="Date" id="Date" />
             </FormGroup>
           </Col>
-          <Col md=''>
+          <Col>
             <FormGroup>
               <Label for="gender">Gender</Label>
               <div id='box' className='form-control'>
@@ -56,9 +65,11 @@ const signup = () =>{
               <Input type="text" name="Address" id="Address" placeholder="address" />
             </FormGroup>
           </Col>
-          <NavLink to='/signup2'><Button className='secondary'>Back</Button></NavLink>
-          <NavLink to='/'><Button className='button_next'>Sign up!</Button></NavLink>
+          <br/><br/>
+          <NavLink to='/signup2'><Button className='secondary'><img src={back} alt=''/>Back</Button></NavLink>
+          <NavLink to='/otp_page'><Button className='button_next'>Next<img src={next} alt=''/></Button></NavLink>
         </Form>
+        <div id='bottom_bar'></div>
       </Container>
     </div>
   )

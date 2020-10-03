@@ -4,7 +4,7 @@
     border: groove 0.5px black;
     font-family: prompt;
 }
-.changeMode{
+#changeMode{
     background-color:#8d7966;
     font-size: 8px;
     width: max-content;
