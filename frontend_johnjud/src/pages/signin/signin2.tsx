@@ -2,29 +2,20 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Button,Container,Form,FormGroup,Col,Label,Input} from 'reactstrap';
 import './signin.css';
-import { NavLink } from 'react-router-dom';
-import back from './arrow_left.png'
-
-
-const clientId = '99307406475-s1a1a9rcrfpo3kchirudo8i8fnidr0og.apps.googleusercontent.com'
-
-const responseGoogle = (response : any) => {
-  console.log(response);
-}
+//import { NavLink } from 'react-router-dom';
 
 const signin = () =>{
   return(
     <Container>
       <div className='left-half'>
-        <NavLink to='/signin'><img src={back} alt='' className='back_page'/></NavLink>
         <div id='logo'></div>
       </div>
       <div className='right-half'>
         <div className='right-white-bg'>
-          <div className='box'>
-            <h2> Sign in </h2>
+          <div className='box2'>
             <Container>
-                <br/><br/>
+              <h2 id='center'> Sign in </h2>
+              <br/><br/>
               <Form>
                 <Col>
                     <FormGroup>

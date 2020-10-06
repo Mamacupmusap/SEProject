@@ -14,7 +14,12 @@ import signin2 from './pages/signin/signin2';
 import signup from './pages/signup/signup';
 import signup2 from './pages/signup/signup2';
 import signup3 from './pages/signup/signup3';
-import otp from './pages/signup/otp_page';
+import signup4 from './pages/signup/signup4';
+import signup5 from './pages/signup/signup5';
+import signup6 from './pages/signup/signup6';
+
+import bookmark from './pages/bookmark/bookmark';
+import chat from './pages/chat/chat';
 
 class App extends Component{
   render(){
@@ -33,8 +38,12 @@ class App extends Component{
              <Route path="/signup" component={signup}/> 
              <Route path="/signup2" component={signup2}/> 
              <Route path="/signup3" component={signup3}/> 
-             <Route exact path="/otp_page" component={otp} />
+             <Route path="/signup4" component={signup4} />
+             <Route path="/signup5" component={signup5} />
+             <Route path="/signup6" component={signup6}/>
 
+             <Route path="/bookmark" component={bookmark}/>
+             <Route path="/chat" component={chat}/>
            </Switch>
         </div> 
       </BrowserRouter>

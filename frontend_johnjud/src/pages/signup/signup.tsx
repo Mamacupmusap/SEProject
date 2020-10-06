@@ -2,10 +2,11 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { NavLink } from 'react-router-dom';
 import {GoogleLogin} from 'react-google-login';
+import { Formik,Form, Field, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
 
 import next from './component/arrow_right.png'
-import back from './component/arrow_left.png'
-import { Container ,Form, FormGroup,Label,Input,Button, Col}  from 'reactstrap';
+import { Container, FormGroup,Label,Button, Col}  from 'reactstrap';
 import jjicon from './component/logojj.png'
 import './signup.css'
 
@@ -14,10 +15,16 @@ const clientId = '99307406475-s1a1a9rcrfpo3kchirudo8i8fnidr0og.apps.googleuserco
 const responseGoogle = (response : any) => {
   console.log(response);
 }
+
+const RegisterSchema = Yup.object().shape({
+  email: Yup.string()
+      .email('Invalid email')
+      .required('This field is required.'),
+});
+
 const signup = () =>{
   return(
     <div>
-      <NavLink to='/signin'><img src={back} alt='' className='back_page'/></NavLink>
       <Container id='contain'>  
         <div className='box_img'>
           <img src={jjicon} alt='icon' className='rounded-lg'/>
@@ -34,15 +41,34 @@ const signup = () =>{
           <br/>
           <p className='line'><span>or create JohnJud account</span></p>
         </Container>
-        <Form>
-          <Col>
-            <FormGroup>
-              <Label for="email">Email*</Label>
-              <Input type="email" name="email" id="email" placeholder="email"/>
-            </FormGroup>
-          </Col>
-          <NavLink to='/signup2'><Button id='button_next'>Next<img src={next} alt=''/></Button></NavLink>
-        </Form>
+        <div>
+        <Formik
+          initialValues={{
+            email: '',
+          }}
+          validationSchema={RegisterSchema}
+          onSubmit={values => {
+            console.log(values);
+          }}
+        >
+          {({ errors, touched }) => (  
+          <Form>
+            <Col>
+              <FormGroup>
+                <Label htmlfor="email">Email*</Label>
+                <Field name="email" 
+                       type="email" 
+                       id="email" 
+                       className={`form-control ${touched.email ? errors.email ? 'is-invalid' : 'is-valid' : ''}`}
+                       placeholder="email"/>
+                <ErrorMessage component="div" name="email" className="invalid-feedback" />
+              </FormGroup>
+            </Col>
+            <NavLink to='/signup2'><Button type="submit" value='submit' id='button_next'>Next<img src={next} alt=''/></Button></NavLink>
+          </Form>
+        )}
+        </Formik>
+        </div>
       </Container>
     </div>
   )

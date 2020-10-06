@@ -1,7 +1,7 @@
 //Navbar
 import React from 'react';
-import {Navbar,Button,Col} from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import {Navbar,Button,Col, UncontrolledDropdown , DropdownToggle,DropdownMenu,DropdownItem} from 'reactstrap';
+import { NavLink} from 'react-router-dom';
 import './Navigation.css';
 import chatIcon from './img/chat.png';
 import alertIcon from './img/alert.png';
@@ -9,8 +9,8 @@ import manIcon from './img/man.png';
 import manIcon2 from './img/man_white.png';
 import JJicon from './img/newlogo02.png';
 
-const Navigation = () => {
-    return (
+const Navigation = () => {   
+   return (
        <div>
          <Navbar className='Navbar'>
             <NavLink to='/home'><img className='jjicon' src={JJicon} alt='jjicon'/></NavLink>
@@ -30,9 +30,24 @@ const Navigation = () => {
             </div>
             </Button>
             <div className='icon'>
-               <img src={chatIcon} alt='chat' />
+               <NavLink to='/chat'><img src={chatIcon} alt='chat'/></NavLink>
                <img src={alertIcon} alt='alert' />
-               <NavLink to='/signin'className='man'><img src={manIcon} alt='man' /></NavLink>
+               <UncontrolledDropdown>
+                  <DropdownToggle nav>
+                     <img src={manIcon} alt='man' />
+                  </DropdownToggle>
+                  <DropdownMenu left className='dropmenu'>
+                     <DropdownItem>
+                        <NavLink to='/signin'>profile</NavLink>
+                     </DropdownItem>
+                     <DropdownItem>
+                        <NavLink to='/bookmark'>bookmark</NavLink>
+                     </DropdownItem>
+                     <DropdownItem>
+                        <NavLink to='/'>Logout</NavLink>
+                     </DropdownItem>
+                  </DropdownMenu>
+               </UncontrolledDropdown>
             </div>
          </Navbar>
        </div>
@@ -40,3 +55,4 @@ const Navigation = () => {
 }
  
 export default Navigation;
+

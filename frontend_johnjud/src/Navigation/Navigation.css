@@ -1,7 +1,7 @@
 .Navbar{
     background-color: white;
     border-style: dashed;
-    border: groove 0.5px black;
+    border: groove 0.5px white;
     font-family: prompt;
 }
 #changeMode{
@@ -33,4 +33,9 @@
 }
 .icon{
     padding: 0% 1% 0% 1%;
+    display: inline;
+}
+
+.dropmenu{
+    height: 160%;
 }

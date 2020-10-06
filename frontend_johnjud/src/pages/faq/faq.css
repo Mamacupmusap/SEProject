@@ -1,0 +1,22 @@
+.body {
+  text-align: center;
+  font-size: 24px;
+  background-color: #f5f8fa;
+}
+@font-face {
+  font-family: prompt;;
+  src: url(Prompt_Thin.ttf);
+}
+.flex-container {
+  padding: 40px;
+  width: 830px;
+  text-align: left;
+  flex-wrap: wrap;
+}
+.ans {
+  padding: 5px;
+  width: 830px;
+  text-align: left;
+  flex-wrap: wrap;
+}
+

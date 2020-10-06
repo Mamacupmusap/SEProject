@@ -1,0 +1,27 @@
+import React from 'react';
+import 'bootstrap/dist/css/bootstrap.css';
+import {Button,Container,Input}  from 'reactstrap';
+//import jjicon from './component/logojj.png'
+import { NavLink } from 'react-router-dom';
+import mobile from './component/mobile.png'
+
+const signin4 = () =>{ 
+  return(
+    <div>
+      <Container className='bigbox'>
+          <img src={mobile} alt='mobile' className='mobile'/>
+          <div className='text2'>
+            <p>OTP has been sent via SMS to your registered number</p>
+            <p>(+66 xx-xxx-xxxx)</p>
+            <p id='text3'>please enter your OTP</p>
+          </div>
+          <div className='otp'>
+            <Input type='text' placeholder='xxx-xxx' className='col-lg-6 input_otp'/>
+            <NavLink to='/signup5'><Button className='button_next'>Submit</Button></NavLink>
+          </div>
+      </Container>
+    </div>
+  )
+}
+
+export default signin4;

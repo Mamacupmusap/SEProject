@@ -1,25 +1,53 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container ,Form, FormGroup,Label,Input,Button, Col}  from 'reactstrap';
+import { Container ,FormGroup,Label,Input,Button, Col}  from 'reactstrap';
 import jjicon from './component/logojj.png'
 import back from './component/arrow_left.png'
 import next from './component/arrow_right.png'
 import './signup.css'
 import { NavLink } from 'react-router-dom';
 
-const signup = () =>{
+import { Formik,Form, Field, ErrorMessage } from 'formik'
+import * as Yup from 'yup'
+
+const RegisterSchema = Yup.object().shape({
+  username: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  password: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required')
+});
+
+const signup2 = () =>{
   return(
     <div>
-      <NavLink to='/signin'><img src={back} alt='' className='back_page'/></NavLink>
       <Container id='contain'>
         <div className='box_img'>
           <img src={jjicon} alt='test' className='rounded-lg'/>
         </div>
-        <Form>
+        <Formik
+          initialValues={{
+            username: '',
+          }}
+          validationSchema={RegisterSchema}
+          onSubmit={values => {
+            console.log(values);
+          }}
+        >
+        {({ errors, touched }) => (
+          <Form>
           <Col>
             <FormGroup>
               <Label for="username">Username*</Label>
-              <Input type="text" name="username" id="username" placeholder="username" />
+              <Field name="username" 
+                       type="text" 
+                       id="username" 
+                       className={`form-control ${touched.username ? errors.username ? 'is-invalid' : 'is-valid' : ''}`}
+                       placeholder="username"/>
+              <ErrorMessage component="div" name="username" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <Col>
@@ -31,10 +59,12 @@ const signup = () =>{
           <br/><br/>
           <NavLink to='/signup'><Button className='button_back'><img src={back} alt=''/>Back</Button></NavLink>
           <NavLink to='/signup3'><Button className='button_next'>Next<img src={next} alt=''/></Button></NavLink>
-        </Form>
+          </Form>
+         )}  
+        </Formik>
       </Container>
     </div>
   )
 }
 
-export default signup;
+export default signup2;

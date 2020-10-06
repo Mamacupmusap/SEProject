@@ -7,10 +7,9 @@ import next from './component/arrow_right.png'
 import './signup.css'
 import { NavLink } from 'react-router-dom';
 
-const signup = () =>{
+const signup3 = () =>{
   return(
     <div>
-      <NavLink to='/signin'><img src={back} alt='' className='back_page'/></NavLink>
       <Container id='contain'>
         <div className='box_img'>
           <img src={jjicon} alt='test' className='rounded-lg'/>
@@ -67,7 +66,7 @@ const signup = () =>{
           </Col>
           <br/><br/>
           <NavLink to='/signup2'><Button className='secondary'><img src={back} alt=''/>Back</Button></NavLink>
-          <NavLink to='/otp_page'><Button className='button_next'>Next<img src={next} alt=''/></Button></NavLink>
+          <NavLink to='/signup4'><Button className='button_next'>Next<img src={next} alt=''/></Button></NavLink>
         </Form>
         <div id='bottom_bar'></div>
       </Container>
@@ -75,4 +74,4 @@ const signup = () =>{
   )
 }
 
-export default signup;
+export default signup3;
