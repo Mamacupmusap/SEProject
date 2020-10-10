@@ -55,19 +55,38 @@ input::placeholder{
     display: grid;
 }
 .mobile{
-  width: 25%;
-  height: 25%;
+  width: 75%;
+  height: 75%;
 }
 label{
     font-size: 12px;
 }
 
-
+.bigbox{
+    margin-top: 6%;
+}
 .otp{
     display: inline;
 }
 .input_otp{
     margin: auto;
+    float: left;
+}
+#submit{
+    float: left;
+    margin-left: 2%;
+    background-color: #61b292;
+    display: flex;
+    text-align: center;
+}
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.text_right{
+    margin-top: 20%;
 }
 
 
@@ -93,6 +112,6 @@ label{
 
 
 .yes{
-    width: 25%;
-    height: 25%;
+    width: 80%;
+    height: 80%;
 }

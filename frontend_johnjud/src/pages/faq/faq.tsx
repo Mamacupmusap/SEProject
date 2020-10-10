@@ -8,7 +8,7 @@ import { Container } from 'reactstrap';
 const faq = () =>{
   return(
     <div className='body'>
-      <img src={head_faq} alt='head_faq'/>
+      <img src={head_faq} alt='head_faq' width="100%"/>
       <Container>
         <div className= "flex-container">
           <h2>Johnjudคืออะไร?</h2><br/><br/>

@@ -9,7 +9,7 @@ import { Container } from 'reactstrap';
 const aboutUS = () =>{
   return(
       <div className='body'>
-          <img src={head_aboutus} alt='head_aboutus'/>
+          <img src={head_aboutus} alt='head_aboutus' width="100%"/>
           <Container>
             <div className= "row">
               <div className="side">
@@ -23,7 +23,7 @@ const aboutUS = () =>{
               </div>
             </div>
           </Container>
-          <img src={head_contact} alt='head_contact'/>
+          <img src={head_contact} alt='head_contact' width="100%"/>
           <Container>
             <div className= "row">
               <div className="side">

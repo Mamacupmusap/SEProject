@@ -1,24 +1,23 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import jjicon from './component/logojj.png'
 import yes from './component/verified.png'
 //import { NavLink } from 'react-router-dom';
+import { Container } from 'reactstrap';
 
 const signin6 = () =>{ 
   return(
-    <div id='contain'>
-        <div className='box_img'>
-          <img src={jjicon} alt='test' className='rounded-lg'/>
-        </div>
-        <div className='left'>
-            <div>
+    <div>
+        <Container className='bigbox'>
+            <div className='left'>
                 <img src={yes} alt='yes' className='yes'/>
             </div>
-            <div>
-                <p>Email Verified</p>
-                <p>your email address was successfully verified.</p>
+            <div className='right'>
+                <div className='text_right text2'>
+                  <p>Email Verified </p>
+                  <p> your email address was successfully verified.</p>
+                </div>
             </div>
-        </div>
+        </Container>
     </div>
   )
 }

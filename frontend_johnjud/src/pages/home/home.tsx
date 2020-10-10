@@ -7,7 +7,7 @@ import head_dog from './img/head_dog.png'
 const home = () =>{
   return(
     <div>
-        <img src={head_dog} alt='head_dog'/>
+        <img src={head_dog} alt='head_dog' width="100%"/>
     </div>
   )
 }

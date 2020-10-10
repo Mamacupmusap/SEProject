@@ -21,6 +21,8 @@ import signup6 from './pages/signup/signup6';
 import bookmark from './pages/bookmark/bookmark';
 import chat from './pages/chat/chat';
 
+import article1 from './pages/article/article1'
+
 class App extends Component{
   render(){
     return(
@@ -44,6 +46,8 @@ class App extends Component{
 
              <Route path="/bookmark" component={bookmark}/>
              <Route path="/chat" component={chat}/>
+
+             <Route path="/article1" component={article1}/>
            </Switch>
         </div> 
       </BrowserRouter>

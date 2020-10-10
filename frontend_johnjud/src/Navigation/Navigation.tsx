@@ -19,19 +19,21 @@ const Navigation = () => {
             <NavLink to='/aboutUS' className='navHead'>ABOUT US</NavLink>
             <NavLink to='/faq' className='navHead'>FAQ</NavLink>
             <Col>
-               <input className='search form-control' type='search' placeholder='search your pet'></input>
+               <input className='search_nav form-control col-lg-8' type='text' placeholder='search your pet' name='search'></input>
             </Col>
             <Button id='changeMode'>
-            <div>
+            <div className='left'>
                <img className='manbox' src={manIcon2} alt='man'/>
             </div>
-            <div>
+            <div className='right'>
                switch to <br/> Donator mode
             </div>
             </Button>
-            <div className='icon'>
-               <NavLink to='/chat'><img src={chatIcon} alt='chat'/></NavLink>
-               <img src={alertIcon} alt='alert' />
+
+            <div id='chat'><NavLink to='/chat'><img src={chatIcon} alt='chat'/></NavLink></div>
+            <div id='alert'><img src={alertIcon} alt='alert'/></div>
+               
+            <div>
                <UncontrolledDropdown>
                   <DropdownToggle nav>
                      <img src={manIcon} alt='man' />
@@ -48,7 +50,8 @@ const Navigation = () => {
                      </DropdownItem>
                   </DropdownMenu>
                </UncontrolledDropdown>
-            </div>
+               </div>
+            
          </Navbar>
        </div>
    );

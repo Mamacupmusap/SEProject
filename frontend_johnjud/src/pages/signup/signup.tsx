@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { NavLink } from 'react-router-dom';
 import {GoogleLogin} from 'react-google-login';
-import { Formik,Form, Field, ErrorMessage } from 'formik'
+import { Formik,Form, Field, ErrorMessage, FormikHelpers } from 'formik'
 import * as Yup from 'yup'
 
 import next from './component/arrow_right.png'
@@ -21,6 +21,10 @@ const RegisterSchema = Yup.object().shape({
       .email('Invalid email')
       .required('This field is required.'),
 });
+
+interface Value2{
+  email: string;
+}
 
 const signup = () =>{
   return(
@@ -44,12 +48,18 @@ const signup = () =>{
         <div>
         <Formik
           initialValues={{
-            email: '',
+            email: ''
+          }}
+          onSubmit={(
+            values: Value2,
+            { setSubmitting }: FormikHelpers<Value2>
+          ) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              setSubmitting(false);
+            }, 500);
           }}
           validationSchema={RegisterSchema}
-          onSubmit={values => {
-            console.log(values);
-          }}
         >
           {({ errors, touched }) => (  
           <Form>
@@ -64,7 +74,8 @@ const signup = () =>{
                 <ErrorMessage component="div" name="email" className="invalid-feedback" />
               </FormGroup>
             </Col>
-            <NavLink to='/signup2'><Button type="submit" value='submit' id='button_next'>Next<img src={next} alt=''/></Button></NavLink>
+            <Button type="submit" value='submit' id='button_next'>Next<img src={next} alt=''/></Button>
+            <NavLink to='/signup2'> ไปหน้าถัดไป ยังแก้ให้มันรวมกันไม่ได้ </NavLink>
           </Form>
         )}
         </Formik>
