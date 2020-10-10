@@ -25,6 +25,7 @@ interface Value2{
   username: string,
   password: string
 }
+
 const signup2 = () =>{
   return(
     <div>

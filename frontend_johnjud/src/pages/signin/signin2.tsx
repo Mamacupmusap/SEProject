@@ -1,8 +1,26 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import {Button,Container,Form,FormGroup,Col,Label,Input} from 'reactstrap';
+import {Button,Container,FormGroup,Col,Label} from 'reactstrap';
 import './signin.css';
 //import { NavLink } from 'react-router-dom';
+
+import { Formik,Form, Field, ErrorMessage , FormikHelpers } from 'formik'
+import * as Yup from 'yup'
+
+const RegisterSchema = Yup.object().shape({
+  email: Yup.string()
+    .email('Invalid email')
+    .required('This field is required.'),
+  password: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required')
+});
+
+interface Value2{
+  email: string,
+  password: string
+}
 
 const signin = () =>{
   return(
@@ -16,21 +34,53 @@ const signin = () =>{
             <Container>
               <h2 id='center'> Sign in </h2>
               <br/><br/>
+
+              <Formik
+                initialValues={{
+                  email: '',
+                  password:''
+                }}
+                onSubmit={(
+                  values: Value2,
+                  { setSubmitting }: FormikHelpers<Value2>
+                ) => {
+                  setTimeout(() => {
+                    alert(JSON.stringify(values, null, 2));
+                    setSubmitting(false);
+                  }, 500);
+                }}
+                validationSchema={RegisterSchema}
+              >
+              {({ errors, touched }) => (  
               <Form>
                 <Col>
                     <FormGroup>
                     <Label for="email" id='head_box'>Email</Label>
-                    <Input type="email" name="email" id="email" placeholder="email"/>
+                    <Field name="email" 
+                       type="email" 
+                       id="email" 
+                       className={`form-control ${touched.email ? errors.email ? 'is-invalid' : 'is-valid' : ''}`}
+                       placeholder="email"/>
+                    <ErrorMessage component="div" name="email" className="invalid-feedback" />
                     </FormGroup>
                 </Col>
                 <Col>
                   <FormGroup>
                     <Label for="password" id='head_box'>Password</Label>
-                    <Input type="password" name="password" id="password" placeholder="password" />
+                    <Field name="password" 
+                       type="password" 
+                       id="password" 
+                       className={`form-control ${touched.password ? errors.password ? 'is-invalid' : 'is-valid' : ''}`}
+                       placeholder="password"/>
+                    <ErrorMessage component="div" name="password" className="invalid-feedback" />
                   </FormGroup>
                 </Col>
+
+                <Button type='submit' className='button_signin'>Sign In</Button>
               </Form>
-              <Button className='button_signin'>Sign In</Button>
+              )}
+              </Formik>
+
             </Container>
           </div>
         </div>
