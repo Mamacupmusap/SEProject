@@ -3,6 +3,7 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Navigation from './Navigation/Navigation';
+import Navigation2 from './Navigation/Navigation2';
 
 import home from './pages/home/home';
 import article from './pages/article/article'
@@ -22,6 +23,7 @@ import bookmark from './pages/bookmark/bookmark';
 import chat from './pages/chat/chat';
 
 import article1 from './pages/article/article1'
+import userprofile from './pages/userprofile/userprofile1'
 
 class App extends Component{
   render(){
@@ -48,6 +50,7 @@ class App extends Component{
              <Route path="/chat" component={chat}/>
 
              <Route path="/article1" component={article1}/>
+             <Route path="/userprofile1" component={userprofile}/>
            </Switch>
         </div> 
       </BrowserRouter>

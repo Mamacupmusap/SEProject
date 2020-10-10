@@ -74,8 +74,12 @@ const signup = () =>{
                 <ErrorMessage component="div" name="email" className="invalid-feedback" />
               </FormGroup>
             </Col>
-            <Button type="submit" value='submit' id='button_next'>Next<img src={next} alt=''/></Button>
-            <NavLink to='/signup2'> ไปหน้าถัดไป ยังแก้ให้มันรวมกันไม่ได้ </NavLink>
+            <NavLink to='/signup2'><Button type="submit" value='submit' id='button_next'>Next<img src={next} alt=''/></Button></NavLink>
+            
+            <div>
+              <br/><br/><br/><br/>
+              <button type='submit' value='submit' >submit</button>
+            </div>
           </Form>
         )}
         </Formik>

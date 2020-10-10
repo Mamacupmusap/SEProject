@@ -21,7 +21,7 @@ const Navigation = () => {
             <Col>
                <input className='search_nav form-control col-lg-8' type='text' placeholder='search your pet' name='search'></input>
             </Col>
-            <Button id='changeMode'>
+            <Button id='changeMode'className='form-control'>
             <div className='left'>
                <img className='manbox' src={manIcon2} alt='man'/>
             </div>
@@ -40,13 +40,13 @@ const Navigation = () => {
                   </DropdownToggle>
                   <DropdownMenu left className='dropmenu'>
                      <DropdownItem>
-                        <NavLink to='/signin'>profile</NavLink>
+                        <NavLink to='/userprofile1'>profile</NavLink>
                      </DropdownItem>
                      <DropdownItem>
                         <NavLink to='/bookmark'>bookmark</NavLink>
                      </DropdownItem>
                      <DropdownItem>
-                        <NavLink to='/'>Logout</NavLink>
+                        <NavLink to='/signin'>Logout</NavLink>
                      </DropdownItem>
                   </DropdownMenu>
                </UncontrolledDropdown>

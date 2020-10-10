@@ -33,7 +33,7 @@ const signin = () =>{
               <br/>
               <NavLink to='/signin2' className='botton_signin'><Button outline color='secondary'>Sign in with JohnJud account</Button></NavLink>
               <br/>
-              <p className='register'>haven't register? <NavLink to='./signup'>sign up </NavLink></p>
+              <p>haven't register? <NavLink to='./signup'>sign up </NavLink></p>
             </Container>
           </Container>
         </div>
