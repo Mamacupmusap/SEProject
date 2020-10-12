@@ -1,6 +1,7 @@
 //Navbar
 import React from 'react';
-import {Navbar,Button,Col, UncontrolledDropdown , DropdownToggle,DropdownMenu,DropdownItem} from 'reactstrap';
+import {Navbar,Button,Col, UncontrolledDropdown , DropdownToggle,DropdownMenu,DropdownItem
+      ,UncontrolledPopover,PopoverHeader, PopoverBody} from 'reactstrap';
 import { NavLink} from 'react-router-dom';
 import './Navigation.css';
 import chatIcon from './img/chat.png';
@@ -8,6 +9,7 @@ import alertIcon from './img/alert.png';
 import manIcon from './img/man.png';
 import manIcon2 from './img/man_white.png';
 import JJicon from './img/newlogo02.png';
+
 
 const Navigation = () => {   
    return (
@@ -31,26 +33,41 @@ const Navigation = () => {
             </Button>
 
             <div id='chat'><NavLink to='/chat'><img src={chatIcon} alt='chat'/></NavLink></div>
-            <div id='alert'><img src={alertIcon} alt='alert'/></div>
-               
+
+            <div id="alert">
+               <img src={alertIcon} alt='alert'/>
+            </div>
+            <UncontrolledPopover trigger="legacy" placement="top" target="alert">
+            <PopoverHeader>Notification</PopoverHeader>
+               <PopoverBody>
+                  This is notification!
+               </PopoverBody>
+            </UncontrolledPopover>
+
             <div>
                <UncontrolledDropdown>
                   <DropdownToggle nav>
                      <img src={manIcon} alt='man' />
                   </DropdownToggle>
-                  <DropdownMenu left className='dropmenu'>
-                     <DropdownItem>
-                        <NavLink to='/userprofile1'>profile</NavLink>
-                     </DropdownItem>
-                     <DropdownItem>
-                        <NavLink to='/bookmark'>bookmark</NavLink>
-                     </DropdownItem>
-                     <DropdownItem>
-                        <NavLink to='/signin'>Logout</NavLink>
-                     </DropdownItem>
+                  <DropdownMenu right className='dropmenu'>
+                     <NavLink to='/userprofile1'>
+                        <DropdownItem>
+                           profile
+                        </DropdownItem>
+                     </NavLink>
+                     <NavLink to='/bookmark'>
+                        <DropdownItem>
+                           bookmark
+                        </DropdownItem>
+                     </NavLink>
+                     <NavLink to='/signin'>
+                        <DropdownItem>
+                           Logout
+                        </DropdownItem>
+                     </NavLink>
                   </DropdownMenu>
                </UncontrolledDropdown>
-               </div>
+            </div>
             
          </Navbar>
        </div>

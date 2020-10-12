@@ -21,6 +21,7 @@ import signup6 from './pages/signup/signup6';
 
 import bookmark from './pages/bookmark/bookmark';
 import chat from './pages/chat/chat';
+import suggestion from './pages/chat/suggest';
 
 import article1 from './pages/article/article1'
 import userprofile from './pages/userprofile/userprofile1'
@@ -48,6 +49,7 @@ class App extends Component{
 
              <Route path="/bookmark" component={bookmark}/>
              <Route path="/chat" component={chat}/>
+             <Route path="/suggestion" component={suggestion}/>
 
              <Route path="/article1" component={article1}/>
              <Route path="/userprofile1" component={userprofile}/>
