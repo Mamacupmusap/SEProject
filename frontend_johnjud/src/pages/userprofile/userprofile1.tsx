@@ -1,10 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const chat = () =>{
+const userprofile1 = () =>{
   return(
     <div>This is Userprofile!</div>
   )
 }
 
-export default chat;
+export default userprofile1;

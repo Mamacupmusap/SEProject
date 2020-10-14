@@ -21,10 +21,12 @@ import signup6 from './pages/signup/signup6';
 
 import bookmark from './pages/bookmark/bookmark';
 import chat from './pages/chat/chat';
-import suggestion from './pages/chat/suggest';
+import suggestion from './pages/chat/chat';
 
 import article1 from './pages/article/article1'
 import userprofile from './pages/userprofile/userprofile1'
+import petprofile from './pages/petprofile/petprofile1'
+
 
 class App extends Component{
   render(){
@@ -33,7 +35,7 @@ class App extends Component{
         <div>
           <Navigation />
             <Switch>
-             <Route path="/home" component={home} exact/>
+             <Route path="/" component={home} exact/>
              <Route path="/article" component={article}/>
              <Route path="/faq" component={faq}/> 
              <Route path="/aboutUS" component={aboutUS}/> 
@@ -53,6 +55,8 @@ class App extends Component{
 
              <Route path="/article1" component={article1}/>
              <Route path="/userprofile1" component={userprofile}/>
+
+             <Route path="/petprofile1" component={petprofile}/>
            </Switch>
         </div> 
       </BrowserRouter>

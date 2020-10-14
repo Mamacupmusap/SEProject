@@ -2,6 +2,7 @@ import React from 'react'
 import { Switch, Route } from 'react-router-dom'
 
 import Navigation from '../Navigation/Navigation';
+import Navigation2 from '../Navigation/Navigation2';
 
 import home from '../pages/home/home';
 import article from '../pages/article/article'
@@ -20,7 +21,7 @@ import signup6 from '../pages/signup/signup6';
 
 import bookmark from '../pages/bookmark/bookmark';
 import chat from '../pages/chat/chat';
-import suggestion from '../pages/chat/suggest';
+import suggestion from '../pages/chat/chat';
 
 
 import article1 from '../pages/article/article1'
@@ -29,7 +30,8 @@ import userprofile from '../pages/userprofile/userprofile1'
 export default () => (
   <Switch>
     <Navigation />
-    <Route exact path="/home" component={home}/>
+    <Navigation2/>
+    <Route exact path="/" component={home}/>
     <Route exact path="/article" component={article} />
     <Route exact path="/aboutUS" component={aboutUS} />
     <Route exact path="/faq" component={faq} />

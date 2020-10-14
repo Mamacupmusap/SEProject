@@ -15,8 +15,8 @@ const Navigation = () => {
    return (
        <div>
          <Navbar className='Navbar'>
-            <NavLink to='/home'><img className='jjicon' src={JJicon} alt='jjicon'/></NavLink>
-            <NavLink to='/home' className='navHead'>HOME</NavLink>
+            <NavLink to='/'><img className='jjicon' src={JJicon} alt='jjicon'/></NavLink>
+            <NavLink to='/' className='navHead'>HOME</NavLink>
             <NavLink to='/article'className='navHead'>ARTICLE</NavLink>
             <NavLink to='/aboutUS' className='navHead'>ABOUT US</NavLink>
             <NavLink to='/faq' className='navHead'>FAQ</NavLink>
