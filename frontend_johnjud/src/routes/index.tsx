@@ -26,6 +26,8 @@ import suggestion from '../pages/chat/chat';
 
 import article1 from '../pages/article/article1'
 import userprofile from '../pages/userprofile/userprofile1'
+import petprofile from '../pages/petprofile/petprofile1'
+
 
 export default () => (
   <Switch>
@@ -51,5 +53,7 @@ export default () => (
 
     <Route path="/article1" component={article1}/>
     <Route path="/userprofile1" component={userprofile}/>
+    <Route path="/petprofile1" component={petprofile}/>
+
   </Switch>
 )
