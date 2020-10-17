@@ -5,6 +5,7 @@
     border-right: 200px solid #F5F8FA;
     background-color: white;
     height: 680px;
+    max-width: 100%;
 }
 
 #headerBook {
@@ -36,4 +37,5 @@
     flex-direction: row;
     justify-content: space-between;
     flex-wrap: wrap;
+    max-width: 100%;
 }

@@ -1,7 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import './suggest.css'
-import wave from './wave.png';
 
 
 const suggest = () =>{

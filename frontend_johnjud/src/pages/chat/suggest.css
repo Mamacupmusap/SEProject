@@ -10,6 +10,7 @@
     border-right: 200px solid #F5F8FA;
     background-color: white;
     height: 660px;
+    max-width: 100%;
 }
 
 #header {
