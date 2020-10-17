@@ -4,7 +4,7 @@
   }
 
 .bodyblah {
-    width: 1560px;
+    width: 1540px;
     margin-left: 0px;
     border-left: 200px solid #F5F8FA;
     border-right: 200px solid #F5F8FA;
@@ -30,11 +30,4 @@
     line-height: 30px;
     font-size: 15px;
     height: 50px;
-}
-
-#wave {
-    position: fixed;
-    margin-bottom: 0;
-    bottom: 0%;
-    width: 1560px;
 }

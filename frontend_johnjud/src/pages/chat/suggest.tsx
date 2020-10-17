@@ -18,7 +18,6 @@ const suggest = () =>{
                     </p>
                 </div>
             </div>
-            <img src={wave} alt='wave' id="wave"/>
         </div>
     )
 }
