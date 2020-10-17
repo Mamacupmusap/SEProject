@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container, FormGroup,Label,Button, Col}  from 'reactstrap';
+import { Container, FormGroup,Label, Col}  from 'reactstrap';
 import { Formik,Form, Field, ErrorMessage, FormikHelpers } from 'formik'
 import check from './imgpic/check.png'
 import Yoda from './imgpic/Yoda.png'
@@ -71,7 +71,7 @@ const chat = () =>{
       >
 
       {({ errors, touched }) => (
-    <Container>
+    <Container className="container_editpet">
       <Form>
         <ul>
         <Col>
@@ -105,12 +105,12 @@ const chat = () =>{
           </div>
         </div>
         <div className="picture">
-          <div className="box"><img src={Yoda} alt='Yoda'></img></div>
-          <div className="box"><img src={addbox} alt='addbox'></img></div>
-          <div className="box"><img src={addbox} alt='addbox'></img></div>
-          <div className="box"><img src={addbox} alt='addbox'></img></div>
-          <div className="box"><img src={addbox} alt='addbox'></img></div>
-          <div className="box"><img src={addbox} alt='addbox'></img></div>
+          <div className="boxeditpet"><img src={Yoda} alt='Yoda'></img></div>
+          <div className="boxeditpet"><img src={addbox} alt='addbox'></img></div>
+          <div className="boxeditpet"><img src={addbox} alt='addbox'></img></div>
+          <div className="boxeditpet"><img src={addbox} alt='addbox'></img></div>
+          <div className="boxeditpet"><img src={addbox} alt='addbox'></img></div>
+          <div className="boxeditpet"><img src={addbox} alt='addbox'></img></div>
         </div>
 
         <div className="information">

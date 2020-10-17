@@ -1,4 +1,5 @@
 import React from 'react';
+import { NavLink} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './home.css'
 import head_dog from './img/banner.png'
@@ -10,16 +11,15 @@ import pet5 from './img/pet5.png'
 import pet6 from './img/pet6.png'
 import pet7 from './img/pet7.png'
 import pet8 from './img/pet8.png'
-import { Container, Card, CardImg, CardText, CardBody,
-  CardTitle, CardSubtitle, Button, CardDeck, CardFooter, Label, Nav} from 'reactstrap';
+import { Container, Card, CardImg, CardBody,
+  CardTitle, CardDeck} from 'reactstrap';
 /*import { CheckboxFilter, TermQuery, BoolMust, RangeQuery } from "searchkit";*/
-import { NavLink } from 'react-router-dom';
 
 export default function home(){
 
   return(
     <div id="bodyblahblah">
-      <img src={head_dog} id='head_dog'/>
+      <img src={head_dog} id='head_dog' alt=""/>
       <div className="urgh">
         <div id="filterAll">
             <div className="filter">
@@ -74,25 +74,25 @@ export default function home(){
         <Container id="middle">
           <CardDeck>
             <Card className="card">
-              <CardImg src={pet1} />
+              <CardImg src={pet1} alt=""/>
               <CardBody className="cardBody">
                 <CardTitle className="cardTitle">PetName</CardTitle>
               </CardBody>
             </Card>
             <Card className="card">
-              <CardImg src={pet2} />
+              <CardImg src={pet2} alt=""/>
               <CardBody className="cardBody">
                 <CardTitle className="cardTitle">PetName</CardTitle>
               </CardBody>
             </Card>
             <Card className="card">
-              <CardImg src={pet3} />
+              <CardImg src={pet3} alt=""/>
               <CardBody className="cardBody">
                 <CardTitle className="cardTitle">PetName</CardTitle>
               </CardBody>
             </Card>
             <Card className="card">
-              <CardImg src={pet4} />
+              <CardImg src={pet4} alt=""/>
               <CardBody className="cardBody">
                 <CardTitle className="cardTitle">PetName</CardTitle>
               </CardBody>
@@ -100,28 +100,28 @@ export default function home(){
           </CardDeck>
           <CardDeck>
             <Card className="card">
-              <CardImg src={pet5} />
+              <CardImg src={pet5} alt=""/>
               <CardBody className="cardBody">
                 <CardTitle className="cardTitle">PetName</CardTitle>
               </CardBody>
             </Card>
             <Card className="card">
-              <CardImg src={pet6} />
+              <CardImg src={pet6} alt=""/>
               <CardBody className="cardBody">
                 <CardTitle className="cardTitle">PetName</CardTitle>
               </CardBody>
             </Card>
             <Card className="card">
-              <CardImg src={pet7} />
+              <CardImg src={pet7} alt=""/>
               <CardBody className="cardBody">
                 <CardTitle className="cardTitle">PetName</CardTitle>
               </CardBody>
             </Card>
             <Card className="card">
-              <CardImg src={pet8} />
+              <CardImg src={pet8} alt=""/>
               <CardBody className="cardBody">
                 <NavLink to='/petprofile1'>
-                  <CardTitle className="cardTitle">PetName</CardTitle>
+                <CardTitle className="cardTitle">PetName</CardTitle>
                 </NavLink>
               </CardBody>
             </Card>

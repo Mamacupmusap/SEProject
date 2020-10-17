@@ -5,12 +5,12 @@
     font-family: 'Prompt', sans-serif;
 }
 
-.container {
+.container_editpet {
     width: 1164px;
     margin: 0 auto;
 }
 
-.container ul{
+.container_editpet ul{
     text-align: center;
     margin-left: 372px;
 }
@@ -159,7 +159,7 @@ input::placeholder{
     cursor: pointer;
 }
 
-.box {
+.boxeditpet {
     display: inline-block;
     padding: 7px;
 }
