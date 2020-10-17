@@ -44,13 +44,14 @@
     padding: 10% 0%;
     position: relative;
     top:20%;
-
+    max-width: 100%;
   }
   .box2{
     height: 100%;
     padding: 10% 0%;
     position: relative;
     top:10%;
+    max-width: 100%;
   }
   .container{
     width: fit-content;
