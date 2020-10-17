@@ -1,20 +1,16 @@
-.bookmark-body {
-    background-color: #f5f8fa;
-    height: 16.5cm;
-}
 
 .bookmark-container {
     background-color: #ffffff;
-    margin-left: 150px;
-    margin-right: 150px;
+    border-left: 150px solid #f5f8fa;
+    border-right: 150px solid #f5f8fa;
     height: 16.5cm;
 }
 
 .bookmark {
+    height: 74px;
     background-color: #b19d85;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    padding-left: 50px;
+    padding-top: 20px;
+    padding-left: 20px;
     border-bottom: 20px solid #ffffff;
     font-size: 34px;
     color: white;
@@ -24,18 +20,17 @@
     font-family: 'Prompt', sans-serif;
 }
 
-.row-pet {
-    background-color: #ffffff;
-    /*background-color: red;*/
-    float: left;
+.card {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*flex-wrap: wrap;*/
+    margin-top: 32px;
+    background: #F5F8FA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
 
-.col-pet {
-    float: left;
-    text-align: center;
-    font-size: 17px;
-    background-color: #f5f8fa;
-    margin: 28.55px;
-    box-shadow: 0 5px 10px 2px #c5c5c5;
-    border-bottom: 7px solid #f5f8fa;
+.cardBody {
+    height: 35px;
 }

@@ -4,47 +4,52 @@ import text1 from './text1.png'
 import text2 from './text2.png'
 import jame from './jame.png'
 import yoda from './yoda.png'
-
+import { Container, Card, CardImg, CardText, CardBody,
+    CardTitle, CardSubtitle, Button, CardDeck, CardFooter} from 'reactstrap';
 
 const Bookmark = () => {
     return (
-        <html>
-        <head>
-            <title>Bookmark</title>
-            <style>
-                @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
-            </style>
-        </head>
-        <body className="bookmark-body">
+        <div>
+            <head>
+                <title>Bookmark</title>
+                <style>
+                    @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
+                </style>
+            </head>
             <div className="bookmark-container">
                 <div className="bookmark">
                     Bookmark
                 </div>
-                <div className="row-pe" id="BookmarkPet">
-                    <a href='./petUrl1'>
-                        <div className="col-pet">
-                            <img src={text1} alt={text1} className="pet-img" height="130"/> <br/> <strong>text</strong>
-                        </div>
-                    </a>
-                    <a href='./petUrl2'>
-                        <div className="col-pet">
-                            <img src={jame} alt={jame} className="pet-img" height="130"/> <br/> <strong>Jame</strong>
-                        </div>
-                    </a>
-                    <a href='./petUrl3'>
-                        <div className="col-pet">
-                            <img src={yoda} alt={yoda} className="pet-img" height="130"/> <br/> <strong>Yoda</strong>
-                        </div>
-                    </a>
-                    <a href='./petUrl4'>
-                        <div className="col-pet">
-                            <img src={text2} alt={text2} className="pet-img" height="130"/> <br/> <strong>text</strong>
-                        </div>
-                    </a>
-                </div>
+                <Container id="middle">
+                    <CardDeck>
+                        <Card className="card">
+                            <CardImg src={text1} />
+                            <CardBody className="cardBody">
+                                <CardTitle className="cardTitle">PetName</CardTitle>
+                            </CardBody>
+                        </Card>
+                        <Card className="card">
+                            <CardImg src={jame} />
+                            <CardBody className="cardBody">
+                                <CardTitle className="cardTitle">PetName</CardTitle>
+                            </CardBody>
+                        </Card>
+                        <Card className="card">
+                            <CardImg src={yoda} />
+                            <CardBody className="cardBody">
+                                <CardTitle className="cardTitle">PetName</CardTitle>
+                            </CardBody>
+                        </Card>
+                        <Card className="card">
+                            <CardImg src={text2} />
+                            <CardBody className="cardBody">
+                                <CardTitle className="cardTitle">PetName</CardTitle>
+                            </CardBody>
+                        </Card>
+                    </CardDeck>
+                </Container>
             </div>
-        </body>
-        </html>
+        </div>
     )
 }
 
