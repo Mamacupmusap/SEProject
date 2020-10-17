@@ -10,38 +10,30 @@ import { Container, Card, CardImg, CardText, CardBody,
 const Bookmark = () => {
     return (
         <div>
-            <head>
-                <title>Bookmark</title>
-                <style>
-                    @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
-                </style>
-            </head>
-            <div className="bookmark-container">
-                <div className="bookmark">
-                    Bookmark
-                </div>
-                <Container id="middle">
-                    <CardDeck>
+            <div className="bodyBook">
+                <h1 id="headerBook">Bookmark</h1>
+                <Container className="BookmarkPet">
+                    <CardDeck className="BookmarkPet">
                         <Card className="card">
-                            <CardImg src={text1} />
+                            <CardImg src={text1} alt=""/>
                             <CardBody className="cardBody">
                                 <CardTitle className="cardTitle">PetName</CardTitle>
                             </CardBody>
                         </Card>
                         <Card className="card">
-                            <CardImg src={jame} />
+                            <CardImg src={jame} alt=""/>
                             <CardBody className="cardBody">
                                 <CardTitle className="cardTitle">PetName</CardTitle>
                             </CardBody>
                         </Card>
                         <Card className="card">
-                            <CardImg src={yoda} />
+                            <CardImg src={yoda} alt=""/>
                             <CardBody className="cardBody">
                                 <CardTitle className="cardTitle">PetName</CardTitle>
                             </CardBody>
                         </Card>
                         <Card className="card">
-                            <CardImg src={text2} />
+                            <CardImg src={text2} alt=""/>
                             <CardBody className="cardBody">
                                 <CardTitle className="cardTitle">PetName</CardTitle>
                             </CardBody>

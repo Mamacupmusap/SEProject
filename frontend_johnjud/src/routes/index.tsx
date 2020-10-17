@@ -21,7 +21,7 @@ import signup6 from '../pages/signup/signup6';
 
 import bookmark from '../pages/bookmark/bookmark';
 import chat from '../pages/chat/chat';
-import suggestion from '../pages/chat/chat';
+import suggestion from '../pages/chat/suggest';
 
 
 import article1 from '../pages/article/article1'
