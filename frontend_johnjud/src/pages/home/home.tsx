@@ -13,6 +13,7 @@ import pet8 from './img/pet8.png'
 import { Container, Card, CardImg, CardText, CardBody,
   CardTitle, CardSubtitle, Button, CardDeck, CardFooter, Label, Nav} from 'reactstrap';
 /*import { CheckboxFilter, TermQuery, BoolMust, RangeQuery } from "searchkit";*/
+import { NavLink } from 'react-router-dom';
 
 export default function home(){
 
@@ -119,7 +120,9 @@ export default function home(){
             <Card className="card">
               <CardImg src={pet8} />
               <CardBody className="cardBody">
-                <CardTitle className="cardTitle">PetName</CardTitle>
+                <NavLink to='/petprofile1'>
+                  <CardTitle className="cardTitle">PetName</CardTitle>
+                </NavLink>
               </CardBody>
             </Card>
           </CardDeck>
