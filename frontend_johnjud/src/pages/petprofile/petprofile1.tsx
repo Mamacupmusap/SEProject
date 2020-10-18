@@ -5,7 +5,6 @@ import { Formik,Form, Field, ErrorMessage, FormikHelpers } from 'formik'
 import check from './imgpic/check.png'
 import Yoda from './imgpic/Yoda.png'
 import addbox from './imgpic/addbox.png'
-import location from './imgpic/location.png'
 import verified from './imgpic/verified.png'
 import './petprofile1.css'
 import * as Yup from 'yup'
@@ -222,7 +221,10 @@ const chat = () =>{
               <ErrorMessage component="div" name="Location" className="invalid-feedback" />
             </FormGroup>
           </Col>
-          <img src={location} alt='line' className="pic"></img><p/>
+          
+          <iframe width="600" height="450" 
+              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=Space+Needle,Seattle+WA">
+          </iframe>
 
           <Col>
             <FormGroup>

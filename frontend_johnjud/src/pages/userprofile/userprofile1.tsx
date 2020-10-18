@@ -1,10 +1,14 @@
-import React from 'react';
+import React, { Component } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 
-const userprofile1 = () =>{
-  return(
-    <div>This is Userprofile!</div>
+class userprofile1 extends Component {
+  render(){
+    return(
+    <div>
+      This is Userprofile!
+    </div>
   )
+  }
 }
 
 export default userprofile1;
