@@ -120,7 +120,7 @@ export default function home(){
             <Card className="card">
               <CardImg src={pet8} alt=""/>
               <CardBody className="cardBody">
-                <NavLink to='/petprofile1'>
+                <NavLink to='/petprofile'>
                 <CardTitle className="cardTitle">PetName</CardTitle>
                 </NavLink>
               </CardBody>

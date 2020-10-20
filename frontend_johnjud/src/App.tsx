@@ -25,8 +25,8 @@ import suggestion from './pages/chat/suggest';
 
 import article1 from './pages/article/article1'
 import userprofile from './pages/userprofile/userprofile1'
-import petprofile from './pages/petprofile/petprofile1'
-
+import petprofile from './pages/petprofile/petprofile'
+import petprofile1 from './pages/petprofile/petprofile1'
 
 class App extends Component{
   render(){
@@ -56,7 +56,8 @@ class App extends Component{
              <Route path="/article1" component={article1}/>
              <Route path="/userprofile1" component={userprofile}/>
 
-             <Route path="/petprofile1" component={petprofile}/>
+             <Route path="/petprofile" component={petprofile}/>
+             <Route path="/petprofile1" component={petprofile1}/>
            </Switch>
         </div> 
       </BrowserRouter>
