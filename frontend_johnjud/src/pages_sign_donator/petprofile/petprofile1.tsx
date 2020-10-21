@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import { NavLink } from 'react-router-dom';
 import { Container, FormGroup,Label, Col}  from 'reactstrap';
 import { Formik,Form, Field, ErrorMessage, FormikHelpers } from 'formik'
 import check from './imgpic/check.png'
@@ -8,7 +9,7 @@ import './petprofile1.css'
 import check_y from './imgpic/check_y.png'
 import check_r from './imgpic/check_r.png'
 import * as Yup from 'yup'
-import Navigation3 from '../../Navigation/Navigation3';
+
 
 const PetinfoSchema = Yup.object().shape({
   petName: Yup.string()
@@ -42,8 +43,6 @@ interface Value2{
 
 const chat = () =>{
   return(
-    <div>
-      <Navigation3/>
     <div className="bodybongchu">
 
       <Formik
@@ -76,19 +75,7 @@ const chat = () =>{
     <Container className="container_editpet">
       <Form>
         <ul>
-        <Col>
-          <FormGroup>
-              <Label for="petName"></Label>
-              <Field name="petName" 
-                       type="text" 
-                       id="petName" 
-                       className={`form-control ${touched.petName ? errors.petName ? 'is-invalid' : 'is-valid' : ''}`}
-                       placeholder="Insert Pet's Name"/>
-              <ErrorMessage component="div" name="petName" className="invalid-feedback" />
-          </FormGroup>
-        </Col>
         </ul>
-        <hr className="linepetname"></hr>
         <div className="status">
 
           <input type="checkbox" id="click2"/>
@@ -110,6 +97,7 @@ const chat = () =>{
               </div>
             </div>
           </div>
+
           <div className="statuszz"><img src={check_y} alt='check_y'></img><div className="status-text2">น้องกำลังไปบ้านใหม่</div></div>
           <input type="checkbox" id="click3"/>
           <Label for="click3" className="click-me3">ได้บ้านใหม่แล้ว</Label>
@@ -117,18 +105,28 @@ const chat = () =>{
           <div className="statuszzz">
             <img src={check_r} alt='check_r'></img>
             <div className="status-text3">น้องมีบ้านใหม่แล้ว</div>
-            
-            </div>
+          </div>
          
         </div>
-
-
       
 
         <div className="information">
         <p className="headinfo">Information</p>
         <hr className="lineinfo"></hr>
         <div className="infopet">
+          <Col>
+            <FormGroup>
+              <Label for="petName" className="information">Pet's Name*:</Label>
+              <Field name="petName" 
+                       type="text" 
+                       id="petName" 
+                       placeholder="pet's name"
+                       className={`form-control ${touched.petName ? errors.petName ? 'is-invalid' : 'is-valid' : ''}`}
+                       />
+              <ErrorMessage component="div" name="petName" className="invalid-feedback" />
+            </FormGroup>
+          </Col>
+
           <Col>
             <FormGroup>
               <Label for="petpic" className="information">Pet picture :</Label>
@@ -269,14 +267,14 @@ const chat = () =>{
           </Col>
           <p></p>
 
-          <input type="checkbox" id="click2"/>
-          <Label for="click2" id="save">Save</Label>
+          <input type="checkbox" id="click22"/>
+          <Label for="click22" id="save">Save</Label>
           <div className="contentz">
-            <div className="savesuc">
-              <Label for="click2" className="xclose">X</Label>
-              <img src={verified} alt="verified"></img>
-              <p>Save successfully</p>
-            </div> 
+              <img src={verified} alt="verified" className="savesuc"></img>
+              <p className="saves">Save successfully</p>
+              <NavLink to='/petprofile'>
+              <button type='button' id='btn-ok'>OK</button>
+              </NavLink>
           </div>
 
           <button type='button' id='cancel'>Cancel</button>
@@ -293,7 +291,6 @@ const chat = () =>{
       )}
       </Formik>
     </div>
-  </div>
   )
 }
 

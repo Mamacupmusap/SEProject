@@ -16,10 +16,8 @@ import signup4 from './pages/signup/signup4';
 import signup5 from './pages/signup/signup5';
 
 
-import bookmark from './pages/bookmark/bookmark';
 import article1 from './pages/article/article1'
 import petprofile from './pages/petprofile/petprofile'
-import petprofile1 from './pages/petprofile/petprofile1'
 
 //sign_in_receiver
 import home_receiver from './pages_sign_receiver/home/home'
@@ -33,7 +31,7 @@ import suggestion_receiver from './pages_sign_receiver/chat/suggest';
 import userpro_receiver from './pages_sign_receiver/userprofile/userprofile1'
 import bookmark_receiver from './pages_sign_receiver/bookmark/bookmark';
 import petprofile_receiver from './pages_sign_receiver/petprofile/petprofile'
-import petprofile1_receiver from './pages_sign_receiver/petprofile/petprofile1'
+
 
 //sign_in_donator
 import home_donator from './pages_sign_donator/home/home'
@@ -69,10 +67,10 @@ class App extends Component{
              <Route path="/signup4" component={signup4} />
              <Route path="/signup5" component={signup5}/>
 
-             <Route path="/bookmark" component={bookmark}/>
+            
              <Route path="/article1" component={article1}/>
              <Route path="/petprofile" component={petprofile}/>
-             <Route path="/petprofile1" component={petprofile1}/>
+             
 
              <Route path="/receiver/home" component={home_receiver}/>
              <Route path="/receiver/article" component={article_receiver}/>
@@ -86,7 +84,7 @@ class App extends Component{
             <Route path="/receiver/userprofile" component={userpro_receiver}/>
             <Route path="/receiver/bookmark" component={bookmark_receiver}/>
             <Route path="/receiver/petprofile" component={petprofile_receiver}/>
-            <Route path="/receiver/petprofile1" component={petprofile1_receiver}/>
+    
 
 
                     

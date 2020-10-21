@@ -13,6 +13,7 @@
 .container_editpet ul{
     text-align: center;
     margin-left: 372px;
+
 }
 
 .linepetname {
@@ -24,15 +25,14 @@
 }
 
 #petName {
-    padding-left: 5%;
-    padding-top: 36px;
-    text-align: center;
-    font-weight: 500;
-    font-size: 30px;
-    line-height: 30px;
-    color: #C4C4C4;
-    width: 254px;
-    border: 1px solid #ffffff;
+    border: none;
+    border: 2px solid #C4C4C4;
+    width: 270px;
+    padding: 1px;
+    margin: 1px 0;
+    margin-left: 1%;
+    border-radius: 15px;
+    display: inline;
 }
 
 
@@ -98,6 +98,10 @@ input::placeholder{
     display: none;
 }
 
+#click2{
+    display: none;
+}
+
 .click-me{
     width: 146px;
     height: 30px;
@@ -149,6 +153,8 @@ input::placeholder{
 
 .statusz{
     display: inline;
+    opacity: 1;
+    visibility: visible;
 }
 
 .statuszz{
@@ -168,12 +174,12 @@ input::placeholder{
     visibility: visible;
 }
 
-#click2:checked ~ .click-me3{
+#click2:checked ~ .statuszz{
     opacity: 1;
     visibility: visible;
 }
 
-#click2:checked ~ .statuszz{
+#click2:checked ~ .click-me3{
     opacity: 1;
     visibility: visible;
 }
@@ -184,12 +190,11 @@ input::placeholder{
     visibility: hidden;
 }
 
-
-
 #click2:checked ~ .click-me{
     opacity: 0;
     visibility: hidden;
 }
+
 
 #click3:checked ~ .statuszzz{
     opacity: 1;
@@ -399,12 +404,23 @@ input[type="file"]{
     color: #ffffff;
 }
 
+#btn-ok{
+    padding: 3px 15px;
+    margin-left: 40%;
+    background-color: #61b292;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    border-radius: 15px;
+    cursor: pointer;
+    color: #ffffff;
+}
 
-#click2{
+#click22{
     display: none;
 }
 
-#click2:checked ~ .contentz{
+#click22:checked ~ .contentz{
     opacity: 1;
     visibility: visible;
 }
@@ -413,16 +429,17 @@ input[type="file"]{
     opacity: 0;
     visibility: hidden;
     width: 320px;
-    height: 200px;
+    height: 250px;
     background: #ffffff;
     border-radius: 3px;
     transition: .3s ease-in;
     box-shadow: 0 2px 12px rgba(0,0,0,.4);
+    padding-top: 2%;
 }
 
 .center,.contentz{
     position: absolute;
-    top:120%;
+    top:150%;
     left: 50%;
     transform: translate(-50%,-50%);
 }
@@ -432,12 +449,9 @@ input[type="file"]{
     padding-left: 32%;
 }
 
-.xclose {
-    padding: 2px 10px;
-    display: inline-block;
-    margin-left: 80%;
-    text-align: center;
-    border: none;
-    cursor: pointer;
-    color: #000000;
+.saves {
+    font-size: 15px;
+    padding-left: 32%;
 }
+
+
