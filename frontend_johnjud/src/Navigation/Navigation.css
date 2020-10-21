@@ -4,14 +4,33 @@
     border: groove 0.5px white;
     font-family: prompt;
 }
+.Navbar_brown{
+    background-color: #8d7966;
+    border-style: dashed;
+    border: groove 0.5px #8d7966;
+    font-family: prompt;
+}
 #changeMode{
     background-color:#8d7966;
     font-size: 8px;
     width: max-content;
     height: min-content;
 }
+#changeMode_brown{
+    background-color:white;
+    font-size: 8px;
+    width: max-content;
+    height: min-content;
+    color: #8d7966;
+}
 .navHead{
     color: #8d7966;
+    font-size: 12px;
+    padding-top: 0.5%;
+    padding-left: 2%;
+}
+.navHead_brown{
+    color: white;
     font-size: 12px;
     padding-top: 0.5%;
     padding-left: 2%;

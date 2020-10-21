@@ -1,3 +1,6 @@
+#contain{
+    margin-top: 5%;
+}
 .form{
     background-color: black;
 }
@@ -63,7 +66,7 @@ label{
 }
 
 .bigbox{
-    margin-top: 6%;
+    margin-top: 15%;
 
 }
 .otp{

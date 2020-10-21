@@ -14,10 +14,13 @@ import pet8 from './img/pet8.png'
 import { Container, Card, CardImg, CardBody,
   CardTitle, CardDeck} from 'reactstrap';
 /*import { CheckboxFilter, TermQuery, BoolMust, RangeQuery } from "searchkit";*/
+import Navigation2 from '../../Navigation/Navigation2';
+
 
 export default function home(){
-
   return(
+  <div>
+    <Navigation2/>
     <div id="bodyblahblah">
       <img src={head_dog} id='head_dog' alt=""/>
       <div className="urgh">
@@ -128,6 +131,7 @@ export default function home(){
           </CardDeck>
         </Container>
       </div>
-      </div>
+    </div>
+  </div>
   )
 };

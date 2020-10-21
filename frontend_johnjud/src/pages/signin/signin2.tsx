@@ -2,7 +2,7 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Button,Container,FormGroup,Col,Label} from 'reactstrap';
 import './signin.css';
-//import { NavLink } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 import { Formik,Form, Field, ErrorMessage , FormikHelpers } from 'formik'
 import * as Yup from 'yup'
@@ -76,7 +76,7 @@ const signin = () =>{
                   </FormGroup>
                 </Col>
 
-                <Button type='submit' className='button_signin'>Sign In</Button>
+                <NavLink to='/receiver/home'><Button type='submit' className='button_signin'>Sign In</Button></NavLink>
               </Form>
               )}
               </Formik>

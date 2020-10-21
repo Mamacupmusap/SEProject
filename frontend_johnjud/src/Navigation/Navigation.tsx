@@ -15,14 +15,16 @@ const Navigation = () => {
    return (
        <div>
          <Navbar className='Navbar'>
-            <NavLink to='/'><img className='jjicon' src={JJicon} alt='jjicon'/></NavLink>
-            <NavLink to='/' className='navHead'>HOME</NavLink>
-            <NavLink to='/article'className='navHead'>ARTICLE</NavLink>
-            <NavLink to='/aboutUS' className='navHead'>ABOUT US</NavLink>
-            <NavLink to='/faq' className='navHead'>FAQ</NavLink>
+            <NavLink to='/receiver/home'><img className='jjicon' src={JJicon} alt='jjicon'/></NavLink>
+            <NavLink to='/receiver/home' className='navHead'>HOME</NavLink>
+            <NavLink to='/receiver/article'className='navHead'>ARTICLE</NavLink>
+            <NavLink to='/receiver/aboutUS' className='navHead'>ABOUT US</NavLink>
+            <NavLink to='/receiver/faq' className='navHead'>FAQ</NavLink>
             <Col>
                <input className='search_nav form-control col-lg-8' type='text' placeholder='search your pet' name='search'></input>
             </Col>
+
+            <NavLink to='/donator/home'>
             <Button id='changeMode'className='form-control'>
             <div className='left'>
                <img className='manbox' src={manIcon2} alt='man'/>
@@ -31,8 +33,9 @@ const Navigation = () => {
                switch to <br/> Donator mode
             </div>
             </Button>
+            </NavLink>
 
-            <div id='chat'><NavLink to='/chat'><img src={chatIcon} alt='chat'/></NavLink></div>
+            <div id='chat'><NavLink to='/receiver/chat'><img src={chatIcon} alt='chat'/></NavLink></div>
 
             <div id="alert">
                <img src={alertIcon} alt='alert'/>
@@ -50,17 +53,17 @@ const Navigation = () => {
                      <img src={manIcon} alt='man' />
                   </DropdownToggle>
                   <DropdownMenu right className='dropmenu'>
-                     <NavLink to='/userprofile1'>
+                     <NavLink to='/receiver/userprofile'>
                         <DropdownItem>
                            profile
                         </DropdownItem>
                      </NavLink>
-                     <NavLink to='/bookmark'>
+                     <NavLink to='/receiver/bookmark'>
                         <DropdownItem>
                            bookmark
                         </DropdownItem>
                      </NavLink>
-                     <NavLink to='/signin'>
+                     <NavLink to='/'>
                         <DropdownItem>
                            Logout
                         </DropdownItem>

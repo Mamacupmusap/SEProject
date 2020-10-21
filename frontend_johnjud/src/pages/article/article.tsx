@@ -3,10 +3,12 @@ import './Article.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import ArticleBG from "./back_article.png"
 import { NavLink } from 'react-router-dom';
+import Navigation2 from '../../Navigation/Navigation2';
 
 const Article = () => {
     return (
-      <div> 
+      <div>
+        <Navigation2/> 
         <div>
             <img src={ArticleBG} alt="ArticleBG" width="100%"/>
         </div><br/>

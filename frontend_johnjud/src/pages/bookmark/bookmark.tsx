@@ -6,10 +6,12 @@ import jame from './jame.png'
 import yoda from './yoda.png'
 import { Container, Card, CardImg, CardBody,
     CardTitle, CardDeck} from 'reactstrap';
+import Navigation2 from '../../Navigation/Navigation2';
 
 const Bookmark = () => {
     return (
         <div>
+            <Navigation2/>
             <div className="bodyBook">
                 <h1 id="headerBook">Bookmark</h1>
                 <Container className="BookmarkPet">

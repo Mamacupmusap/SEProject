@@ -5,9 +5,12 @@ import head_aboutus from './img/aboutus_header.jpg'
 import head_contact from './img/contact_header.jpg'
 import { Container } from 'reactstrap';
 //import {Button} from 'reactstrap';
+import Navigation2 from '../../Navigation/Navigation2';
 
 const aboutUS = () =>{
   return(
+    <div>
+      <Navigation2/>
       <div className='body'>
           <img src={head_aboutus} alt='head_aboutus' width="100%"/>
           <Container>
@@ -44,6 +47,7 @@ const aboutUS = () =>{
             </div>
           </Container>
       </div>
+    </div>
   )
 }
 

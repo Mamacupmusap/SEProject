@@ -3,9 +3,12 @@ import './article1.css'
 import imgArticle1 from './yerlin-matu-GtwiBmtJvaU-unsplash 1.png'
 import 'bootstrap/dist/css/bootstrap.css'
 
+import Navigation2 from '../../Navigation/Navigation2';
+
 const Article1 = () => {
     return (
         <html>
+            <Navigation2/>
         <head>
             <title>How to take a good care of your kitten</title>
         </head>

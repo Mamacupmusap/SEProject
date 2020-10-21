@@ -4,9 +4,12 @@ import './faq.css'
 import head_faq from './img/head_faq.jpg'
 import { Container } from 'reactstrap';
 //import {Button} from 'reactstrap';
+import Navigation2 from '../../Navigation/Navigation2';
 
 const faq = () =>{
   return(
+    <div>
+      <Navigation2/>
     <div className='body'>
       <img src={head_faq} alt='head_faq' width="100%"/>
       <Container>
@@ -29,6 +32,7 @@ const faq = () =>{
         </div>
       </Container>
     </div>
+  </div>
   )
 }
 
