@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 const petprofile = () =>{
   return(
     <div>
-        <NavLink to='./petprofile1'>ไปยัง edit pet profilesssssss</NavLink>
+        <NavLink to='./petprofile1'>ไปยัง edit pet profilesssssssssssss</NavLink>
     </div>
   )
 }
