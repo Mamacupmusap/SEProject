@@ -9,6 +9,7 @@ import next from './component/arrow_right.png'
 import { Container, FormGroup,Label,Button, Col}  from 'reactstrap';
 import jjicon from './component/logojj.png'
 import './signup.css'
+import Navigation2 from '../../Navigation/Navigation2';
 
 const clientId = '99307406475-s1a1a9rcrfpo3kchirudo8i8fnidr0og.apps.googleusercontent.com'
 
@@ -29,6 +30,7 @@ interface Value2{
 const signup = () =>{
   return(
     <div>
+      <Navigation2/>
       <Container id='contain'>  
         <div className='box_img'>
           <img src={jjicon} alt='icon' className='rounded-lg'/>

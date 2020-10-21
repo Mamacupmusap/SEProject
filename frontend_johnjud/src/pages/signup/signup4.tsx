@@ -4,10 +4,12 @@ import {Button,Container,Input}  from 'reactstrap';
 //import jjicon from './component/logojj.png'
 import { NavLink } from 'react-router-dom';
 import mobile from './component/mobile.png'
+import Navigation2 from '../../Navigation/Navigation2';
 
 const signin4 = () =>{ 
   return(
     <div>
+      <Navigation2/>
       <Container className='bigbox'>
           <div className='left'>
             <img src={mobile} alt='mobile' className='mobile'/>

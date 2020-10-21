@@ -9,6 +9,7 @@ import { NavLink } from 'react-router-dom';
 
 import { Formik,Form, Field, ErrorMessage , FormikHelpers } from 'formik'
 import * as Yup from 'yup'
+import Navigation2 from '../../Navigation/Navigation2';
 
 const RegisterSchema = Yup.object().shape({
   username: Yup.string()
@@ -29,6 +30,7 @@ interface Value2{
 const signup2 = () =>{
   return(
     <div>
+      <Navigation2/>
       <Container id='contain'>
         <div className='box_img'>
           <img src={jjicon} alt='test' className='rounded-lg'/>
