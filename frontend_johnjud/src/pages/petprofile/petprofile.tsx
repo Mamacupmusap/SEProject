@@ -1,19 +1,26 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { NavLink } from 'react-router-dom';
+import { Container,Label}  from 'reactstrap';
 import alert from './imgpic/alert.png'
-
+import './petprofile.css'
 
 const petprofile = () =>{
   return(
-    <div>
-      <div className="loginPopup">
+    <Container>
+      <input type="checkbox" id="testYay"/>
+      <Label for="testYay" id="testButtonYay">edit</Label>
+      <div className="centerPet">
         <img src={ alert} alt="alertsign" id="alertSign"/>
-        <p>Please sign in</p>
-        <button type='button' value='confirm' id='confirm'>confirm</button>
-        <button type='button' value='cancel' id='cancel'>cancel</button>
-      </div>>
-    </div>
+        <p id="pleaseSignIn">Please sign in</p>
+        <NavLink to='/signin'>
+          <button type='button' id='confirmYay-btn'>confirm</button>
+        </NavLink>
+        <input type="checkbox" id="cancelYay"/>
+        <Label for="testYay" id="cancelYay-btn">cancel</Label>
+      </div>
+    </Container>
+
   )
 }
 
