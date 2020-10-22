@@ -9,7 +9,7 @@ import './petprofile1.css'
 import check_y from './imgpic/check_y.png'
 import check_r from './imgpic/check_r.png'
 import * as Yup from 'yup'
-
+import Navigation3 from '../../Navigation/Navigation3'
 
 const PetinfoSchema = Yup.object().shape({
   petName: Yup.string()
@@ -44,7 +44,7 @@ interface Value2{
 const chat = () =>{
   return(
     <div className="bodybongchu">
-
+      <Navigation3/>
       <Formik
           initialValues={{
             petName: '',
