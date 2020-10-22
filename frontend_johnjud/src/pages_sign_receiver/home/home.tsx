@@ -26,51 +26,51 @@ export default function home(){
       <div className="urgh">
         <div id="filterAll">
             <div className="filter">
-              <input type="checkbox"></input>
+              <input type="checkbox"/>
               <label>Near by you</label>
             </div>
             <div className="filter">
               <p>Type</p>
-              <input type="checkbox"></input>
+              <input type="checkbox"/>
               <label>Dog</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>Cat</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>Others</label>
             </div>
             <div className="filter">
               <p>Weight</p>
-              <input type="checkbox"></input>
+              <input type="checkbox"/>
               <label>less than 5kg</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>5-10kg</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>more than 10kg</label>
             </div>
             <div className="filter">
               <p>Height</p>
-              <input type="checkbox"></input>
+              <input type="checkbox"/>
               <label>less than 20cm</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>20-50cm</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>more than 50cm</label>
             </div>
             <div className="filter">
               <p>Age</p>
-              <input type="checkbox"></input>
+              <input type="checkbox"/>
               <label>less than a year</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>1-5years</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>more than 5 years</label>
             </div>
           </div>

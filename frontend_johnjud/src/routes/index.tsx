@@ -30,7 +30,8 @@ import article1_receiver from '../pages_sign_receiver/article/article1'
 import chat_receiver from '../pages_sign_receiver/chat/components/Chat/Chat';
 import suggestion_receiver from '../pages_sign_receiver/chat/suggest';
 import userpro_receiver from '../pages_sign_receiver/userprofile/userprofile1'
-import bookmark_receiver from '../pages_sign_receiver/bookmark/bookmark';
+//import bookmark_receiver from '../pages_sign_receiver/bookmark/bookmark';
+import Bookmark from '../pages_sign_receiver/bookmark/bookmark2';
 
 import petprofile_receiver from '../pages_sign_receiver/petprofile/petprofile'
 
@@ -47,6 +48,7 @@ import userpro_donator from '../pages_sign_donator/userprofile/userprofile1'
 
 import petprofile_donator from '../pages_sign_donator/petprofile/petprofile'
 import petprofile1_donator from '../pages_sign_donator/petprofile/petprofile1'
+//import {isDevMode} from "@ionic/react/dist/types/components/utils/dev";
 
 export default () => (
   <Switch>
@@ -78,7 +80,8 @@ export default () => (
     <Route path="/receiver/chat" component={chat_receiver}/>
     <Route path="/receiver/suggestion" component={suggestion_receiver}/>
     <Route path="/receiver/userprofile" component={userpro_receiver}/>
-    <Route path="/receiver/bookmark" component={bookmark_receiver}/>
+
+    <Route path="/receiver/bookmark" component={Bookmark}/>
     <Route path="/receiver/petprofile" component={petprofile_receiver}/>
 
 
