@@ -9,7 +9,7 @@ const petprofile = () =>{
   return(
     <Container>
       <input type="checkbox" id="testYay"/>
-      <Label for="testYay" id="testButtonYay">edit</Label>
+      <Label for="testYay" id="testButtonYay">contact</Label>
       <div className="centerPet">
         <img src={ alert} alt="alertsign" id="alertSign"/>
         <p id="pleaseSignIn">Please sign in</p>
