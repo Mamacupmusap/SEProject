@@ -16,7 +16,6 @@ import { Container, Card, CardImg, CardBody,
 /*import { CheckboxFilter, TermQuery, BoolMust, RangeQuery } from "searchkit";*/
 import Navigation2 from '../../Navigation/Navigation2';
 
-
 export default function home(){
   return(
   <div>
@@ -124,7 +123,7 @@ export default function home(){
               <CardImg src={pet8} alt=""/>
               <CardBody className="cardBody">
                 <NavLink to='/petprofile'>
-                <CardTitle className="cardTitle">PetName</CardTitle>
+                <CardTitle className="cardTitle">Yoda</CardTitle>
                 </NavLink>
               </CardBody>
             </Card>

@@ -7,7 +7,7 @@ const petprofile = () =>{
   return(
     <div>
       <Navigation3/>
-      <NavLink to='/donator/petprofile1'>ไปยัง edit pet profile</NavLink>
+      <p>รอๆๆๆจ้า</p>
     </div>
   )
 }

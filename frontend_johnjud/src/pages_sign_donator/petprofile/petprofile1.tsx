@@ -272,7 +272,7 @@ const chat = () =>{
           <div className="contentz">
               <img src={verified} alt="verified" className="savesuc"></img>
               <p className="saves">Save successfully</p>
-              <NavLink to='/petprofile'>
+              <NavLink to='/donator/petprofile'>
               <button type='button' id='btn-ok'>OK</button>
               </NavLink>
           </div>
