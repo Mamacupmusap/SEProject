@@ -58,11 +58,6 @@ const Navigation = () => {
                            profile
                         </DropdownItem>
                      </NavLink>
-                     <NavLink to='/donator/bookmark'>
-                        <DropdownItem>
-                           bookmark
-                        </DropdownItem>
-                     </NavLink>
                      <NavLink to='/'>
                         <DropdownItem>
                            Logout

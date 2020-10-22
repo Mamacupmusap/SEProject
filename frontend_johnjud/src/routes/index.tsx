@@ -19,7 +19,6 @@ import signup5 from '../pages/signup/signup5';
 
 import article1 from '../pages/article/article1'
 import petprofile from '../pages/petprofile/petprofile'
-import petprofile1 from '../pages/petprofile/petprofile1'
 
 //sign_in_receiver
 import home_receiver from '../pages_sign_receiver/home/home'
@@ -34,7 +33,6 @@ import userpro_receiver from '../pages_sign_receiver/userprofile/userprofile1'
 import bookmark_receiver from '../pages_sign_receiver/bookmark/bookmark';
 
 import petprofile_receiver from '../pages_sign_receiver/petprofile/petprofile'
-import petprofile1_receiver from '../pages_sign_receiver/petprofile/petprofile1'
 
 //sign_in_donator
 import home_donator from '../pages_sign_donator/home/home'
@@ -46,7 +44,6 @@ import article1_donator from '../pages_sign_donator/article/article1'
 import chat_donator from '../pages_sign_donator/chat/components/Chat/Chat';
 import suggestion_donator from '../pages_sign_donator/chat/suggest';
 import userpro_donator from '../pages_sign_donator/userprofile/userprofile1'
-import bookmark_donator from '../pages_sign_donator/bookmark/bookmark';
 
 import petprofile_donator from '../pages_sign_donator/petprofile/petprofile'
 import petprofile1_donator from '../pages_sign_donator/petprofile/petprofile1'
@@ -70,7 +67,6 @@ export default () => (
 
     <Route path="/article1" component={article1}/>
     <Route path="/petprofile" component={petprofile}/>
-    <Route path="/petprofile1" component={petprofile1}/>
     
 
     <Route path="/receiver/home" component={home_receiver}/>
@@ -84,7 +80,6 @@ export default () => (
     <Route path="/receiver/userprofile" component={userpro_receiver}/>
     <Route path="/receiver/bookmark" component={bookmark_receiver}/>
     <Route path="/receiver/petprofile" component={petprofile_receiver}/>
-    <Route path="/receiver/petprofile1" component={petprofile1_receiver}/>
 
 
 
@@ -97,7 +92,6 @@ export default () => (
     <Route path="/donator/chat" component={chat_donator}/>
     <Route path="/donator/suggestion" component={suggestion_donator}/>
     <Route path="/donator/userprofile" component={userpro_donator}/>
-    <Route path="/donator/bookmark" component={bookmark_donator}/>
     <Route path="/donator/petprofile" component={petprofile_donator}/>
     <Route path="/donator/petprofile1" component={petprofile1_donator}/>
 

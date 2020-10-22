@@ -43,7 +43,6 @@ import article1_donator from './pages_sign_donator/article/article1'
 import chat_donator from './pages_sign_donator/chat/components/Chat/Chat';
 import suggestion_donator from './pages_sign_donator/chat/suggest';
 import userpro_donator from './pages_sign_donator/userprofile/userprofile1'
-import bookmark_donator from './pages_sign_donator/bookmark/bookmark';
 import petprofile_donator from './pages_sign_donator/petprofile/petprofile'
 import petprofile1_donator from './pages_sign_donator/petprofile/petprofile1'
 
@@ -97,7 +96,6 @@ class App extends Component{
             <Route path="/donator/chat" component={chat_donator}/>
             <Route path="/donator/suggestion" component={suggestion_donator}/>
             <Route path="/donator/userprofile" component={userpro_donator}/>
-            <Route path="/donator/bookmark" component={bookmark_donator}/>
             <Route path="/donator/petprofile" component={petprofile_donator}/>
             <Route path="/donator/petprofile1" component={petprofile1_donator}/>
 
