@@ -18,7 +18,7 @@ import signup4 from '../pages/signup/signup4';
 import signup5 from '../pages/signup/signup5';
 
 import article1 from '../pages/article/article1'
-import petprofile from '../pages/petprofile/petprofile'
+import petprofile from '../pages/petprofile/Petprofile'
 
 //sign_in_receiver
 import home_receiver from '../pages_sign_receiver/home/home'

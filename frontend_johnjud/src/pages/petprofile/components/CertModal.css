@@ -1,0 +1,15 @@
+.Modalbody{
+    text-align:center;
+}
+.firstbutton{
+    display: block;
+    text-align:center ;
+}
+.secondbutton{
+    text-align:right;
+    margin-left:100px;
+}
+
+.Certbutton{
+    text-align:right;
+}

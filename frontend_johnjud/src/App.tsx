@@ -17,7 +17,7 @@ import signup5 from './pages/signup/signup5';
 
 
 import article1 from './pages/article/article1'
-import petprofile from './pages/petprofile/petprofile'
+import petprofile from './pages/petprofile/Petprofile'
 
 //sign_in_receiver
 import home_receiver from './pages_sign_receiver/home/home'
@@ -69,7 +69,7 @@ class App extends Component{
             
              <Route path="/article1" component={article1}/>
              <Route path="/petprofile" component={petprofile}/>
-             
+
 
              <Route path="/receiver/home" component={home_receiver}/>
              <Route path="/receiver/article" component={article_receiver}/>

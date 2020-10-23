@@ -1,0 +1,75 @@
+.Navbar{
+    background-color: white;
+    border-style: dashed;
+    border: groove 0.5px white;
+    font-family: prompt;
+}
+#changeMode{
+    background-color:#8d7966;
+    font-size: 15px;
+    width: max-content;
+    height: min-content;
+}
+.navHead{
+    color: #8d7966;
+    font-size: 12px;
+    padding-top: 0.5%;
+    padding-left: 2%;
+}
+.search_nav{
+    margin-left: 50px;
+    width: 20%; 
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-image: url("./img/search.png"); 
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out; 
+    transition: width 0.4s ease-in-out;
+
+    background-color:#DCDDDE; 
+    float: right;
+}
+.search_nav::placeholder{
+    padding-left: 5%;
+}
+
+.jjicon{
+    height: 80px;
+    width: 200px;
+    padding: 0% 10% 0% 0%;
+}
+.manbox{
+    height: 30px;
+    width: 30px;
+}
+.icon{
+    padding: 0% 1% 0% 1%;
+    display: inline;
+
+}
+
+.dropmenu{
+    height: 160%;
+}
+
+.left{
+    margin-right: 10px;
+}
+
+#chat{
+    margin-left: 1.5%;
+    margin-right: 0.5%;
+}
+#alert{
+    margin-left: 0.5%;
+}
+
+.register{
+    color: #8d7966;
+    font-size: 12px;
+}
+
