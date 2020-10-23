@@ -1,0 +1,67 @@
+@font-face {
+    font-family: prompt;;
+    src: url(Prompt_Thin.ttf);
+}
+
+.bodyblahblah {
+    max-width: 100%;
+}
+
+#head_dog {
+    width: 100%;
+}
+
+#mypet {
+    height: 48px;
+    font-size: 16px;
+    background-color: #8D7966;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    padding-left: 16px;
+    width: 200px;
+    color: white;
+
+}
+
+#newpet {
+    width: 162px;
+    height: 26px;
+    margin-top: 10px;
+    margin-left: 19px;
+    background-color: #B19D85;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 4px;
+    text-align: center;
+    border: none;
+    font-size: 14px;
+    color: white;
+}
+
+.card {
+    font-size: 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /*flex-wrap: wrap;*/
+    margin-top: 32px;
+    background: #F5F8FA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.cardBody {
+    height: 35px;
+    /*background: #F5F8FA;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);*/
+}
+
+#middle{
+    margin-left: 10%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.urgh {
+    display: flex;
+    flex-direction: row;
+}

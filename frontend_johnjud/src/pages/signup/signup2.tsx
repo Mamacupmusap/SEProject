@@ -1,40 +1,95 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container ,Form, FormGroup,Label,Input,Button, Col}  from 'reactstrap';
+import { Container ,FormGroup,Label,Button, Col}  from 'reactstrap';
 import jjicon from './component/logojj.png'
 import back from './component/arrow_left.png'
 import next from './component/arrow_right.png'
 import './signup.css'
 import { NavLink } from 'react-router-dom';
 
-const signup = () =>{
+import { Formik,Form, Field, ErrorMessage , FormikHelpers } from 'formik'
+import * as Yup from 'yup'
+import Navigation2 from '../../Navigation/Navigation2';
+
+const RegisterSchema = Yup.object().shape({
+  username: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required'),
+  password: Yup.string()
+    .min(2, 'Too Short!')
+    .max(50, 'Too Long!')
+    .required('Required')
+});
+
+interface Value2{
+  username: string,
+  password: string
+}
+
+const signup2 = () =>{
   return(
     <div>
-      <NavLink to='/signin'><img src={back} alt='' className='back_page'/></NavLink>
+      <Navigation2/>
       <Container id='contain'>
         <div className='box_img'>
           <img src={jjicon} alt='test' className='rounded-lg'/>
         </div>
-        <Form>
+        <Formik
+          initialValues={{
+            username: '',
+            password: ''
+          }}
+          onSubmit={(
+            values: Value2,
+            { setSubmitting }: FormikHelpers<Value2>
+          ) => {
+            setTimeout(() => {
+              alert(JSON.stringify(values, null, 2));
+              setSubmitting(false);
+            }, 500);
+          }}
+          validationSchema={RegisterSchema}
+        >
+        {({ errors, touched }) => (
+          <Form>
           <Col>
             <FormGroup>
               <Label for="username">Username*</Label>
-              <Input type="text" name="username" id="username" placeholder="username" />
+              <Field name="username" 
+                       type="text" 
+                       id="username" 
+                       className={`form-control ${touched.username ? errors.username ? 'is-invalid' : 'is-valid' : ''}`}
+                       placeholder="username"/>
+              <ErrorMessage component="div" name="username" className="invalid-feedback" />
             </FormGroup>
           </Col>
-          <Col>
+         <Col>
             <FormGroup>
               <Label for="password">Password*</Label>
-              <Input type="password" name="password" id="password" placeholder="password" />
+              <Field name="password" 
+                       type="password" 
+                       id="password" 
+                       className={`form-control ${touched.password ? errors.password ? 'is-invalid' : 'is-valid' : ''}`}
+                       placeholder="password"/>
+              <ErrorMessage component="div" name="password" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <br/><br/>
           <NavLink to='/signup'><Button className='button_back'><img src={back} alt=''/>Back</Button></NavLink>
           <NavLink to='/signup3'><Button className='button_next'>Next<img src={next} alt=''/></Button></NavLink>
-        </Form>
+          
+          <div>
+            <br/><br/><br/><br/>
+            <button type='submit' value='submit' >submit</button>
+          </div>
+          
+          </Form>
+         )}  
+        </Formik>
       </Container>
     </div>
   )
 }
 
-export default signup;
+export default signup2;

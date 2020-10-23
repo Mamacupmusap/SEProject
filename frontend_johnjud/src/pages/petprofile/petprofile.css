@@ -1,0 +1,86 @@
+.font{
+  font-family: prompt;
+  src: url(Prompt_Thin.ttf);
+}
+.carousel{
+    display: 'inline-block';
+    text-align: center;
+  }
+
+.container {
+    font-size: 30px;
+    display: 'inline-block';
+    text-align: center;
+  }
+
+.Header {
+  font-size: 50px;
+  display: 'inline-block';
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+.infoText {
+  display: flex;
+  justify-content: space-between;
+  flex-direction:row;
+  font-size: 26px;
+  margin-left: 300px;
+  margin-right: 300px;
+}
+
+.Text {
+  font-size: 26px;
+  margin-left: 300px;
+  margin-right: 300px;
+  padding-bottom: 30px;
+}
+
+.Column {
+  display: flex;
+  flex-direction:column;
+}
+
+.Map {
+  justify-content: center;
+  align-items : center;
+  text-align: center;
+  height:  400px;
+  width: 910px;
+  margin-left: 300px;
+}
+
+.Contact {
+  height:  50px;
+  width: 100px;
+  padding-left: 5%;
+}
+
+.lineunder{
+  justify-content: center;
+  align-items : center;
+  text-align: center;
+  height:  10px;
+  width: 910px;
+  margin-left: 300px;
+}
+
+.User{
+  margin-left: 300px;
+}
+
+.PostbyText{
+  display:flex;
+  justify-content: space-between;
+  font-size: 26px;
+  margin-right: 800px;
+}
+
+.nametag{
+  order:1;
+}
+
+.Profile{
+  color:green;
+  text-decoration: underline;
+}

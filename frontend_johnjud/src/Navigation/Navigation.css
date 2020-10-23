@@ -1,7 +1,13 @@
 .Navbar{
     background-color: white;
     border-style: dashed;
-    border: groove 0.5px black;
+    border: groove 0.5px white;
+    font-family: prompt;
+}
+.Navbar_brown{
+    background-color: #8d7966;
+    border-style: dashed;
+    border: groove 0.5px #8d7966;
     font-family: prompt;
 }
 #changeMode{
@@ -10,16 +16,44 @@
     width: max-content;
     height: min-content;
 }
+#changeMode_brown{
+    background-color:white;
+    font-size: 8px;
+    width: max-content;
+    height: min-content;
+    color: #8d7966;
+}
 .navHead{
     color: #8d7966;
     font-size: 12px;
     padding-top: 0.5%;
     padding-left: 2%;
 }
-.search{
-    font-size: 8px;
-    padding-top: 1.5%;
-    width: 50%;
+.navHead_brown{
+    color: white;
+    font-size: 12px;
+    padding-top: 0.5%;
+    padding-left: 2%;
+}
+.search_nav{
+    margin-left: 50px; /*ระยะขอบซ้าย*/
+    width: 20%; /*ความยาวช่องค้นหา*/
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-image: url("./img/search.png"); /*ใส่รูปแว่นขยาย*/
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+    -webkit-transition: width 0.4s ease-in-out; /*ทำให้ค่อยๆยืด*/
+    transition: width 0.4s ease-in-out;
+
+    background-color:#DCDDDE; /*สีพื้นหลังช่องค้นหา*/
+    float: right;
+}
+.search_nav::placeholder{
+    padding-left: 10%;
 }
 
 .jjicon{
@@ -28,9 +62,35 @@
     padding: 0% 10% 0% 0%;
 }
 .manbox{
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
 }
 .icon{
     padding: 0% 1% 0% 1%;
+    display: inline;
+
+}
+
+.dropmenu{
+    height: 160%;
+}
+
+.left{
+    margin-right: 10px;
+}
+
+#chat{
+    margin-left: 1.5%;
+    margin-right: 0.5%;
+}
+#alert{
+    margin-left: 0.5%;
+}
+.register{
+    color: #8d7966;
+    font-size: 12px;
+}
+
+.blank_box{
+    width: 1%;
 }

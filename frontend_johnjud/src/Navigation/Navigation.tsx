@@ -1,7 +1,8 @@
 //Navbar
 import React from 'react';
-import {Navbar,Button,Col} from 'reactstrap';
-import { NavLink } from 'react-router-dom';
+import {Navbar,Button,Col, UncontrolledDropdown , DropdownToggle,DropdownMenu,DropdownItem
+      ,UncontrolledPopover,PopoverHeader, PopoverBody} from 'reactstrap';
+import { NavLink} from 'react-router-dom';
 import './Navigation.css';
 import chatIcon from './img/chat.png';
 import alertIcon from './img/alert.png';
@@ -9,34 +10,72 @@ import manIcon from './img/man.png';
 import manIcon2 from './img/man_white.png';
 import JJicon from './img/newlogo02.png';
 
-const Navigation = () => {
-    return (
+
+const Navigation = () => {   
+   return (
        <div>
          <Navbar className='Navbar'>
-            <NavLink to='/home'><img className='jjicon' src={JJicon} alt='jjicon'/></NavLink>
-            <NavLink to='/home' className='navHead'>HOME</NavLink>
-            <NavLink to='/article'className='navHead'>ARTICLE</NavLink>
-            <NavLink to='/aboutUS' className='navHead'>ABOUT US</NavLink>
-            <NavLink to='/faq' className='navHead'>FAQ</NavLink>
+            <NavLink to='/receiver/home'><img className='jjicon' src={JJicon} alt='jjicon'/></NavLink>
+            <NavLink to='/receiver/home' className='navHead'>HOME</NavLink>
+            <NavLink to='/receiver/article'className='navHead'>ARTICLE</NavLink>
+            <NavLink to='/receiver/aboutUS' className='navHead'>ABOUT US</NavLink>
+            <NavLink to='/receiver/faq' className='navHead'>FAQ</NavLink>
             <Col>
-               <input className='search form-control' type='search' placeholder='search your pet'></input>
+               <input className='search_nav form-control col-lg-8' type='text' placeholder='search your pet' name='search'></input>
             </Col>
-            <Button id='changeMode'>
-            <div>
+
+            <NavLink to='/donator/home'>
+            <Button id='changeMode'className='form-control'>
+            <div className='left'>
                <img className='manbox' src={manIcon2} alt='man'/>
             </div>
-            <div>
+            <div className='right'>
                switch to <br/> Donator mode
             </div>
             </Button>
-            <div className='icon'>
-               <img src={chatIcon} alt='chat' />
-               <img src={alertIcon} alt='alert' />
-               <NavLink to='/signin'className='man'><img src={manIcon} alt='man' /></NavLink>
+            </NavLink>
+
+            <div id='chat'><NavLink to='/receiver/chat'><img src={chatIcon} alt='chat'/></NavLink></div>
+
+            <div id="alert">
+               <img src={alertIcon} alt='alert'/>
             </div>
+            <UncontrolledPopover trigger="legacy" placement="top" target="alert">
+            <PopoverHeader>Notification</PopoverHeader>
+               <PopoverBody>
+                  This is notification!
+               </PopoverBody>
+            </UncontrolledPopover>
+
+            <div>
+               <UncontrolledDropdown>
+                  <DropdownToggle nav>
+                     <img src={manIcon} alt='man' />
+                  </DropdownToggle>
+                  <DropdownMenu right className='dropmenu'>
+                     <NavLink to='/receiver/userprofile'>
+                        <DropdownItem>
+                           profile
+                        </DropdownItem>
+                     </NavLink>
+                     <NavLink to='/receiver/bookmark'>
+                        <DropdownItem>
+                           bookmark
+                        </DropdownItem>
+                     </NavLink>
+                     <NavLink to='/'>
+                        <DropdownItem>
+                           Logout
+                        </DropdownItem>
+                     </NavLink>
+                  </DropdownMenu>
+               </UncontrolledDropdown>
+            </div>
+            
          </Navbar>
        </div>
    );
 }
  
 export default Navigation;
+
