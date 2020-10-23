@@ -1,8 +1,8 @@
 import React, { Component, useEffect, useState } from 'react';
-import './Petprofile.css';
+import './petprofile.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import profileservice from './ProfileService';
-import Navigation from '../../Navigation/Navigation';
+import Navigation2 from '../../Navigation/Navigation2';
 import {Petinfo} from './Interface';
 import { NavLink} from 'react-router-dom';
 import { Button} from 'reactstrap';
@@ -46,7 +46,7 @@ export const Petprofile = () => {
     
     return(
     <div className='font'>
-        < Navigation />
+        < Navigation2 />
         <Button color="link"><img className='back_button' src={back_button} alt='back_button'/></Button>
         <div className="Header">
             {petname}
