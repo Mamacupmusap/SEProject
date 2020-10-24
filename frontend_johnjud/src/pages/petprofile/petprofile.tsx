@@ -5,15 +5,14 @@ import profileservice from './ProfileService';
 import Navigation2 from '../../Navigation/Navigation2';
 import {Petinfo} from './Interface';
 import { NavLink} from 'react-router-dom';
-import { Button} from 'reactstrap';
+import { Button, Container, Label} from 'reactstrap';
 import { MyCarousel } from './components/MyCarousel';
 import { BookmarkModal } from './components/BookmarkModal';
-import back_button from './components/img/arrow_left.png';
 import {CertModal} from './components/CertModal';
-import map from './components/img/Map.png';
-import lineunder from './components/img/lineunder.png';
 import User from './components/img/User.png';
-import contact from './components/img/contact.png';
+import greenRight from './components/img/check.png';
+import mail from './components/img/mail.png';
+import alert from './components/img/alert.png'
 
 export const Petprofile = () => {
     const[obj,setObj] = useState<Petinfo>();
@@ -45,48 +44,73 @@ export const Petprofile = () => {
     const adopuserid = obj?.AdopUserId;
     
     return(
-    <div className='font'>
+    <div className='bodyPetpro'>
         < Navigation2 />
-        <Button color="link"><img className='back_button' src={back_button} alt='back_button'/></Button>
-        <div className="Header">
-            {petname}
+        <div className="HeaderPetpro">
+          <div id="petStatusPro">
+            <img src={greenRight} width="24" height="24"/><h1 id="petStatusPro2">กำลังหาบ้านให้น้อง</h1>
+          </div> 
+          <div className="toppppp">
+            {petname}yoda
+          </div>
+          <hr id="lineHeader"></hr> 
         </div>
         <div className="carousel">
             < MyCarousel />
         </div>
-        <div className="container">
-            Information<br /><br />
-            -----------
+        <div className="informationn">
+            Information
+            <hr id="lineHeader"></hr>
         </div>
-        <div className="infoText">
-            <div className="Column">
-                <p>Type: {pettype}</p>
-                <p>Gender: {petgender}</p>       
-                <p>Length: {petlength}</p>
-                <p>Height: {petheight}</p>
-                <p>Breed: {petbreed}</p>
-                <p>Location:</p>
-                <p>bla bla</p>
+        <Container className="infoText">
+            <Container className="ColumnPro">
+                <h1 id="oyay">Type: {pettype}</h1>
+                <h1 id="oyay">Gender: {petgender}</h1>       
+                <h1 id="oyay">Length: {petlength}</h1>
+                <h1 id="oyay">Height: {petheight}</h1>
+                <h1 id="oyay">Breed: {petbreed}</h1>
+                <h1 id="oyay">Location:</h1>
+                <h1 id="oyay">bla bla</h1>
+            </Container>
+            <div className="ColumnSide">
+                <BookmarkModal id="testagain"/>
+                <CertModal id="testagain"/>
             </div>
-            <div className="Column">
-                <BookmarkModal/>
-                <CertModal/>
-            </div>
-        </div>
-        <img src={map} className="Map"/>
+        </Container>
+        <Container>
+          <iframe width="500" height="450" 
+            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=Space+Needle,Seattle+WA" id="maphuhu">
+          </iframe>
+        </Container>
         
-        <div className='Text'>
-            <p>Description:</p>
+        <Container>
+            <h1 id="TextDescrip">Description:</h1>
             {petstatus}
-        </div>
-        <img src={lineunder} className="lineunder"/>
-        <p className='Text'>Post by:</p>
-        <div className="PostbyText">
-            <img src={User} className="User"/>
-            <p> Tiffany Young </p>
-            <NavLink to='/contactprofile' className='Profile'> Profile</NavLink>     
-            <NavLink to='/chat'><img src={contact} className="Contact" alt='contact'/></NavLink>    
-        </div>
+            <hr id="lineHeader2"></hr>
+        </Container>
+        <Container>
+          <h1 id='TextDescripNotSign'>Post by:</h1>
+            <div className="PostbyTextNotSign">
+              <img src={User} className="PostUserPicNotSign"/>
+              <div className="postInfoNotSign">
+                <div className="postInfoNotSign2">
+                  <h1 id="PostUserNotSign"> Tiffany Young </h1>
+                  <input type="checkbox" id="postProfile"/>
+                  <Label for="postProfile" id="postProfileButt">profile</Label>
+                  <div className="centerPet">
+                    <img src={ alert} alt="alertsign" id="alertSign"/>
+                    <p id="pleaseSignIn">Please sign in</p>
+                    <NavLink to='/signin'>
+                      <button type='button' id='confirmYay-btn'>confirm</button>
+                    </NavLink>
+                    <input type="checkbox" id="cancelYay"/>
+                    <Label for="testYay" id="cancelYay-btn">cancel</Label>
+                  </div>                
+              </div>
+              <NavLink to='/receiver/chat'><Button className='button_contactPet'><img src={mail} id="mailIcon1"/>contact</Button></NavLink>    
+              </div>
+            </div>
+        </Container>
     </div>
     );
 }
