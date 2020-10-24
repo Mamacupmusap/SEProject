@@ -4,7 +4,6 @@ import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Cert from './img/cert.png' ;
 import Realcerti from './img/RealCerti.png';
 import close from './img/close.png';
-import greenRight from './img/check.png'
 
 export const CertModal = (props:any) => {
   const {
@@ -18,15 +17,16 @@ export const CertModal = (props:any) => {
 
   return (
     <div>
-      <Button color="link" onClick={toggle} id="doCer"><img src={greenRight} width="14" height="14"/>certificate</Button>
-      <Modal isOpen={modal} toggle={toggle} id="cerPopUp">
+      <Button color="link" onClick={toggle}><img src={Cert}/>{buttonLabel}</Button>
+      <Modal isOpen={modal} toggle={toggle}>
+        <ModalHeader toggle={toggle}></ModalHeader>
         <ModalBody className="Modalbody">
-          <h5>Health Certification</h5>
-          <img src={Realcerti}/>
+        Health Certification
+          <p><img src={Realcerti}/></p>
         </ModalBody>
-        <div id="certButt"> 
-          <Button color="link" onClick={toggle} className="Certbutton">close</Button>
-        </div>
+        <ModalFooter> 
+          <Button color="link" onClick={toggle} className="Certbutton"><img src={close}/></Button>
+        </ModalFooter>
       </Modal>
     </div>
   );

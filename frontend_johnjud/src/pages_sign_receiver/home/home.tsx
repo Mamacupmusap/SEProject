@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { NavLink} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './home.css'
@@ -12,11 +12,24 @@ import pet6 from './img/pet6.png'
 import pet7 from './img/pet7.png'
 import pet8 from './img/pet8.png'
 import { Container, Card, CardImg, CardBody,
-  CardTitle, CardDeck} from 'reactstrap';
+  CardTitle} from 'reactstrap';
 /*import { CheckboxFilter, TermQuery, BoolMust, RangeQuery } from "searchkit";*/
 import Navigation from '../../Navigation/Navigation';
+import homeService_receiver from "./homeService_receiver";
 
-export default function home(){
+const Home = () => {
+  const[allPet,setAllPet] = useState<any[]>([]);
+  const petInfo=() =>{
+    return(
+        homeService_receiver.fetchAllPet()
+            .then(name => {
+              setAllPet(name)
+            })
+    )
+  }
+  useEffect(()=>{
+    petInfo().then()
+  },[])
 
   return(
     <div>
@@ -75,7 +88,7 @@ export default function home(){
             </div>
           </div>
         <Container id="middle">
-          <CardDeck>
+
             <Card className="card">
               <CardImg src={pet1} alt=""/>
               <CardBody className="cardBody">
@@ -100,8 +113,8 @@ export default function home(){
                 <CardTitle className="cardTitle">PetName</CardTitle>
               </CardBody>
             </Card>
-          </CardDeck>
-          <CardDeck>
+
+
             <Card className="card">
               <CardImg src={pet5} alt=""/>
               <CardBody className="cardBody">
@@ -128,10 +141,25 @@ export default function home(){
                 </NavLink>
               </CardBody>
             </Card>
-          </CardDeck>
+
+            {allPet.map((value) => {
+              return (
+                  <Card className="card">
+                    <CardImg src={value.petPicUrl} alt="" height="130px"/>
+                    <CardBody className="cardBody">
+                      <NavLink to='/donator/petprofile'>
+                        <CardTitle className="cardTitle">{value.PetName}</CardTitle>
+                      </NavLink>
+                    </CardBody>
+                  </Card>)
+            })}
+
+
         </Container>
       </div>
       </div>
   </div>   
   )
 };
+
+export default Home;

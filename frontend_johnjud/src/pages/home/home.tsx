@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { NavLink} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './home.css'
@@ -12,11 +12,25 @@ import pet6 from './img/pet6.png'
 import pet7 from './img/pet7.png'
 import pet8 from './img/pet8.png'
 import { Container, Card, CardImg, CardBody,
-  CardTitle, CardDeck} from 'reactstrap';
+  CardTitle} from 'reactstrap';
 /*import { CheckboxFilter, TermQuery, BoolMust, RangeQuery } from "searchkit";*/
 import Navigation2 from '../../Navigation/Navigation2';
+import homeService_page from "./homeService_page";
 
-export default function home(){
+const Home = () => {
+  const[allPet,setAllPet] = useState<any[]>([]);
+  const petInfo=() =>{
+    return(
+        homeService_page.fetchAllPet()
+            .then(name => {
+              setAllPet(name)
+            })
+    )
+  }
+  useEffect(()=>{
+    petInfo().then()
+  },[])
+
   return(
   <div>
     <Navigation2/>
@@ -25,56 +39,56 @@ export default function home(){
       <div className="urgh">
         <div id="filterAll">
             <div className="filter">
-              <input type="checkbox"></input>
+              <input type="checkbox"/>
               <label>Near by you</label>
             </div>
             <div className="filter">
               <p>Type</p>
-              <input type="checkbox"></input>
+              <input type="checkbox"/>
               <label>Dog</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>Cat</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>Others</label>
             </div>
             <div className="filter">
               <p>Weight</p>
-              <input type="checkbox"></input>
+              <input type="checkbox"/>
               <label>less than 5kg</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>5-10kg</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>more than 10kg</label>
             </div>
             <div className="filter">
               <p>Height</p>
-              <input type="checkbox"></input>
+              <input type="checkbox"/>
               <label>less than 20cm</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>20-50cm</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>more than 50cm</label>
             </div>
             <div className="filter">
               <p>Age</p>
-              <input type="checkbox"></input>
+              <input type="checkbox"/>
               <label>less than a year</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>1-5years</label>
-              <br></br>
-              <input type="checkbox"></input>
+              <br/>
+              <input type="checkbox"/>
               <label>more than 5 years</label>
             </div>
           </div>
         <Container id="middle">
-          <CardDeck>
+
             <Card className="card">
               <CardImg src={pet1} alt=""/>
               <CardBody className="cardBody">
@@ -99,8 +113,8 @@ export default function home(){
                 <CardTitle className="cardTitle">PetName</CardTitle>
               </CardBody>
             </Card>
-          </CardDeck>
-          <CardDeck>
+
+
             <Card className="card">
               <CardImg src={pet5} alt=""/>
               <CardBody className="cardBody">
@@ -120,17 +134,30 @@ export default function home(){
               </CardBody>
             </Card>
             <Card className="card">
-              <CardImg src={pet8} alt=""/>
+              <CardImg src={pet8} alt="" />
               <CardBody className="cardBody">
                 <NavLink to='/petprofile'>
                 <CardTitle className="cardTitle">Yoda</CardTitle>
                 </NavLink>
               </CardBody>
             </Card>
-          </CardDeck>
+
+          {allPet.map((value) => {
+            return (
+                <Card className="card">
+                  <CardImg src={value.petPicUrl} alt="" height="130px"/>
+                  <CardBody className="cardBody">
+                    <NavLink to='/donator/petprofile'>
+                      <CardTitle className="cardTitle">{value.PetName}</CardTitle>
+                    </NavLink>
+                  </CardBody>
+                </Card>)
+          })}
         </Container>
       </div>
     </div>
   </div>
   )
 };
+
+export default Home;
