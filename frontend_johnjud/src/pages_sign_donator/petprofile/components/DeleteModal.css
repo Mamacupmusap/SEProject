@@ -7,6 +7,10 @@
     text-align:center;
 }
 
+#deletePetPro {
+    text-decoration: underline;
+}
+
 #proPopUp {
     align-items: center;
     width: 440px;
@@ -35,16 +39,4 @@
     width: 89px;
     height: 38px;
     margin-bottom: 44px;
-}
-
-#addToBmk {
-    display: flex;
-    flex-direction: row;
-    font-size: 12px;
-    color: #61B292;
-    background-color: white;
-    border: solid;
-    border-radius: 8px;
-    border-color: #9D9D9D;
-    border-width: 1px;
 }

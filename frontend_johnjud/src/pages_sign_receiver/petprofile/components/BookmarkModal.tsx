@@ -16,7 +16,7 @@ export const BookmarkModal = (props:any) => {
 
   return (
     <div>
-      <Button color="link" onClick={toggle} id="addToBmk" width="24"><img src={plus}/>Add to bookmark</Button>
+      <Button color="link" onClick={toggle} id="addToBmk"><img src={plus}/>Add to bookmark</Button>
       <Modal isOpen={modal} toggle={toggle} className={className} id="hahahaha">
         <ModalBody className="Modalbody">
           <img src={verified} id="verifiedbmk"/>

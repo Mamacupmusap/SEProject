@@ -18,7 +18,7 @@ export const CertModal = (props:any) => {
 
   return (
     <div>
-      <Button color="link" onClick={toggle} id="doCer"><img src={greenRight} width="14" height="14"/>certificate</Button>
+      <Button color="link" onClick={toggle} id="doCer2"><img src={greenRight} width="14" height="14"/>certificate</Button>
       <Modal isOpen={modal} toggle={toggle} id="cerPopUp">
         <ModalBody className="Modalbody">
           <h5>Health Certification</h5>

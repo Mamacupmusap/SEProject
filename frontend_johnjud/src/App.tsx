@@ -54,7 +54,12 @@ import petprofile_donator from './pages_sign_donator/petprofile/petprofile'
 import petprofile1_donator from './pages_sign_donator/petprofile/petprofile1'
 
 
+
 class App extends Component{
+  componentDidMount(){
+    document.title = "๋JohnJud"
+  }
+
   render(){
     return(
       <BrowserRouter>

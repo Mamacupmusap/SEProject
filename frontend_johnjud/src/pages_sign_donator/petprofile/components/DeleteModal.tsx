@@ -1,12 +1,11 @@
 import React, { useState } from 'react';
-import './BookmarkModal.css'
+import './DeleteModal.css'
 import { Button, Modal, ModalBody } from 'reactstrap';
 import alert from './img/Warning.png'
 import { NavLink } from 'react-router-dom';
-import plus from './img/add.png';
 
 
-export const BookmarkModal = (props:any) => {
+export const DeleteModal = (props:any) => {
   const {
     buttonLabel,
     className
@@ -18,15 +17,15 @@ export const BookmarkModal = (props:any) => {
 
   return (
     <div>
-      <Button color="link" onClick={toggle} id="addToBmk"><img src={plus}/>Add to bookmark</Button>
+      <Button color="link" onClick={toggle} id="deletePetPro" style={{color: '#C4C4C4'}}>delete</Button>
       <Modal isOpen={modal} toggle={toggle} id="proPopUp">
         <ModalBody className="Modalbody">
           <img id="alertPro" src={alert}/>
-          <h5 id="pleaseSignInPro">Please sign in</h5>
+          <h5 id="deletSurePet">Are you sure to delete this?</h5>
         </ModalBody>
         <div className="proAllButt">
             <div id="proButt1">
-                <NavLink to='/signin'>
+                <NavLink to='/donator/home'>
                     <Button color="link" onClick={toggle} className="Probutton1">confirm</Button>
                 </NavLink>
             </div>
@@ -39,4 +38,4 @@ export const BookmarkModal = (props:any) => {
   );
 }
 
-export default BookmarkModal;
+export default DeleteModal;

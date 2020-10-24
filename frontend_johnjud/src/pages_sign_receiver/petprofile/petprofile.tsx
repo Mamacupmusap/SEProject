@@ -50,7 +50,7 @@ export const Petprofile = () => {
             <img src={greenRight} width="24" height="24"/><h1 id="petStatusPro2">กำลังหาบ้านให้น้อง</h1>
           </div> 
           <div className="toppppp">
-            {petname}yoda
+            {petname}
           </div>
           <hr id="lineHeader"></hr> 
         </div>
