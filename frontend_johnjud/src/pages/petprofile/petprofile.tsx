@@ -13,6 +13,7 @@ import User from './components/img/User.png';
 import greenRight from './components/img/check.png';
 import mail from './components/img/mail.png';
 import { ProfileModal} from './components/ProfileModal';
+import ContactModal from './components/ContactModal';
 
 export const Petprofile = () => {
     const[obj,setObj] = useState<Petinfo>();
@@ -97,7 +98,7 @@ export const Petprofile = () => {
                   <h1 id="PostUser"> Tiffany Young </h1>
                   < ProfileModal/>
                 </div>
-                <NavLink to='/receiver/chat'><Button className='button_contactPet'><img src={mail} id="mailIcon1"/>contact</Button></NavLink>    
+                <ContactModal/>    
               </div>
             </div>
         </Container>
