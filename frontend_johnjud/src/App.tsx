@@ -49,11 +49,17 @@ import article3_donator from './pages_sign_donator/article/article3'
 
 import chat_donator from './pages_sign_donator/chat/components/Chat/Chat';
 import suggestion_donator from './pages_sign_donator/chat/suggest';
-import userpro_donator from './pages_sign_donator/userprofile/userprofile1'
 import petprofile_donator from './pages_sign_donator/petprofile/petprofile'
 import petprofile1_donator from './pages_sign_donator/petprofile/petprofile1'
 
-
+import ProDescrib from'./pages_sign_donator/userprofile/Allprofile/ProDescrib';
+import ProAdop from './pages_sign_donator/userprofile/Allprofile/ProAdop';
+import ProRegis from './pages_sign_donator/userprofile/Allprofile/ProRegis';
+import ProDonate from './pages_sign_donator/userprofile/Allprofile/ProDonate';
+import EditProfile from './pages_sign_donator/userprofile/EditProfile/EditProfile';
+import ProChangePasword from './pages_sign_donator/userprofile/EditProfile/ChangePassword';
+import ProChangeEmail from './pages_sign_donator/userprofile/EditProfile/ChangeEmail';
+import ProChangePhone from './pages_sign_donator/userprofile/EditProfile/ChangePhone';
 
 class App extends Component{
   componentDidMount(){
@@ -96,13 +102,20 @@ class App extends Component{
             
             <Route path="/receiver/chat" component={chat_receiver}/>
             <Route path="/receiver/suggestion" component={suggestion_receiver}/>
-            <Route path="/receiver/userprofile" component={userpro_receiver}/>
             <Route path="/receiver/bookmark" component={Bookmark}/>
             <Route path="/receiver/petprofile" component={petprofile_receiver}/>
-    
 
+            <Route path="/receiver/userprofile/editprofile/changepassword" component={ProChangePasword}/>
+            <Route path="/receiver/userprofile/editprofile/changeemail" component={ProChangeEmail}/>
+            <Route path="/receiver/userprofile/editprofile/changephone" component={ProChangePhone}/>
+            <Route path="/receiver/userprofile/proadoption" component={ProAdop}/>
+            <Route path="/receiver/userprofile/proregister" component={ProRegis}/>
+            <Route path="/receiver/userprofile/prodonation" component={ProDonate}/>
+            <Route path="/receiver/userprofile/editprofile" component={EditProfile}/>
+            <Route path="/receiver/userprofile" component={ProDescrib}/>
 
-                    
+          
+
             <Route path="/donator/home" component={home_donator}/>
             <Route path="/donator/article" component={article_donator}/>
             <Route path="/donator/aboutUS" component={aboutUS_donator}/>
@@ -113,9 +126,17 @@ class App extends Component{
 
             <Route path="/donator/chat" component={chat_donator}/>
             <Route path="/donator/suggestion" component={suggestion_donator}/>
-            <Route path="/donator/userprofile" component={userpro_donator}/>
             <Route path="/donator/petprofile" component={petprofile_donator}/>
             <Route path="/donator/petprofile1" component={petprofile1_donator}/>
+
+            <Route path="/donator/userprofile/editprofile/changepassword" component={ProChangePasword}/>
+            <Route path="/donator/userprofile/editprofile/changeemail" component={ProChangeEmail}/>
+            <Route path="/donator/userprofile/editprofile/changephone" component={ProChangePhone}/>
+            <Route path="/donator/userprofile/proadoption" component={ProAdop}/>
+            <Route path="/donator/userprofile/proregister" component={ProRegis}/>
+            <Route path="/donator/userprofile/prodonation" component={ProDonate}/>
+            <Route path="/donator/userprofile/editprofile" component={EditProfile}/>
+            <Route path="/donator/userprofile" component={ProDescrib}/>
 
 
            </Switch>
