@@ -40,11 +40,13 @@ const Bookmark = () => {
             </div>
             <div className="row-pet">
                 {obj.map((value) => {
-                    return <a href={'./petprofile/'+value.id}>
+                    return (
+                        <a href={'./petprofile/'+value.id}>
                         <div className="col-pet">
-                            <img src={url} alt={value.petPicUrl} className="pet-img"/> <strong>{value.PetName}</strong>
+                            <img src={url} alt={value.petPicUrl} className="pet-img" height="140px" width="100%"/>
+                            <strong>{value.PetName}</strong>
                         </div>
-                    </a>
+                        </a>)
                 })}
             </div>
         </div>

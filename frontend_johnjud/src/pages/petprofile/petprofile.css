@@ -1,4 +1,4 @@
-.font{
+.bodyPetpro{
   font-family: prompt;
   src: url(Prompt_Thin.ttf);
 }
@@ -7,80 +7,217 @@
     text-align: center;
   }
 
-.container {
-    font-size: 30px;
+.informationn {
+    font-size: 20px;
     display: 'inline-block';
     text-align: center;
+    margin-top: 42px;
   }
 
-.Header {
-  font-size: 50px;
+.HeaderPetpro {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 32px;
+  font-size: 36px;
   display: 'inline-block';
   text-align: center;
   padding-bottom: 30px;
 }
 
+#petStatusPro {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  margin-right: 50px;
+}
+
+#petStatusPro2 {
+  color: #61B292;
+  font-size: 20px;
+}
+
+.toppppp {
+  display: flex;
+  flex-direction: row;
+}
+
+#lineHeader {
+  border-top: 5px solid #C4C4C4;
+  margin-top: 32px;
+  width: 250px;
+}
+
+#lineHeader2 {
+  border-top: 5px solid #C4C4C4;
+  margin-top: 32px;
+  width: 500px;
+}
+
 .infoText {
   display: flex;
-  justify-content: space-between;
   flex-direction:row;
-  font-size: 26px;
-  margin-left: 300px;
-  margin-right: 300px;
+  font-size: 16px;
 }
 
-.Text {
-  font-size: 26px;
-  margin-left: 300px;
-  margin-right: 300px;
-  padding-bottom: 30px;
+#oyay {
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
-.Column {
+#TextDescriptNotSign {
+  font-size: 16px;
+  margin-bottom: 32px;
+  margin-right: 400px;
+  margin-top: 32px;
+}
+
+.ColumnPro {
   display: flex;
   flex-direction:column;
+  margin-right: 280px;
 }
 
-.Map {
-  justify-content: center;
-  align-items : center;
-  text-align: center;
-  height:  400px;
-  width: 910px;
-  margin-left: 300px;
+#testagain {
+  display: flex;
+  flex-direction:column;
+  margin-right: 20%;
 }
 
-.Contact {
-  height:  50px;
-  width: 100px;
-  padding-left: 5%;
+#maphuhu {
+  margin-top: 16px;
 }
 
-.lineunder{
-  justify-content: center;
-  align-items : center;
-  text-align: center;
-  height:  10px;
-  width: 910px;
-  margin-left: 300px;
-}
-
-.User{
-  margin-left: 300px;
-}
-
-.PostbyText{
+.PostbyTextNotSign{
   display:flex;
-  justify-content: space-between;
-  font-size: 26px;
-  margin-right: 800px;
+  justify-content: left;
 }
 
 .nametag{
   order:1;
 }
 
-.Profile{
-  color:green;
+.PostUserPicNotSign {
+  margin-bottom: 16px;
+}
+
+.postInfoNotSign {
+  display: flex;
+  flex-direction: column;
+}
+
+#postProfileButt{
+  margin-top: 5px;
+  color: #61b292;
+  font-size: 15px;
   text-decoration: underline;
+}
+
+#postProfile{
+  display: none;
+}
+
+#cancelYay{
+  display: none;
+}
+
+#postProfile:checked ~ .centerPet{
+  opacity: 1;
+  visibility: visible;
+}
+
+.centerPet{
+  position: absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+  visibility: hidden;
+  width: 438px;
+  height: 260px;
+  background: #ffffff;
+  border-radius: 3px;
+  transition: .3s ease-in;
+  box-shadow: 0 2px 12px rgba(0,0,0,.4);
+  padding-top: 2%;
+}
+
+#alertSign {
+  margin-left: 176px;
+  margin-top: 24px;
+  
+}
+
+#pleaseSignIn{
+  font-size: 20px;
+  margin-left: 150px;
+  margin-top: 8px;
+}
+
+#confirmYay-btn{
+  display: inline-block;
+  width: 89px;
+  padding: 15px;
+  font-size: 14px;
+  margin-top: 12px;
+  margin-left: 114px;
+  margin-right: 32px;
+  background-color: #61b292;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+#cancelYay-btn{
+  display: inline-block;
+  width: 89px;
+  padding: 15px;
+  font-size: 14px;
+  background-color: #C4C4C4;
+  display: inline-block;
+  text-align: center;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  color: #ffffff;
+}
+
+
+#PostContactNotSign {
+  font-size: 16px;
+  margin-left: 16px;
+}
+
+.postInfoNotSign2 {
+  display: flex;
+  flex-direction: row;
+}
+
+#PostUserNotSign {
+  font-size: 16px;
+  width: 104px;
+  margin-left: 16px;
+  margin-right: 16px;
+  height: 22px;
+}
+
+#mailIcon1 {
+  margin-right: 3px;
+}
+
+.button_contactPet {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  font-size: 10px;
+  width: 72px;
+  height: 24px;
+  margin-left: 12px;
+  background: #8D7966;
+  border-radius: 4px;
 }

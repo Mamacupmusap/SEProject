@@ -1,0 +1,150 @@
+.bodyPetpro{
+  font-family: prompt;
+  src: url(Prompt_Thin.ttf);
+}
+.carousel{
+    display: 'inline-block';
+    text-align: center;
+  }
+
+.informationn {
+    font-size: 20px;
+    display: 'inline-block';
+    text-align: center;
+    margin-top: 42px;
+  }
+
+.HeaderPetpro {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 32px;
+  font-size: 36px;
+  display: 'inline-block';
+  text-align: center;
+  padding-bottom: 30px;
+}
+
+#petStatusPro {
+  display: flex;
+  flex-direction: row;
+  align-self: flex-end;
+  margin-right: 50px;
+}
+
+#petStatusPro2 {
+  color: #61B292;
+  font-size: 20px;
+}
+
+.toppppp {
+  display: flex;
+  flex-direction: row;
+}
+
+#lineHeader {
+  border-top: 5px solid #C4C4C4;
+  margin-top: 32px;
+  width: 250px;
+}
+
+#lineHeader2 {
+  border-top: 5px solid #C4C4C4;
+  margin-top: 32px;
+  width: 500px;
+}
+
+.infoText {
+  display: flex;
+  flex-direction:row;
+  font-size: 16px;
+}
+
+#oyay {
+  font-size: 16px;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+#TextDescrip {
+  font-size: 16px;
+  margin-bottom: 32px;
+  margin-right: 400px;
+  margin-top: 32px;
+}
+
+.ColumnPro {
+  display: flex;
+  flex-direction:column;
+  margin-right: 280px;
+}
+
+#testagain {
+  display: flex;
+  flex-direction:column;
+  margin-right: 20%;
+}
+
+#maphuhu {
+  margin-top: 16px;
+}
+
+.PostbyText{
+  display:flex;
+  justify-content: left;
+}
+
+.nametag{
+  order:1;
+}
+
+.PostUserPic {
+  margin-bottom: 16px;
+}
+
+.postInfo {
+  display: flex;
+  flex-direction: column;
+}
+
+#PostProfile{
+  font-size: 16px;
+  color:green;
+  text-decoration: underline;
+  height: 22px;
+}
+
+#PostContact {
+  font-size: 16px;
+  margin-left: 16px;
+}
+
+.postInfo2 {
+  display: flex;
+  flex-direction: row;
+}
+
+#PostUser {
+  font-size: 16px;
+  width: 104px;
+  margin-left: 16px;
+  margin-right: 16px;
+  height: 22px;
+}
+
+#mailIcon1 {
+  margin-right: 3px;
+}
+
+.button_contactPet {
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  font-size: 10px;
+  width: 72px;
+  height: 24px;
+  margin-left: 12px;
+  background: #8D7966;
+  border-radius: 4px;
+}

@@ -1,0 +1,42 @@
+#alertPro {
+    margin-top: 44px;
+    margin-bottom: 16px;
+}
+
+.Modalbody{
+    text-align:center;
+}
+
+#deletePetPro {
+    text-decoration: underline;
+}
+
+#proPopUp {
+    align-items: center;
+    width: 440px;
+    height: 300px;
+}
+
+.proAllButt {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+
+.Probutton1{
+    background-color: #61B292;
+    color: white;
+    border-radius: 45px;
+    width: 89px;
+    height: 38px;
+}
+
+.Probutton2{
+    background-color: #C4C4C4;
+    color: white;
+    border-radius: 45px;
+    width: 89px;
+    height: 38px;
+    margin-bottom: 44px;
+}

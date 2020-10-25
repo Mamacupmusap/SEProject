@@ -1,16 +1,33 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { NavLink} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './home.css'
 import head_dog from './img/banner.png'
 import pet7 from './img/pet7.png'
 import pet8 from './img/pet8.png'
-import { Container, Card, CardImg, CardBody,
-  CardTitle, CardDeck} from 'reactstrap';
+import {
+    Container, Card, CardImg, CardBody,
+    CardTitle, CardDeck
+} from 'reactstrap';
 /*import { CheckboxFilter, TermQuery, BoolMust, RangeQuery } from "searchkit";*/
 import Navigation3 from './../../Navigation/Navigation3';
 
-export default function home(){
+import homeService from "./homeService";
+import {useEffect} from "react";
+
+const Home = () =>{
+  const[pet,setPet] = useState<any[]>([]);
+  const petInfo=() =>{
+    return(
+        homeService.fetchPetRegister()
+            .then(name => {
+              setPet(name)
+            })
+    )
+  }
+  useEffect(()=>{
+    petInfo().then()
+  },[])
 
   return(
     <div>
@@ -22,8 +39,9 @@ export default function home(){
               <h1 id="mypet">My pet</h1>
               <button type='button' id='newpet'><NavLink to='/donator/petprofile1' style={{color: 'white'}}>Add new pet</NavLink></button>
             </div>
+
             <Container id="middle">
-              <CardDeck>
+                <CardDeck>
                 <Card className="card" style={{backgroundColor: '#8D7966', color: 'white'}}>
                   <CardImg src={pet7} alt=""/>
                   <CardBody className="cardBody">
@@ -38,10 +56,22 @@ export default function home(){
                     </NavLink>
                   </CardBody>
                 </Card>
-              </CardDeck>
+                </CardDeck>
+                {pet.map((value) => {
+                  return (
+                      <Card className="card" style={{backgroundColor: '#8D7966', color: 'white'}}>
+                        <CardImg src={value.petPicUrl} alt="" height="130px"/>
+                        <CardBody className="cardBody">
+                          <NavLink to='/donator/petprofile' style={{color: 'white'}}>
+                            <CardTitle className="cardTitle">{value.PetName}</CardTitle>
+                          </NavLink>
+                        </CardBody>
+                      </Card>)
+                })}
             </Container>
           </div>
       </div>
     </div>
   )
 };
+export default Home;
