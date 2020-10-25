@@ -20,6 +20,7 @@
     "bootstrap": "^4.5.2",
     "express": "^4.17.1",
     "formik": "^2.1.7",
+    "imgbb-uploader": "^1.1.0",
     "nodemodule": "^0.3.0",
     "react": "^16.13.1",
     "react-chat-elements": "^10.11.0",

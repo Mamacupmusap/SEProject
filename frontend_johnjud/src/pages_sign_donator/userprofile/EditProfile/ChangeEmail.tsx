@@ -24,15 +24,17 @@ const ChangeEmail=() => {
     },[])
     
     const email = obj?.Email;
+    const [Password, setPassword] = useState<string>('')
     const [newEmail, setNewEmail] = useState<string|undefined>(email);
-/*
+
     const update=() =>{
-        const newEmail = {
-            Email:email,
+        const newEmails = {
+            Email:newEmail,
+            Password:Password,
         }
-        ProfileService.updateemail(newEmail);
+        ProfileService.updateemail(newEmails);
     }
-*/
+
     return(
         <div className = 'ChangePage'>
             <Link to='/donator/userprofile'>  
@@ -47,12 +49,12 @@ const ChangeEmail=() => {
             </div>
             <div className='ChangeBlock'>
                 <span id='ChangeEmail'>New Email: </span>
-                <input id='InputChangeEmail'></input>
+                <input id='InputChangeEmail' value={newEmail} onChange={(e) => {setNewEmail(e.target.value);}}></input>
                 <br/><br/>
                 <span id='ChangeEmail'>Password*: </span>
-                &nbsp;<input id='InputChangeEmail' value={newEmail} onChange={(e) => {setNewEmail(e.target.value);}}></input>
+                &nbsp;<input id='InputChangeEmail' value={Password} onChange={(e) => {setPassword(e.target.value);}}></input>
                 <br/><br/>
-                <button id='SubmitEmailButton' /*onClick={update}*/>Submit</button>
+                <button id='SubmitEmailButton' onClick={update}>Submit</button>
             </div>
 
         </div>

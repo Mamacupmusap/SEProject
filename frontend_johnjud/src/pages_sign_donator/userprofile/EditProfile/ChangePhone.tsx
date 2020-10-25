@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 import ProfilePic from '../ProfilePic.png';
 import Glasspic from '../Glasspic.jpg';
 import {Userinfo} from '../Interface';
-
 const ChangePhone=() => {
     const[obj,setObj] = useState<Userinfo>();
 
@@ -24,14 +23,18 @@ const ChangePhone=() => {
     },[])
 
     const phone = obj?.PhoneNO;
-/*
+    const [newPhone,setNewPhone] = useState<string>('');
+    const [Password, setPassword] = useState<string>('')
+
+
     const update=() =>{
-        const newPhone= {
-            Email:phone,
+        const newPhones= {
+            PhoneNO:newPhone,
+            Password:Password,
         }
-        ProfileService.updateemail(newPhone);
+        ProfileService.updatephone(newPhones);
     }
-    */
+    
     return(
         <div className = 'ChangePage'>
             <Link to='/donator/userprofile'>  
@@ -46,13 +49,13 @@ const ChangePhone=() => {
             </div>
             <div className='ChangeBlock'>
                 <span id='ChangePhone'>New Phone Number*: </span>
-                <input id='InputChangePhone'></input>
+                <input id='InputChangePhone'  value={newPhone} onChange={(e) => {setNewPhone(e.target.value);}}></input>
                 <br/><br/>
                 <span id='ChangePhone'>Password*: </span>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input id='InputChangePhone'></input>
+                <input id='InputChangePhone' value={Password} onChange={(e) => {setPassword(e.target.value);}}></input>
                 <br/><br/>
-                <button id='SubmitPhoneButton'>Submit</button>
+                <button id='SubmitPhoneButton' onClick={update}>Submit</button>
             </div>
 
         </div>

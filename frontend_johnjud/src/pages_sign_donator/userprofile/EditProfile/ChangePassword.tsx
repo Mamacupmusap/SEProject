@@ -20,14 +20,9 @@ const ChangePassword=() => {
                 </div>
             </div>
             <div className='ChangeBlock'>
-                <span id='ChangePassword'>Old Password*: </span>
+                <span id='ChangePassword'>New Password*: </span>
                 &nbsp;&nbsp;<input id='InputChangePassword'></input>
                 <br/><br/>
-                <span id='ChangePassword'>New Password*: </span>
-                <input id='InputChangePassword'></input>
-                <br/><br/>
-                <span id='ChangePassword'>Confirm new Password*: </span>
-                <input id='InputChangePassword'></input>
                 <button id='SubmitPasswordButton'>Submit</button>
             </div>
 
