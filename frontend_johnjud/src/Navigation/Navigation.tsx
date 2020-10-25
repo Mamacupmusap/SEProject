@@ -9,7 +9,7 @@ import alertIcon from './img/alert.png';
 import manIcon from './img/man.png';
 import manIcon2 from './img/man_white.png';
 import JJicon from './img/newlogo02.png';
-
+import AcceptPetModal from './components/AcceptPetModal';
 
 const Navigation = () => {   
    return (
@@ -43,7 +43,7 @@ const Navigation = () => {
             <UncontrolledPopover trigger="legacy" placement="top" target="alert">
             <PopoverHeader>Notification</PopoverHeader>
                <PopoverBody>
-                  This is notification!
+                  <AcceptPetModal/>
                </PopoverBody>
             </UncontrolledPopover>
 
