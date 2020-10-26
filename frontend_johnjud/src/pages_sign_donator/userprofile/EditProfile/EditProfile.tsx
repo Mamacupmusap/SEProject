@@ -19,8 +19,6 @@ const EditProfile=() =>{
         <div className = 'Profile'>
             <img id='profilePic' src={ProfilePic}></img>
 
-            <button onClick={uploadProfile}>Upload Profile</button>
-
             <img id='glasspic' src = {Glasspic}></img>
             <div className='block'>
                <LeftBlockEdit/>

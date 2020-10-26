@@ -34,12 +34,20 @@
     padding-left:25px;
     word-wrap: break-word;
 }
+.Info{
+    width : 200px;
+    height : 638px;
+    font-family: Prompt;
+    padding-top: 80px;
+    text-align: left;
+}
 .topblock{
     background-color:#ffffff;  
-    width : 800px;
-    height : 200px;
+    width : 600px;
+    height : 150px;
     position: absolute;
-    left: 34%;
+
+    left: 40%;
     top: 31%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
@@ -48,10 +56,10 @@
 }
 .bottomblock{
     background-color:#FFFFFF;  
-    width : 800px;
-    height : 600px;
+    width : 600px;
+    height : 535px;
     position: absolute;
-    left: 34%;
+    left: 40%;
     top: 62%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
@@ -89,8 +97,8 @@
     background-color: #ffffff;
     border: white;
     color: rgb(0, 0, 0);
-    padding: 35px 50px;
-    font-size: 25px;
+    padding: 30px 30px;
+    font-size: 16px;
     font-weight: bold;
     font-family: Prompt;
     text-align: center;
@@ -103,7 +111,7 @@
     background-color: #ffffff;
     border: white;
     color: rgb(0, 0, 0);
-    padding: 35px 50px;
+    padding: 30px 30px;
     font-size: 20px;
     font-weight: bold;
     font-family: Prompt;
@@ -117,8 +125,8 @@
     background-color: #ffffff;
     border: white;
     color: rgb(0, 0, 0);
-    padding: 35px 50px;
-    font-size: 20px;
+    padding: 30px 30px;
+    font-size: 16px;
     font-weight: bold;
     font-family: Prompt;
     text-align: center;
@@ -146,7 +154,7 @@
     z-index: 1;
     background-color:#FFFFFF;  
     width : 300px;
-    height : 980px;
+    height : 904px;
     position: absolute;
     left: 12%;
     top: 31%;
@@ -163,12 +171,14 @@
     position: absolute;
     background-color: #b19d85;
     font-family: Prompt;
-    font-size: 20px;
+    font-size: 16px;
     color: white;
     left: 79.5%;
     top : 24%;
     border: none;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
+    height : 40px;
+    width : 120px;
 }
 
 #AddressInput{
@@ -176,7 +186,7 @@
     border: 2px solid rgb(209, 209, 209);
     border-radius: 5px;
     resize: none;
-    width: 255px;
+    width: 175px;
 }
 
 #Input{
@@ -194,12 +204,13 @@
     padding: 5px 30px;
     font-size: 20px;
     border-radius: 5px;
-    left:25%
+    left: 10%
 }
 
 .h4{   
     font-family: Prompt;
     font-weight: bold;
+    font-size: 16px;
 }
 
 #DescriptionInput{
@@ -208,17 +219,17 @@
     border: 2px solid rgb(209, 209, 209);
     border-radius: 5px;
     resize: none;
-    width: 720px;
+    width: 500px;
     left: 30px;
     top:5px;
 }
 
 .DescriptionEditBlock{
     background-color:#FFFFFF;  
-    width : 800px;
+    width : 600px;
     height : 350px;
     position: absolute;
-    left: 34%;
+    left: 40%;
     top: 62%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
@@ -226,6 +237,7 @@
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
     font-family: Prompt;
     font-weight: bold;
+    text-align: left;
 }
 
 #DescriptionButton{
@@ -234,20 +246,20 @@
     border: none;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
     padding: 5px 30px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 5px;
     position: relative;
     top: 20px;
-    left: 627px;
+    left: 400px;
 }
 .EditPasswordBlock{
     display: inline-block;
     background-color:#FFFFFF;  
-    width : 800px;
+    width : 600px;
     height : 100px;
     position: absolute;
-    left: 34%;
-    top: 115%;
+    left: 40%;
+    top: 121%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
     padding: 10px;
@@ -261,20 +273,20 @@
     border: none;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
     padding: 5px 30px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 5px;
     position: relative;
-    left: 417px;
+    left: 250px;
 }
 
 .EditEmailBlock{
     display: inline-block;
     background-color:#FFFFFF;  
-    width : 800px;
+    width : 600px;
     height : 100px;
     position: absolute;
-    left: 34%;
-    top: 133%;
+    left: 40%;
+    top: 140%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
     padding: 10px;
@@ -288,20 +300,20 @@
     border: none;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
     padding: 5px 48px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 5px;
     position: relative;
-    left: 455px;
+    left: 280px;
 }
 
 .EditPhoneBlock{
     display: inline-block;
     background-color:#FFFFFF;  
-    width : 800px;
+    width : 600px;
     height : 100px;
     position: absolute;
-    left: 34%;
-    top: 152%;
+    left: 40%;
+    top: 160%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
     padding: 10px;
@@ -315,10 +327,10 @@
     border: none;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
     padding: 5px 48px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 5px;
     position: relative;
-    left: 454px;
+    left: 270px;
 }
 
 .ChangePage{
@@ -341,22 +353,23 @@
     border-color: rgb(214, 213, 211);
     padding: 10px;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
-    font-size: 20px;
+    font-size: 16px;
     font-family: Prompt;
     padding-left:25px;
+    padding-top: 100px;
 }
 .ChangeBlock{
     background-color:#FFFFFF;  
-    width : 1200px;
+    width : 1100px;
     height : 300px;
     position: absolute;
     left: 12%;
-    top: 63%;
+    top: 67%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
     padding: 10px;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
-    font-size: 20px;
+    font-size: 16px;
     font-family: Prompt;
     padding-left:25px;
 }
@@ -366,10 +379,10 @@
     border: none;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
     padding: 5px 48px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 5px;
     position: relative;
-    left: 500px;
+    left: 300px;
     top:100px;
 }
 #ChangePassword{
@@ -403,10 +416,10 @@
     border: none;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
     padding: 5px 48px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 5px;
     position: relative;
-    left: 980px;
+    left: 800px;
     top: 100px;
 }
 
@@ -428,10 +441,10 @@
     border: none;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
     padding: 5px 48px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 5px;
     position: relative;
-    left: 980px;
+    left: 800px;
     top:100px;
 }
 #DoneButton{
@@ -440,10 +453,10 @@
     border: none;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
     padding: 5px 40px;
-    font-size: 20px;
+    font-size: 16px;
     border-radius: 5px;
     position: relative;
-    left: 1190px;
+    left: 1050px;
     top: 170px;
 }
 .PetBlock{

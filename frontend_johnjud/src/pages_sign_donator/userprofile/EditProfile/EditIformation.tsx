@@ -125,8 +125,8 @@ const LeftBlockEdit=() =>{
             <br/><br/><br/>
             <div className='profilename'>
             <h1><u>{username}</u></h1>
-            </div>
             <br/>
+            <div className='Info'><h5>
             <p className='bold'>FirstName:<input id='Input' value={newFirstName} onChange={(e) => {setNewFirstName(e.target.value);}}></input></p>
             <p className='bold'>LastName:<input id='Input' value={newLastName} onChange={(e) => {setNewLastName(e.target.value);}}></input></p>
             <p className='bold'>Birthday:<input id='Input' value={newBirthDay} onChange={(e) => {setNewBirthDay(e.target.value);}}></input></p>
@@ -134,6 +134,9 @@ const LeftBlockEdit=() =>{
             <p className='bold'>Address:<textarea id='AddressInput' value={newAddress} onChange={(e) => {setNewAddress(e.target.value);}}></textarea></p>
             <p className='bold'>Facebook:<input id='Input' value={newFacebook} onChange={(e) => {setNewFacebook(e.target.value);}}></input></p>
             <button id='ButtonUpdate' onClick={update} >update</button>
+            </h5>
+            </div>
+            </div>
         </div>
     )
 }

@@ -25,7 +25,6 @@ const ChangePassword=() => {
                 <br/><br/>
                 <button id='SubmitPasswordButton'>Submit</button>
             </div>
-
         </div>
     )
 }
