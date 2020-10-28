@@ -11,11 +11,14 @@ import EditEmail from './EditEmail';
 import EditPhone from './EditPhone';
 
 const EditProfile=() =>{
+    const [selectFile, setSelectedFiles] = useState(undefined);
+    const uploadProfile=()=>{
+
+    }
     return(
         <div className = 'Profile'>
-            <Link to='/donator/userprofile/prodescribtion'>  
-                <img id='profilePic' src={ProfilePic}></img>
-            </Link>
+            <img id='profilePic' src={ProfilePic}></img>
+
             <img id='glasspic' src = {Glasspic}></img>
             <div className='block'>
                <LeftBlockEdit/>

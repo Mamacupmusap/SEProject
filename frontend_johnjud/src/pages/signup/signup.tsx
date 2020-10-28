@@ -1,8 +1,8 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { NavLink } from 'react-router-dom';
+import { useHistory } from "react-router-dom";
 import {GoogleLogin} from 'react-google-login';
-import { Formik,Form, Field, ErrorMessage, FormikHelpers } from 'formik'
+import { Formik,Form, Field, ErrorMessage} from 'formik'
 import * as Yup from 'yup'
 
 import next from './component/arrow_right.png'
@@ -18,16 +18,18 @@ const responseGoogle = (response : any) => {
 }
 
 const RegisterSchema = Yup.object().shape({
-  email: Yup.string()
+  Email: Yup.string()
       .email('Invalid email')
       .required('This field is required.'),
 });
 
 interface Value2{
-  email: string;
+  Email: string;
 }
 
-const signup = () =>{
+
+const Signup= (props:any) =>{
+  let history = useHistory();
   return(
     <div>
       <Navigation2/>
@@ -49,39 +51,44 @@ const signup = () =>{
         </Container>
         <div>
         <Formik
-          initialValues={{
-            email: ''
-          }}
-          onSubmit={(
-            values: Value2,
-            { setSubmitting }: FormikHelpers<Value2>
-          ) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 500);
-          }}
-          validationSchema={RegisterSchema}
+          initialValues={{Email: ''}}
+          
+          onSubmit={ async (values:Value2,actions) =>{
+            console.log(values.Email)
+            const sendEmail ={
+               "Email": values.Email
+             }
+            const res = await fetch('http://localhost:2000/signup/check-email',{
+                method:'POST',
+                mode: 'cors',
+                headers:{'Content-Type': 'application/json'},
+                body: JSON.stringify(sendEmail)
+            })
+            console.log(sendEmail)
+            console.log('success')
+            // fetch id to const 
+            actions.setSubmitting(false);
+            history.push('/signup2')
+          }
+        }
+          
         >
-          {({ errors, touched }) => (  
+          {({touched,errors,isSubmitting}) => (  
           <Form>
             <Col>
               <FormGroup>
                 <Label htmlfor="email">Email*</Label>
-                <Field name="email" 
+                <Field name="Email" 
                        type="email" 
                        id="email" 
-                       className={`form-control ${touched.email ? errors.email ? 'is-invalid' : 'is-valid' : ''}`}
-                       placeholder="email"/>
+                       className={`form-control ${touched.Email ? errors.Email ? 'is-invalid' : 'is-valid' : ''}`}
+                       placeholder="email"
+                       
+                       />
                 <ErrorMessage component="div" name="email" className="invalid-feedback" />
               </FormGroup>
             </Col>
-            <NavLink to='/signup2'><Button type="submit" value='submit' id='button_next'>Next<img src={next} alt=''/></Button></NavLink>
-            
-            <div>
-              <br/><br/><br/><br/>
-              <button type='submit' value='submit' >submit</button>
-            </div>
+            <Button type="submit" value='submit' id='button_next' disabled={isSubmitting}>Next<img src={next} alt=''/></Button>
           </Form>
         )}
         </Formik>
@@ -91,4 +98,4 @@ const signup = () =>{
   )
 }
 
-export default signup;
+export default Signup;

@@ -36,8 +36,8 @@ const Leftblock=() =>{
             <br/><br/><br/>
             <div className='profilename'>
             <h1><u>{username}</u></h1>
-            </div>
             <br/>
+            <div className='Info'><h5>
             <p className='bold'>FirstName:<span className='notbold'> &nbsp;{firstname}</span></p>
             <p className='bold'>LastName:<span className='notbold'> &nbsp;{lastname}</span></p>
             <p className='bold'>Birthday:<span className='notbold'> &nbsp;{birthday}</span></p>
@@ -46,6 +46,9 @@ const Leftblock=() =>{
             <p className='bold'>Facrbook:<span className='notbold'> &nbsp;{facebook}</span></p>
             <p className='bold'>Phone:<span className='notbold'> &nbsp;{phone}</span></p>
             <p className='bold'>Email:<span className='notbold'> &nbsp;{email}</span></p>
+            </h5>
+            </div>
+            </div>
         </div>
     )
 }

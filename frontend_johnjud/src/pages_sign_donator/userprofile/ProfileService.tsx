@@ -51,6 +51,13 @@ async function updateemail(newEmail:Userinfo): Promise<any|null> {
         body: JSON.stringify(newEmail),
     });
 }
+async function updatephone(newPhone:Userinfo): Promise<any|null> {
+    const res = await fetch('http://localhost:2000/userinfo/5f8174e7327a81094416d04f',{
+        method: 'PATCH',
+        headers : {'Content-Type': 'application/json'},
+        body: JSON.stringify(newPhone),
+    });
+}
 
 export default {
     fetchProfileInfo,
@@ -60,5 +67,6 @@ export default {
     updateinfo,
     updatedescription,
     updateemail,
+    updatephone,
 }
 

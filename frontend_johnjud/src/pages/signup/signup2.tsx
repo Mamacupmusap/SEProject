@@ -1,4 +1,6 @@
 import React from 'react';
+
+import { useHistory } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.css';
 import { Container ,FormGroup,Label,Button, Col}  from 'reactstrap';
 import jjicon from './component/logojj.png'
@@ -12,22 +14,28 @@ import * as Yup from 'yup'
 import Navigation2 from '../../Navigation/Navigation2';
 
 const RegisterSchema = Yup.object().shape({
-  username: Yup.string()
-    .min(2, 'Too Short!')
+  UserName: Yup.string()
+    .min(8, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required'),
-  password: Yup.string()
-    .min(2, 'Too Short!')
+    Password: Yup.string()
+    .min(8, 'Too Short!')
     .max(50, 'Too Long!')
     .required('Required')
 });
 
 interface Value2{
-  username: string,
-  password: string
+  UserName: string,
+  Password: string,
 }
 
-const signup2 = () =>{
+const get_id =async() =>{
+  const res2 = await fetch ('http://localhost:2000/signup/check-email')
+    console.log(res2)
+}
+
+const Signup2 = () => {
+  let history = useHistory();
   return(
     <div>
       <Navigation2/>
@@ -36,22 +44,26 @@ const signup2 = () =>{
           <img src={jjicon} alt='test' className='rounded-lg'/>
         </div>
         <Formik
-          initialValues={{
-            username: '',
-            password: ''
-          }}
-          onSubmit={(
-            values: Value2,
-            { setSubmitting }: FormikHelpers<Value2>
-          ) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 500);
-          }}
-          validationSchema={RegisterSchema}
+          initialValues={{Email:'',UserName: '', Password:'',id:''}}
+          onSubmit={ async (values:Value2,actions) =>{
+            const sendUserPass ={
+               "UserName": values.UserName,
+               "Password": values.Password
+            }
+            get_id()
+            const res = await fetch('http://localhost:2000/signup/logininfo',{
+                method:'PATCH',
+                headers:{'Content-Type': 'application/json'},
+                body: JSON.stringify(sendUserPass)
+            });
+            console.log('success')
+            actions.setSubmitting(false);
+            history.push('/signup3')
+          }
+        }
         >
-        {({ errors, touched }) => (
+        {({touched,errors,isSubmitting}) => ( 
+        
           <Form>
           <Col>
             <FormGroup>
@@ -59,7 +71,7 @@ const signup2 = () =>{
               <Field name="username" 
                        type="text" 
                        id="username" 
-                       className={`form-control ${touched.username ? errors.username ? 'is-invalid' : 'is-valid' : ''}`}
+                       className={`form-control ${touched.UserName ? errors.UserName ? 'is-invalid' : 'is-valid' : ''}`}
                        placeholder="username"/>
               <ErrorMessage component="div" name="username" className="invalid-feedback" />
             </FormGroup>
@@ -70,19 +82,14 @@ const signup2 = () =>{
               <Field name="password" 
                        type="password" 
                        id="password" 
-                       className={`form-control ${touched.password ? errors.password ? 'is-invalid' : 'is-valid' : ''}`}
+                       className={`form-control ${touched.Password ? errors.Password ? 'is-invalid' : 'is-valid' : ''}`}
                        placeholder="password"/>
               <ErrorMessage component="div" name="password" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <br/><br/>
           <NavLink to='/signup'><Button className='button_back'><img src={back} alt=''/>Back</Button></NavLink>
-          <NavLink to='/signup3'><Button className='button_next'>Next<img src={next} alt=''/></Button></NavLink>
-          
-          <div>
-            <br/><br/><br/><br/>
-            <button type='submit' value='submit' >submit</button>
-          </div>
+          <Button type="submit" value='submit' id='button_next' disabled={isSubmitting}>Next<img src={next} alt=''/></Button>
           
           </Form>
          )}  
@@ -92,4 +99,4 @@ const signup2 = () =>{
   )
 }
 
-export default signup2;
+export default Signup2;

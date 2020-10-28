@@ -31,15 +31,19 @@ const RegisterSchema = Yup.object().shape({
 });
 
 interface Value2{
-  Name: string;
-  Surname: string;
-  phone: string;
-  Date: string;
-  gender: string;
-  Address: string;
+  FirstName: string;
+  LastName: string;
+  ProfileURL: string;
+  Birthday: string;
+  Gender: string;
+  PhoneNo: string;
+  LocationLat: string;
+  LocationLong: string;
+  TimeUpdate: string,
+  id: string
 }
 
-const signup3 = () =>{
+const Signup3 = () =>{
   return(
     <div>
       <Navigation2/>
@@ -50,77 +54,89 @@ const signup3 = () =>{
 
         <Formik
           initialValues={{
-            Name: '',
-            Surname: '',
-            phone: '',
-            Date: '',
-            gender: '',
-            Address: ''
+            FirstName: '',
+            LastName: '',
+            ProfileURL:'',
+            Birthday: '',
+            Gender: '',
+            PhoneNo:'',
+            LocationLat: '',
+            LocationLong: '',
+            TimeUpdate:'',
+            id:''
           }}
-          onSubmit={(
-            values: Value2,
-            { setSubmitting }: FormikHelpers<Value2>
-          ) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 500);
+          onSubmit={async(values: Value2,actions)=>{
+            console.log(values.FirstName)
+            const sendInfo ={
+              "FirstName": values.FirstName,
+              "LastName": values.LastName,
+              "ProfileURL": values.ProfileURL,
+              "Birthday": values.Birthday,
+              "Gender": values.Gender,
+              "PhoneNo": values.PhoneNo,
+              "LocationLat": values.LocationLat,
+              "LocationLong": values.LocationLong,
+              "TimeUpdate": values.TimeUpdate,
+              "id": values.id
+            }
+           const res = await fetch('http://localhost:2000/signup/user-info',{
+               method:'PATCH',
+               headers:{'Content-Type': 'application/json'},
+               body: JSON.stringify(sendInfo)
+           })
+           console.log(sendInfo)
+           console.log('success')
           }}
-          validationSchema={RegisterSchema}
         >
           
-        {({ errors, touched }) => (
+        {() => (
         <Form>
           <Col>
             <FormGroup>
-              <Label for="Name">Name*</Label>
-              <Field name="Name" 
+              <Label for="FirstName">Name*</Label>
+              <Field name="FirstName" 
                        type="text" 
                        id="Name" 
-                       className={`form-control ${touched.Name ? errors.Name ? 'is-invalid' : 'is-valid' : ''}`}
                        placeholder="name"/>
-              <ErrorMessage component="div" name="Name" className="invalid-feedback" />
+              <ErrorMessage component="div" name="FirstName" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <Col>
             <FormGroup>
-              <Label for="Surname">Surname*</Label>
-              <Field name="Surname" 
+              <Label for="LastName">Surname*</Label>
+              <Field name="LastName" 
                        type="text" 
                        id="Surname" 
-                       className={`form-control ${touched.Surname ? errors.Surname ? 'is-invalid' : 'is-valid' : ''}`}
                        placeholder="surname"/>
-              <ErrorMessage component="div" name="Surname" className="invalid-feedback" />
+              <ErrorMessage component="div" name="LastName" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <Col>
             <FormGroup>
-              <Label for="phone">Phone Number*</Label>
-              <Field name="phone" 
+              <Label for="PhoneNo">Phone Number*</Label>
+              <Field name="PhoneNo" 
                        type="tel" 
                        id="phone" 
-                       className={`form-control ${touched.phone ? errors.phone ? 'is-invalid' : 'is-valid' : ''}`}
                        placeholder="phone number"/>
-              <ErrorMessage component="div" name="phone" className="invalid-feedback" />
+              <ErrorMessage component="div" name="PhoneNo" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <Col>
             <FormGroup>
-              <Label for="Date">Birth Date*</Label>
-              <Field name="Date" 
+              <Label for="Birthday">Birth Date*</Label>
+              <Field name="Birthday" 
                        type="date" 
                        id="Date" 
-                       className={`form-control ${touched.Date ? errors.Date ? 'is-invalid' : 'is-valid' : ''}`}
                        />
               <ErrorMessage component="div" name="Date" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <Col>
             <FormGroup>
-              <Label for="gender">Gender</Label>
+              <Label for="Gender">Gender</Label>
               <div id='box' className='form-control'>
                 <div className="custom-control custom-radio custom-control-inline">
-                  <Field name="gender" 
+                  <Field name="Gender" 
                        type="radio" 
                        id="gender"
                        value='male' 
@@ -128,7 +144,7 @@ const signup3 = () =>{
                   <label>Male</label>
                 </div>
                 <div className="custom-control custom-radio custom-control-inline">
-                  <Field name="gender" 
+                  <Field name="Gender" 
                        type="radio" 
                        id="gender"
                        value='female' 
@@ -136,7 +152,7 @@ const signup3 = () =>{
                   <label>Female</label>
                 </div>
                 <div className="custom-control custom-radio custom-control-inline">
-                  <Field name="gender" 
+                  <Field name="Gender" 
                        type="radio" 
                        id="gender"
                        value='others' 
@@ -152,7 +168,6 @@ const signup3 = () =>{
               <Field name="Address" 
                        type="text" 
                        id="Address" 
-                       className={`form-control ${touched.Address ? errors.Address ? 'is-invalid' : 'is-valid' : ''}`}
                        placeholder='address'/>
               <ErrorMessage component="div" name="Address" className="invalid-feedback" />
             </FormGroup>
@@ -177,4 +192,4 @@ const signup3 = () =>{
   )
 }
 
-export default signup3;
+export default Signup3;
