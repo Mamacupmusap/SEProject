@@ -94,3 +94,20 @@
 .blank_box{
     width: 1%;
 }
+
+#noti1 {
+    font-size: 16px;
+    color: #B19D85;
+}
+
+#noti2 {
+    font-size: 16px;
+    color: #B19D85;
+    width: 60px;
+    text-decoration: underline;
+}
+
+.notiPop {
+    display: flex;
+    flex-direction: row;
+}

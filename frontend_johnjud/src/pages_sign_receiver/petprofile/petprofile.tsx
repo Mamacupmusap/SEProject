@@ -96,7 +96,21 @@ export const Petprofile = () => {
                   <h1 id="PostUser"> Tiffany Young </h1>
                   <NavLink to='/contactprofile' id='PostProfile'> Profile</NavLink>
                 </div>
-                <NavLink to='/receiver/chat'><Button className='button_contactPet'><img src={mail} id="mailIcon1"/>contact</Button></NavLink>    
+                <NavLink to='/receiver/chat'><Button className='button_contactPet'><img src={mail} id="mailIcon1"/>contact</Button></NavLink>
+                <div>
+                  <form>
+                    <div className="enterPetCode">
+                      <label id="petCodeHehe">รหัสสำหรับนัดแลกเปลี่ยนสัตว์</label>
+                      <input
+                        /*type="email"*/
+                        className="inputPetCode"
+                      />
+                      <button type="submit" className="btnPetCode">
+                      Submit
+                      </button>
+                    </div>
+                  </form>
+                </div>
               </div>
             </div>
         </Container>

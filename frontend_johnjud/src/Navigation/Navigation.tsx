@@ -42,8 +42,11 @@ const Navigation = () => {
             </div>
             <UncontrolledPopover trigger="legacy" placement="top" target="alert">
             <PopoverHeader>Notification</PopoverHeader>
-               <PopoverBody>
-                  <AcceptPetModal/>
+               <PopoverBody className="notiPop">
+                  <h5 id="noti1">คุณได้ทำการนัดแลกเปลี่ยน PetName เรียบร้อยแล้ว</h5>
+                  <NavLink to="/receiver/petprofile">
+                     <h5 id="noti2">ดูข้อมูล</h5>
+                  </NavLink>
                </PopoverBody>
             </UncontrolledPopover>
 

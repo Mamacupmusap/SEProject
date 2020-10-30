@@ -76,7 +76,7 @@ const chat = () =>{
       <Form>
         <ul>
         </ul>
-        <div className="status">
+        {/*<div className="status">
 
           <input type="checkbox" id="click2"/>
           <Label for="click2" className="confirm-btn" hidden>พาไปบ้านใหม่</Label>
@@ -108,6 +108,7 @@ const chat = () =>{
           </div>
          
         </div>
+        */}
       
 
         <div className="information">
