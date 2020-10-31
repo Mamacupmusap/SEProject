@@ -10,14 +10,19 @@ import manIcon from './img/man_white_logo.png';
 import manIcon2 from './img/man_white.png';
 import JJicon from './img/JohnJud_white.png';
 
+import AuthenService from "../pages/signin/AuthenService";
 
-const Navigation = () => {   
+const Navigation = () => {
+   const haddlelogout = () => {
+      AuthenService.logoutUser()
+   }
+
    return (
        <div>
          <Navbar className='Navbar_brown'>
             <NavLink to='/donator/home'><img className='jjicon' src={JJicon} alt='jjicon'/></NavLink>
             <NavLink to='/donator/home' className='navHead_brown'>HOME</NavLink>
-            <NavLink to='/donator/article'className='navHead_brown'>ARTICLE</NavLink>
+            <NavLink to='/donator/article' className='navHead_brown'>ARTICLE</NavLink>
             <NavLink to='/donator/aboutUS' className='navHead_brown'>ABOUT US</NavLink>
             <NavLink to='/donator/faq' className='navHead_brown'>FAQ</NavLink>
             <Col>
@@ -25,7 +30,7 @@ const Navigation = () => {
             </Col>
 
             <NavLink to='/receiver/home'>
-            <Button id='changeMode_brown'className='form-control'>
+            <Button id='changeMode_brown' className='form-control'>
             <div className='left'>
                <img className='manbox' src={manIcon2} alt='man'/>
             </div>
@@ -64,6 +69,11 @@ const Navigation = () => {
                      <NavLink to='/'>
                         <DropdownItem>
                            Logout
+                        </DropdownItem>
+                     </NavLink>
+                     <NavLink to='/'>
+                        <DropdownItem onClick={haddlelogout}>
+                           Test Logout
                         </DropdownItem>
                      </NavLink>
                   </DropdownMenu>

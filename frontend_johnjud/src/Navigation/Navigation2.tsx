@@ -13,16 +13,16 @@ const Navigation = () => {
          <Navbar className='Navbar'>
             <NavLink to='/'><img className='jjicon' src={JJicon} alt='jjicon'/></NavLink>
             <NavLink to='/' className='navHead'>HOME</NavLink>
-            <NavLink to='/article'className='navHead'>ARTICLE</NavLink>
+            <NavLink to='/article' className='navHead'>ARTICLE</NavLink>
             <NavLink to='/aboutUS' className='navHead'>ABOUT US</NavLink>
             <NavLink to='/faq' className='navHead'>FAQ</NavLink>
             <Col>
                <h1 id="hiw"> </h1>
             </Col>
             
-            <div className='blank_box'></div>
+            <div className='blank_box'/>
             <NavLink to='/signin'><div className='register'>sign in</div></NavLink>
-            <div className='blank_box'></div>
+            <div className='blank_box'/>
          </Navbar>
        </div>
    );

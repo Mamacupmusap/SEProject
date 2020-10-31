@@ -16,7 +16,7 @@ const Navigation = () => {
          <Navbar className='Navbar'>
             <NavLink to='/receiver/home'><img className='jjicon' src={JJicon} alt='jjicon'/></NavLink>
             <NavLink to='/receiver/home' className='navHead'>HOME</NavLink>
-            <NavLink to='/receiver/article'className='navHead'>ARTICLE</NavLink>
+            <NavLink to='/receiver/article' className='navHead'>ARTICLE</NavLink>
             <NavLink to='/receiver/aboutUS' className='navHead'>ABOUT US</NavLink>
             <NavLink to='/receiver/faq' className='navHead'>FAQ</NavLink>
             <Col>
@@ -24,7 +24,7 @@ const Navigation = () => {
             </Col>
 
             <NavLink to='/donator/home'>
-            <Button id='changeMode'className='form-control'>
+            <Button id='changeMode' className='form-control'>
             <div className='left'>
                <img className='manbox' src={manIcon2} alt='man'/>
             </div>

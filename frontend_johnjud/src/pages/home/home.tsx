@@ -141,13 +141,12 @@ const Home = () => {
                 </NavLink>
               </CardBody>
             </Card>
-
           {allPet.map((value) => {
             return (
                 <Card className="card">
                   <CardImg src={value.petPicUrl} alt="" height="130px"/>
                   <CardBody className="cardBody">
-                    <NavLink to='/donator/petprofile'>
+                    <NavLink to='/petprofile'>
                       <CardTitle className="cardTitle">{value.PetName}</CardTitle>
                     </NavLink>
                   </CardBody>

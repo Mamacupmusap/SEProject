@@ -1,16 +1,10 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import {GoogleLogin} from 'react-google-login';
 import {Button,Container} from 'reactstrap';
 import './signin.css';
 import { NavLink } from 'react-router-dom';
 import Navigation2 from '../../Navigation/Navigation2';
 
-const clientId = '99307406475-s1a1a9rcrfpo3kchirudo8i8fnidr0og.apps.googleusercontent.com'
-
-const responseGoogle = (response : any) => {
-  console.log(response);
-}
 
 const signin = () =>{
   return(
@@ -18,7 +12,7 @@ const signin = () =>{
       <Navigation2/>
     <Container>
       <div className='left-half'>
-        <div id='logo'></div>
+        <div id='logo'/>
       </div>
       <div className='right-half'>
         <div className='right-white-bg'>
