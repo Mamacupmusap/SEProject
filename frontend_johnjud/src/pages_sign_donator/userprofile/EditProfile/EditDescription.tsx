@@ -4,12 +4,12 @@ import ProfileService from '../ProfileService';
 import profileservice from '../ProfileService';
 import {Userinfo} from '../Interface';
 
-const DescriptionEdit=() =>{
+const DescriptionEdit=(prop:any) =>{
     const[obj,setObj] = useState<Userinfo>();
 
     const fetchProfileInfo=() =>{
       return(
-        profileservice.fetchProfileInfo()
+        profileservice.fetchProfileInfo(prop.userId)
         .then(res => {
           setObj(res)
         })

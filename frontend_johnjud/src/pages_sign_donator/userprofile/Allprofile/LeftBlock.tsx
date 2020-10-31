@@ -5,12 +5,13 @@ import { useEffect } from 'react';
 import profileservice from '../ProfileService'
 import {Userinfo} from '../Interface';
 
-const Leftblock=() =>{
+const Leftblock=(prop:any) =>{
   const[obj,setObj] = useState<Userinfo>();
-
+  // console.log("heeeeelllooooo")
+  // console.log(prop.userId)
   const fetchProfileInfo=() =>{
     return(
-      profileservice.fetchProfileInfo()
+      profileservice.fetchProfileInfo(prop.userId)
       .then(res => {
         setObj(res)
       })
@@ -28,7 +29,6 @@ const Leftblock=() =>{
     const gender = obj?.Gender;
     const address = obj?.Address;
     const phone = obj?.PhoneNO;
-    const facebook = obj?.Facebook;
     const email = obj?.Email;
  
     return(
@@ -43,7 +43,6 @@ const Leftblock=() =>{
             <p className='bold'>Birthday:<span className='notbold'> &nbsp;{birthday}</span></p>
             <p className='bold'>Gender:<span className='notbold'> &nbsp;{gender}</span></p>
             <p className='bold'>Address:<span className='notbold'> &nbsp;{address}</span></p>
-            <p className='bold'>Facrbook:<span className='notbold'> &nbsp;{facebook}</span></p>
             <p className='bold'>Phone:<span className='notbold'> &nbsp;{phone}</span></p>
             <p className='bold'>Email:<span className='notbold'> &nbsp;{email}</span></p>
             </h5>

@@ -4,13 +4,13 @@ import profileservice from '../ProfileService';
 
 
 
-const ProfileOTP=() =>{
+const ProfileOTP=(prop:any) =>{
 
     const[obj,setObj] = useState<OTPinfo>();
 
     const fetchProfileInfo=() =>{
       return(
-        profileservice.fetchProfileInfo()
+        profileservice.fetchProfileInfo(prop.userId)
         .then(res => {
           setObj(res)
         })
@@ -21,7 +21,7 @@ const ProfileOTP=() =>{
       fetchProfileInfo()
     },[])
     const ID = obj?.id;
-    const newPhone = obj?.PhoneNo;
+    const newPhone = localStorage.newPhone
     const [otp,setOTP] = useState<string>('')
     
     const submit=() =>{
@@ -30,12 +30,21 @@ const ProfileOTP=() =>{
             OTP:otp,
             phoneNO:newPhone,
         }
-        profileservice.updatephone(OTP)
+        profileservice.updateOTP(OTP)
+    }
+    const resend=() =>{
+      const resends = {
+        id:ID,
+        phoneNO:newPhone,
+      }
+      profileservice.resendOTP(resends)
     }
     return(
         <div>
             OTP:
             <input id='InputProfileOTP'  value={otp} onChange={(e) => {setOTP(e.target.value);}}></input>
+            <button onClick = {submit}>Submit</button>
+            <button onClick = {resend}>Resend OTP</button>
         </div>
     )
 }

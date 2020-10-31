@@ -6,13 +6,16 @@ import { Link } from 'react-router-dom';
 import ProfilePic from '../ProfilePic.png';
 import Glasspic from '../Glasspic.jpg';
 import {Userinfo} from '../Interface';
+import Navigation3 from '../../../Navigation/Navigation3'
 
-const ChangeEmail=() => {
+const ChangeEmail=(props:any) => {
     const[obj,setObj] = useState<Userinfo>();
+    const userId = props.match.params.userId;
+
 
     const fetchProfileInfo=() =>{
       return(
-        profileservice.fetchProfileInfo()
+        profileservice.fetchProfileInfo(userId)
         .then(res => {
           setObj(res)
         })
@@ -36,7 +39,11 @@ const ChangeEmail=() => {
     }
 
     return(
-        <div className = 'ChangePage'>
+        <div>
+            {localStorage.UserId == userId &&
+            <div>
+            <Navigation3/>
+            <div className = 'ChangePage'>
             <Link to='/donator/userprofile'>  
                 <img id='profilePic' src={ProfilePic}></img>
             </Link>
@@ -56,7 +63,15 @@ const ChangeEmail=() => {
                 <br/><br/>
                 <button id='SubmitEmailButton' onClick={update}>Submit</button>
             </div>
+            </div>
+            </div>
+            }
+            {localStorage.UserId!==userId && 
+            <div>
+                this is not for you!!!!!!!!!
 
+            </div>
+            }
         </div>
     )
 }

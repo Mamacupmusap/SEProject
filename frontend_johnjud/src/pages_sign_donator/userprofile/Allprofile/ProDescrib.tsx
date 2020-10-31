@@ -9,13 +9,15 @@ import LeftBlock from './LeftBlock';
 import { useEffect } from 'react';
 import profileservice from '../ProfileService'
 import {Userinfo} from '../Interface';
+import Navigation3 from '../../../Navigation/Navigation3'
 
-const Apps=() => {
+const Apps=(props:any) => {
   const[obj,setObj] = useState<Userinfo>();
+  const userId = props.match.params.userId
 
   const fetchProfileInfo=() =>{
     return(
-      profileservice.fetchProfileInfo()
+      profileservice.fetchProfileInfo(userId)
       .then(res => {
         setObj(res)
       })
@@ -29,20 +31,25 @@ const Apps=() => {
   const description = obj?.Description;
 
   return(   
-    <div className = 'Profile'>
-        <Link to='/donator/userprofile'>  
+    <div>
+      <Navigation3/>
+      <div className = 'Profile'>
+        <Link to={`/donator/userprofile/${userId}`}>  
           <img id='profilePic' src={ProfilePic}></img>
         </Link>
-        <Link to='/donator/userprofile/editprofile'>
+
+        {userId == localStorage.UserId &&
+        <Link to={`/donator/userprofile/${userId}/editprofile`}>
           <button className='EditProfile'>Edit Profile</button>
         </Link>
+        }
         <img id='glasspic' src = {Glasspic}></img>
         
         <div className = 'block'>
-        <LeftBlock/>
+        <LeftBlock userId ={userId}/>
 
           <div className = 'topblock'>
-            <TabProfile/>
+            <TabProfile userId ={userId}/>
           </div>
           
           <div className = 'bottomblock'>
@@ -55,6 +62,8 @@ const Apps=() => {
 
         </div>
     </div>
+    </div>
+
     
 
   )

@@ -131,14 +131,14 @@ class App extends Component{
             <Route path="/donator/petprofile" component={petprofile_donator}/>
             <Route path="/donator/petprofile1" component={petprofile1_donator}/>
 
-            <Route path="/donator/userprofile/editprofile/changepassword" component={ProChangePasword}/>
-            <Route path="/donator/userprofile/editprofile/changeemail" component={ProChangeEmail}/>
-            <Route path="/donator/userprofile/editprofile/changephone" component={ProChangePhone}/>
-            <Route path="/donator/userprofile/proadoption" component={ProAdop}/>
-            <Route path="/donator/userprofile/proregister" component={ProRegis}/>
-            <Route path="/donator/userprofile/prodonation" component={ProDonate}/>
-            <Route path="/donator/userprofile/editprofile" component={EditProfile}/>
-            <Route path="/donator/userprofile" component={ProDescrib}/>
+            <Route path="/donator/userprofile/:userId/editprofile/changepassword" component={ProChangePasword}/>
+            <Route path="/donator/userprofile/:userId/editprofile/changeemail" component={ProChangeEmail}/>
+            <Route path="/donator/userprofile/:userId/editprofile/changephone" component={ProChangePhone}/>
+            <Route path="/donator/userprofile/:userId/proadoption" component={ProAdop}/>
+            <Route path="/donator/userprofile/:userId/proregister" component={ProRegis}/>
+            <Route path="/donator/userprofile/:userId/prodonation" component={ProDonate}/>
+            <Route path="/donator/userprofile/:userId/editprofile" component={EditProfile}/>
+            <Route path="/donator/userprofile/:userId" component={ProDescrib}/>
 
 
            </Switch>

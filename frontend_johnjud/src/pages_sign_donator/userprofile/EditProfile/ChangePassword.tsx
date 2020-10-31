@@ -5,10 +5,18 @@ import profileservice from '../ProfileService';
 import { Link } from 'react-router-dom';
 import ProfilePic from '../ProfilePic.png';
 import Glasspic from '../Glasspic.jpg';
+import Navigation3 from '../../../Navigation/Navigation3'
 
-const ChangePassword=() => {
+
+const ChangePassword=(props:any) => {
+
+    const userId = props.match.params.userId;
     return(
-        <div className = 'ChangePage'>
+        <div>
+            {localStorage.UserId == userId &&
+            <div>
+            <Navigation3/>
+            <div className = 'ChangePage'>
             <Link to='/donator/userprofile'>  
                 <img id='profilePic' src={ProfilePic}></img>
             </Link>
@@ -26,6 +34,15 @@ const ChangePassword=() => {
                 <button id='SubmitPasswordButton'>Submit</button>
             </div>
         </div>
+        </div>}
+        {localStorage.UserId!==userId && 
+            <div>
+                this is not for you!!!!!!!!!
+
+            </div>
+            }
+        </div>
+     
     )
 }
 export default ChangePassword;

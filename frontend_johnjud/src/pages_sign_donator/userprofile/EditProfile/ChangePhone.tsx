@@ -2,16 +2,20 @@ import React, { useEffect, useState } from 'react';
 import '../Profile.css';
 import ProfileService from '../ProfileService';
 import profileservice from '../ProfileService';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import ProfilePic from '../ProfilePic.png';
 import Glasspic from '../Glasspic.jpg';
 import {Userinfo} from '../Interface';
-const ChangePhone=() => {
-    const[obj,setObj] = useState<Userinfo>();
+import Navigation3 from '../../../Navigation/Navigation3'
 
+
+const ChangePhone=(props:any) => {
+    const[obj,setObj] = useState<Userinfo>();
+    const history = useHistory();
+    const userId = props.match.params.userId;
     const fetchProfileInfo=() =>{
       return(
-        profileservice.fetchProfileInfo()
+        profileservice.fetchProfileInfo(userId)
         .then(res => {
           setObj(res)
         })
@@ -29,14 +33,26 @@ const ChangePhone=() => {
 
     const update=() =>{
         const newPhones= {
+            accessToken:localStorage.Token,
             PhoneNO:newPhone,
-            Password:Password,
         }
-        ProfileService.updatephone(newPhones);
+        console.log("sssss")
+        const a = ProfileService.updatephone(newPhones)
+        console.log(a)
+        // if(ProfileService.updatephone(newPhones)){
+        //     console.log(ProfileService.updatephone(newPhones))
+        //     localStorage.setItem("newPhone",newPhone);
+        //     // history.push("/donator/userprofile/editprofile/changephone/OTP")
+        // }
     }
     
     return(
-        <div className = 'ChangePage'>
+        <div>
+        {localStorage.UserId == userId &&
+            <div>
+            
+            <Navigation3/>
+            <div className = 'ChangePage'>
             <Link to='/donator/userprofile'>  
                 <img id='profilePic' src={ProfilePic}></img>
             </Link>
@@ -51,14 +67,21 @@ const ChangePhone=() => {
                 <span id='ChangePhone'>New Phone Number*: </span>
                 <input id='InputChangePhone'  value={newPhone} onChange={(e) => {setNewPhone(e.target.value);}}></input>
                 <br/><br/>
-                <span id='ChangePhone'>Password*: </span>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                <input id='InputChangePhone' value={Password} onChange={(e) => {setPassword(e.target.value);}}></input>
                 <br/><br/>
                 <button id='SubmitPhoneButton' onClick={update}>Submit</button>
             </div>
 
         </div>
+        </div>}
+        {localStorage.UserId!==userId && 
+            <div>
+                this is not for you!!!!!!!!!
+
+            </div>
+            }
+        </div>
+
     )
 }
 export default ChangePhone;
