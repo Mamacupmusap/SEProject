@@ -21,6 +21,7 @@
     "bootstrap": "^4.5.2",
     "express": "^4.17.1",
     "formik": "^2.1.7",
+    "formik-persist": "^1.1.0",
     "imgbb-uploader": "^1.1.0",
     "nodemodule": "^0.3.0",
     "react": "^16.14.0",
