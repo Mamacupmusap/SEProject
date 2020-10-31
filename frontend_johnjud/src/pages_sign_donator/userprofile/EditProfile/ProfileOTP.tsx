@@ -4,13 +4,15 @@ import profileservice from '../ProfileService';
 
 
 
-const ProfileOTP=(prop:any) =>{
+
+const ProfileOTP=(props:any) =>{
 
     const[obj,setObj] = useState<OTPinfo>();
+    const userId = props.match.params.userId;
 
     const fetchProfileInfo=() =>{
       return(
-        profileservice.fetchProfileInfo(prop.userId)
+        profileservice.fetchProfileInfo(userId)
         .then(res => {
           setObj(res)
         })
@@ -25,12 +27,16 @@ const ProfileOTP=(prop:any) =>{
     const [otp,setOTP] = useState<string>('')
     
     const submit=() =>{
-        const OTP = {
-            id:ID,
-            OTP:otp,
-            phoneNO:newPhone,
-        }
-        profileservice.updateOTP(OTP)
+        profileservice.updateOTP(otp,localStorage.Token)
+        .then(a => {
+          if(a){
+            alert("Change Phone Success!")
+            // history.push(`/donator/userprofile/${userId}/editprofile/changephone/OTP`)
+          }
+          else{
+            alert("Error")
+          }
+        })
     }
     const resend=() =>{
       const resends = {
@@ -40,12 +46,16 @@ const ProfileOTP=(prop:any) =>{
       profileservice.resendOTP(resends)
     }
     return(
+      <div>
+        {userId == localStorage.UserId &&
         <div>
             OTP:
             <input id='InputProfileOTP'  value={otp} onChange={(e) => {setOTP(e.target.value);}}></input>
             <button onClick = {submit}>Submit</button>
             <button onClick = {resend}>Resend OTP</button>
-        </div>
+        </div>}
+      </div>
+
     )
 }
 

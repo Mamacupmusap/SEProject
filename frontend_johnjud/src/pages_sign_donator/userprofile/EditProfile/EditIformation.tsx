@@ -12,7 +12,7 @@ const LeftBlockEdit=(prop:any) =>{
       Address:'',
       Birthday: '',
       Gender: '',
-      PhoneNO: '',
+      PhoneNo: '',
       Email: '',
       Facebook:'',
       Location: '',
@@ -114,7 +114,7 @@ const LeftBlockEdit=(prop:any) =>{
             Gender: newGender,
             Address: newAddress,
         }
-        profileservice.updateinfo(newInfoProfile);
+        profileservice.updateinfo(newInfoProfile,prop.userId);
     }
 
 

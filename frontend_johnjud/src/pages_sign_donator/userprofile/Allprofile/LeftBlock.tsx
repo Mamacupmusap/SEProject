@@ -28,7 +28,7 @@ const Leftblock=(prop:any) =>{
     const birthday = obj?.Birthday;
     const gender = obj?.Gender;
     const address = obj?.Address;
-    const phone = obj?.PhoneNO;
+    const phone = obj?.PhoneNo;
     const email = obj?.Email;
  
     return(

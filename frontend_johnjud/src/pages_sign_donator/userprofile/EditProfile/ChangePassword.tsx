@@ -9,8 +9,15 @@ import Navigation3 from '../../../Navigation/Navigation3'
 
 
 const ChangePassword=(props:any) => {
+    const [Password, setPassword] = useState<string>('')
+    const [ConfirmPassword, setConfirmPassword] = useState<string>('')
 
     const userId = props.match.params.userId;
+    const submit=() =>{
+        return(
+            profileservice.updatePassword(Password,ConfirmPassword,localStorage.Token)
+        )
+    }
     return(
         <div>
             {localStorage.UserId == userId &&
@@ -29,9 +36,11 @@ const ChangePassword=(props:any) => {
             </div>
             <div className='ChangeBlock'>
                 <span id='ChangePassword'>New Password*: </span>
-                &nbsp;&nbsp;<input id='InputChangePassword'></input>
+                &nbsp;&nbsp;<input id='InputChangePassword' value={Password} onChange={(e) => {setPassword(e.target.value);}}></input>
                 <br/><br/>
-                <button id='SubmitPasswordButton'>Submit</button>
+                <span id='ChangePassword'>confirm Password*: </span>
+                &nbsp;&nbsp;<input id='InputChangePassword' value={ConfirmPassword} onChange={(e) => {setConfirmPassword(e.target.value);}}></input>
+                <button id='SubmitPasswordButton' onClick={submit}>Submit</button>
             </div>
         </div>
         </div>}

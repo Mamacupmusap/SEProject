@@ -27,7 +27,7 @@ const DescriptionEdit=(prop:any) =>{
         const newdescription = {
             Description:newDescription,
         }
-        ProfileService.updatedescription(newdescription);
+        ProfileService.updatedescription(newdescription,prop.userId);
     }
     const initNewdescription = () =>{
       setNewDescription(description)

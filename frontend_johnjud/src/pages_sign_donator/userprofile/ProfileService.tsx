@@ -32,8 +32,8 @@ async function fetchdonation(): Promise<any[]>{
     return name;
 }
 
-async function updateinfo(newInfoProfile:Userinfo): Promise<any|null> {
-    const res = await fetch('http://localhost:2000/userinfo/5f8174e7327a81094416d04f/setting/infosetting',{
+async function updateinfo(newInfoProfile:Userinfo,userId:string): Promise<any|null> {
+    const res = await fetch(`http://localhost:2000/User/${userId}`,{
         method: 'PATCH',//PUT POST
         headers : {'Content-Type': 'application/json'},
         body: JSON.stringify(newInfoProfile),
@@ -48,32 +48,41 @@ async function updateinfo(newInfoProfile:Userinfo): Promise<any|null> {
     }
 }
 
-async function updatedescription(newDescription:Userinfo): Promise<any|null> {
-    const res = await fetch('http://localhost:2000/userinfo/5f8174e7327a81094416d04f/setting/description',{
+async function updatedescription(newDescription:Userinfo,userId:string): Promise<any|null> {
+    const res = await fetch(`http://localhost:2000/User/${userId}`,{
         method: 'PATCH',
         headers : {'Content-Type': 'application/json'},
         body: JSON.stringify(newDescription),
     });
 }
 
-async function updateemail(newEmail:Userinfo): Promise<any|null> {
-    const res = await fetch('http://localhost:2000/userinfo/5f8174e7327a81094416d04f',{
+async function updateemail(newEmail:string,token:string): Promise<any|null> {
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("Email", newEmail);
+    const res = await fetch('http://localhost:2000/user/edit-user/change-email',{
         method: 'PATCH',
-        headers : {'Content-Type': 'application/json'},
-        body: JSON.stringify(newEmail),
+        headers : {'Authorization': `Bearer ${token}`},
+        body: urlencoded,
     });
 }
 
-async function updatephone(newPhone:phoneinfo): Promise<any|null> {
+async function updatephone(newPhone:string, token:string): Promise<any|null> {
+    // console.log(newPhone)
+    // console.log(token)
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("PhoneNo", newPhone);
+    // console.log('rlllll')
+    // console.log(urlencoded)
     const res = await fetch('http://localhost:2000/user/edit-user/change-phone/save-temp-phone',{
-        method: 'PATCH',
-        headers : {'Content-Type': 'application/json'},
-        body: JSON.stringify(newPhone),
+        method: 'PATCH',//PUT POST
+        headers : {'Authorization': `Bearer ${token}`},
+        body: urlencoded,
     });
-    const updatephone:OTPinfo = await res.json();
-    console.log('Hello')
-    console.log(updatephone)
-    return false
+    const updatephone = await res.json();
+    // console.log('sendback is')
+    // console.log(updatephone)
+    console.log(updatephone.success)
+    return updatephone.success
     /*
     if (updatephone.success !== true){
         return true;
@@ -93,12 +102,30 @@ async function resendOTP(OTPS:Userinfo): Promise<any|null> {
     });
 }
 
-async function updateOTP(OTPS:Userinfo): Promise<any|null> {
-    const res = await fetch('http://localhost:2000/userinfo/5f8174e7327a81094416d04f',{
+async function updateOTP(OTPS:string,token:string): Promise<any|null> {
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("FeedbackOTP", OTPS);
+    const res = await fetch('http://localhost:2000/user/edit-user/change-phone/verify-phone',{
         method: 'PATCH',
-        headers : {'Content-Type': 'application/json'},
-        body: JSON.stringify(OTPS),
+        headers : {'Authorization': `Bearer ${token}`},
+        body: urlencoded,
     });
+    const ress= await res.json();
+    return ress
+}
+async function updatePassword(password:string,confirmpassword:string,token:string): Promise<any|null> {
+    console.log(password)
+    console.log(confirmpassword)
+    var urlencoded = new URLSearchParams();
+    urlencoded.append("Password", password);
+    urlencoded.append("ConfirmPassword", confirmpassword);
+    const res = await fetch('http://localhost:2000/user/edit-user/change-password',{
+        method: 'PATCH',
+        headers : {'Authorization': `Bearer ${token}`},
+        body: urlencoded,
+    });
+    const ress= await res.json();
+    return ress
 }
 
 export default {
@@ -112,5 +139,6 @@ export default {
     updatephone,
     resendOTP,
     updateOTP,
+    updatePassword,
 }
 

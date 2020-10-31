@@ -60,6 +60,7 @@ import EditProfile from './pages_sign_donator/userprofile/EditProfile/EditProfil
 import ProChangePasword from './pages_sign_donator/userprofile/EditProfile/ChangePassword';
 import ProChangeEmail from './pages_sign_donator/userprofile/EditProfile/ChangeEmail';
 import ProChangePhone from './pages_sign_donator/userprofile/EditProfile/ChangePhone';
+import ProfileOTP from './pages_sign_donator/userprofile/EditProfile/ProfileOTP'
 
 //import AuthenService from "./pages/signin/AuthenService";
 
@@ -131,6 +132,7 @@ class App extends Component{
             <Route path="/donator/petprofile" component={petprofile_donator}/>
             <Route path="/donator/petprofile1" component={petprofile1_donator}/>
 
+            <Route path="/donator/userprofile/:userId/editprofile/changephone/OTP" component={ProfileOTP}/>
             <Route path="/donator/userprofile/:userId/editprofile/changepassword" component={ProChangePasword}/>
             <Route path="/donator/userprofile/:userId/editprofile/changeemail" component={ProChangeEmail}/>
             <Route path="/donator/userprofile/:userId/editprofile/changephone" component={ProChangePhone}/>

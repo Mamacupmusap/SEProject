@@ -6,7 +6,7 @@ export interface Userinfo{
     Address?:string;
     Birthday?: string;
     Gender?: string;
-    PhoneNO?: string;
+    PhoneNo?: string;
     Email?: string;
     Facebook?:string;
     Location?: string;

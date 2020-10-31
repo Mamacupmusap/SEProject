@@ -29,8 +29,13 @@ const Apps=(props:any) => {
   },[])
   
   const description = obj?.Description;
+  console.log('aaaaa')
+  console.log(obj?.UserName)
 
   return(   
+    <div>
+      {obj?.UserName !== undefined &&
+    
     <div>
       <Navigation3/>
       <div className = 'Profile'>
@@ -62,8 +67,8 @@ const Apps=(props:any) => {
 
         </div>
     </div>
+    </div>}
     </div>
-
     
 
   )

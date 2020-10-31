@@ -28,14 +28,19 @@ const ChangeEmail=(props:any) => {
     
     const email = obj?.Email;
     const [Password, setPassword] = useState<string>('')
-    const [newEmail, setNewEmail] = useState<string|undefined>(email);
+    const [newEmail, setNewEmail] = useState<string>('');
 
     const update=() =>{
-        const newEmails = {
-            Email:newEmail,
-            Password:Password,
-        }
-        ProfileService.updateemail(newEmails);
+        ProfileService.updateemail(newEmail,localStorage.Token)
+        .then(a=>{
+            if(a){
+                alert("Change Email Success!")
+                // history.push(`/donator/userprofile/${userId}/editprofile/changephone/OTP`)
+            }
+            else{
+                alert("Error")
+            }
+        })
     }
 
     return(
@@ -57,9 +62,6 @@ const ChangeEmail=(props:any) => {
             <div className='ChangeBlock'>
                 <span id='ChangeEmail'>New Email: </span>
                 <input id='InputChangeEmail' value={newEmail} onChange={(e) => {setNewEmail(e.target.value);}}></input>
-                <br/><br/>
-                <span id='ChangeEmail'>Password*: </span>
-                &nbsp;<input id='InputChangeEmail' value={Password} onChange={(e) => {setPassword(e.target.value);}}></input>
                 <br/><br/>
                 <button id='SubmitEmailButton' onClick={update}>Submit</button>
             </div>

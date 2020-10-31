@@ -26,24 +26,24 @@ const ChangePhone=(props:any) => {
       fetchProfileInfo()
     },[])
 
-    const phone = obj?.PhoneNO;
+    const phone = obj?.PhoneNo;
     const [newPhone,setNewPhone] = useState<string>('');
     const [Password, setPassword] = useState<string>('')
 
 
     const update=() =>{
         const newPhones= {
-            accessToken:localStorage.Token,
-            PhoneNO:newPhone,
+            PhoneNo:newPhone,
         }
-        console.log("sssss")
-        const a = ProfileService.updatephone(newPhones)
-        console.log(a)
-        // if(ProfileService.updatephone(newPhones)){
-        //     console.log(ProfileService.updatephone(newPhones))
-        //     localStorage.setItem("newPhone",newPhone);
-        //     // history.push("/donator/userprofile/editprofile/changephone/OTP")
-        // }
+        
+        ProfileService.updatephone(newPhone,localStorage.Token)
+        .then(a => {
+            if(a){
+                history.push(`/donator/userprofile/${userId}/editprofile/changephone/OTP`)
+            }
+        })
+        
+
     }
     
     return(

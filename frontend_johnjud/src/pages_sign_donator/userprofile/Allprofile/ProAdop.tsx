@@ -34,6 +34,9 @@ const Apps=(props:any) => {
 
   return(   
     <div>
+    
+    
+    <div>
       <Navigation3/>
       <div className = 'Profile'>
       
@@ -66,7 +69,7 @@ const Apps=(props:any) => {
       </div>
   </div>
     </div>
-   
+    </div>
     
 
   )
