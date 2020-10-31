@@ -64,19 +64,8 @@ export const Petprofile = () => {
               <div className="statusz"><img src={check} alt='check'></img><div className="status-text">กำลังหาบ้านให้น้อง</div></div>
 
               <input type="checkbox" id="click"/>
-              <Label for="click" className="click-me">พาไปบ้านใหม่</Label>
-              <div className="content">
-                <div className="rubnong">
-                  <h1>Username ผู้รับน้อง</h1>
-                  <input type="text" placeholder="username" className="rubnonguser"/>
-                  <h2>*จะมีการเปลี่ยนแปลงสถานะหลังจากผู้รับกดยืนยัน</h2>
-                  <div className="btnx">
-                    <input type="checkbox" id="click2"/>
-                    <Label for="click2" className="confirm-btn">confirm</Label>
-                    <Label for="click" className="cancel-btn">cancel</Label>
-                  </div>
-                </div>
-              </div>
+              <Label for="click" className="click-me">test</Label>
+              
                 <div className="statuszz"><img src={check_y} alt='check_y'></img><div className="status-text2">น้องกำลังไปบ้านใหม่</div></div>
                 <input type="checkbox" id="click3"/>
                 <Label for="click3" className="click-me3">ได้บ้านใหม่แล้ว</Label>

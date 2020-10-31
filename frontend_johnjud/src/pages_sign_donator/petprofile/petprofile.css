@@ -165,23 +165,7 @@
   margin-left: 1%;
 }
 
-.center,.content{
-  position: absolute;
-  top: 15%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-/*
-.content{
-  display: none;
-}
-*/
-
 #click{
-  display: none;
-}
-
-#click2{
   display: none;
 }
 
@@ -200,6 +184,10 @@
   padding-top: 10px;
   opacity: 1;
   visibility: visible;
+}
+
+#click2{
+  display: none;
 }
 
 #click3{
@@ -223,16 +211,6 @@
   visibility: hidden;
 }
 
-.content{
-  opacity: 0;
-  visibility: hidden;
-  width: 450px;
-  height: 250px;
-  background: #ffffff;
-  border-radius: 3px;
-  transition: .3s ease-in;
-  box-shadow: 0 2px 12px rgba(0,0,0,.4);
-}
 
 .statusz{
   display: inline;
@@ -252,32 +230,15 @@
   visibility: hidden;
 }
 
-#click:checked ~ .content{
+#click:checked ~ .statuszz{
   opacity: 1;
   visibility: visible;
 }
 
-#click2:checked ~ .statuszz{
+#click:checked ~ .click-me3{
   opacity: 1;
   visibility: visible;
 }
-
-#click2:checked ~ .click-me3{
-  opacity: 1;
-  visibility: visible;
-}
-
-
-#click2:checked ~ .content{
-  opacity: 0;
-  visibility: hidden;
-}
-
-#click2:checked ~ .click-me{
-  opacity: 0;
-  visibility: hidden;
-}
-
 
 #click3:checked ~ .statuszzz{
   opacity: 1;
@@ -289,47 +250,8 @@
   visibility: hidden;
 }
 
-.rubnong {
-  padding-top: 12%;
-}
-
-.rubnong h1{
-  font-size: 20px;
-}
-
-.rubnong h2{
-  font-size: 13px;
-  padding-top: 2%;
-}
-
 .btnx {
   padding-top: 4%;
-}
-
-.confirm-btn{
-  display: inline-block;
-  padding: 15px 15px;
-  font-size: 14px;
-  background-color: #61b292;
-  display: inline-block;
-  text-align: center;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  color: #ffffff;
-}
-
-.cancel-btn{
-  display: inline-block;
-  margin-left: 10%;
-  padding: 15px 19px;
-  font-size: 14px;
-  background-color: #C4C4C4;
-  text-align: center;
-  border: none;
-  border-radius: 20px;
-  cursor: pointer;
-  color: #ffffff;
 }
 
 #hoho {
