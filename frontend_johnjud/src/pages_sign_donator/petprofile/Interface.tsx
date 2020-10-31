@@ -1,15 +1,40 @@
-export class Petinfo{
+/*export class Petinfo{
+    _id?: string;
+    petid?:string;
     PetName?: string;
     PetBreed?: string;
     PetGender?: string; 
-    type?: string;
-    petPicUrl?: string;
-    regPetStatus?: string;
-    adopPetStatus?: string;
+    PetPicURL?: string;
     PetStatus?: string;
-    petLength?: number;
-    petHeight?: number;
+    PetWeight?: number;
+    PetCerURL?: string;
+    TimeStampUpdate?: Date;
+    UserId?:string;
+    AdopUserId?:string;
+}*/
+
+import { ThrowStatement } from "typescript";
+
+export class Petinfo{
+    _id?:string;
+    petid?:string;
+    PetName?: string;
+    PetBreed?: string;
+    PetGender?: string; 
+    Type?: string;
+    PetPicUrl?: string;
+    PetStatus?:string;
+    PetLength?: number;
+    PetHeight?: number;
+    PetCerURL?: string;
+    TimeStampUpdate?:Date;
     UserId?: string;
     AdopUserId?: string;
+    CheckCode?: string;
+    CodePet?:string;
+    accessToken?:string;
 }
+
+
+
 
