@@ -9,7 +9,6 @@ import alertIcon from './img/alert.png';
 import manIcon from './img/man.png';
 import manIcon2 from './img/man_white.png';
 import JJicon from './img/newlogo02.png';
-import AcceptPetModal from './components/AcceptPetModal';
 
 const Navigation = () => {   
    return (
@@ -21,7 +20,7 @@ const Navigation = () => {
             <NavLink to='/receiver/aboutUS' className='navHead'>ABOUT US</NavLink>
             <NavLink to='/receiver/faq' className='navHead'>FAQ</NavLink>
             <Col>
-               <input className='search_nav form-control col-lg-8' type='text' placeholder='search your pet' name='search'></input>
+               <h1 id="hiw"> </h1>
             </Col>
 
             <NavLink to='/donator/home'>

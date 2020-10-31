@@ -26,14 +26,7 @@ const signin = () =>{
             <h2> Welcome to JohnJud! </h2>
             <br/><br/>
             <Container className='textbox'>
-              <GoogleLogin
-                clientId={clientId}
-                buttonText="Sign in with Google account"
-                onSuccess={responseGoogle}
-                onFailure={responseGoogle}
-                cookiePolicy={'single_host_origin'}
-              />
-              <br/>
+             
               <NavLink to='/signin2' className='botton_signin'><Button outline color='secondary'>Sign in with JohnJud account</Button></NavLink>
               <br/>
               <p>haven't register? <NavLink to='./signup'>sign up </NavLink></p>

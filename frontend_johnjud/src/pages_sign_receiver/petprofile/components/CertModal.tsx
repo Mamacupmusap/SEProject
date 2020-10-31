@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './CertModal.css'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
 import Cert from './img/cert.png' ;
-import Realcerti from './img/RealCerti.png';
+import Realcerti from './img/HealthCer.jpg';
 import close from './img/close.png';
 import greenRight from './img/check.png'
 
@@ -22,7 +22,7 @@ export const CertModal = (props:any) => {
       <Modal isOpen={modal} toggle={toggle} id="cerPopUp">
         <ModalBody className="Modalbody">
           <h5>Health Certification</h5>
-          <img src={Realcerti}/>
+          <img src={Realcerti} style={{width:250}}/>
         </ModalBody>
         <div id="certButt"> 
           <Button color="link" onClick={toggle} className="Certbutton">close</Button>

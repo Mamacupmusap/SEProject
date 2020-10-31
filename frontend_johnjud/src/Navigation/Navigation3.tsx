@@ -21,7 +21,7 @@ const Navigation = () => {
             <NavLink to='/donator/aboutUS' className='navHead_brown'>ABOUT US</NavLink>
             <NavLink to='/donator/faq' className='navHead_brown'>FAQ</NavLink>
             <Col>
-               <input className='search_nav form-control col-lg-8' type='text' placeholder='search your pet' name='search'></input>
+               <h1 id="hiw"> </h1>
             </Col>
 
             <NavLink to='/receiver/home'>
