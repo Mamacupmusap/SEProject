@@ -3,7 +3,7 @@ import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import home from './pages/home/home';
-import article from './pages/article/article'
+import article from './pages/article/article';
 import aboutUS from './pages/aboutUS/aboutUS';
 import faq from './pages/faq/faq';
 
@@ -32,7 +32,7 @@ import article3_receiver from './pages_sign_receiver/article/article3'
 
 import chat_receiver from './pages_sign_receiver/chat/components/Chat/Chat';
 import suggestion_receiver from './pages_sign_receiver/chat/suggest';
-import userpro_receiver from './pages_sign_receiver/userprofile/userprofile1'
+//import userpro_receiver from './pages_sign_receiver/userprofile/userprofile1'
 //import bookmark_receiver from './pages_sign_receiver/bookmark/bookmark';
 import Bookmark from "./pages_sign_receiver/bookmark/bookmark2";
 import petprofile_receiver from './pages_sign_receiver/petprofile/petprofile'
@@ -60,6 +60,9 @@ import EditProfile from './pages_sign_donator/userprofile/EditProfile/EditProfil
 import ProChangePasword from './pages_sign_donator/userprofile/EditProfile/ChangePassword';
 import ProChangeEmail from './pages_sign_donator/userprofile/EditProfile/ChangeEmail';
 import ProChangePhone from './pages_sign_donator/userprofile/EditProfile/ChangePhone';
+import ProfileOTP from './pages_sign_donator/userprofile/EditProfile/ProfileOTP'
+
+//import AuthenService from "./pages/signin/AuthenService";
 
 class App extends Component{
   componentDidMount(){
@@ -114,7 +117,7 @@ class App extends Component{
             <Route path="/receiver/userprofile/editprofile" component={EditProfile}/>
             <Route path="/receiver/userprofile" component={ProDescrib}/>
 
-          
+
 
             <Route path="/donator/home" component={home_donator}/>
             <Route path="/donator/article" component={article_donator}/>
@@ -129,14 +132,15 @@ class App extends Component{
             <Route path="/donator/petprofile" component={petprofile_donator}/>
             <Route path="/donator/petprofile1" component={petprofile1_donator}/>
 
-            <Route path="/donator/userprofile/editprofile/changepassword" component={ProChangePasword}/>
-            <Route path="/donator/userprofile/editprofile/changeemail" component={ProChangeEmail}/>
-            <Route path="/donator/userprofile/editprofile/changephone" component={ProChangePhone}/>
-            <Route path="/donator/userprofile/proadoption" component={ProAdop}/>
-            <Route path="/donator/userprofile/proregister" component={ProRegis}/>
-            <Route path="/donator/userprofile/prodonation" component={ProDonate}/>
-            <Route path="/donator/userprofile/editprofile" component={EditProfile}/>
-            <Route path="/donator/userprofile" component={ProDescrib}/>
+            <Route path="/donator/userprofile/:userId/editprofile/changephone/OTP" component={ProfileOTP}/>
+            <Route path="/donator/userprofile/:userId/editprofile/changepassword" component={ProChangePasword}/>
+            <Route path="/donator/userprofile/:userId/editprofile/changeemail" component={ProChangeEmail}/>
+            <Route path="/donator/userprofile/:userId/editprofile/changephone" component={ProChangePhone}/>
+            <Route path="/donator/userprofile/:userId/proadoption" component={ProAdop}/>
+            <Route path="/donator/userprofile/:userId/proregister" component={ProRegis}/>
+            <Route path="/donator/userprofile/:userId/prodonation" component={ProDonate}/>
+            <Route path="/donator/userprofile/:userId/editprofile" component={EditProfile}/>
+            <Route path="/donator/userprofile/:userId" component={ProDescrib}/>
 
 
            </Switch>

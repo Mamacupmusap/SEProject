@@ -1,11 +1,12 @@
 export interface Userinfo{
+    id?:string;
     UserName?: string;
     FirstName?: string;
     LastName?: string; 
     Address?:string;
     Birthday?: string;
     Gender?: string;
-    PhoneNO?: string;
+    PhoneNo?: string;
     Email?: string;
     Facebook?:string;
     Location?: string;

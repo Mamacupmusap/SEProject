@@ -6,13 +6,16 @@ import { Link } from 'react-router-dom';
 import ProfilePic from '../ProfilePic.png';
 import Glasspic from '../Glasspic.jpg';
 import {Userinfo} from '../Interface';
+import Navigation3 from '../../../Navigation/Navigation3'
 
-const ChangeEmail=() => {
+const ChangeEmail=(props:any) => {
     const[obj,setObj] = useState<Userinfo>();
+    const userId = props.match.params.userId;
+
 
     const fetchProfileInfo=() =>{
       return(
-        profileservice.fetchProfileInfo()
+        profileservice.fetchProfileInfo(userId)
         .then(res => {
           setObj(res)
         })
@@ -24,17 +27,28 @@ const ChangeEmail=() => {
     },[])
     
     const email = obj?.Email;
-    const [newEmail, setNewEmail] = useState<string|undefined>(email);
-/*
+    const [Password, setPassword] = useState<string>('')
+    const [newEmail, setNewEmail] = useState<string>('');
+
     const update=() =>{
-        const newEmail = {
-            Email:email,
-        }
-        ProfileService.updateemail(newEmail);
+        ProfileService.updateemail(newEmail,localStorage.Token)
+        .then(a=>{
+            if(a){
+                alert("Change Email Success!")
+                // history.push(`/donator/userprofile/${userId}/editprofile/changephone/OTP`)
+            }
+            else{
+                alert("Error")
+            }
+        })
     }
-*/
+
     return(
-        <div className = 'ChangePage'>
+        <div>
+            {localStorage.UserId == userId &&
+            <div>
+            <Navigation3/>
+            <div className = 'ChangePage'>
             <Link to='/donator/userprofile'>  
                 <img id='profilePic' src={ProfilePic}></img>
             </Link>
@@ -47,14 +61,19 @@ const ChangeEmail=() => {
             </div>
             <div className='ChangeBlock'>
                 <span id='ChangeEmail'>New Email: </span>
-                <input id='InputChangeEmail'></input>
+                <input id='InputChangeEmail' value={newEmail} onChange={(e) => {setNewEmail(e.target.value);}}></input>
                 <br/><br/>
-                <span id='ChangeEmail'>Password*: </span>
-                &nbsp;<input id='InputChangeEmail' value={newEmail} onChange={(e) => {setNewEmail(e.target.value);}}></input>
-                <br/><br/>
-                <button id='SubmitEmailButton' /*onClick={update}*/>Submit</button>
+                <button id='SubmitEmailButton' onClick={update}>Submit</button>
             </div>
+            </div>
+            </div>
+            }
+            {localStorage.UserId!==userId && 
+            <div>
+                this is not for you!!!!!!!!!
 
+            </div>
+            }
         </div>
     )
 }

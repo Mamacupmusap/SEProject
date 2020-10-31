@@ -1,5 +1,7 @@
-import React from 'react';
+import React,{ Component, useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
+import {Petinfo} from './Interface';
+import profileservice from './ProfileService';
 import { NavLink } from 'react-router-dom';
 import { Container, FormGroup,Label, Col}  from 'reactstrap';
 import { Formik,Form, Field, ErrorMessage, FormikHelpers } from 'formik'
@@ -11,6 +13,69 @@ import check_r from './imgpic/check_r.png'
 import * as Yup from 'yup'
 import Navigation3 from '../../Navigation/Navigation3'
 
+type PetinfoProps = {
+  onNewPetProfileCreate?: (newPetinfo:Petinfo) => void,
+};
+const AddPetProfile = (props: PetinfoProps) => {
+  const [newPetName, setnewPetName] = useState<string>();
+  const [newPetBreed, setnewPetBreed] = useState<string>();
+  const [newPetGender, setnewPetGender] = useState<string>();
+  const [newType, setnewType] = useState<string>();
+  const [newPetStatus, setnewPetStatus] = useState<string>();
+  const [newPetLength, setnewPetLength] = useState<number>();
+  const [newPetHeight, setnewPetHeight] = useState<number>();
+
+const update=() =>{
+  const newPetProfile = {
+    PetName: newPetName,
+    PetBreed: newPetBreed,
+    PetGender: newPetGender,
+    type: newType,
+    //petPicUrl = obj?.petPicUrl;
+    //regPetStatus = obj?.regPetStatus;
+    //adopPetStatus = obj?.adopPetStatus;
+    PetStatus: newPetStatus,
+    PetLength: newPetLength,
+    PetHeight: newPetHeight,
+    //adopuserid = newAdopUserId;
+    };
+    const result:any = fetch("http://localhost:2000/petinfo/",{
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json',
+        credentials: "same-origin",
+      },
+
+        body: JSON.stringify(newPetProfile)
+})
+      .then(res => res.json())
+      .then(SavePetinfo=> {
+        if (props.onNewPetProfileCreate != undefined) {
+            props.onNewPetProfileCreate(SavePetinfo);}
+      console.log(result);
+            if(result.accessToken) {
+             localStorage.setItem("Token", result.accessToken)
+               return result
+    }
+})    
+}
+
+/*
+ const PetName=  obj?.PetName;
+ const PetBreed = obj?.PetBreed;
+ const PetGender=  obj?.PetGender;
+ const PetType=  obj?.Type;
+ const PetPicUrl= obj?.PetPicUrl;
+ const PetStatus=  obj?.PetStatus;
+ const PetLength = obj?.PetLength;
+ const PetHeight=  obj?.PetHeight;
+ const PetCerURL = obj?.PetCerURL;
+ const TimeStampUpdate = obj?.TimeStampUpdate
+ const UserId=  obj?.PetStatus;
+ const AdopUserId = obj?.PetLength;
+ const CheckCode=  obj?.PetHeight;
+ const CodePet = obj?.PetCerURL;
+ */
+//
 const PetinfoSchema = Yup.object().shape({
   petName: Yup.string()
     .required('Required'),
@@ -41,7 +106,6 @@ interface Value2{
   Description: string;
 }
 
-const chat = () =>{
   return(
     <div className="bodybongchu">
       <Navigation3/>
@@ -76,7 +140,7 @@ const chat = () =>{
       <Form>
         <ul>
         </ul>
-        <div className="status">
+        {/*<div className="status">
 
           <input type="checkbox" id="click2"/>
           <Label for="click2" className="confirm-btn" hidden>พาไปบ้านใหม่</Label>
@@ -108,6 +172,7 @@ const chat = () =>{
           </div>
          
         </div>
+        */}
       
 
         <div className="information">
@@ -122,6 +187,7 @@ const chat = () =>{
                        id="petName" 
                        placeholder="pet's name"
                        className={`form-control ${touched.petName ? errors.petName ? 'is-invalid' : 'is-valid' : ''}`}
+                       value={newPetName} onChange={(e:any) => {setnewPetName(e.target.value);}}
                        />
               <ErrorMessage component="div" name="petName" className="invalid-feedback" />
             </FormGroup>
@@ -193,7 +259,9 @@ const chat = () =>{
                        type="text" 
                        id="petWeight" 
                        placeholder='weight'
-                       className="input_text1"/>
+                       className="input_text1"
+                       /*value={newPetWeight} onChange={(e:any) => {setnewPetWeight(e.target.value);}}*/
+                       />
             </FormGroup>
           </Col>
           <Col>
@@ -223,7 +291,10 @@ const chat = () =>{
                        type="text" 
                        id="petBreed" 
                        placeholder='breed'
-                       className="input_text1"/>
+                       className="input_text1"
+                      
+                          onChange={(e:any) => {setnewPetBreed(e.target.value);}}
+                       />
             </FormGroup>
           </Col>
               
@@ -262,13 +333,14 @@ const chat = () =>{
                        id="Location" 
                        placeholder='Describe about your pet...'
                        className="input_text3"
+                       value={newPetStatus} onChange={(e:any) => {setnewPetStatus(e.target.value);}}
                        />
             </FormGroup>
           </Col>
           <p></p>
 
           <input type="checkbox" id="click22"/>
-          <Label for="click22" id="save">Save</Label>
+          <Label for="click22" id="save" onClick={update}>Save</Label>
           <div className="contentz">
               <img src={verified} alt="verified" className="savesuc"></img>
               <p className="saves">Save successfully</p>
@@ -280,7 +352,7 @@ const chat = () =>{
           <button type='button' id='cancel'>Cancel</button>
 
           <br/><br/>
-          <button type='submit' value='submit' id='save'>Submit</button>
+          <button type='submit' value='submit' id='save' >Submit</button>
           <br/><br/>
           
 
@@ -294,4 +366,5 @@ const chat = () =>{
   )
 }
 
-export default chat;
+
+export default AddPetProfile;

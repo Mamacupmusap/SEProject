@@ -35,39 +35,19 @@
     padding-top: 0.5%;
     padding-left: 2%;
 }
-.search_nav{
-    margin-left: 50px; /*ระยะขอบซ้าย*/
-    width: 20%; /*ความยาวช่องค้นหา*/
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-    background-image: url("./img/search.png"); /*ใส่รูปแว่นขยาย*/
-    background-position: 10px 10px;
-    background-repeat: no-repeat;
-    padding: 12px 20px 12px 40px;
-    -webkit-transition: width 0.4s ease-in-out; /*ทำให้ค่อยๆยืด*/
-    transition: width 0.4s ease-in-out;
-
-    background-color:#DCDDDE; /*สีพื้นหลังช่องค้นหา*/
-    float: right;
-}
-.search_nav::placeholder{
-    padding-left: 10%;
-}
 
 .jjicon{
     height: 60px;
-    width: 170px;
-    padding: 0% 10% 0% 0%;
+    padding: 0% 0% 0% 0%;
 }
+
 .manbox{
     height: 30px;
     width: 30px;
 }
 .icon{
     padding: 0% 1% 0% 1%;
-    display: inline;
+    display: flex;
 
 }
 
@@ -94,3 +74,28 @@
 .blank_box{
     width: 1%;
 }
+
+#noti1 {
+    font-size: 16px;
+    color: #B19D85;
+}
+
+#noti2 {
+    font-size: 16px;
+    color: #B19D85;
+    width: 60px;
+    text-decoration: underline;
+}
+
+.notiPop {
+    display: flex;
+    flex-direction: row;
+}
+
+/*.textLink {
+    width: 30%;
+    display: flex;
+    align-content: flex-start;
+    justify-content: space-evenly;
+}
+*/

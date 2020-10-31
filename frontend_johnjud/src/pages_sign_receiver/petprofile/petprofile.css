@@ -148,3 +148,21 @@
   background: #8D7966;
   border-radius: 4px;
 }
+
+.enterPetCode {
+  margin-top: 10px;
+  margin-left: 12px;
+}
+
+#petCodeHehe {
+  font-size: 13px;
+}
+
+.btnPetCode {
+  font-size: 10px;
+  background-color: #61B292;
+  color: white;
+  border-radius: 45px;
+  width: 55px;
+  height: 25px;
+}

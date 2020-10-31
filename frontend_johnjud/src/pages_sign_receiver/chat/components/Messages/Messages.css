@@ -3,3 +3,31 @@
   overflow: auto;
   flex: auto;
 }
+
+.chatGroup {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  height: 40px;
+  /*width: 200px;
+  border: 0.5px solid #c4c4c4;*/
+  margin: 2%;
+}
+
+.chatBubble {
+  margin-left: 2%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  background-color: white;
+  height: 40px;
+  width: 200px;
+  border-radius: 20px;
+  border: 0.5px solid #c4c4c4;
+}
+
+#messageText {
+  margin-top: 5%;
+  margin-left: 10%;
+  font-size: 12px;
+}

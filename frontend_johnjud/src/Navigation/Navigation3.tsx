@@ -10,22 +10,27 @@ import manIcon from './img/man_white_logo.png';
 import manIcon2 from './img/man_white.png';
 import JJicon from './img/JohnJud_white.png';
 
+import AuthenService from "../pages/signin/AuthenService";
 
-const Navigation = () => {   
+const Navigation = () => {
+   const haddlelogout = () => {
+      AuthenService.logoutUser()
+   }
+
    return (
        <div>
          <Navbar className='Navbar_brown'>
             <NavLink to='/donator/home'><img className='jjicon' src={JJicon} alt='jjicon'/></NavLink>
             <NavLink to='/donator/home' className='navHead_brown'>HOME</NavLink>
-            <NavLink to='/donator/article'className='navHead_brown'>ARTICLE</NavLink>
+            <NavLink to='/donator/article' className='navHead_brown'>ARTICLE</NavLink>
             <NavLink to='/donator/aboutUS' className='navHead_brown'>ABOUT US</NavLink>
             <NavLink to='/donator/faq' className='navHead_brown'>FAQ</NavLink>
             <Col>
-               <input className='search_nav form-control col-lg-8' type='text' placeholder='search your pet' name='search'></input>
+               <h1 id="hiw"> </h1>
             </Col>
 
             <NavLink to='/receiver/home'>
-            <Button id='changeMode_brown'className='form-control'>
+            <Button id='changeMode_brown' className='form-control'>
             <div className='left'>
                <img className='manbox' src={manIcon2} alt='man'/>
             </div>
@@ -42,8 +47,11 @@ const Navigation = () => {
             </div>
             <UncontrolledPopover trigger="legacy" placement="top" target="alert">
             <PopoverHeader>Notification</PopoverHeader>
-               <PopoverBody>
-                  This is notification!
+               <PopoverBody className="notiPop">
+                  <h5 id="noti1">คุณได้ทำการนัดแลกเปลี่ยน PetName เรียบร้อยแล้ว</h5>
+                  <NavLink to="/donator/petprofile">
+                     <h5 id="noti2">ดูข้อมูล</h5>
+                  </NavLink>
                </PopoverBody>
             </UncontrolledPopover>
 
@@ -61,6 +69,11 @@ const Navigation = () => {
                      <NavLink to='/'>
                         <DropdownItem>
                            Logout
+                        </DropdownItem>
+                     </NavLink>
+                     <NavLink to='/'>
+                        <DropdownItem onClick={haddlelogout}>
+                           Test Logout
                         </DropdownItem>
                      </NavLink>
                   </DropdownMenu>

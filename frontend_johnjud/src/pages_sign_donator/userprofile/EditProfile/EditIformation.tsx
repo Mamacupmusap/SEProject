@@ -4,7 +4,7 @@ import profileservice from '../ProfileService';
 import {Userinfo} from '../Interface';
 
 
-const LeftBlockEdit=() =>{
+const LeftBlockEdit=(prop:any) =>{
     
     const[obj,setObj] = useState<Userinfo>({UserName: '',
       FirstName: '',
@@ -12,11 +12,10 @@ const LeftBlockEdit=() =>{
       Address:'',
       Birthday: '',
       Gender: '',
-      PhoneNO: '',
+      PhoneNo: '',
       Email: '',
       Facebook:'',
       Location: '',
-      AvgPoint: 99,
       Description: ''});
     
 
@@ -24,7 +23,7 @@ const LeftBlockEdit=() =>{
 
     const fetchProfileInfo=() =>{
       return(
-        profileservice.fetchProfileInfo()
+        profileservice.fetchProfileInfo(prop.userId)
         .then(res => {
           console.log(res);
           setObj(res)
@@ -114,9 +113,8 @@ const LeftBlockEdit=() =>{
             Birthday: newBirthDay,
             Gender: newGender,
             Address: newAddress,
-            Facebook: newFacebook,
         }
-        profileservice.updateinfo(newInfoProfile);
+        profileservice.updateinfo(newInfoProfile,prop.userId);
     }
 
 
@@ -125,15 +123,17 @@ const LeftBlockEdit=() =>{
             <br/><br/><br/>
             <div className='profilename'>
             <h1><u>{username}</u></h1>
-            </div>
             <br/>
+            <div className='Info'><h5>
             <p className='bold'>FirstName:<input id='Input' value={newFirstName} onChange={(e) => {setNewFirstName(e.target.value);}}></input></p>
             <p className='bold'>LastName:<input id='Input' value={newLastName} onChange={(e) => {setNewLastName(e.target.value);}}></input></p>
             <p className='bold'>Birthday:<input id='Input' value={newBirthDay} onChange={(e) => {setNewBirthDay(e.target.value);}}></input></p>
             <p className='bold'>Gender:<input id='Input' value={newGender} onChange={(e) => {setNewGender(e.target.value);}}></input></p>
             <p className='bold'>Address:<textarea id='AddressInput' value={newAddress} onChange={(e) => {setNewAddress(e.target.value);}}></textarea></p>
-            <p className='bold'>Facebook:<input id='Input' value={newFacebook} onChange={(e) => {setNewFacebook(e.target.value);}}></input></p>
             <button id='ButtonUpdate' onClick={update} >update</button>
+            </h5>
+            </div>
+            </div>
         </div>
     )
 }

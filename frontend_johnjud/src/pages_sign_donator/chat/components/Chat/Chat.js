@@ -5,8 +5,10 @@ import TextContainer from '../TextContainer/TextContainer';
 import Messages from '../Messages/Messages';
 import InfoBar from '../InfoBar/InfoBar';
 import Input from '../Input/Input';
-
+import Navigation3 from '../../../../Navigation/Navigation3';
 import './Chat.css';
+import user1 from './img/user1.png';
+import user2 from './img/user2.png';
 
 const ENDPOINT = 'https://project-chat-application.herokuapp.com/';
 
@@ -53,13 +55,31 @@ const Chat = ({ location }) => {
   }
 
   return (
-    <div className="outerContainer">
-      <div className="container_chat">
-          <InfoBar room={room} />
-          <Messages messages={messages} name={name} />
-          <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+    <div>
+      <Navigation3/>
+      <div className="outerContainer">
+        <div className="left_chat">
+          <div className="head_left_chat">
+            <h5 id="head_message">message</h5>
+          </div>
+          <div className="allPeople">
+            <div className="chatPeople_group">
+              <img src={user1} id="userPic" style={{width:30,height:30}}/>
+              <h5 id="chat_userName">John Bush</h5>
+            </div>
+            <div className="chatPeople_group">
+              <img src={user2} id="userPic" style={{width:30,height:30}}/>
+              <h5 id="chat_userName">Jodi Clark</h5>
+            </div>
+          </div>
+        </div>
+        <div className="container_chat">
+            <InfoBar room={room} />
+            <Messages messages={messages} name={name} />
+            <Input message={message} setMessage={setMessage} sendMessage={sendMessage} />
+        </div>
+        <TextContainer users={users}/>
       </div>
-      <TextContainer users={users}/>
     </div>
   );
 }

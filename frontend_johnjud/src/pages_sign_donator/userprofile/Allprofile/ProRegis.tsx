@@ -9,10 +9,12 @@ import LeftBlock from './LeftBlock';
 import PetBlock from './PetBlock';
 import profileservice from '../ProfileService';
 import {Userinfo} from '../Interface';
+import Navigation3 from '../../../Navigation/Navigation3'
 
 
-const Apps=() => {
+const Apps=(props:any) => {
   const[obj,setObj] = useState<any[]>([]);
+  const userId = props.match.params.userId
 
   const fetchProfileInfo=() =>{
     return(
@@ -29,19 +31,22 @@ const Apps=() => {
 
   const petPro = obj.map(item=>(<span><PetBlock message = {item.PetName} img={item.petPicUrl} link={item.petPicUrl}/></span>))
   return(   
-    <div className = 'Profile'>
-        <Link to='/donator/userprofile'>  
+    <div>
+      <Navigation3/>
+      <div className = 'Profile'>
+        <Link to={`/donator/userprofile/${userId}`}>  
           <img id='profilePic' src={ProfilePic}></img>
         </Link>
-        <Link to='/donator/userprofile/editprofile'>
+        {userId == localStorage.UserId &&
+        <Link to={`/donator/userprofile/${userId}/editprofile`}>
           <button className='EditProfile'>Edit Profile</button>
-        </Link>
+        </Link>}
         <img id='glasspic' src = {Glasspic}></img>
         <div className = 'block'>
-        <LeftBlock/>
+        <LeftBlock userId ={userId}/>
 
           <div className = 'topblock'>
-            <TabProfile/>
+            <TabProfile userId ={userId}/>
           </div>
           <div className = 'bottomblock'>
             <header id='Description'>
@@ -53,6 +58,8 @@ const Apps=() => {
 
         </div>
     </div>
+    </div>
+    
     
 
   )

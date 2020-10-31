@@ -1,95 +1,112 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Container ,FormGroup,Label,Button, Col}  from 'reactstrap';
-import jjicon from './component/logojj.png'
-import back from './component/arrow_left.png'
-import next from './component/arrow_right.png'
-import './signup.css'
-import { NavLink } from 'react-router-dom';
-
-import { Formik,Form, Field, ErrorMessage , FormikHelpers } from 'formik'
-import * as Yup from 'yup'
+import {Button,Container,FormGroup, Col}  from 'reactstrap';
+import { Formik,Form, Field} from 'formik'
+import { useHistory } from "react-router-dom";
+//import jjicon from './component/logojj.png'
+import mobile from './component/mobile.png'
 import Navigation2 from '../../Navigation/Navigation2';
 
-const RegisterSchema = Yup.object().shape({
-  username: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Required'),
-  password: Yup.string()
-    .min(2, 'Too Short!')
-    .max(50, 'Too Long!')
-    .required('Required')
-});
 
-interface Value2{
-  username: string,
-  password: string
+interface ValueOTP{
+  id:string;
+  FeedbackOTP:string;
 }
 
-const signup2 = () =>{
+//PATCH to verify OTP and return true to next page
+//all done! database update 
+
+//1) OTP ที่ใส่ = OTP ที่เก็บไหม
+//2) ถ้าถูกก็ patch 
+
+/*
+async function verifyOTP(verify_OTP:Value2): Promise<any|null> {
+  const res = await fetch('http://localhost:2000/signup/v2/verify-phone',{
+      method: 'PATCH',
+      headers : {'Content-Type': 'application/json'},
+      body: JSON.stringify(verify_OTP),
+  });
+}
+*/
+
+
+const Signup2 = () =>{ 
+  let history = useHistory();
   return(
     <div>
       <Navigation2/>
-      <Container id='contain'>
-        <div className='box_img'>
-          <img src={jjicon} alt='test' className='rounded-lg'/>
-        </div>
-        <Formik
-          initialValues={{
-            username: '',
-            password: ''
-          }}
-          onSubmit={(
-            values: Value2,
-            { setSubmitting }: FormikHelpers<Value2>
-          ) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 500);
-          }}
-          validationSchema={RegisterSchema}
-        >
-        {({ errors, touched }) => (
-          <Form>
-          <Col>
-            <FormGroup>
-              <Label for="username">Username*</Label>
-              <Field name="username" 
-                       type="text" 
-                       id="username" 
-                       className={`form-control ${touched.username ? errors.username ? 'is-invalid' : 'is-valid' : ''}`}
-                       placeholder="username"/>
-              <ErrorMessage component="div" name="username" className="invalid-feedback" />
-            </FormGroup>
-          </Col>
-         <Col>
-            <FormGroup>
-              <Label for="password">Password*</Label>
-              <Field name="password" 
-                       type="password" 
-                       id="password" 
-                       className={`form-control ${touched.password ? errors.password ? 'is-invalid' : 'is-valid' : ''}`}
-                       placeholder="password"/>
-              <ErrorMessage component="div" name="password" className="invalid-feedback" />
-            </FormGroup>
-          </Col>
-          <br/><br/>
-          <NavLink to='/signup'><Button className='button_back'><img src={back} alt=''/>Back</Button></NavLink>
-          <NavLink to='/signup3'><Button className='button_next'>Next<img src={next} alt=''/></Button></NavLink>
-          
-          <div>
-            <br/><br/><br/><br/>
-            <button type='submit' value='submit' >submit</button>
+      <Container className='bigbox'>
+          <div className='left'>
+            <img src={mobile} alt='mobile' className='mobile'/>
           </div>
-          
-          </Form>
-         )}  
-        </Formik>
+           <div className='right'>
+            <Container className='text_right'>
+              <div className='text2'>
+                <p>OTP has been sent via SMS to your registered number</p>
+                <p>(+66 xx-xxx-xxxx)</p>
+                <p id='text3'>please enter your OTP</p>
+              </div>
+              <div className='otp'>
+
+              <Formik
+                initialValues={{
+                  id:'',
+                  FeedbackOTP:''
+                }}
+                
+                onSubmit={ async (values:ValueOTP,actions) =>{
+                  const OTPcollect ={
+                    "id": localStorage.getItem('id'),
+                    "FeedbackOTP": values.FeedbackOTP
+                  }
+                  
+                    const res = await fetch('http://localhost:2000/signup/v2/verify-phone',{
+                      method:'PATCH',
+                      mode: 'cors',
+                      headers:{'Content-Type': 'application/json'},
+                      body: JSON.stringify(OTPcollect)
+                    })
+
+                    // fetch id to const 
+                    const res2 = await res.json();  
+                    console.log(res2)
+                    console.log(res2.success)
+                    
+                    if(res2.success==false){
+                      alert('WRONG OTP!!!')
+                  }
+
+                    if(res2.success==true){
+                      actions.setSubmitting(false);
+                      history.push('/signup3')
+                    }
+                  
+                  
+                }
+              }       
+                render={props =>  
+                <Form>
+                  <Col>
+                    <FormGroup>
+                    <Field name="FeedbackOTP" 
+                        type="text" 
+                        id="otp" 
+                        placeholder="xxx-xxx"
+                        className='col-lg-6 input_otp'
+                        />
+                    </FormGroup>
+                  </Col>
+                  <Button id='submit' type="submit" value='submit'>Submit</Button>
+                </Form>
+                }
+              />
+                  
+              </div>
+            </Container>
+          </div>
       </Container>
     </div>
   )
 }
 
-export default signup2;
+export default Signup2;

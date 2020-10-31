@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import './MyCarousel.css';
 import {
   Carousel,
@@ -7,21 +7,13 @@ import {
   CarouselIndicators,
   CarouselCaption
 } from 'reactstrap';
-import Dog from './img/Yoda.png';
-import Dog2 from './img/Yoda.png';
+import ProfileService from '../ProfileService'
+import {Petinfo} from '../Interface'
 /*import Dog3 from './img/dog3.jpg';*/
 
+/*
+
 const items = [
-    {
-      src: Dog,
-      altText: '',
-      caption: ''
-    },
-    {
-      src: Dog2,
-      altText: '',
-      caption: ''
-    },
     {
       src: Dog,
       altText: '',
@@ -75,6 +67,27 @@ const items = [
         <CarouselControl direction="prev" directionText="Previous" onClickHandler={previous} />
         <CarouselControl direction="next" directionText="Next" onClickHandler={next} />
       </Carousel>
+    );
+  }
+  
+  export default MyCarousel;
+  */
+
+  
+  export const MyCarousel = (prop:any) => {
+    const[obj,setObj] = useState<Petinfo>();
+    const getObj = () =>
+    fetch('http://localhost:3000/petinfo/two')
+    
+    .then((res) => res.json())
+
+    useEffect(() => {
+    getObj().then((obj) => setObj(obj))
+    }, [])
+    const PetPicUrl= obj?.PetPicUrl;
+
+    return (
+      <img src={PetPicUrl}/>
     );
   }
   

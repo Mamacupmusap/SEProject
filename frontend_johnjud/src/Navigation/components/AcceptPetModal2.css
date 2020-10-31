@@ -1,0 +1,51 @@
+#accYes{
+    display: none;
+}
+
+#accClose{
+    display: none;
+}
+
+#accYesButton{
+    background-color: #61B292;
+    color: white;
+    border-radius: 45px;
+    width: 89px;
+    height: 38px;
+    margin-right: 27px;
+}
+
+#accYes:checked ~ .accYesPopUp{
+    opacity: 1;
+    visibility: visible;
+}
+
+.accYesPopUp{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    visibility: hidden;
+    width: 438px;
+    height: 260px;
+    background: #ffffff;
+    border-radius: 3px;
+    transition: .3s ease-in;
+    box-shadow: 0 2px 12px rgba(0,0,0,.4);
+    padding-top: 2%;
+}
+
+#accClose-btn{
+    display: inline-block;
+    width: 89px;
+    padding: 15px;
+    font-size: 14px;
+    background-color: #C4C4C4;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    color: #ffffff;
+}

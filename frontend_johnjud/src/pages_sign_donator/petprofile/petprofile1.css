@@ -40,7 +40,7 @@ input::placeholder{
     padding-left: 3%;
     font-size: 12px;
 }
-
+/*
 .status {
     padding-top: 20px;
     font-size: 20px;
@@ -92,7 +92,6 @@ input::placeholder{
 .content{
     display: none;
 }
-*/
 
 #click{
     display: none;
@@ -206,9 +205,6 @@ input::placeholder{
     visibility: hidden;
 }
 
-
-
-
 .rubnong {
     padding-top: 12%;
     padding-left: 20%;
@@ -252,6 +248,7 @@ input::placeholder{
     cursor: pointer;
     color: #ffffff;
 }
+*/
 
 #gohome{
     width: 146px;

@@ -6,17 +6,19 @@ import {
     Redirect
   } from "react-router-dom";
 
-const TapProfile = () => {
+const TapProfile = (props:any) => {
+  const userId = props.userId
+
   return (
     <div>
         <div>
-            <Link to='/donator/userprofile/proadoption' >
+            <Link to={`/donator/userprofile/${userId}/proadoption`}>
                 <button id='ButtonPetAdop' >Pet Adoption<br/><br/> 1</button>
             </Link>
-            <Link to='/donator/userprofile/proregister' >
+            <Link to={`/donator/userprofile/${userId}/proregister`} >
                 <button id='ButtonPetAdop' >Pet Registeration<br/><br/> 1 </button>
             </Link>
-            <Link to='/donator/userprofile/prodonation' >
+            <Link to={`/donator/userprofile/${userId}/prodonation`} >
                 <button id='ButtonPetAdop' >Pet Donation<br/><br/> 1</button>
             </Link>
         </div>

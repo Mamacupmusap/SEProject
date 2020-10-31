@@ -10,22 +10,21 @@ import manIcon from './img/man.png';
 import manIcon2 from './img/man_white.png';
 import JJicon from './img/newlogo02.png';
 
-
 const Navigation = () => {   
    return (
        <div>
          <Navbar className='Navbar'>
             <NavLink to='/receiver/home'><img className='jjicon' src={JJicon} alt='jjicon'/></NavLink>
             <NavLink to='/receiver/home' className='navHead'>HOME</NavLink>
-            <NavLink to='/receiver/article'className='navHead'>ARTICLE</NavLink>
+            <NavLink to='/receiver/article' className='navHead'>ARTICLE</NavLink>
             <NavLink to='/receiver/aboutUS' className='navHead'>ABOUT US</NavLink>
             <NavLink to='/receiver/faq' className='navHead'>FAQ</NavLink>
             <Col>
-               <input className='search_nav form-control col-lg-8' type='text' placeholder='search your pet' name='search'></input>
+               <h1 id="hiw"> </h1>
             </Col>
 
             <NavLink to='/donator/home'>
-            <Button id='changeMode'className='form-control'>
+            <Button id='changeMode' className='form-control'>
             <div className='left'>
                <img className='manbox' src={manIcon2} alt='man'/>
             </div>
@@ -42,8 +41,11 @@ const Navigation = () => {
             </div>
             <UncontrolledPopover trigger="legacy" placement="top" target="alert">
             <PopoverHeader>Notification</PopoverHeader>
-               <PopoverBody>
-                  This is notification!
+               <PopoverBody className="notiPop">
+                  <h5 id="noti1">คุณได้ทำการนัดแลกเปลี่ยน PetName เรียบร้อยแล้ว</h5>
+                  <NavLink to="/receiver/petprofile">
+                     <h5 id="noti2">ดูข้อมูล</h5>
+                  </NavLink>
                </PopoverBody>
             </UncontrolledPopover>
 

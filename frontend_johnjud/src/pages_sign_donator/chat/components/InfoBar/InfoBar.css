@@ -3,7 +3,8 @@
   align-items: center;
   justify-content: space-between;
   background: #8d7966;
-  border-radius: 4px 4px 0 0;
+  border-top-right-radius: 8px;
+  border-top-left-radius: 0px;
   height: 60px;
   width: 100%;
 }
@@ -13,14 +14,26 @@
   display: flex;
   align-items: center;
   margin-left: 5%;
+}
+
+#roomName {
+  font-size: 15px;
   color: white;
+  margin-bottom: 0px;
 }
 
 .rightInnerContainer {
   display: flex;
   flex: 0.5;
+  align-items: center;
   justify-content: flex-end;
   margin-right: 5%;
+  color: white;
+  font-size: 12px;
+}
+
+#read_suggest {
+  text-decoration: underline;
 }
 
 .onlineIcon {

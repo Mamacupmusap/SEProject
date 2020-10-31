@@ -1,0 +1,137 @@
+#haveOne {
+    color: #B19D85;
+}
+
+.Modalbody{
+    text-align:center;
+}
+
+#haveOnePopUp {
+    align-items: center;
+    width: 557px;
+    height: 277px;
+}
+
+#acceptThisPet {
+    margin-top: 25px;
+}
+
+.petWithPro {
+    display: flex;
+    flex-direction: row;
+    justify-content: center
+}
+
+#goPro {
+    width: 124px;
+    height: 36px;
+    margin-left: 45px;
+    font-size: 15px;
+    color: #9D9D9D;
+    background-color: white;
+    border: solid;
+    border-radius: 6px;
+    border-color: #9D9D9D;
+    border-width: 1px;
+    margin-top: 30px;
+}
+
+.accAllButt {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+
+.accButton1{
+    background-color: #61B292;
+    color: white;
+    border-radius: 45px;
+    width: 89px;
+    height: 38px;
+    margin-right: 27px;
+}
+
+.accButton2{
+    background-color: #C4C4C4;
+    color: white;
+    border-radius: 45px;
+    width: 89px;
+    height: 38px;
+    margin-bottom: 44px;
+    margin-left: 27px;
+}
+
+#yesAccPopUp {
+    display: flex;
+    align-items: center;
+    width: 557px;
+    height: 277px;
+}
+
+#checkAcc {
+    margin-top: 50px;
+}
+
+#accSuccessTxt{
+    font-size: 15px;
+}
+
+
+.Modalbody{
+    text-align:center;
+}
+
+.accButton1{
+    background-color: #61B292;
+    color: white;
+    border-radius: 45px;
+    width: 89px;
+    height: 38px;
+    margin-right: 27px;
+}
+
+/*POPUP AFTER YES*/
+#accYes{
+    display: none;
+}
+
+#accClose{
+    display: none;
+}
+
+
+#accYes:checked ~ .haveOnePopUp{
+    opacity: 0;
+    visibility: hidden;
+}
+#accYes:checked ~ .accYesPopUp{
+    opacity: 1;
+    visibility: visible;
+}
+
+
+.accYesPopUp{
+    position: absolute;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    opacity: 0;
+    visibility: hidden;
+    width: 438px;
+    height: 260px;
+    background: #ffffff;
+    border-radius: 3px;
+    transition: .3s ease-in;
+    box-shadow: 0 2px 12px rgba(0,0,0,.4);
+    padding-top: 2%;
+}
+
+#checkAcc {
+    margin-top: 50px;
+}
+
+#accSuccessTxt{
+    font-size: 15px;
+}

@@ -9,30 +9,55 @@ import DescriptionEdit from './EditDescription';
 import EditPassword from './EditPassword';
 import EditEmail from './EditEmail';
 import EditPhone from './EditPhone';
+import Navigation3 from '../../../Navigation/Navigation3'
+import Editimage from './EditImageProfile'
 
-const EditProfile=() =>{
+
+const EditProfile=(props:any) =>{
+    const [selectFile, setSelectedFiles] = useState(undefined);
+    const uploadProfile=()=>{
+
+    }
+    const userId = props.match.params.userId
+
     return(
-        <div className = 'Profile'>
-            <Link to='/donator/userprofile/prodescribtion'>  
-                <img id='profilePic' src={ProfilePic}></img>
-            </Link>
+        <div>
+            {localStorage.UserId==userId && 
+            <div>
+            <Navigation3/>
+            <div className = 'Profile'>
+            <img id='profilePic' src={ProfilePic}></img>
+            <Editimage/>
+            
             <img id='glasspic' src = {Glasspic}></img>
             <div className='block'>
-               <LeftBlockEdit/>
+               <LeftBlockEdit userId={userId}/>
                 <div className='topblock'>
                     <TabProfile/>
                 </div>
                 <div>
-                    <DescriptionEdit/>
-                    <EditPassword/>
-                    <EditEmail/>
-                    <EditPhone/>
-                    <Link to='/donator/userprofile/prodescribtion'>  
+                    <DescriptionEdit userId={userId}/>
+                    <EditPassword userId={userId}/>
+                    <EditEmail userId={userId}/>
+                    <EditPhone userId={userId}/>
+                    <Link to={`/donator/userprofile/${userId}`}>  
                         <button id='DoneButton'>Done</button>
                     </Link>
                 </div>
             </div>
+            </div>
+            </div>}
+
+            {localStorage.UserId!==userId && 
+            <div>
+                this is not for you!!!!!!!!!
+
+            </div>
+            }
+
+        
         </div>
+        
     )
 }
 export default EditProfile;

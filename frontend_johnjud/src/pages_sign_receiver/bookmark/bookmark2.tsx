@@ -8,12 +8,10 @@ const url = "https://images.unsplash.com/photo-1561037404-61cd46aa615b?ixlib=rb-
 
 const Bookmark = () => {
     const[obj,setObj] = useState<any[]>([]);
-    const petArr=() =>{
+    const petArr = () =>{
         return(
             bookmarkService.fetchbookmark()
-                .then(name => {
-                    setObj(name)
-                })
+                .then(name => {setObj(name)})
         )
     }
     useEffect(()=>{
