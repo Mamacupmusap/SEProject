@@ -5,7 +5,7 @@ import profileservice from './ProfileService';
 import Navigation from '../../Navigation/Navigation3';
 import {Petinfo} from './Interface';
 import { NavLink} from 'react-router-dom';
-import { Button, Container, Nav, Label} from 'reactstrap';
+import {Button, Container, Nav, Label, Col, FormGroup} from 'reactstrap';
 import { MyCarousel } from './components/MyCarousel';
 import {CertModal} from './components/CertModal';
 import greenRight from './components/img/check.png';
@@ -14,16 +14,12 @@ import check_y from './imgpic/check_y.png'
 import check_r from './imgpic/check_r.png'
 import check from './imgpic/check.png'
 
-
-//import changeStatusService from "./changeStatusService";
-
-type SubmitFormProb = {
-    SubmitCallback: () => void
-}
+import { Formik,Form, Field, ErrorMessage , FormikHelpers } from 'formik';
+import changeStatusService from "./changeStatusService";
 
 interface Value2{
-    codePet: string,
-    petId: string
+    petId: string,
+    token: string
 }
 
 export const Petprofile = (props:any) => {
@@ -37,8 +33,6 @@ export const Petprofile = (props:any) => {
         })
       )
     }
-
-
 
 localStorage.setItem('pet_id',petid)
 console.log(petid)
@@ -63,60 +57,85 @@ console.log(petid)
 
     const link_google = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=${PetAddress}`
 
-    const changeStatusAvaToPend = () => {
-        // fetch PetStatus จาก database มา check ถ้า PetStatus เป็น Pend ให้
-        // เปลี่ยนจากกำลังหาบ้านให้น้อง เป็น น้องกำลังไปบ้านใหม่
-        if (PetStatus === "Pend") {
-            return (
-                <div>น้องกำลังไปบ้านใหม่</div>
-            )
-        }
-    };
+    const isPend = () => {
+        console.log(PetStatus === 'pend')
+        //return PetStatus !== 'pend'
+        return PetStatus === 'pend'
+    }
+    useEffect(()=>{
+        isPend()
+    },[])
 
-    const changeStatusPendToDone = () => {
-        // ตรงนี้จะมีการ click ยืนยันโดยตัว donator อีกทีโดยกดที่ปุ่ม ได้บ้านใหม่แล้ว
-        // ให้ patch ข้อมูลไปที่ updateStatus แล้วจะคืนค่า petinfo อันใหม่มาให้ ให้เราเลือก petinfo.PetStatus มาใช้เปลี่ยน status
-        // เปลี่ยนจากน้องกำลังไปบ้านใหม่ เป็น น้องมีบ้านใหม่แล้ว
-        if (PetStatus === "Done") {
-            return (
-                <div>น้องมีบ้านใหม่แล้ว</div>
-            )
-        }
-    };
+    const isDone = () => {
+        console.log(PetStatus === 'done')
+        //return PetStatus !== 'done'
+        return PetStatus === 'done'
+    }
+    useEffect(()=>{
+        isDone()
+    },[])
 
-    const handleUpdate = () => [
-
-    ];
-
-    const hello = () => {
-      return (
-          <div>hello</div>
-      )
-    };
-    
+    const isAva = () => {
+        console.log(PetStatus === 'ava')
+        //return PetStatus !== 'ava'
+        return PetStatus === 'ava'
+    }
+    useEffect(()=>{
+        isAva()
+    },[])
 
     return(
     <div className='bodyPetpro'>
         < Navigation />
         <div className="HeaderPetpro">
         <Container>
-              <div className="status">
+            <div className="status">
+                {isAva() &&
+                (<div>
+                    <img src={check} alt='check'/><div className="status-text">กำลังหาบ้านให้น้อง</div>
+                </div>)}
 
-                <input type="checkbox" id="click2"/>
-                <Label for="click2" className="confirm-btn" hidden>พาไปบ้านใหม่</Label>
+                {isPend() &&
+                (<div>
+                    <img src={check} alt='check'/><div className="status-text">กำลังหาบ้านให้น้อง</div>
+                    <img src={check_y} alt='check_y'/><div className="status-text2">น้องกำลังไปบ้านใหม่</div>
+                    <Formik
+                        initialValues={{
+                            codePet: '',
+                            petId: petid,
+                            token: localStorage.Token
+                        }}
+                        onSubmit={async (
+                            values: Value2,
+                            { setSubmitting }: FormikHelpers<Value2>
+                        ) => {
+                            console.log(values.token)
+                            console.log(values.petId)
+                            const result = await changeStatusService.updateStatus(values);
+                            console.log(result);
+                            //alert(values.codePet);
+                            setSubmitting(false);
+                        }}
+                    >
+                        {({touched }) => (
+                            <Form>
+                                <Col>
+                                    <FormGroup>
+                                        <Button type='submit'>ได้บ้านใหม่แล้ว</Button>
+                                    </FormGroup>
+                                </Col>
+                            </Form>
+                        )}
+                    </Formik>
+                </div>)}
 
-              <div className="statusz"><img src={check} alt='check'/><div className="status-text">กำลังหาบ้านให้น้อง</div></div>
+                {isDone &&
+                (<div>
+                    <img src={check} alt='check'/><div className="status-text">กำลังหาบ้านให้น้อง</div>
+                    <img src={check_y} alt='check_y'/><div className="status-text2">น้องกำลังไปบ้านใหม่</div>
+                    <img src={check_r} alt='check_r'/><div className="status-text3">น้องมีบ้านใหม่แล้ว</div>
+                </div>)}
 
-              <input type="checkbox" id="click"/>
-              <Label for="click" className="click-me">พาไปบ้านใหม่</Label>
-                <div className="statuszz"><img src={check_y} alt='check_y'/><div className="status-text2">น้องกำลังไปบ้านใหม่</div></div>
-                <input type="checkbox" id="click3"/>
-                <Label for="click3" className="click-me3">ได้บ้านใหม่แล้ว</Label>
-
-                <div className="statuszzz">
-                  <img src={check_r} alt='check_r'/>
-                  <div className="status-text3">น้องมีบ้านใหม่แล้ว</div>
-                </div>
             </div>
         </Container>
           <div id="sideHehe">

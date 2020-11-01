@@ -38,7 +38,7 @@ const EditProfile=(props:any) =>{
             <div>
             <Navigation3/>
             <div className = 'Profile'>
-            <img id='profilePic' src={ProfilePic}></img>
+            <img id='profilePic' src={ProfilePic}/>
             <div className = "editimageProfile" style={{height:20}}>
              <Editimage/>
             </div>

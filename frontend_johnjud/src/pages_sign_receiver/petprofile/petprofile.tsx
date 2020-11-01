@@ -5,7 +5,7 @@ import profileservice from './ProfileService';
 import Navigation from '../../Navigation/Navigation';
 import {Petinfo} from './Interface';
 import { NavLink, useHistory} from 'react-router-dom';
-import { Button, Container} from 'reactstrap';
+import {Button,Container,FormGroup,Col,Label} from 'reactstrap';
 import { MyCarousel } from './components/MyCarousel';
 import { BookmarkModal } from './components/BookmarkModal';
 import {CertModal} from './components/CertModal';
@@ -13,6 +13,15 @@ import User from './components/img/User.png';
 import greenRight from './components/img/check.png';
 import mail from './components/img/mail.png';
 import userEvent from '@testing-library/user-event';
+
+import { Formik,Form, Field, ErrorMessage , FormikHelpers } from 'formik';
+import submitCodeService from "./submitCodeService";
+
+interface Value2{
+    codePet: string,
+    petId: string,
+    token: string
+}
 
 export const Petprofile = (props:any) => {
   const[obj,setObj] = useState<Petinfo>();
@@ -56,10 +65,10 @@ export const Petprofile = (props:any) => {
     profileservice.makeroomchat(a,localStorage.UserId,UserId)
     .then(a=>{
       if(a=="exist"){
-        history.push('http://localhost:2000/donator/chat')
+        //history.push('http://localhost:2000/donator/chat')
       }
       else{
-        history.push('http://localhost:2000/donator/chat')
+        //history.push('http://localhost:2000/donator/chat')
       }
     })
   }
@@ -68,19 +77,19 @@ export const Petprofile = (props:any) => {
         < Navigation />
         <div className="HeaderPetpro">
           <div id="petStatusPro">
-            <img src={greenRight} width="24" height="24"/><h1 id="petStatusPro2">กำลังหาบ้านให้น้อง</h1>
+            <img src={greenRight} width="24" height="24" alt={''}/><h1 id="petStatusPro2">กำลังหาบ้านให้น้อง</h1>
           </div> 
           <div className="toppppp">
             {PetName}
           </div>
-          <hr id="lineHeader"></hr> 
+          <hr id="lineHeader"/>
         </div>
         <div className="carousel">
             < MyCarousel />
         </div>
         <div className="informationn">
             Information
-            <hr id="lineHeader"></hr>
+            <hr id="lineHeader"/>
         </div>
         <Container id="infoText">
             <Container id="ColumnPro">
@@ -105,7 +114,7 @@ export const Petprofile = (props:any) => {
         <Container id="petBobo">
             <h1 id="TextDescrip">Description:</h1>
             <h5 id="ihatepine" style={{fontSize:16}}>{Describe}</h5>
-            <hr id="lineHeader2"></hr>
+            <hr id="lineHeader2"/>
         </Container>
         <Container>
           <h1 id='TextDescrip'>Post by:</h1>
@@ -116,22 +125,45 @@ export const Petprofile = (props:any) => {
                   <h1 id="PostUser"> Tiffany Young </h1>
                   <NavLink to='/contactprofile' id='PostProfile'> Profile</NavLink>
                 </div>
-                <NavLink to='/receiver/chat'><Button id='whatitsbrown' onClick={makeroom}><img src={mail} id="mailIcon1"/>contact</Button></NavLink>
-                <div>
-                  <form>
-                    <div id="enterPetCode">
-                      <label id="petCodeHehe">รหัสสำหรับนัดแลกเปลี่ยนสัตว์</label>
-                      <input
-                        /*type="email"*/
-                        id="inputPetCode"
-                        style={{marginLeft:10}}
-                      />
-                      <button type="submit" id="btnPetCode">
-                      Submit
-                      </button>
-                    </div>
-                  </form>
-                </div>
+                <NavLink to='/receiver/chat'><Button id='whatitsbrown' onClick={makeroom}><img src={mail} id="mailIcon1" alt={''}/>contact</Button></NavLink>
+                  <div>
+                      <Formik
+                          initialValues={{
+                              codePet: '',
+                              petId: petid,
+                              token: localStorage.Token
+                          }}
+                          onSubmit={async (
+                              values: Value2,
+                              { setSubmitting }: FormikHelpers<Value2>
+                          ) => {
+                              console.log(values.token)
+                              console.log(values.petId)
+                              console.log(values.codePet)
+                              const result = await submitCodeService.submitCode(values);
+                              console.log(result);
+                              //alert(values.codePet);
+                              setSubmitting(false);
+                          }}
+                      >
+                          {({touched }) => (
+                              <Form>
+                                  <Col>
+                                      <FormGroup>
+                                          <label id="petCodeHehe">รหัสสำหรับนัดแลกเปลี่ยนสัตว์</label>
+                                          <Field name="codePet"
+                                                 type="text"
+                                                 id="codePet"
+                                                 placeholder="codePet"
+                                                 style={{marginLeft:10}}/>
+                                          <ErrorMessage component="div" name="codePet" className="invalid-feedback" />
+                                          <button type="submit" id="btnPetCode">Submit</button>
+                                      </FormGroup>
+                                  </Col>
+                              </Form>
+                          )}
+                      </Formik>
+                  </div>
               </div>
             </div>
         </Container>
