@@ -6,6 +6,9 @@ import { Container } from 'reactstrap';
 import Navigation2 from '../../Navigation/Navigation2';
 
 const Signup3 = () =>{ 
+  localStorage.removeItem("SignupInfo");
+  localStorage.removeItem("keyinfo");
+  localStorage.removeItem("id");
   return(
     <div>
       <Navigation2/>

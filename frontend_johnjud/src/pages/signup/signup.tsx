@@ -10,6 +10,7 @@ import { Container, FormGroup,Label,Button, Col}  from 'reactstrap';
 import jjicon from './component/logojj.png'
 import './signup.css'
 import Navigation2 from '../../Navigation/Navigation2';
+import Messages from '../../pages_sign_donator/chat/components/Messages/Messages';
 
 
 interface Value2{
@@ -82,6 +83,7 @@ const Signup= () =>{
                 alert(res2.message)
             }
 
+
             values.id = res2.id;
             console.log(values.id);
             console.log(sendInfo)
@@ -104,6 +106,7 @@ const Signup= () =>{
                        id="email" 
                        placeholder="email"
                        className="inp_text"
+                       required
                        />
               </FormGroup>
             </Col>
@@ -114,7 +117,10 @@ const Signup= () =>{
                        type="text" 
                        id="username"
                        className="inp_text" 
-                       placeholder="username"/>
+                       placeholder="username"
+                       required
+                       />
+              <ErrorMessage component="div" name="username" className="invalid-feedback" />
             </FormGroup>
           </Col>
          <Col>
@@ -124,7 +130,10 @@ const Signup= () =>{
                        type="password" 
                        id="password" 
                        className="inp_text"
-                       placeholder="password"/>
+                       placeholder="password"
+                       required
+                       />
+              <ErrorMessage component="div" name="password" className="invalid-feedback" />
             </FormGroup>
           </Col>
 
@@ -135,7 +144,10 @@ const Signup= () =>{
                        type="text" 
                        id="Name" 
                        className="inp_text"
-                       placeholder="name"/>
+                       placeholder="name"
+                       required
+                       />
+              <ErrorMessage component="div" name="FirstName" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <Col>
@@ -145,7 +157,10 @@ const Signup= () =>{
                        type="text" 
                        id="Surname"
                        className="inp_text" 
-                       placeholder="surname"/>
+                       placeholder="surname"
+                       required
+                       />
+              <ErrorMessage component="div" name="LastName" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <Col>
@@ -155,7 +170,10 @@ const Signup= () =>{
                        type="tel" 
                        id="phone"
                        className="inp_text" 
-                       placeholder="phone number"/>
+                       placeholder="phone number"
+                       required
+                       />
+              <ErrorMessage component="div" name="PhoneNo" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <Col>
@@ -165,6 +183,7 @@ const Signup= () =>{
                        type="date" 
                        className="inp_text1" 
                        id="Date" 
+                       required
                        />
             </FormGroup>
           </Col>
@@ -177,6 +196,7 @@ const Signup= () =>{
                        type="radio" 
                        id="gender"
                        value='male' 
+                       required
                   />
                   <label className="textgender">Male</label>
                 </div>
@@ -206,7 +226,9 @@ const Signup= () =>{
                        type="text" 
                        id="Address" 
                        className="inp_text"
-                       placeholder='address'/>
+                       placeholder='address'
+                       required
+                       />
             </FormGroup>
           </Col>  
           <div id="coco">

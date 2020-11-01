@@ -12,7 +12,7 @@ const Article = () => {
         <div>
             <img src={ArticleBG} alt="ArticleBG" width="100%"/>
         </div><br/>
-        <input type="text" name="search" placeholder="Search Article" className="search_article"/><br/><br/>
+        
         <NavLink to='/article1'>
           <div className="article-alert">
               <p className="article-link-text">How to take a good care of your kitten </p>

@@ -55,22 +55,7 @@ const Home = () => {
                     </div>
 
                     <Container id="middle">
-                        <CardDeck>
-                            <Card className="card" style={{backgroundColor: '#8D7966', color: 'white'}}>
-                                <CardImg src={pet7} alt=""/>
-                                <CardBody className="cardBody">
-                                    <CardTitle className="cardTitle">PetName</CardTitle>
-                                </CardBody>
-                            </Card>
-                            <Card className="card" style={{backgroundColor: '#8D7966', color: 'white'}}>
-                                <CardImg src={pet8} alt=""/>
-                                <CardBody className="cardBody">
-                                    <NavLink to='/donator/petprofile' style={{color: 'white'}}>
-                                        <CardTitle className="cardTitle">PetName</CardTitle>
-                                    </NavLink>
-                                </CardBody>
-                            </Card>
-                        </CardDeck>
+                    
                         {pet.map((value) => {
                             return (
                                 <Card className="card" style={{backgroundColor: '#8D7966', color: 'white'}} key={value}>

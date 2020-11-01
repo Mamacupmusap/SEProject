@@ -14,8 +14,7 @@ import signin2 from './../pages/signin/signin2';
 import signup from '../pages/signup/signup';
 import signup2 from '../pages/signup/signup2';
 import signup3 from '../pages/signup/signup3';
-import signup4 from '../pages/signup/signup4';
-import signup5 from '../pages/signup/signup5';
+
 
 import article1 from '../pages/article/article1'
 import article2 from '../pages/article/article2'
@@ -77,8 +76,7 @@ export default () => (
     <Route exact path="/signup" component={signup} />
     <Route exact path="/signup2" component={signup2} />
     <Route exact path="/signup3" component={signup3} />
-    <Route exact path="/signup4" component={signup4} />
-    <Route exact path="/signup5" component={signup5} />
+
 
     <Route path="/article1" component={article1}/>
     <Route path="/article2" component={article2}/>

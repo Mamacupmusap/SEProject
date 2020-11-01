@@ -38,10 +38,7 @@ const Home = () => {
       <img src={head_dog} id='head_dog' alt=""/>
       <div className="urgh">
         <div id="filterAll">
-            <div className="filter">
-              <input type="checkbox"/>
-              <label>Near by you</label>
-            </div>
+            
             <div className="filter">
               <p>Type</p>
               <input type="checkbox"/>
@@ -53,17 +50,7 @@ const Home = () => {
               <input type="checkbox"/>
               <label>Others</label>
             </div>
-            <div className="filter">
-              <p>Weight</p>
-              <input type="checkbox"/>
-              <label>less than 5kg</label>
-              <br/>
-              <input type="checkbox"/>
-              <label>5-10kg</label>
-              <br/>
-              <input type="checkbox"/>
-              <label>more than 10kg</label>
-            </div>
+            
             <div className="filter">
               <p>Height</p>
               <input type="checkbox"/>
@@ -75,72 +62,9 @@ const Home = () => {
               <input type="checkbox"/>
               <label>more than 50cm</label>
             </div>
-            <div className="filter">
-              <p>Age</p>
-              <input type="checkbox"/>
-              <label>less than a year</label>
-              <br/>
-              <input type="checkbox"/>
-              <label>1-5years</label>
-              <br/>
-              <input type="checkbox"/>
-              <label>more than 5 years</label>
-            </div>
+            
           </div>
         <Container id="middle">
-
-            <Card className="card">
-              <CardImg src={pet1} alt=""/>
-              <CardBody className="cardBody">
-                <CardTitle className="cardTitle">PetName</CardTitle>
-              </CardBody>
-            </Card>
-            <Card className="card">
-              <CardImg src={pet2} alt=""/>
-              <CardBody className="cardBody">
-                <CardTitle className="cardTitle">PetName</CardTitle>
-              </CardBody>
-            </Card>
-            <Card className="card">
-              <CardImg src={pet3} alt=""/>
-              <CardBody className="cardBody">
-                <CardTitle className="cardTitle">PetName</CardTitle>
-              </CardBody>
-            </Card>
-            <Card className="card">
-              <CardImg src={pet4} alt=""/>
-              <CardBody className="cardBody">
-                <CardTitle className="cardTitle">PetName</CardTitle>
-              </CardBody>
-            </Card>
-
-
-            <Card className="card">
-              <CardImg src={pet5} alt=""/>
-              <CardBody className="cardBody">
-                <CardTitle className="cardTitle">PetName</CardTitle>
-              </CardBody>
-            </Card>
-            <Card className="card">
-              <CardImg src={pet6} alt=""/>
-              <CardBody className="cardBody">
-                <CardTitle className="cardTitle">PetName</CardTitle>
-              </CardBody>
-            </Card>
-            <Card className="card">
-              <CardImg src={pet7} alt=""/>
-              <CardBody className="cardBody">
-                <CardTitle className="cardTitle">PetName</CardTitle>
-              </CardBody>
-            </Card>
-            <Card className="card">
-              <CardImg src={pet8} alt="" />
-              <CardBody className="cardBody">
-                <NavLink to='/petprofile'>
-                <CardTitle className="cardTitle">Yoda</CardTitle>
-                </NavLink>
-              </CardBody>
-            </Card>
           {allPet.map((value) => {
             return (
                 <Card className="card">

@@ -12,8 +12,7 @@ import signin2 from './pages/signin/signin2';
 import signup from './pages/signup/signup';
 import signup2 from './pages/signup/signup2';
 import signup3 from './pages/signup/signup3';
-import signup4 from './pages/signup/signup4';
-import signup5 from './pages/signup/signup5';
+
 
 
 import article1 from './pages/article/article1'
@@ -84,8 +83,7 @@ class App extends Component{
              <Route path="/signup" component={signup}/> 
              <Route path="/signup2" component={signup2}/> 
              <Route path="/signup3" component={signup3}/> 
-             <Route path="/signup4" component={signup4} />
-             <Route path="/signup5" component={signup5}/>
+
 
             
              <Route path="/article1" component={article1}/>
