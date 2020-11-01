@@ -61,6 +61,16 @@ import ProChangeEmail from './pages_sign_donator/userprofile/EditProfile/ChangeE
 import ProChangePhone from './pages_sign_donator/userprofile/EditProfile/ChangePhone';
 import ProfileOTP from './pages_sign_donator/userprofile/EditProfile/ProfileOTP'
 
+import ProDescribs from'./pages_sign_receiver/userprofile/Allprofile/ProDescrib';
+import ProAdops from './pages_sign_receiver/userprofile/Allprofile/ProAdop';
+import ProRegiss from './pages_sign_receiver/userprofile/Allprofile/ProRegis';
+import ProDonates from './pages_sign_receiver/userprofile/Allprofile/ProDonate';
+import EditProfiles from './pages_sign_receiver/userprofile/EditProfile/EditProfile';
+import ProChangePaswords from './pages_sign_receiver/userprofile/EditProfile/ChangePassword';
+import ProChangeEmails from './pages_sign_receiver/userprofile/EditProfile/ChangeEmail';
+import ProChangePhones from './pages_sign_receiver/userprofile/EditProfile/ChangePhone';
+import ProfileOTPs from './pages_sign_receiver/userprofile/EditProfile/ProfileOTP'
+
 //import AuthenService from "./pages/signin/AuthenService";
 
 class App extends Component{
@@ -105,14 +115,15 @@ class App extends Component{
             <Route path="/receiver/bookmark" component={Bookmark}/>
             <Route path="/receiver/petprofile/:petid" component={petprofile_receiver}/>
 
-            <Route path="/receiver/userprofile/editprofile/changepassword" component={ProChangePasword}/>
-            <Route path="/receiver/userprofile/editprofile/changeemail" component={ProChangeEmail}/>
-            <Route path="/receiver/userprofile/editprofile/changephone" component={ProChangePhone}/>
-            <Route path="/receiver/userprofile/proadoption" component={ProAdop}/>
-            <Route path="/receiver/userprofile/proregister" component={ProRegis}/>
-            <Route path="/receiver/userprofile/prodonation" component={ProDonate}/>
-            <Route path="/receiver/userprofile/editprofile" component={EditProfile}/>
-            <Route path="/receiver/userprofile" component={ProDescrib}/>
+            <Route path="/donator/userprofile/:userId/editprofile/changephone/OTP" component={ProfileOTPs}/>
+            <Route path="/receiver/userprofile/:userId/editprofile/changepassword" component={ProChangePaswords}/>
+            <Route path="/receiver/userprofile/:userId/editprofile/changeemail" component={ProChangeEmails}/>
+            <Route path="/receiver/userprofile/:userId/editprofile/changephone" component={ProChangePhones}/>
+            <Route path="/receiver/userprofile/:userId/proadoption" component={ProAdops}/>
+            <Route path="/receiver/userprofile/:userId/proregister" component={ProRegiss}/>
+            <Route path="/receiver/userprofile/:userId/prodonation" component={ProDonates}/>
+            <Route path="/receiver/userprofile/:userId/editprofile" component={EditProfiles}/>
+            <Route path="/receiver/userprofile/:userId" component={ProDescribs}/>
 
 
 

@@ -1,288 +1,254 @@
-import React,{ Component, useEffect, useState } from 'react';
+import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
-import {Petinfo} from './Interface';
-import { NavLink } from 'react-router-dom';
-import { Container, FormGroup,Label, Col}  from 'reactstrap';
-import { Formik,Form, Field, ErrorMessage, FormikHelpers } from 'formik'
-import verified from './imgpic/verified.png'
-import './petprofile1.css'
+import { NavLink } from "react-router-dom";
+import { Formik,Form, Field} from 'formik'
+import {Persist} from 'formik-persist'
+import { useHistory } from "react-router-dom";
 
-import * as Yup from 'yup'
+import { Container, FormGroup,Label, Col, Button}  from 'reactstrap';
+import './petprofile1.css'
 import Navigation3 from '../../Navigation/Navigation3'
 
-type PetinfoProps = {
-  onNewPetProfileCreate?: (newPetinfo:Petinfo) => void,
-};
-const AddPetProfile = (props: PetinfoProps) => {
-  const [newPetName, setnewPetName] = useState<string>();
-  const [newPetBreed, setnewPetBreed] = useState<string>();
-  const [newPetGender, setnewPetGender] = useState<string>();
-  const [newType, setnewType] = useState<string>();
-  const [newPetStatus, setnewPetStatus] = useState<string>();
-  const [newPetLength, setnewPetLength] = useState<number>();
-  const [newPetHeight, setnewPetHeight] = useState<number>();
 
-const update=() =>{
-  const newPetProfile = {
-    PetName: newPetName,
-    PetBreed: newPetBreed,
-    PetGender: newPetGender,
-    type: newType,
-    PetStatus: newPetStatus,
-    PetLength: newPetLength,
-    PetHeight: newPetHeight,
-    
-    };
-    const result:any = fetch("http://localhost:2000/petinfo/",{
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json',
-        credentials: "same-origin",
-      },
-
-        body: JSON.stringify(newPetProfile)
-})
-      .then(res => res.json())
-      .then(SavePetinfo=> {
-        if (props.onNewPetProfileCreate != undefined) {
-            props.onNewPetProfileCreate(SavePetinfo);}
-      console.log(result);
-            if(result.accessToken) {
-             localStorage.setItem("Token", result.accessToken)
-             return result
-    }
-})    
-}
-
-const PetinfoSchema = Yup.object().shape({
-  petName: Yup.string()
-    .required('Required'),
-  petType: Yup.string()
-    .required('Required'),
-  petGender: Yup.string()
-    .required('Required'),
-  petWeight: Yup.string(),
-  petSize: Yup.string(),
-  petColor: Yup.string(),
-  petBreed: Yup.string(),
-  Location : Yup.string()
-    .required('Required'),
-  Description: Yup.string(),
-});
-//
 interface Value2{
-  petName: string;
-  petpic: string;
-  petType: string;
-  petGender: string;
-  petWeight: string;
-  petSize: string;
-  petColor: string;
-  petBreed: string;
-  petcerti: string;
-  Location: string;
-  Description: string;
+  petid: string;
+  PetName: string;
+  PetBreed: string;
+  PetGender: string;
+  Type: string;
+  PetPicURL: string;
+  PetStatus: string;
+  PetLength: string;
+  PetHeight: string;
+  PetCerURL: string;
+  TimeStampUpdate: string;
+  UserId: string;
+  TimeUpdate : string;
+  Describe: string,
+  PetAddress : string;
 }
 
-const link_google = "https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q="+ {Location}
+
+//const link_google = "https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q="+ {Location}
+
+const Addpetprofile= () =>{
+  let history = useHistory();
+
+  const accessToken = localStorage.getItem('Token');
+  console.log(accessToken)
 
   return(
-    <div className="bodybongchu">
+    <div>
       <Navigation3/>
-      <Formik
-          initialValues={{
-            petName: '',
-            petpic: '',
-            petType: '',
-            petGender: '',
-            petWeight: '',
-            petSize: '',
-            petColor: '',
-            petBreed: '',
-            petcerti: '',
-            Location: '',
-            Description: ''
-          }}
-          onSubmit={(
-            values: Value2,
-            { setSubmitting }: FormikHelpers<Value2>
-          ) => {
-            setTimeout(() => {
-              alert(JSON.stringify(values, null, 2));
-              setSubmitting(false);
-            }, 500);
-          }}
-          validationSchema={PetinfoSchema}
-      >
+      <Container id='contain'>  
+        <div>
+        <Formik
+            initialValues={{
+              petid: '',
+              PetName: '',
+              PetBreed: '',
+              PetGender: '',
+              Type: '',
+              PetPicURL: '',
+              PetStatus: '',
+              PetLength: '',
+              PetHeight: '',
+              PetCerURL: '',
+              TimeStampUpdate: '',
+              UserId: '',
+              TimeUpdate : '',
+              Describe: '',
+              PetAddress : ''
 
-      {({ errors, touched }) => (
-    <Container className="container_editpet">
-      <Form>
-        <div className="information">
+          }}
+        
+          onSubmit={ async (values:Value2,actions) =>{
+            const sendInfoPet ={
+              petid: values.petid,
+              PetName: values.PetName,
+              PetBreed: values.PetBreed,
+              PetGender: values.PetGender,
+              Type: values.Type,
+              PetPicURL: values.PetPicURL,
+              PetStatus: values.PetStatus,
+              PetLength: values.PetLength,
+              PetHeight: values.PetHeight,
+              PetCerURL: values.PetCerURL,
+              TimeStampUpdate: values.TimeStampUpdate,
+              UserId: values.UserId,
+              TimeUpdate : values.TimeUpdate,
+              Describe: values.Describe,
+              PetAddress : values.PetAddress
+            }
+            
+
+            const res = await fetch('http://localhost:2000/petinfo/',{
+              method:'POST',
+              mode: 'cors',
+              headers:
+              {
+                'Content-Type': 'application/json',
+                'Authorization' : `Bearer ${accessToken}`
+              },
+              body: JSON.stringify(sendInfoPet)
+            })
+            
+            const res2 = await res.json();  
+            console.log(res2);
+            
+
+            if(res2.success==true){
+              actions.setSubmitting(false);
+              // delete key
+              localStorage.removeItem('AddpetInfo');
+              history.push('/donator/home')
+            }
+          }
+        }
+
+          render={props =>  
+          <Form>
+            <div className="information">
         <p className="headinfo">Information</p>
         <hr className="lineinfo"></hr>
         <div className="infopet">
           <Col>
             <FormGroup>
-              <Label for="petName" className="information">Pet's Name*:</Label>
-              <Field name="petName" 
+              <Label for="PetName" className="information">Pet's Name*:</Label>
+              <Field name="PetName" 
                        type="text" 
-                       id="petName" 
+                       id="PetName" 
                        placeholder="pet's name"
-                       className={`form-control ${touched.petName ? errors.petName ? 'is-invalid' : 'is-valid' : ''}`}
-                       value={newPetName} onChange={(e:any) => {setnewPetName(e.target.value);}}
+                       className="input_text1"
                        />
             </FormGroup>
           </Col>
 
           <Col>
             <FormGroup>
-              <Label for="petpic" className="information">Pet picture :</Label>
-              <Field name="petpic" 
+              <Label for="PetPicURL" className="information">Pet picture :</Label>
+              <Field name="PetPicURL" 
                        type="file" 
-                       id="petpic" 
+                       id="PetPicURL" 
                        />
             </FormGroup>
           </Col>
 
           <Col>
             <FormGroup>
-              <Label for="petType" className="information">Type* : </Label>
-                  <Field name="petType" 
-                       type="text" 
-                       id="Type"
-                       placeholder='type' 
-                  />        
-            </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup>
-              <Label for="petGender" className="information">Gender* :</Label>
-                  <Field name="petGender" 
+              <Label for="PetGender" className="information">Gender* :</Label>
+                  <Field name="PetGender" 
                        type="radio" 
                        id="Male"
                        value='Male' 
                   />        
                   <Label className="choice">Male</Label>
-                  <Field name="petGender" 
+                  <Field name="PetGender" 
                        type="radio" 
                        id="Female"
                        value='Female' 
                   />        
                   <Label className="choice">Female</Label>
-                  <ErrorMessage component="div" name="petGender" className="invalid-feedback" />
+                  
             </FormGroup>
           </Col>
     
           <Col>
             <FormGroup>
-              <Label for="petWeight" className="information">Weight :</Label>
-              <Field name="petWeight" 
+              <Label for="PetLength" className="information">Length :</Label>
+              <Field name="PetLength" 
                        type="text" 
-                       id="petWeight" 
-                       placeholder='weight'
+                       id="PetLength" 
+                       placeholder='length'
                        className="input_text1"
                        />
             </FormGroup>
           </Col>
           <Col>
             <FormGroup>
-              <Label for="petSize" className="information">Size :</Label>
-              <Field name="petSize" 
+              <Label for="PetHeight" className="information">Height :</Label>
+              <Field name="PetHeight" 
                        type="text" 
-                       id="petSize" 
-                       placeholder='size'
+                       id="PetHeight" 
+                       placeholder='height'
                        className="input_text1"/>
             </FormGroup>
           </Col>
+
           <Col>
             <FormGroup>
-              <Label for="petColor" className="information">Color :</Label>
-              <Field name="petColor" 
+              <Label for="PetBreed" className="information">Breed :</Label>
+              <Field name="PetBreed" 
                        type="text" 
-                       id="petColor" 
-                       placeholder='color'
-                       className="input_text1"/>
-            </FormGroup>
-          </Col>
-          <Col>
-            <FormGroup>
-              <Label for="petBreed" className="information">Breed :</Label>
-              <Field name="petBreed" 
-                       type="text" 
-                       id="petBreed" 
+                       id="PetBreed" 
                        placeholder='breed'
                        className="input_text1"
-                      
-                          onChange={(e:any) => {setnewPetBreed(e.target.value);}}
                        />
             </FormGroup>
           </Col>
-              
           <Col>
             <FormGroup>
-              <Label for="petcerti" className="information">Animal Health Certificate :</Label>
-              <Field name="petcerti" 
-                       type="file" 
-                       id="petcerti" 
-                       />
-            </FormGroup>
-          </Col>
-
-          <Col>
-            <FormGroup>
-              <Label for="Location" className="information">Location*:</Label><label id="location-please">please pin your delivery location on the map</label><p></p>
-              <Field name="Location" 
+              <Label for="Type" className="information">Type* : </Label>
+                  <Field name="Type" 
                        type="text" 
-                       id="Location" 
-                       placeholder='(location)'
-                       className={`form-control ${touched.Location ? errors.Location ? 'is-invalid' : 'is-valid' : ''}`}
+                       id="Type"
+                       placeholder='type' 
+                       className="input_text1"
+                  />        
+            </FormGroup>
+          </Col>   
+          <Col>
+            <FormGroup>
+              <Label for="PetCerURL" className="information">Animal Health Certificate :</Label>
+              <Field name="PetCerURL" 
+                       type="file" 
+                       id="PetCerURL" 
                        />
             </FormGroup>
           </Col>
 
-          
-          <iframe width="600" height="450" src={link_google}></iframe>
+          <Col>
+            <FormGroup>
+              <Label for="PetAddress" className="information">Location*:</Label><label id="location-please">please pin your delivery location on the map</label><p></p>
+              <Field name="PetAddress" 
+                       type="text" 
+                       id="PetAddress" 
+                       placeholder='(location)'
+                       className="input_text1"
+                       />
+            </FormGroup>
+          </Col>
         
           <Col>
             <FormGroup>
-              <Label for="Description" className="information">Description:</Label><p></p>
-              <Field name="Description" 
+              <Label for="Describe" className="information">Description:</Label><p></p>
+              <Field name="Describe" 
                        Type="text" 
-                       id="Location" 
+                       id="Describe" 
                        placeholder='Describe about your pet...'
                        className="input_text3"
-                       value={newPetStatus} onChange={(e:any) => {setnewPetStatus(e.target.value);}}
                        />
             </FormGroup>
           </Col>
-          <p></p>
 
-          <input type="checkbox" id="click22"/>
-          <Label for="click22" id="save" onClick={update}>Save</Label>
-          <div className="contentz">
-              <img src={verified} alt="verified" className="savesuc"></img>
-              <p className="saves">Save successfully</p>
-              <NavLink to='/donator/petprofile'>
-              <button type='button' id='btn-ok'>OK</button>
-              </NavLink>
-          </div>
-
-          <button type='button' id='cancel'>Cancel</button>
-
-          <br/><br/>
-          <button type='submit' value='submit' id='save' >Submit</button>
-          <br/><br/>
           
+          <Button id="save" type="submit" value='submit'>Save</Button>
 
+          <NavLink to='/donator/home'>
+            <Button type='button' id='cancel'>Cancel</Button>
+          </NavLink>
+          <br/><br/>
+          <br/>
         </div>
       </div>
-      </Form>
+          <Persist name='AddpetInfo'/>
+          </Form>
+          }
+         />
+        </div>
       </Container>
-      )}
-      </Formik>
     </div>
   )
 }
 
-
-export default AddPetProfile;
+export default Addpetprofile;

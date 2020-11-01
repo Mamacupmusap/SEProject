@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import profileservice from '../ProfileService';
 
 const EditImageProfile =() =>{
   const [image, setImage] = useState<any>();
@@ -7,11 +6,20 @@ const EditImageProfile =() =>{
   const handleUpload=() =>{
     const file = image
     console.log(image)
+    const profile_pic = new FormData()
+    profile_pic.append('image',file,'sss.jpg')
 
-    const profile_pic = {source: file}
-
+    // const data = {"key": "6a6fdcf54607966c3d037f0db246f7c1", 
+    // "image": profile_pic, 
+    // "name": "test", 
+    // "expiration": "15552000"};
+    
     console.log(profile_pic)
-    profileservice.updateProfile(profile_pic,localStorage.Token,localStorage.UserId)
+    fetch('https://api.imgbb.com/1/upload?key=6a6fdcf54607966c3d037f0db246f7c1',{
+      method:'POST',
+      body:profile_pic,
+      redirect: 'follow'
+    })
   }
 
 

@@ -36,7 +36,8 @@ const Navigation = () => {
     const userid = obj?.UserId;
     const adopuserid = obj?.AdopUserId;
     const checkcode = obj?.CheckCode;
-    
+    const userIdlocal = localStorage.UserId;
+
    return (
        <div>
          <Navbar className='Navbar'>
@@ -92,7 +93,7 @@ const Navigation = () => {
                      <img src={manIcon} alt='man' />
                   </DropdownToggle>
                   <DropdownMenu right className='dropmenu'>
-                     <NavLink to='/receiver/userprofile'>
+                     <NavLink to={`/receiver/userprofile/${userIdlocal}`}>
                         <DropdownItem>
                            profile
                         </DropdownItem>

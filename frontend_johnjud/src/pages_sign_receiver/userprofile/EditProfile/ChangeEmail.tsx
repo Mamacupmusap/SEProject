@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import '../Profile.css';
 import ProfileService from '../ProfileService';
 import profileservice from '../ProfileService';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ProfilePic from '../ProfilePic.png';
 import Glasspic from '../Glasspic.jpg';
 import {Userinfo} from '../Interface';
-import Navigation3 from '../../../Navigation/Navigation3'
+import Navigation3 from '../../../Navigation/Navigation'
 
 const ChangeEmail=(props:any) => {
     const[obj,setObj] = useState<Userinfo>();
@@ -29,14 +29,13 @@ const ChangeEmail=(props:any) => {
     const email = obj?.Email;
     const [Password, setPassword] = useState<string>('')
     const [newEmail, setNewEmail] = useState<string>('');
-    const history = useHistory();
+
     const update=() =>{
         ProfileService.updateemail(newEmail,localStorage.Token)
         .then(a=>{
-            console.log(a)
             if(a){
                 alert("Change Email Success!")
-                history.push(`/donator/userprofile/${userId}/editprofile`)
+                // history.push(`/donator/userprofile/${userId}/editprofile/changephone/OTP`)
             }
             else{
                 alert("Error")
@@ -51,9 +50,9 @@ const ChangeEmail=(props:any) => {
             <Navigation3/>
             <div className = 'ChangePage'>
             <Link to='/donator/userprofile'>  
-                <img id='profilePic' src={ProfilePic} alt={''}/>
+                <img id='profilePic' src={ProfilePic}></img>
             </Link>
-            <img id='glasspic' src = {Glasspic}/>
+            <img id='glasspic' src = {Glasspic}></img>
             <div className='BlockBehindProfilePic'>
                 <div className='profilename'>
                 <br/><br/>
@@ -62,7 +61,7 @@ const ChangeEmail=(props:any) => {
             </div>
             <div className='ChangeBlock'>
                 <span id='ChangeEmail'>New Email: </span>
-                <input id='InputChangeEmail' value={newEmail} onChange={(e) => {setNewEmail(e.target.value);}}/>
+                <input id='InputChangeEmail' value={newEmail} onChange={(e) => {setNewEmail(e.target.value);}}></input>
                 <br/><br/>
                 <button id='SubmitEmailButton' onClick={update}>Submit</button>
             </div>
