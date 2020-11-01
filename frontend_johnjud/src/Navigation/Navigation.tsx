@@ -71,14 +71,14 @@ const Navigation = () => {
                   {allPet.map((value) => {
                      
                      return (
-
-                        <div>     
-                           <h5 id="noti1">คุณได้ทำการนัดแลกเปลี่ยน {value.PetName} เรียบร้อยแล้ว</h5>
-                           
-                           <NavLink to="/receiver/petprofile/">
-                              <h5 id="noti2">ดูข้อมูล</h5>
-                           </NavLink>
-                        </div> 
+                        <div>
+                        {value.CheckCode ? 
+                           <h5 id="noti1">คุณได้ทำการนัดแลกเปลี่ยน {value.PetName} เรียบร้อยแล้ว
+                           <NavLink to="/receiver/petprofile/"><h5 id="noti2">ดูข้อมูล</h5></NavLink>
+                           </h5> 
+                           : null
+                        }
+                        </div>
                )
                })}
                </PopoverBody>

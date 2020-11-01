@@ -19,19 +19,18 @@ const Navigation = () => {
       AuthenService.logoutUser()
    }
    const[obj,setObj] = useState<Petinfo>();
-
-   const fetchpetinfo=() =>{
-      return(
-        NavigationService.fetchpetinfo()
-        .then(res => {
-          setObj(res)
-        })
-      )
-    }
-  
-    useEffect(()=>{
-      fetchpetinfo()
-    },[])
+   const[allPet,setAllPet] = useState<any[]>([]);
+   const petInfo=() =>{
+     return(
+      NavigationService.fetchAllPet()
+             .then(name => {
+               setAllPet(name)
+             })
+     )
+   }
+   useEffect(()=>{
+     petInfo().then()
+   },[])
     
     const petname = obj?.PetName;
     const userid = obj?.UserId;
@@ -67,12 +66,20 @@ const Navigation = () => {
             </div>
             <UncontrolledPopover trigger="legacy" placement="top" target="alert">
             <PopoverHeader>Notification</PopoverHeader>
-
-               <PopoverBody className="notiPop">
-                  <h5 id="noti1">คุณได้ทำการนัดแลกเปลี่ยน {petname} เรียบร้อยแล้ว</h5>
-                  <NavLink to="/donator/petprofile">
-                     <h5 id="noti2">ดูข้อมูล</h5>
-                  </NavLink>
+               <PopoverBody className="notiPop">                  
+                  {allPet.map((value) => {
+                     
+                     return (
+                        <div>
+                        {value.CheckCode ? 
+                           <h5 id="noti1">คุณได้ทำการนัดแลกเปลี่ยน {value.PetName} เรียบร้อยแล้ว
+                           <NavLink to="/receiver/petprofile/"><h5 id="noti2">ดูข้อมูล</h5></NavLink>
+                           </h5> 
+                           : null
+                        }
+                        </div>
+               )
+               })}
                </PopoverBody>
             </UncontrolledPopover>
 
