@@ -1,27 +1,32 @@
-import React from 'react';
+// import React,{ useState, useEffect } from 'react';
+// import profileservice from '../../ProfileService';
+// import {chat} from '../../Interface';
+// import {chatroom} from '../../Interface';
 
 
-const TextContainer = ({ users }) => (
-  <div className="textContainer">
-    {
-      users
-        ? (
-          <div>
-            <h1>People currently chatting:</h1>
-            <div className="activeContainer">
-              <h2>
-                {users.map(({name}) => (
-                  <div key={name} className="activeItem">
-                    {name}
-                  </div>
-                ))}
-              </h2>
-            </div>
-          </div>
-        )
-        : null
-    }
-  </div>
-);
 
-export default TextContainer;
+// const TextContainer = ({ users }) => (
+  
+//   <div className="textContainer">
+//     {
+//       users
+//         ? (
+//           <div>
+//             <h1>People currently chatting:</h1>
+//             <div className="activeContainer">
+//               <h2>
+//                 {users.map(({name}) => (
+//                   <div key={name} className="activeItem">
+//                     {name}
+//                   </div>
+//                 ))}
+//               </h2>
+//             </div>
+//           </div>
+//         )
+//         : null
+//     }
+//   </div>
+// );
+
+// export default TextContainer;

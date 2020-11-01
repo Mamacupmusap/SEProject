@@ -77,3 +77,34 @@
     }
   }
   
+  .form {
+    display: flex;
+    border-bottom-right-radius: 8px;
+    background-color: white;
+    border-top: 1px solid #c4c4c4;
+    height: 15%;
+  }
+  
+  .input {
+    padding: 5%;
+    width: 80%;
+    font-size: 14px;
+    height: 15%;
+    border: 0px;
+  }
+  
+  input:focus, textarea:focus, select:focus{
+    outline: none;
+  }
+  
+  .sendButton {
+    color: #fff !important;
+    text-transform: uppercase;
+    text-decoration: none;
+    background:#8d7966;
+    padding: 20px;
+    display: inline-block;
+    border: none;
+    width: 20%;
+    border-bottom-right-radius: 8px;
+  }

@@ -1,8 +1,9 @@
 import React from 'react';
-
 import './Input.css';
 
-const Input = ({ setMessage, sendMessage, message }) => (
+const Input = ( setMessage:any, sendMessage:any, message:any ) => {
+  //const[setMessage,sendMessage, message] = useState<any[]>([]);
+  return(
   <form className="form">
     <input
       className="input"
@@ -14,6 +15,6 @@ const Input = ({ setMessage, sendMessage, message }) => (
     />
     <button className="sendButton" onClick={e => sendMessage(e)}>Send</button>
   </form>
-)
+)}
 
 export default Input;

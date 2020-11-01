@@ -14,7 +14,6 @@ import signup2 from './pages/signup/signup2';
 import signup3 from './pages/signup/signup3';
 
 
-
 import article1 from './pages/article/article1'
 import article2 from './pages/article/article2'
 import article3 from './pages/article/article3'
@@ -29,7 +28,7 @@ import article1_receiver from './pages_sign_receiver/article/article1'
 import article2_receiver from './pages_sign_receiver/article/article2'
 import article3_receiver from './pages_sign_receiver/article/article3'
 
-import chat_receiver from './pages_sign_receiver/chat/components/Chat/Chat';
+import chat_receiver from './pages_sign_receiver/chat/chatroom';
 import suggestion_receiver from './pages_sign_receiver/chat/suggest';
 //import userpro_receiver from './pages_sign_receiver/userprofile/userprofile1'
 //import bookmark_receiver from './pages_sign_receiver/bookmark/bookmark';
@@ -46,6 +45,7 @@ import article1_donator from './pages_sign_donator/article/article1'
 import article2_donator from './pages_sign_donator/article/article2'
 import article3_donator from './pages_sign_donator/article/article3'
 
+//import chat_donator from './pages_sign_donator/chat/components/Chat/Chat';
 import chat_donator from './pages_sign_donator/chat/chatroom';
 import suggestion_donator from './pages_sign_donator/chat/suggest';
 import petprofile_donator from './pages_sign_donator/petprofile/petprofile';
@@ -111,7 +111,7 @@ class App extends Component{
              <Route path="/receiver/article2" component={article2_receiver}/>
              <Route path="/receiver/article3" component={article3_receiver}/>
 
-            <Route path="/receiver/chat" component={chat_receiver}/>
+            <Route path="/receiver/chat/:roomId" component={chat_receiver}/>
             <Route path="/receiver/suggestion" component={suggestion_receiver}/>
             <Route path="/receiver/bookmark" component={Bookmark}/>
             <Route path="/receiver/petprofile/:petid" component={petprofile_receiver}/>
@@ -126,8 +126,6 @@ class App extends Component{
             <Route path="/receiver/userprofile/:userId/editprofile" component={EditProfiles}/>
             <Route path="/receiver/userprofile/:userId" component={ProDescribs}/>
 
-
-
             <Route path="/donator/home" component={home_donator}/>
             <Route path="/donator/article" component={article_donator}/>
             <Route path="/donator/aboutUS" component={aboutUS_donator}/>
@@ -135,8 +133,8 @@ class App extends Component{
             <Route path="/donator/article1" component={article1_donator}/>
             <Route path="/donator/article2" component={article2_donator}/>
             <Route path="/donator/article3" component={article3_donator}/>
-
-            <Route path="/donator/chat" component={chat_donator}/>
+            
+            <Route path="/donator/chat/:roomId" component={chat_donator}/>
             <Route path="/donator/suggestion" component={suggestion_donator}/>
             <Route path="/donator/petprofile/:petid" component={petprofile_donator}/>
             <Route path="/donator/petprofile1" component={petprofile1_donator}/>
