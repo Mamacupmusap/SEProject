@@ -1,5 +1,5 @@
 //Navbar
-import React from 'react';
+import React ,{ useState, useEffect } from 'react';
 import {Navbar,Button,Col, UncontrolledDropdown , DropdownToggle,DropdownMenu,DropdownItem
       ,UncontrolledPopover,PopoverHeader, PopoverBody} from 'reactstrap';
 import { NavLink} from 'react-router-dom';
@@ -9,8 +9,33 @@ import alertIcon from './img/alert.png';
 import manIcon from './img/man.png';
 import manIcon2 from './img/man_white.png';
 import JJicon from './img/newlogo02.png';
+import {Petinfo} from './Interface';
+import NavigationService from './NavigationService'
+import AuthenService from "../pages/signin/AuthenService";
 
 const Navigation = () => {   
+   const haddlelogout = () => {
+      AuthenService.logoutUser()
+   }
+   const[obj,setObj] = useState<Petinfo>();
+   const[allPet,setAllPet] = useState<any[]>([]);
+   const petInfo=() =>{
+     return(
+      NavigationService.fetchAllPet()
+             .then(name => {
+               setAllPet(name)
+             })
+     )
+   }
+   useEffect(()=>{
+     petInfo().then()
+   },[])
+    
+    const petname = obj?.PetName;
+    const userid = obj?.UserId;
+    const adopuserid = obj?.AdopUserId;
+    const checkcode = obj?.CheckCode;
+    
    return (
        <div>
          <Navbar className='Navbar'>
@@ -41,12 +66,22 @@ const Navigation = () => {
             </div>
             <UncontrolledPopover trigger="legacy" placement="top" target="alert">
             <PopoverHeader>Notification</PopoverHeader>
-               <PopoverBody className="notiPop">
-                  <h5 id="noti1">คุณได้ทำการนัดแลกเปลี่ยน PetName เรียบร้อยแล้ว</h5>
-                  <NavLink to="/receiver/petprofile">
-                     <h5 id="noti2">ดูข้อมูล</h5>
-                  </NavLink>
+               <PopoverBody className="notiPop">                  
+                  {allPet.map((value) => {
+                     
+                     return (
+
+                        <div>     
+                           <h5 id="noti1">คุณได้ทำการนัดแลกเปลี่ยน {value.PetName} เรียบร้อยแล้ว</h5>
+                           
+                           <NavLink to="/receiver/petprofile/">
+                              <h5 id="noti2">ดูข้อมูล</h5>
+                           </NavLink>
+                        </div> 
+               )
+               })}
                </PopoverBody>
+            
             </UncontrolledPopover>
 
             <div>

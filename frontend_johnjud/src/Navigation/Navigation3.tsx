@@ -1,5 +1,5 @@
 //Navbar
-import React from 'react';
+import React,{ useState, useEffect } from 'react';
 import {Navbar,Button,Col, UncontrolledDropdown , DropdownToggle,DropdownMenu,DropdownItem
       ,UncontrolledPopover,PopoverHeader, PopoverBody} from 'reactstrap';
 import { NavLink} from 'react-router-dom';
@@ -9,6 +9,8 @@ import alertIcon from './img/alert_white.png';
 import manIcon from './img/man_white_logo.png';
 import manIcon2 from './img/man_white.png';
 import JJicon from './img/JohnJud_white.png';
+import {Petinfo} from './Interface';
+import NavigationService from './NavigationService'
 
 import AuthenService from "../pages/signin/AuthenService";
 
@@ -16,6 +18,24 @@ const Navigation = () => {
    const haddlelogout = () => {
       AuthenService.logoutUser()
    }
+   const[obj,setObj] = useState<Petinfo>();
+
+   const fetchpetinfo=() =>{
+      return(
+        NavigationService.fetchpetinfo()
+        .then(res => {
+          setObj(res)
+        })
+      )
+    }
+  
+    useEffect(()=>{
+      fetchpetinfo()
+    },[])
+    
+    const petname = obj?.PetName;
+    const userid = obj?.UserId;
+    const adopuserid = obj?.AdopUserId;
 
    return (
        <div>
@@ -47,8 +67,9 @@ const Navigation = () => {
             </div>
             <UncontrolledPopover trigger="legacy" placement="top" target="alert">
             <PopoverHeader>Notification</PopoverHeader>
+
                <PopoverBody className="notiPop">
-                  <h5 id="noti1">คุณได้ทำการนัดแลกเปลี่ยน PetName เรียบร้อยแล้ว</h5>
+                  <h5 id="noti1">คุณได้ทำการนัดแลกเปลี่ยน {petname} เรียบร้อยแล้ว</h5>
                   <NavLink to="/donator/petprofile">
                      <h5 id="noti2">ดูข้อมูล</h5>
                   </NavLink>
