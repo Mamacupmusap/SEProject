@@ -9,7 +9,7 @@ const InfoBar = ({ room }) => (
       <h3 id="roomName">John Bush{room}</h3>
     </div>
     <div className="rightInnerContainer">
-      <NavLink to='/donator/suggestion' style={{color:'white'}} id="read_suggest">คำแนะนำเพิ่มเติม</NavLink>
+      <NavLink to='/receiver/suggestion' style={{color:'white'}} id="read_suggest">คำแนะนำเพิ่มเติม</NavLink>
     </div>
   </div>
 );

@@ -23,15 +23,16 @@ const Bookmark = () => {
     const petUrl = obj.map(item=>(<span>{item.id}</span>))
     */
     return (
-        <html>
+        <div>
         <Navigation/>
-        <head>
+        <div className='hohohehehah'>
+        <div>
             <title>Bookmark</title>
             <style>
                 @import url('https://fonts.googleapis.com/css2?family=Prompt&display=swap');
             </style>
-        </head>
-        <body className="bookmark-body">
+        </div>
+        <div className="bookmark-body">
         <div className="bookmark-container">
             <div className="bookmark">
                 Bookmark
@@ -48,8 +49,9 @@ const Bookmark = () => {
                 })}
             </div>
         </div>
-        </body>
-        </html>
+        </div>
+        </div>
+        </div>
     )
 }
 

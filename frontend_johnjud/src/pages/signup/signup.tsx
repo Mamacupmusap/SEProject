@@ -209,11 +209,13 @@ const Signup= () =>{
                        placeholder='address'/>
             </FormGroup>
           </Col>  
-            
+          <div id="coco">
             <Button type="submit" value='submit' id='button_next'>Next<img src={next} alt=''/></Button>
+          </div>
             <div className='box_white'></div>
             <Persist name='SignupInfo'/>
-          </Form>}
+          </Form>
+          }
          />
         </div>
       </Container>

@@ -15,9 +15,9 @@
 #button_next{
     background-color: #61b292;
     text-align: center;
-    margin: auto;
-    margin-left: 10%;
+    margin-left: 35%;
 }
+
 
 .box_img{
     text-align: center;
@@ -133,6 +133,14 @@ label{
     padding: 10px;
     border-radius: 10px;
     font-size: 15px;
+}
+
+.form-control {
+    display: flex;
+    flex-direction: row;
+    width: 300px;
+    justify-content: space-around;
+    padding-left: 0px;
 }
 
 .col-lg-6{
