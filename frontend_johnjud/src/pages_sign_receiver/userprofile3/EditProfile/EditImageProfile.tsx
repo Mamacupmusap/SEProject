@@ -33,10 +33,11 @@ class Upload extends Component {
                 <form>
                     <div className="">
                         <input type="file" className="ChooseProfile_pic" 
-                        onChange={(e)=>this.handleFile(e)} />
+                        onChange={(e)=>this.handleFile(e)} style={{color:'white'}}/>
+                        <Button className='buttonUploadprofile' onClick={(e)=>this.handleUpload(e)}>Upload</Button>
                     </div>
                     <br />
-                    <Button className='buttonUploadprofile' onClick={(e)=>this.handleUpload(e)}>Upload</Button>
+                
                 </form>
             </div>
         );

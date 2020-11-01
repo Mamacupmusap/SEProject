@@ -145,10 +145,11 @@
 }
 .bold{
     font-weight: bold;
+    font-size: 14px;
 }
 .notbold{
     font-weight: normal;
-    font-size:17px;
+    font-size:14px;
 }
 .EditInformationBlock{
     z-index: 1;
@@ -456,8 +457,8 @@
     font-size: 16px;
     border-radius: 5px;
     position: relative;
-    left: 1050px;
-    top: 170px;
+    left: 1090px;
+    top: 100px;
 }
 .PetBlock{
     background-color: lightgrey;
@@ -493,7 +494,7 @@
 }
 .editimageProfile{
     position: absolute;
-    left:12%;
+    left:15%;
     top:52%;
     z-index: 3;
 }
@@ -501,24 +502,23 @@
   content: 'Select some files';
   display: inline-block;
   background: linear-gradient(top, #f9f9f9, #e3e3e3);
-  border: 1px solid #999;
   border-radius: 3px;
-  padding: 5px 8px;
+  padding: 0;
   outline: none;
   white-space: nowrap;
   -webkit-user-select: none;
   cursor: pointer;
-  text-shadow: 1px 1px #fff;
+  text-shadow: 1px 1px black;
   font-weight: 700;
   font-size: 10pt;
   background: -webkit-linear-gradient(top, #e3e3e3, #f9f9f9);
   border: 0;
   height: 0px;
-  
 }
+
 .buttonUploadprofile{
     position: absolute;
-    left:55%;
-    top:0%;
+    left:20%;
+    top:50px;
     z-index: 3;
 }
