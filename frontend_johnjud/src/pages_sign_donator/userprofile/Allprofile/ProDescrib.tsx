@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import '../Profile.css';
 import Glasspic from '../Glasspic.jpg';
-import ProfilePic from '../ProfilePic.png';
 import 'bootstrap/dist/css/bootstrap.css'
 import TabProfile from '../TabProfile';
 import { Link } from 'react-router-dom';
@@ -29,6 +28,8 @@ const Apps=(props:any) => {
   },[])
   
   const description = obj?.Description;
+  const ProfilePic = obj?.ImgURL;
+
   console.log('aaaaa')
   console.log(obj?.UserName)
 

@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import '../Profile.css';
 import Glasspic from '../Glasspic.jpg';
-import ProfilePic from '../ProfilePic.png';
 import 'bootstrap/dist/css/bootstrap.css'
 import TabProfile from '../TabProfile';
 import { Link } from 'react-router-dom';
@@ -14,6 +13,7 @@ import Navigation3 from '../../../Navigation/Navigation3'
 
 export const Apps=(props:any) => {
   const[obj,setObj] = useState<any[]>([]);
+  const [Objs,setObjs] = useState<Userinfo>();
   const userId = props.match.params.userId
 
   const fetchProfileInfo=() =>{
@@ -24,12 +24,22 @@ export const Apps=(props:any) => {
       })
     )
   }
+  const fetchProfileInfos=() =>{
+    return(
+      profileservice.fetchProfileInfo(userId)
+      .then(res => {
+        setObjs(res)
+      })
+    )
+  }
 
   useEffect(()=>{
     fetchProfileInfo()
+    fetchProfileInfos()
   },[])
 
   const petPro = obj.map(item=>(<span><PetBlock message = {item.PetName} img={item.petPicUrl} link={item._id} /></span>))
+  const ProfilePic = Objs?.ImgURL
 
   return(   
     <div>

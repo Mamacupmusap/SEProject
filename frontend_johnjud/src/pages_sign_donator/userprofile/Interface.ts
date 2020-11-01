@@ -1,6 +1,7 @@
 export interface Userinfo{
     id?:string;
     UserName?: string;
+    ImgURL?:string;
     FirstName?: string;
     LastName?: string; 
     Address?:string;
