@@ -9,7 +9,7 @@ import Profileservice from '../ProfileService'
 import PetBlock from './PetBlock';
 import profileservice from '../ProfileService';
 import {Userinfo} from '../Interface';
-import Navigation3 from '../../../Navigation/Navigation3'
+import Navigation3 from '../../../Navigation/Navigation'
 
 
 const Apps=(props:any) => {
@@ -20,7 +20,7 @@ const Apps=(props:any) => {
 
   const fetchProfileInfo=() =>{
     return(
-      profileservice.fetchadoption(userId)
+      profileservice.fetchadoption()
       .then(res => {
         setObj(res)
       })
@@ -41,9 +41,10 @@ const Apps=(props:any) => {
 
   const petPro = obj.map(item=>(<span><PetBlock message = {item.PetName} img={item.petPicUrl} link={item._id}/></span>))
   const ProfilePic = Objs?.ImgURL
-
   return(   
     <div>
+    
+    
     <div>
       <Navigation3/>
       <div className = 'Profile'>

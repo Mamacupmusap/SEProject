@@ -8,7 +8,7 @@ import LeftBlock from './LeftBlock';
 import { useEffect } from 'react';
 import profileservice from '../ProfileService'
 import {Userinfo} from '../Interface';
-import Navigation3 from '../../../Navigation/Navigation3'
+import Navigation3 from '../../../Navigation/Navigation'
 
 const Apps=(props:any) => {
   const[obj,setObj] = useState<Userinfo>();
@@ -30,8 +30,8 @@ const Apps=(props:any) => {
   const description = obj?.Description;
   const ProfilePic = obj?.ImgURL;
 
-  // console.log('aaaaa')
-  // console.log(obj?.UserName)
+  console.log('aaaaa')
+  console.log(obj?.UserName)
 
   return(   
     <div>

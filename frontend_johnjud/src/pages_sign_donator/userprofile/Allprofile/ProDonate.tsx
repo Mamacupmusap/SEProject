@@ -18,7 +18,7 @@ export const Apps=(props:any) => {
 
   const fetchProfileInfo=() =>{
     return(
-      profileservice.fetchdonation()
+      profileservice.fetchdonation(userId)
       .then(res => {
         setObj(res)
       })

@@ -54,13 +54,13 @@ const TapProfile = (props:any) => {
   return (
     <div>
         <div>
-            <Link to={`/donator/userprofile/${userId}/proadoption`}>
+            <Link to={`/receiver/userprofile/${userId}/proadoption`}>
                 <button id='ButtonPetAdop' >Pet Adoption<br/><br/> {countadop}</button>
             </Link>
-            <Link to={`/donator/userprofile/${userId}/proregister`} >
+            <Link to={`/receiver/userprofile/${userId}/proregister`} >
                 <button id='ButtonPetAdop' >Pet Registeration<br/><br/> {count} </button>
             </Link>
-            <Link to={`/donator/userprofile/${userId}/prodonation`} >
+            <Link to={`/receiver/userprofile/${userId}/prodonation`} >
                 <button id='ButtonPetAdop' >Pet Donation<br/><br/> {countdonate}</button>
             </Link>
         </div>

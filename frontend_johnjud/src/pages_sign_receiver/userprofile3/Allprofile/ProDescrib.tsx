@@ -8,7 +8,7 @@ import LeftBlock from './LeftBlock';
 import { useEffect } from 'react';
 import profileservice from '../ProfileService'
 import {Userinfo} from '../Interface';
-import Navigation3 from '../../../Navigation/Navigation3'
+import Navigation3 from '../../../Navigation/Navigation'
 
 const Apps=(props:any) => {
   const[obj,setObj] = useState<Userinfo>();
@@ -39,12 +39,12 @@ const Apps=(props:any) => {
     <div>
       <Navigation3/>
       <div className = 'Profile'>
-        <Link to={`/donator/userprofile/${userId}`}>  
+        <Link to={`/receiver/userprofile/${userId}`}>  
           <img id='profilePic' src={ProfilePic}></img>
         </Link>
 
         {userId == localStorage.UserId &&
-        <Link to={`/donator/userprofile/${userId}/editprofile`}>
+        <Link to={`/receiver/userprofile/${userId}/editprofile`}>
           <button className='EditProfile'>Edit Profile</button>
         </Link>
         }

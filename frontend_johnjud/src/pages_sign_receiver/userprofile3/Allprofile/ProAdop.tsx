@@ -9,7 +9,7 @@ import Profileservice from '../ProfileService'
 import PetBlock from './PetBlock';
 import profileservice from '../ProfileService';
 import {Userinfo} from '../Interface';
-import Navigation3 from '../../../Navigation/Navigation3'
+import Navigation3 from '../../../Navigation/Navigation'
 
 
 const Apps=(props:any) => {
@@ -48,12 +48,12 @@ const Apps=(props:any) => {
       <Navigation3/>
       <div className = 'Profile'>
       
-      <Link to={`/donator/userprofile/${userId}`}>  
+      <Link to={`/receiver/userprofile/${userId}`}>  
         <img id='profilePic' src={ProfilePic}></img>
       </Link>
       {userId == localStorage.UserId &&
       
-      <Link to={`/donator/userprofile/${userId}/editprofile`}>
+      <Link to={`/receiver/userprofile/${userId}/editprofile`}>
         <button className='EditProfile'>Edit Profile</button>
       </Link>
       }

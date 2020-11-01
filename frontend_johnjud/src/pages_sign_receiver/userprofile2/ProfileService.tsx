@@ -2,47 +2,33 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import {Userinfo} from './Interface';
 import {OTPinfo} from './EditProfile/Interface';
-import {petnum} from './EditProfile/interface3';
+import {phoneinfo} from './EditProfile/interface3';
 import {image} from './EditProfile/interface4';
+import { cpuUsage } from 'process';
 
 
 async function fetchProfileInfo(userId:string): Promise<Userinfo>{
+    console.log('aaaaaaaaaaaaaaaaaa')
+    console.log(userId)
     const res = await fetch(`http://localhost:2000/User/${userId}`);
     const name = await res.json();
     return name;
 }
 
-async function fetchadoption(userId:string): Promise<any[]>{
-    const res = await fetch(`http://localhost:2000/User/${userId}/getpetadoptdetail`);
+async function fetchadoption(): Promise<any[]>{
+    const res = await fetch('http://localhost:2000/userinfo/5f8174e7327a81094416d04f/petadoption');
     const name = await res.json();
     return name;
 }
 
-async function fetchadoptionnum(userId:string): Promise<number>{
-    const res = await fetch(`http://localhost:2000/User/${userId}/getpetadoptcount`);
+async function fetchregister(): Promise<any[]>{
+    const res = await fetch('http://localhost:2000/userinfo/5f8174e7327a81094416d04f/petregister');
     const name = await res.json();
     return name;
 }
 
-
-async function fetchregister(userId:string): Promise<any[]>{
-    const res = await fetch(`http://localhost:2000/User/${userId}/getpetregdetail`);
-    const name = await res.json();
-    return name;
-}
-async function fetchregisternum(userId:string): Promise<number>{
-    const res = await fetch(`http://localhost:2000/User/${userId}/getpetregcount`);
-    const name = await res.json();
-    return name;
-}
-
-async function fetchdonation(userId:string): Promise<any[]>{
-    const res = await fetch(`http://localhost:2000/User/${userId}/getpetdonateddetail`);
-    const name = await res.json();
-    return name;
-}
-async function fetchdonationnum(userId:string): Promise<number>{
-    const res = await fetch(`http://localhost:2000/User/${userId}/getpetdonatedcount`);
+async function fetchdonation(   ): Promise<any[]>{
+    const res = await fetch('http://localhost:2000/userinfo/5f8174e7327a81094416d04f/petdonation');
     const name = await res.json();
     return name;
 }
@@ -170,11 +156,8 @@ async function updateurlimage(display:string,deletes:string,userId:string,token:
 export default {
     fetchProfileInfo,
     fetchadoption,
-    fetchadoptionnum,
     fetchregister,
-    fetchregisternum,
     fetchdonation,
-    fetchdonationnum,   
     updateinfo,
     updatedescription,
     updateemail,

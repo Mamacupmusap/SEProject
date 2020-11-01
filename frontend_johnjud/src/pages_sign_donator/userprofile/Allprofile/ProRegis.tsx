@@ -16,15 +16,15 @@ const Apps=(props:any) => {
   const userId = props.match.params.userId
   const [Objs,setObjs] = useState<Userinfo>();
 
-
   const fetchProfileInfo=() =>{
     return(
-      profileservice.fetchregister()
+      profileservice.fetchregister(userId)
       .then(res => {
         setObj(res)
       })
     )
   }
+
   const fetchProfileInfos=() =>{
     return(
       profileservice.fetchProfileInfo(userId)

@@ -61,15 +61,15 @@ import ProChangeEmail from './pages_sign_donator/userprofile/EditProfile/ChangeE
 import ProChangePhone from './pages_sign_donator/userprofile/EditProfile/ChangePhone';
 import ProfileOTP from './pages_sign_donator/userprofile/EditProfile/ProfileOTP'
 
-import ProDescribs from'./pages_sign_receiver/userprofile/Allprofile/ProDescrib';
-import ProAdops from './pages_sign_receiver/userprofile/Allprofile/ProAdop';
-import ProRegiss from './pages_sign_receiver/userprofile/Allprofile/ProRegis';
-import ProDonates from './pages_sign_receiver/userprofile/Allprofile/ProDonate';
-import EditProfiles from './pages_sign_receiver/userprofile/EditProfile/EditProfile';
-import ProChangePaswords from './pages_sign_receiver/userprofile/EditProfile/ChangePassword';
-import ProChangeEmails from './pages_sign_receiver/userprofile/EditProfile/ChangeEmail';
-import ProChangePhones from './pages_sign_receiver/userprofile/EditProfile/ChangePhone';
-import ProfileOTPs from './pages_sign_receiver/userprofile/EditProfile/ProfileOTP'
+import ProDescribs from'./pages_sign_receiver/userprofile3/Allprofile/ProDescrib';
+import ProAdops from './pages_sign_receiver/userprofile3/Allprofile/ProAdop';
+import ProRegiss from './pages_sign_receiver/userprofile3/Allprofile/ProRegis';
+import ProDonates from './pages_sign_receiver/userprofile3/Allprofile/ProDonate';
+import EditProfiles from './pages_sign_receiver/userprofile3/EditProfile/EditProfile';
+import ProChangePaswords from './pages_sign_receiver/userprofile3/EditProfile/ChangePassword';
+import ProChangeEmails from './pages_sign_receiver/userprofile3/EditProfile/ChangeEmail';
+import ProChangePhones from './pages_sign_receiver/userprofile3/EditProfile/ChangePhone';
+import ProfileOTPs from './pages_sign_receiver/userprofile3/EditProfile/ProfileOTP'
 
 //import AuthenService from "./pages/signin/AuthenService";
 
