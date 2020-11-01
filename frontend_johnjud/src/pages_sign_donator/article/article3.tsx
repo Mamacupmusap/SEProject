@@ -1,5 +1,5 @@
 import React from "react";
-import './article3.css'
+import './article2.css'
 import imgArticle3 from './pupup.png'
 import 'bootstrap/dist/css/bootstrap.css'
 
@@ -12,7 +12,7 @@ const Article3 = () => {
         <head>
             <title>Should my pet be tested for COVID-19?</title>
         </head>
-        <body className="body">
+        <body className="body1">
         <div className="container1">
             <h1 className="headText">Should my pet be tested for COVID-19?</h1>
             <img src={imgArticle3} alt="imgArticle1" className="imageCSS"/>

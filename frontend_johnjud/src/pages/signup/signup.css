@@ -80,41 +80,46 @@ input::placeholder{
 }
 
 .mobile{
-  width: 75%;
-  height: 75%;
+  width: 400px;
+  height: 400px
 }
+
 label{
     font-size: 12px;
 }
 
 .bigbox{
     margin-top: 7%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
 
-}
-.otp{
-    display: inline;
-}
 .input_otp{
     margin: auto;
     float: left;
+    /*width: 100%;*/
 }
+
 #submit{
     float: left;
-    margin-left: 2%;
+    margin-left: 10px;
+    margin-top: 2px;
     background-color: #61b292;
     display: flex;
     text-align: center;
 }
-.left{
-    float: left;
-}
-.right{
-    float: right;
-}
-.text_right{
-    margin-top: 20%;
-}
 
+/*.left{
+    float: left;
+}*/
+
+
+.rightOTP{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
 
 .box_text{
     text-align: center;
@@ -140,9 +145,8 @@ label{
 .form-control {
     display: flex;
     flex-direction: row;
-    width: 300px;
-    justify-content: space-around;
     padding-left: 0px;
+    width: 100%;
 }
 
 .col-lg-6{
@@ -159,9 +163,15 @@ label{
     padding-top: 6%;
     padding-bottom: 4%;
 }
+
 .text2{
     font-size: 16px;
+    line-height: normal;
+    width: 50%;
+    display: flex;
+    flex-wrap: wrap;
 }
+
 .text3{
     font-size: 12px;
     padding-top: 4%;
@@ -178,3 +188,35 @@ label{
 .box_white{
     padding: 10%;
 }
+
+#email {
+    width: 100%;
+}
+
+#Name {
+    width: 100%;
+}
+
+#Surname {
+    width: 100%;
+}
+
+#phone {
+    width: 100%;
+}
+
+#Date {
+    width: 100%;
+}
+
+.custom-control{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    min-inline-size: 15%;
+}
+
+#Address {
+    width: 100%;
+}
+

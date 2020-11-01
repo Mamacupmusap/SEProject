@@ -12,7 +12,7 @@ const Article1 = () => {
         <head>
             <title>How to take a good care of your kitten</title>
         </head>
-        <body className="body">
+        <body className="body1">
         <div className="container1">
             <h1 className="headText">How to take a good care of your kitten</h1>
             <img src={imgArticle1} alt="imgArticle1" className="imageCSS"/>

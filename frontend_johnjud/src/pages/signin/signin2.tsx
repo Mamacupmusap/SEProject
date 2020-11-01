@@ -86,7 +86,8 @@ const Signin = (props: SigninFormProb) => {
                                                                type="text"
                                                                id="username"
                                                                className={`form-control ${touched.username ? errors.username ? 'is-invalid' : 'is-valid' : ''}`}
-                                                               placeholder="username"/>
+                                                               placeholder="username"
+                                                               />
                                                         <ErrorMessage component="div" name="username" className="invalid-feedback" />
                                                     </FormGroup>
                                                 </Col>

@@ -10,7 +10,7 @@ const faq = () =>{
   return(
     <div>
       <Navigation2/>
-    <div className='body'>
+    <div className='bodyFaq'>
       <img src={head_faq} alt='head_faq' width="100%"/>
       <Container>
         <div className= "flex-container">

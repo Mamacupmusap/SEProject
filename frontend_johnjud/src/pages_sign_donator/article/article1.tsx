@@ -2,6 +2,7 @@ import React from "react";
 import './article1.css'
 import imgArticle1 from './yerlin-matu-GtwiBmtJvaU-unsplash 1.png'
 import 'bootstrap/dist/css/bootstrap.css'
+
 import Navigation3 from '../../Navigation/Navigation3';
 
 const Article1 = () => {
@@ -11,7 +12,7 @@ const Article1 = () => {
         <head>
             <title>How to take a good care of your kitten</title>
         </head>
-        <body className="body">
+        <body className="body1">
         <div className="container1">
             <h1 className="headText">How to take a good care of your kitten</h1>
             <img src={imgArticle1} alt="imgArticle1" className="imageCSS"/>

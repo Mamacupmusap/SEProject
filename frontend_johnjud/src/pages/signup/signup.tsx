@@ -191,7 +191,7 @@ const Signup= () =>{
             <FormGroup>
               <Label for="Gender" className="informationh">Gender</Label>
               <div id='box' className='form-control'>
-                <div className="custom-control custom-radio custom-control-inline">
+                <div className="custom-control">
                   <Field name="Gender" 
                        type="radio" 
                        id="gender"
@@ -200,7 +200,7 @@ const Signup= () =>{
                   />
                   <label className="textgender">Male</label>
                 </div>
-                <div className="custom-control custom-radio custom-control-inline">
+                <div className="custom-control">
                   <Field name="Gender" 
                        type="radio" 
                        id="gender"
@@ -208,7 +208,7 @@ const Signup= () =>{
                   />
                   <label className="textgender">Female</label>
                 </div>
-                <div className="custom-control custom-radio custom-control-inline">
+                <div className="custom-control">
                   <Field name="Gender" 
                        type="radio" 
                        id="gender"

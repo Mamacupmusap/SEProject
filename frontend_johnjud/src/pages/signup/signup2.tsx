@@ -36,14 +36,12 @@ const Signup2 = () =>{
     <div>
       <Navigation2/>
       <Container className='bigbox'>
-          <div className='left'>
-            <img src={mobile} alt='mobile' className='mobile'/>
-          </div>
-           <div className='right'>
-            <Container className='text_right'>
+          <img src={mobile} alt='mobile' className='mobile'/>
+           <div className='rightOTP'>
+            <div className='text_rightOTP'>
               <div className='text2'>
-                <p>OTP has been sent via SMS to your registered number</p>
-                <p>(+66 xx-xxx-xxxx)</p>
+                <p style={{fontSize:16}}>OTP has been sent via SMS to your registered number</p>
+                <p style={{fontSize:16}}>(+66 xx-xxx-xxxx)</p>
                 <p id='text3'>please enter your OTP</p>
               </div>
               <div className='otp'>
@@ -85,9 +83,9 @@ const Signup2 = () =>{
                 }
               }       
                 render={props =>  
-                <Form>
+                <Form id="nanacup">
                   <Col>
-                    <FormGroup>
+                    <FormGroup id="mamacup">
                     <Field name="FeedbackOTP" 
                         type="text" 
                         id="otp" 
@@ -102,7 +100,7 @@ const Signup2 = () =>{
               />
                   
               </div>
-            </Container>
+            </div>
           </div>
       </Container>
     </div>

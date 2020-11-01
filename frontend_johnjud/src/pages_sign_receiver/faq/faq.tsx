@@ -9,8 +9,8 @@ import Navigation from '../../Navigation/Navigation';
 const faq = () =>{
   return(
     <div>
-    <Navigation/>
-    <div className='body'>
+      <Navigation/>
+    <div className='bodyFaq'>
       <img src={head_faq} alt='head_faq' width="100%"/>
       <Container>
         <div className= "flex-container">
@@ -32,7 +32,7 @@ const faq = () =>{
         </div>
       </Container>
     </div>
-    </div>
+  </div>
   )
 }
 

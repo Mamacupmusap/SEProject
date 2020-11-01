@@ -1,7 +1,9 @@
-.body {
+.body1 {
     background-color: #F5F8FA;
     /*background-color: #61dafb;*/
     height: 17cm;
+    padding-left: 150px;
+    line-height: normal;
 }
 
 .container1 {
@@ -33,7 +35,7 @@
     margin-top: 0.5cm;
     margin-left: 2.5cm;
     margin-right: 2.5cm;
-    font-size: large;
+    font-size: 12px;
 }
 
 .body,.headText,.text-article {

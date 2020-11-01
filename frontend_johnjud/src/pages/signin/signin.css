@@ -64,6 +64,13 @@
     margin: auto;
   }
 
+  #yesihavent {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    line-height: normal;
+  }
+
   .textbox{
     display: grid;
   }
@@ -84,3 +91,15 @@
     text-align: center;
     color: red;
   }
+
+  #username {
+    width:100%;
+    padding: 10px;
+  }
+
+  #password {
+    width: 100%;
+    padding: 10px;
+  }
+
+  
