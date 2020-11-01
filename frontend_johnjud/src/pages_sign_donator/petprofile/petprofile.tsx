@@ -14,6 +14,7 @@ import check_y from './imgpic/check_y.png'
 import check_r from './imgpic/check_r.png'
 import check from './imgpic/check.png'
 
+
 //import changeStatusService from "./changeStatusService";
 
 type SubmitFormProb = {
@@ -36,7 +37,12 @@ export const Petprofile = (props:any) => {
         })
       )
     }
-  
+
+
+
+localStorage.setItem('pet_id',petid)
+console.log(petid)
+
     useEffect(()=>{
       fetchProfileInfo()
     },[])
@@ -50,10 +56,12 @@ export const Petprofile = (props:any) => {
     const PetHeight=  obj?.PetHeight;
     const PetCerURL = obj?.PetCerURL;
     const TimeStampUpdate = obj?.TimeStampUpdate;
-    const UserId=  obj?.PetStatus;
-    const AdopUserId = obj?.PetLength;
-    const CheckCode=  obj?.PetHeight;
-    const CodePet = obj?.PetCerURL;
+    const UserId=  obj?.UserId;
+    const TimeUpdate = obj?.TimeUpdate;
+    const Describe=  obj?.Describe;
+    const PetAddress = obj?.PetAddress;
+
+    const link_google = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=${PetAddress}`
 
     const changeStatusAvaToPend = () => {
         // fetch PetStatus จาก database มา check ถ้า PetStatus เป็น Pend ให้
@@ -145,30 +153,31 @@ export const Petprofile = (props:any) => {
         <Container className="infoText">
             <Container className="ColumnPro5">
                 <h1 id="oyay">Type: {PetType}</h1>
-                <h1 id="oyay">Gender: {PetGender}</h1>       
-                <h1 id="oyay">height: {PetHeight} </h1>
+                <h1 id="oyay">Gender: {PetGender}</h1>  
+                <h1 id="oyay">Length: {PetLength}</h1>     
+                <h1 id="oyay">Height: {PetHeight} </h1>
                 <h1 id="oyay">Breed: {PetBreed}</h1>
-                <h1 id="oyay">Location:{}</h1>
-                <h1 id="oyay">{PetStatus}</h1>
+                <h1 id="oyay">Location:{PetAddress}</h1>
+
             </Container>
             <div className="ColumnSideO">
                   <CertModal id="testagain9"/>
             </div>
                 <div id="hehehuhu">
-                <NavLink to='/donator/petprofile1' id="editPetLuv" style={{color: '#61b292'}}>edit</NavLink>
+                <NavLink to='/donator/editpetprofile' id="editPetLuv" style={{color: '#61b292'}}>edit</NavLink>
                 < DeleteModal id="testagain9"/>
                 </div>
            
         </Container>
         <Container>
           <iframe width="500" height="450" 
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=Space+Needle,Seattle+WA" id="maphuhu">
+            src={link_google} id="maphuhu">
           </iframe>
         </Container>
         
         <Container>
             <h1 id="TextDescrip">Description:</h1>
-            {PetStatus}
+            {Describe}
             <hr id="lineHeader2"/>
         </Container>
     </div>

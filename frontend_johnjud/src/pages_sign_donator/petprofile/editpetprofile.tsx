@@ -61,7 +61,7 @@ const Addpetprofile= () =>{
         
           onSubmit={ async (values:Value2,actions) =>{
             const sendInfoPet ={
-              petid: values.petid,
+              petid: localStorage.getItem('pet_id'),
               PetName: values.PetName,
               PetBreed: values.PetBreed,
               PetGender: values.PetGender,
@@ -79,8 +79,8 @@ const Addpetprofile= () =>{
             }
             
 
-            const res = await fetch('http://localhost:2000/petinfo/',{
-              method:'POST',
+            const res = await fetch('http://localhost:2000/petinfo/editPetInfo',{
+              method:'PATCH',
               mode: 'cors',
               headers:
               {
@@ -97,7 +97,6 @@ const Addpetprofile= () =>{
             if(res2.success==true){
               actions.setSubmitting(false);
               // delete key
-              localStorage.removeItem('AddpetInfo');
               history.push('/donator/home')
             }
           }
@@ -238,7 +237,7 @@ const Addpetprofile= () =>{
           <br/>
         </div>
       </div>
-          <Persist name='AddpetInfo'/>
+          <Persist name='EditpetInfo'/>
           </Form>
           }
          />

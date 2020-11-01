@@ -51,7 +51,6 @@ headers: {
 }
 */
 async function fetchProfileInfo(petid:string): Promise<Petinfo>{
-    console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
     console.log(petid)
     const res = await fetch(`http://localhost:2000/petinfo/${petid}`);
     const name = await res.json();

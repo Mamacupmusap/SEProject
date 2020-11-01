@@ -42,7 +42,7 @@ const Home = () => {
         setUsername(AuthenService.getUsername());
     };*/
     //example>//
-
+    localStorage.removeItem('AddpetInfo')
     return(
         <div>
             <Navigation3/>

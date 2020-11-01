@@ -35,7 +35,7 @@ const Leftblock=(prop:any) =>{
         <div className='leftblock'>
             <br/><br/><br/>
             <div className='profilename'>
-            <h1><u>{username}</u></h1>
+            <h1 style={{marginTop:50}}><u>{username}</u></h1>
             <br/>
             <div className='Info'><h5>
             <p className='bold'>FirstName:<span className='notbold'> &nbsp;{firstname}</span></p>

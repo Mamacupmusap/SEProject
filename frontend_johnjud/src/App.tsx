@@ -48,8 +48,9 @@ import article3_donator from './pages_sign_donator/article/article3'
 
 import chat_donator from './pages_sign_donator/chat/chatroom';
 import suggestion_donator from './pages_sign_donator/chat/suggest';
-import petprofile_donator from './pages_sign_donator/petprofile/petprofile'
-import petprofile1_donator from './pages_sign_donator/petprofile/petprofile1'
+import petprofile_donator from './pages_sign_donator/petprofile/petprofile';
+import petprofile1_donator from './pages_sign_donator/petprofile/petprofile1';
+import editpetprofile_donator from './pages_sign_donator/petprofile/editpetprofile';
 
 import ProDescrib from'./pages_sign_donator/userprofile/Allprofile/ProDescrib';
 import ProAdop from './pages_sign_donator/userprofile/Allprofile/ProAdop';
@@ -139,6 +140,7 @@ class App extends Component{
             <Route path="/donator/suggestion" component={suggestion_donator}/>
             <Route path="/donator/petprofile/:petid" component={petprofile_donator}/>
             <Route path="/donator/petprofile1" component={petprofile1_donator}/>
+            <Route path="/donator/editpetprofile" component={editpetprofile_donator}/>
 
             <Route path="/donator/userprofile/:userId/editprofile/changephone/OTP" component={ProfileOTP}/>
             <Route path="/donator/userprofile/:userId/editprofile/changepassword" component={ProChangePasword}/>

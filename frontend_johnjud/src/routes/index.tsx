@@ -49,8 +49,9 @@ import article3_donator from '../pages_sign_donator/article/article3'
 import chat_donator from '../pages_sign_donator/chat/components/Chat/Chat';
 import suggestion_donator from '../pages_sign_donator/chat/suggest';
 
-import petprofile_donator from '../pages_sign_donator/petprofile/petprofile'
-import petprofile1_donator from '../pages_sign_donator/petprofile/petprofile1'
+import petprofile_donator from '../pages_sign_donator/petprofile/petprofile';
+import petprofile1_donator from '../pages_sign_donator/petprofile/petprofile1';
+import editpetprofile_donator from '../pages_sign_donator/petprofile/editpetprofile';
 //import {isDevMode} from "@ionic/react/dist/types/components/utils/dev";
 
 import ProDescrib from'../pages_sign_donator/userprofile/Allprofile/ProDescrib';
@@ -120,7 +121,8 @@ export default () => (
     <Route path="/donator/suggestion" component={suggestion_donator}/>
     <Route path="/donator/petprofile" component={petprofile_donator}/>
     <Route path="/donator/petprofile1" component={petprofile1_donator}/>
-
+    <Route path="/donator/editpetprofile" component={editpetprofile_donator}/>
+    
     <Route path="/donator/userprofile/editprofile/changepassword" component={ProChangePasword}/>
     <Route path="/donator/userprofile/editprofile/changeemail" component={ProChangeEmail}/>
     <Route path="/donator/userprofile/editprofile/changephone" component={ProChangePhone}/>
