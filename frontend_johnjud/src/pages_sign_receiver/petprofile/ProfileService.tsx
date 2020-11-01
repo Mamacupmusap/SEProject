@@ -46,6 +46,15 @@ async function updateemail(newEmail:Petinfo): Promise<any|null> {
         body: JSON.stringify(newEmail),
     });
 }
+async function makeroomchat(a:any,userId1:string,userId2:string|undefined): Promise<any|null> {
+    const res = await fetch(`http://localhost:2000/createroom/${userId1}/${userId2}`,{
+        method: 'POST',
+        headers : {'Content-Type': 'application/json'},
+        body: JSON.stringify(a),
+    });
+    const ress = await res.json();
+    return ress
+}
 
 export default {
     fetchProfileInfo,
@@ -55,5 +64,6 @@ export default {
     updateinfo,
     updatedescription,
     updateemail,
+    makeroomchat,
 } 
 

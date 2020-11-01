@@ -12,6 +12,7 @@ import {CertModal} from './components/CertModal';
 import User from './components/img/User.png';
 import greenRight from './components/img/check.png';
 import mail from './components/img/mail.png';
+import userEvent from '@testing-library/user-event';
 
 export const Petprofile = (props:any) => {
   const[obj,setObj] = useState<Petinfo>();
@@ -46,7 +47,21 @@ export const Petprofile = (props:any) => {
   const PetAddress = obj?.PetAddress;
     
   const link_google = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=${PetAddress}`
-
+  const makeroom=()=>{
+    const a={
+      userid1:localStorage.UserId,
+      userid2:UserId
+    }
+    profileservice.makeroomchat(a,localStorage.UserId,UserId)
+    .then(a=>{
+      if(a=="exist"){
+        history.push('http://localhost:2000/donator/chat')
+      }
+      else{
+        history.push('http://localhost:2000/donator/chat')
+      }
+    })
+  }
     return(
     <div className='bodyPetpro'>
         < Navigation />
@@ -100,7 +115,7 @@ export const Petprofile = (props:any) => {
                   <h1 id="PostUser"> Tiffany Young </h1>
                   <NavLink to='/contactprofile' id='PostProfile'> Profile</NavLink>
                 </div>
-                <NavLink to='/receiver/chat'><Button id='whatitsbrown'><img src={mail} id="mailIcon1"/>contact</Button></NavLink>
+                <NavLink to='/receiver/chat'><Button id='whatitsbrown' onClick={makeroom}><img src={mail} id="mailIcon1"/>contact</Button></NavLink>
                 <div>
                   <form>
                     <div id="enterPetCode">
