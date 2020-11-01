@@ -29,7 +29,7 @@ class Upload extends Component {
 
     render() {
         return (
-            <div className="Up">
+            <div className="Up" style={{height:20}}>
                 <form>
                     <div className="">
                         <input type="file" className="ChooseProfile_pic" 
