@@ -27,6 +27,31 @@ const Home = () => {
             })
     )
   }
+  const dog=() =>{
+    return(
+      homeService_receiver.fetchFillterDog()
+          .then(name => {
+            setAllPet(name)
+          })
+    )
+  }
+  const cat=() =>{
+    return(
+      homeService_receiver.fetchFillterCat()
+          .then(name => {
+            setAllPet(name)
+          })
+    )
+  }
+  const others=() =>{
+    return(
+      homeService_receiver.fetchFillterOther()
+          .then(name => {
+            setAllPet(name)
+          })
+    )
+  }
+  
   useEffect(()=>{
     petInfo().then()
   },[])
@@ -40,13 +65,13 @@ const Home = () => {
         <div id="filterAll">
             <div className="filter">
               <p>Type</p>
-              <input type="checkbox"/>
+              <input type="checkbox" value="dog" onChange={dog}/>
               <label>Dog</label>
               <br/>
-              <input type="checkbox"/>
+              <input type="checkbox" value="cat" onChange={cat}/>
               <label>Cat</label>
               <br/>
-              <input type="checkbox"/>
+              <input type="checkbox" value="others" defaultChecked onChange={others}/>
               <label>Others</label>
             </div>
             

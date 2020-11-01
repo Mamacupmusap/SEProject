@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, Component } from 'react';
 import { NavLink} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './home.css'
@@ -16,9 +16,14 @@ import { Container, Card, CardImg, CardBody,
 /*import { CheckboxFilter, TermQuery, BoolMust, RangeQuery } from "searchkit";*/
 import Navigation2 from '../../Navigation/Navigation2';
 import homeService_page from "./homeService_page";
+import { If } from 'react-if';
+import { constants } from 'buffer';
+
+const fillter1 = document.getElementById('fillter0');
 
 const Home = () => {
   const[allPet,setAllPet] = useState<any[]>([]);
+  const [Fillter1, setFillter] = useState<string>('');
   const petInfo=() =>{
     return(
         homeService_page.fetchAllPet()
@@ -27,6 +32,31 @@ const Home = () => {
             })
     )
   }
+  const dog=() =>{
+    return(
+      homeService_page.fetchFillterDog()
+          .then(name => {
+            setAllPet(name)
+          })
+    )
+  }
+  const cat=() =>{
+    return(
+      homeService_page.fetchFillterCat()
+          .then(name => {
+            setAllPet(name)
+          })
+    )
+  }
+  const others=() =>{
+    return(
+      homeService_page.fetchFillterOther()
+          .then(name => {
+            setAllPet(name)
+          })
+    )
+  }
+
   useEffect(()=>{
     petInfo().then()
   },[])
@@ -41,14 +71,16 @@ const Home = () => {
             
             <div className="filter">
               <p>Type</p>
-              <input type="checkbox"/>
+              <input type="checkbox" value="dog" onChange={dog}/>
               <label>Dog</label>
               <br/>
-              <input type="checkbox"/>
+              <input type="checkbox" value="cat" onChange={cat}/>
               <label>Cat</label>
               <br/>
-              <input type="checkbox"/>
+              <input type="checkbox" value="others" onChange={others}/>
               <label>Others</label>
+              
+              
             </div>
             
             <div className="filter">
@@ -74,7 +106,8 @@ const Home = () => {
                       <CardTitle className="cardTitle">{value.PetName}</CardTitle>
                     </NavLink>
                   </CardBody>
-                </Card>)
+                </Card>
+              )
           })}
         </Container>
       </div>
