@@ -50,9 +50,9 @@ const ChangeEmail=(props:any) => {
             <Navigation3/>
             <div className = 'ChangePage'>
             <Link to='/donator/userprofile'>  
-                <img id='profilePic' src={ProfilePic}></img>
+                <img id='profilePic' src={ProfilePic} alt={''}/>
             </Link>
-            <img id='glasspic' src = {Glasspic}></img>
+            <img id='glasspic' src = {Glasspic}/>
             <div className='BlockBehindProfilePic'>
                 <div className='profilename'>
                 <br/><br/>
@@ -61,7 +61,7 @@ const ChangeEmail=(props:any) => {
             </div>
             <div className='ChangeBlock'>
                 <span id='ChangeEmail'>New Email: </span>
-                <input id='InputChangeEmail' value={newEmail} onChange={(e) => {setNewEmail(e.target.value);}}></input>
+                <input id='InputChangeEmail' value={newEmail} onChange={(e) => {setNewEmail(e.target.value);}}/>
                 <br/><br/>
                 <button id='SubmitEmailButton' onClick={update}>Submit</button>
             </div>

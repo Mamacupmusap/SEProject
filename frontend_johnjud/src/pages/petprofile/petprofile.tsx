@@ -1,17 +1,17 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './petprofile.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import profileservice from './ProfileService';
+//import profileservice from './ProfileService';
 import Navigation from '../../Navigation/Navigation2';
 import {Petinfo} from './Interface';
-import { NavLink} from 'react-router-dom';
-import { Button, Container} from 'reactstrap';
+//import { NavLink} from 'react-router-dom';
+import { Container} from 'reactstrap';
 import { MyCarousel } from './components/MyCarousel';
 import { BookmarkModal } from './components/BookmarkModal';
 import {CertModal} from './components/CertModal';
 import User from './components/img/User.png';
 import greenRight from './components/img/check.png';
-import mail from './components/img/mail.png';
+//import mail from './components/img/mail.png';
 import { ProfileModal} from './components/ProfileModal';
 import ContactModal from './components/ContactModal';
 
@@ -75,19 +75,19 @@ export const Petprofile = () => {
         < Navigation />
         <div className="HeaderPetpro">
           <div id="petStatusPro">
-            <img src={greenRight} width="24" height="24"/><h1 id="petStatusPro2">กำลังหาบ้านให้น้อง</h1>
+            <img src={greenRight} width="24" height="24" alt={''}/><h1 id="petStatusPro2">กำลังหาบ้านให้น้อง</h1>
           </div> 
           <div className="toppppp">
             {PetName}
           </div>
-          <hr id="lineHeader"></hr> 
+          <hr id="lineHeader"/> 
         </div>
         <div className="carousel">
             < MyCarousel />
         </div>
         <div className="informationn">
             Information
-            <hr id="lineHeader"></hr>
+            <hr id="lineHeader"/>
         </div>
         <Container className="infoText">
             <Container className="ColumnPro">
@@ -113,12 +113,12 @@ export const Petprofile = () => {
         <Container>
             <h1 id="TextDescrip">Description:</h1>
             {PetStatus}
-            <hr id="lineHeader2"></hr>
+            <hr id="lineHeader2"/>
         </Container>
         <Container>
           <h1 id='TextDescrip'>Post by:</h1>
             <div className="PostbyText">
-              <img src={User} className="PostUserPic"/>
+              <img src={User} className="PostUserPic" alt={"'"}/>
               <div className="postInfo">
                 <div className="postInfo2">
                   <h1 id="PostUser"> Tiffany Young </h1>

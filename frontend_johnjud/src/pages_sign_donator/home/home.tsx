@@ -76,7 +76,7 @@ const Home = () => {
                                 <Card className="card" style={{backgroundColor: '#8D7966', color: 'white'}} key={value}>
                                     <CardImg src={value.petPicUrl} alt="" height="130px"/>
                                     <CardBody className="cardBody">
-                                        <NavLink to='/donator/petprofile' style={{color: 'white'}}>
+                                        <NavLink to={'/donator/petprofile/' + value.petid} style={{color: 'white'}}>
                                             <CardTitle className="cardTitle">{value.PetName}</CardTitle>
                                         </NavLink>
                                     </CardBody>

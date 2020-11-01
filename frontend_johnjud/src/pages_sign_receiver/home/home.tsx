@@ -147,7 +147,7 @@ const Home = () => {
                   <Card className="card">
                     <CardImg src={value.petPicUrl} alt="" height="130px"/>
                     <CardBody className="cardBody">
-                      <NavLink to='/receiver/petprofile'>
+                      <NavLink to={'/receiver/petprofile/' + value.petid}>
                         <CardTitle className="cardTitle">{value.PetName}</CardTitle>
                       </NavLink>
                     </CardBody>
