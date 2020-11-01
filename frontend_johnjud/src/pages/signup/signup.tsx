@@ -115,7 +115,6 @@ const Signup= () =>{
                        id="username"
                        className="inp_text" 
                        placeholder="username"/>
-              <ErrorMessage component="div" name="username" className="invalid-feedback" />
             </FormGroup>
           </Col>
          <Col>
@@ -126,7 +125,6 @@ const Signup= () =>{
                        id="password" 
                        className="inp_text"
                        placeholder="password"/>
-              <ErrorMessage component="div" name="password" className="invalid-feedback" />
             </FormGroup>
           </Col>
 
@@ -138,7 +136,6 @@ const Signup= () =>{
                        id="Name" 
                        className="inp_text"
                        placeholder="name"/>
-              <ErrorMessage component="div" name="FirstName" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <Col>
@@ -149,7 +146,6 @@ const Signup= () =>{
                        id="Surname"
                        className="inp_text" 
                        placeholder="surname"/>
-              <ErrorMessage component="div" name="LastName" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <Col>
@@ -160,7 +156,6 @@ const Signup= () =>{
                        id="phone"
                        className="inp_text" 
                        placeholder="phone number"/>
-              <ErrorMessage component="div" name="PhoneNo" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <Col>
@@ -171,7 +166,6 @@ const Signup= () =>{
                        className="inp_text1" 
                        id="Date" 
                        />
-              <ErrorMessage component="div" name="Date" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <Col>
@@ -217,6 +211,7 @@ const Signup= () =>{
           </Col>  
             
             <Button type="submit" value='submit' id='button_next'>Next<img src={next} alt=''/></Button>
+            <div className='box_white'></div>
             <Persist name='SignupInfo'/>
           </Form>}
          />

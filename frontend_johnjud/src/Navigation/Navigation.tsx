@@ -10,7 +10,12 @@ import manIcon from './img/man.png';
 import manIcon2 from './img/man_white.png';
 import JJicon from './img/newlogo02.png';
 
+import AuthenService from "../pages/signin/AuthenService";
+
 const Navigation = () => {   
+   const haddlelogout = () => {
+      AuthenService.logoutUser()
+   }
    return (
        <div>
          <Navbar className='Navbar'>
@@ -66,8 +71,8 @@ const Navigation = () => {
                         </DropdownItem>
                      </NavLink>
                      <NavLink to='/'>
-                        <DropdownItem>
-                           Logout
+                        <DropdownItem onClick={haddlelogout}>
+                           logout
                         </DropdownItem>
                      </NavLink>
                   </DropdownMenu>
