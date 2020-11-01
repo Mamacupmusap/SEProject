@@ -55,7 +55,7 @@
   width: 500px;
 }
 
-.infoText {
+#infoText {
   display: flex;
   flex-direction:row;
   font-size: 16px;
@@ -74,10 +74,12 @@
   margin-top: 32px;
 }
 
-.ColumnPro {
+#ColumnPro {
   display: flex;
   flex-direction:column;
-  margin-right: 280px;
+  justify-content: center;
+  /*margin-right: 280px;*/
+  max-width: 35%;
 }
 
 #testagain {
@@ -86,13 +88,23 @@
   margin-right: 20%;
 }
 
+#petBobo1 {
+  max-width: 500px;
+}
+
+#fuckjk {
+  display: flex;
+  justify-content: center;
+}
+
 #maphuhu {
   margin-top: 16px;
 }
 
-.PostbyTextNotSign{
+#PostbyTextNotSign{
   display:flex;
-  justify-content: left;
+  justify-content: flex-start;
+  margin-left: 30%;
 }
 
 .nametag{

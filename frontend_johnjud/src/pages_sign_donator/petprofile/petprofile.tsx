@@ -109,18 +109,6 @@ console.log(petid)
 
               <input type="checkbox" id="click"/>
               <Label for="click" className="click-me">พาไปบ้านใหม่</Label>
-              <div className="content">
-                <div className="rubnong">
-                  <h1>Username ผู้รับน้อง</h1>
-                  <input type="text" placeholder="username" className="rubnonguser"/>
-                  <h2>*จะมีการเปลี่ยนแปลงสถานะหลังจากผู้รับกดยืนยัน</h2>
-                  <div className="btnx">
-                    <input type="checkbox" id="click2"/>
-                    <Label for="click2" className="confirm-btn">confirm</Label>
-                    <Label for="click" className="cancel-btn">cancel</Label>
-                  </div>
-                </div>
-              </div>
                 <div className="statuszz"><img src={check_y} alt='check_y'/><div className="status-text2">น้องกำลังไปบ้านใหม่</div></div>
                 <input type="checkbox" id="click3"/>
                 <Label for="click3" className="click-me3">ได้บ้านใหม่แล้ว</Label>
@@ -150,8 +138,8 @@ console.log(petid)
             Information
             <hr id="lineHeader"/>
         </div>
-        <Container className="infoText">
-            <Container className="ColumnPro5">
+        <Container id="infoText1">
+            <Container id="ColumnPro5">
                 <h1 id="oyay">Type: {PetType}</h1>
                 <h1 id="oyay">Gender: {PetGender}</h1>  
                 <h1 id="oyay">Length: {PetLength}</h1>     
@@ -160,7 +148,7 @@ console.log(petid)
                 <h1 id="oyay">Location:{PetAddress}</h1>
 
             </Container>
-            <div className="ColumnSideO">
+            <div id="ColumnSideO">
                   <CertModal id="testagain9"/>
             </div>
                 <div id="hehehuhu">
@@ -169,15 +157,15 @@ console.log(petid)
                 </div>
            
         </Container>
-        <Container>
+        <Container id='fuckk'>
           <iframe width="500" height="450" 
             src={link_google} id="maphuhu">
           </iframe>
         </Container>
         
-        <Container>
+        <Container id="scam">
             <h1 id="TextDescrip">Description:</h1>
-            {Describe}
+            <h5 id="ihatepine" style={{fontSize:16}}>{Describe}</h5>
             <hr id="lineHeader2"/>
         </Container>
     </div>

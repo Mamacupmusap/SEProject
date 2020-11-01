@@ -67,7 +67,7 @@
   width: 500px;
 }
 
-.infoText {
+#infoText1 {
   display: flex;
   flex-direction:row;
   font-size: 16px;
@@ -80,6 +80,10 @@
   display: inline-block;
 }
 
+#scam {
+  max-width: 500px;
+}
+
 #TextDescrip {
   font-size: 16px;
   margin-bottom: 32px;
@@ -87,17 +91,28 @@
   margin-top: 32px;
 }
 
-.ColumnPro5 {
+#ihatepine {
   display: flex;
-  flex-direction:column;
-  margin-right: 280px;
-  margin-left: 12%;
+  max-width: 500px;
+}
+
+#ColumnPro5 {
+    display: flex;
+    flex-direction:column;
+    justify-content: flex-start;
+    max-width: 500px;
+    margin-left: 300px;
 }
 
 #testagain9 {
   display: flex;
   flex-direction:column;
   margin-right: 20%;
+}
+
+#fuckk {
+  display: flex;
+  justify-content: center;
 }
 
 #maphuhu {
@@ -110,11 +125,11 @@
 
 #editPetLuv {
   text-decoration: underline;
-  margin-top: 15px;
+  margin-top: 8px;
   margin-left: 35px;
 }
 
-.ColumnSideO {
+#ColumnSideO {
   margin-left: 50px;
   margin-right: 32px;
 }

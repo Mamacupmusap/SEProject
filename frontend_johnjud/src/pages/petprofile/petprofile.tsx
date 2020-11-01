@@ -71,8 +71,8 @@ export const Petprofile = (props:any) => {
             Information
             <hr id="lineHeader"/>
         </div>
-        <Container className="infoText">
-            <Container className="ColumnPro">
+        <Container id="infoText">
+            <Container id="ColumnPro">
                 <h1 id="oyay">Type: {PetType}</h1>
                 <h1 id="oyay">Gender: {PetGender}</h1> 
                 <h1 id="oyay">Length: {PetLength}</h1> 
@@ -85,20 +85,20 @@ export const Petprofile = (props:any) => {
                 <CertModal id="testagain"/>
             </div>
         </Container>
-        <Container>
+        <Container  id='fuckjk'>
           <iframe width="500" height="450" 
             src={link_google} id="maphuhu">
           </iframe>
         </Container>
         
-        <Container>
+        <Container id="petBobo1">
             <h1 id="TextDescrip">Description:</h1>
-            {Describe}
+            <h5 style={{textAlign:'start', fontSize:16}}>{Describe}</h5>
             <hr id="lineHeader2"/>
         </Container>
         <Container>
           <h1 id='TextDescrip'>Post by:</h1>
-            <div className="PostbyText">
+            <div id="PostbyTextNotSign">
               <img src={User} className="PostUserPic" alt={"'"}/>
               <div className="postInfo">
                 <div className="postInfo2">

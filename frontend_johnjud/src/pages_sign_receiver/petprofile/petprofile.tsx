@@ -66,8 +66,8 @@ export const Petprofile = (props:any) => {
             Information
             <hr id="lineHeader"></hr>
         </div>
-        <Container className="infoText">
-            <Container className="ColumnPro">
+        <Container id="infoText">
+            <Container id="ColumnPro">
                 <h1 id="oyay">Type: {PetType}</h1>
                 <h1 id="oyay">Gender: {PetGender}</h1>       
                 <h1 id="oyay">Length: {PetLength}</h1>
@@ -75,41 +75,42 @@ export const Petprofile = (props:any) => {
                 <h1 id="oyay">Breed: {PetBreed}</h1>
                 <h1 id="oyay">Location: {PetAddress}</h1>
             </Container>
-            <div className="ColumnSide">
+            <div id="ColumnSide">
                 <BookmarkModal id="testagain"/>
                 <CertModal id="testagain"/>
             </div>
         </Container>
-        <Container>
+        <Container id="fuckj">
           <iframe width="500" height="450" 
             src={link_google} id="maphuhu">
           </iframe>
         </Container>
         
-        <Container>
+        <Container id="petBobo">
             <h1 id="TextDescrip">Description:</h1>
-            {Describe}
+            <h5 id="ihatepine" style={{fontSize:16}}>{Describe}</h5>
             <hr id="lineHeader2"></hr>
         </Container>
         <Container>
           <h1 id='TextDescrip'>Post by:</h1>
-            <div className="PostbyText">
+            <div id="PostbyText">
               <img src={User} className="PostUserPic"/>
               <div className="postInfo">
                 <div className="postInfo2">
                   <h1 id="PostUser"> Tiffany Young </h1>
                   <NavLink to='/contactprofile' id='PostProfile'> Profile</NavLink>
                 </div>
-                <NavLink to='/receiver/chat'><Button className='button_contactPet'><img src={mail} id="mailIcon1"/>contact</Button></NavLink>
+                <NavLink to='/receiver/chat'><Button id='whatitsbrown'><img src={mail} id="mailIcon1"/>contact</Button></NavLink>
                 <div>
                   <form>
-                    <div className="enterPetCode">
+                    <div id="enterPetCode">
                       <label id="petCodeHehe">รหัสสำหรับนัดแลกเปลี่ยนสัตว์</label>
                       <input
                         /*type="email"*/
-                        className="inputPetCode"
+                        id="inputPetCode"
+                        style={{marginLeft:10}}
                       />
-                      <button type="submit" className="btnPetCode">
+                      <button type="submit" id="btnPetCode">
                       Submit
                       </button>
                     </div>
