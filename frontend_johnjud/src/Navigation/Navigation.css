@@ -79,21 +79,26 @@
 }
 
 #noti1 {
-    font-size: 16px;
+    font-size: 14px;
     color: #B19D85;
 }
 
 #noti2 {
-    font-size: 16px;
+    font-size: 14px;
     color: #B19D85;
     width: 60px;
     text-decoration: underline;
 }
 
+
 .notiPop {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; 
+    line-height: 1.6;  
 }
+#abc{ display:none; }
+
+
 
 /*.textLink {
     width: 30%;
