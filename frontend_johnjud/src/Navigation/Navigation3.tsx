@@ -90,7 +90,7 @@ const Navigation = () => {
                   <DropdownToggle nav>
                      <img src={manIcon} alt='man' />
                   </DropdownToggle>
-                  <DropdownMenu right className='dropmenu2'>
+                  <DropdownMenu right className='dropmenu2' style={{lineHeight:0.8}}>
                      <NavLink to={`/donator/userprofile/${userIdlocal}`}>
                         <DropdownItem>
                            profile

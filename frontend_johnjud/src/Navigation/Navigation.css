@@ -10,19 +10,26 @@
     border: groove 0.5px #8d7966;
     font-family: prompt;
 }
+
 #changeMode{
     background-color:#8d7966;
     font-size: 8px;
     width: max-content;
     height: min-content;
+    display: flex;
+    flex-direction: row;
 }
+
 #changeMode_brown{
     background-color:white;
     font-size: 8px;
     width: max-content;
     height: min-content;
     color: #8d7966;
+    display: flex;
+    flex-direction: row;
 }
+
 .navHead{
     color: #8d7966;
     font-size: 12px;

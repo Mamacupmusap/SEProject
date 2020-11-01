@@ -52,12 +52,12 @@ const Navigation = () => {
 
             <NavLink to='/donator/home'>
             <Button id='changeMode' className='form-control'>
-            <div className='left'>
-               <img className='manbox' src={manIcon2} alt='man'/>
-            </div>
-            <div className='right'>
-               switch to <br/> Donator mode
-            </div>
+               <div className='left'>
+                  <img className='manbox' src={manIcon2} alt='man'/>
+               </div>
+               <div className='right'>
+                  switch to <br/> Donator mode
+               </div>
             </Button>
             </NavLink>
 
@@ -94,7 +94,7 @@ const Navigation = () => {
                   <DropdownToggle nav>
                      <img src={manIcon} alt='man' />
                   </DropdownToggle>
-                  <DropdownMenu right className='dropmenu'>
+                  <DropdownMenu right className='dropmenu' style={{lineHeight:0.8}}>
                      <NavLink to={`/receiver/userprofile/${userIdlocal}`}>
                         <DropdownItem>
                            profile
