@@ -81,20 +81,15 @@ const Navigation = () => {
                   <DropdownToggle nav>
                      <img src={manIcon} alt='man' />
                   </DropdownToggle>
-                  <DropdownMenu right className='dropmenu'>
+                  <DropdownMenu right className='dropmenu2'>
                      <NavLink to='/donator/userprofile'>
                         <DropdownItem>
                            profile
                         </DropdownItem>
                      </NavLink>
                      <NavLink to='/'>
-                        <DropdownItem>
-                           Logout
-                        </DropdownItem>
-                     </NavLink>
-                     <NavLink to='/'>
                         <DropdownItem onClick={haddlelogout}>
-                           Test Logout
+                           logout
                         </DropdownItem>
                      </NavLink>
                   </DropdownMenu>

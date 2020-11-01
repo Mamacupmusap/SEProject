@@ -101,12 +101,11 @@ const Signin = (props: SigninFormProb) => {
                                                         <ErrorMessage component="div" name="password" className="invalid-feedback" />
                                                     </FormGroup>
                                                 </Col>
-                                                <Button type='submit'>test Sign In</Button>
-                                                <NavLink to='/receiver/home'><Button type='submit' className='button_signin'>Sign In</Button></NavLink>
-                                                <br/>Token:
-                                                <br/>{ signInErrorMessage && (
-                                                    <div>{signInErrorMessage}</div>
-                                                )}
+                                                <Button type='submit'className='button_signin'>Sign In</Button>
+                                                <div className='last_box'>
+                                                    { signInErrorMessage}
+                                                </div>
+                                                
                                             </Form>
                                         )}
                                     </Formik>

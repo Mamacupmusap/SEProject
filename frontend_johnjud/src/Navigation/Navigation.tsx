@@ -13,6 +13,7 @@ import {Petinfo} from './Interface';
 import NavigationService from './NavigationService'
 import AuthenService from "../pages/signin/AuthenService";
 
+
 const Navigation = () => {   
    const haddlelogout = () => {
       AuthenService.logoutUser()
@@ -101,8 +102,8 @@ const Navigation = () => {
                         </DropdownItem>
                      </NavLink>
                      <NavLink to='/'>
-                        <DropdownItem>
-                           Logout
+                        <DropdownItem onClick={haddlelogout}>
+                           logout
                         </DropdownItem>
                      </NavLink>
                   </DropdownMenu>

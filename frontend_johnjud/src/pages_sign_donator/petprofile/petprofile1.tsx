@@ -1,15 +1,12 @@
 import React,{ Component, useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Petinfo} from './Interface';
-import profileservice from './ProfileService';
 import { NavLink } from 'react-router-dom';
 import { Container, FormGroup,Label, Col}  from 'reactstrap';
 import { Formik,Form, Field, ErrorMessage, FormikHelpers } from 'formik'
-import check from './imgpic/check.png'
 import verified from './imgpic/verified.png'
 import './petprofile1.css'
-import check_y from './imgpic/check_y.png'
-import check_r from './imgpic/check_r.png'
+
 import * as Yup from 'yup'
 import Navigation3 from '../../Navigation/Navigation3'
 
@@ -31,13 +28,10 @@ const update=() =>{
     PetBreed: newPetBreed,
     PetGender: newPetGender,
     type: newType,
-    //petPicUrl = obj?.petPicUrl;
-    //regPetStatus = obj?.regPetStatus;
-    //adopPetStatus = obj?.adopPetStatus;
     PetStatus: newPetStatus,
     PetLength: newPetLength,
     PetHeight: newPetHeight,
-    //adopuserid = newAdopUserId;
+    
     };
     const result:any = fetch("http://localhost:2000/petinfo/",{
         method: 'POST',
@@ -59,23 +53,6 @@ const update=() =>{
 })    
 }
 
-/*
- const PetName=  obj?.PetName;
- const PetBreed = obj?.PetBreed;
- const PetGender=  obj?.PetGender;
- const PetType=  obj?.Type;
- const PetPicUrl= obj?.PetPicUrl;
- const PetStatus=  obj?.PetStatus;
- const PetLength = obj?.PetLength;
- const PetHeight=  obj?.PetHeight;
- const PetCerURL = obj?.PetCerURL;
- const TimeStampUpdate = obj?.TimeStampUpdate
- const UserId=  obj?.PetStatus;
- const AdopUserId = obj?.PetLength;
- const CheckCode=  obj?.PetHeight;
- const CodePet = obj?.PetCerURL;
- */
-//
 const PetinfoSchema = Yup.object().shape({
   petName: Yup.string()
     .required('Required'),
@@ -105,6 +82,8 @@ interface Value2{
   Location: string;
   Description: string;
 }
+
+const link_google = "https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q="+ {Location}
 
   return(
     <div className="bodybongchu">
@@ -138,43 +117,6 @@ interface Value2{
       {({ errors, touched }) => (
     <Container className="container_editpet">
       <Form>
-        <ul>
-        </ul>
-        {/*<div className="status">
-
-          <input type="checkbox" id="click2"/>
-          <Label for="click2" className="confirm-btn" hidden>พาไปบ้านใหม่</Label>
-
-          <div className="statusz"><img src={check} alt='check'></img><div className="status-text">กำลังหาบ้านให้น้อง</div></div>
-
-          <input type="checkbox" id="click"/>
-          <Label for="click" className="click-me">พาไปบ้านใหม่</Label>
-          <div className="content">
-            <div className="rubnong">
-              <h1>Username ผู้รับน้อง</h1>
-              <input type="text" placeholder="username" className="rubnonguser"/>
-              <h2>*จะมีการเปลี่ยนแปลงสถานะหลังจากผู้รับกดยืนยัน</h2>
-              <div className="btnx">
-                <input type="checkbox" id="click2"/>
-                <Label for="click2" className="confirm-btn">confirm</Label>
-                <Label for="click" className="cancel-btn">cancel</Label>
-              </div>
-            </div>
-          </div>
-
-          <div className="statuszz"><img src={check_y} alt='check_y'></img><div className="status-text2">น้องกำลังไปบ้านใหม่</div></div>
-          <input type="checkbox" id="click3"/>
-          <Label for="click3" className="click-me3">ได้บ้านใหม่แล้ว</Label>
-
-          <div className="statuszzz">
-            <img src={check_r} alt='check_r'></img>
-            <div className="status-text3">น้องมีบ้านใหม่แล้ว</div>
-          </div>
-         
-        </div>
-        */}
-      
-
         <div className="information">
         <p className="headinfo">Information</p>
         <hr className="lineinfo"></hr>
@@ -189,7 +131,6 @@ interface Value2{
                        className={`form-control ${touched.petName ? errors.petName ? 'is-invalid' : 'is-valid' : ''}`}
                        value={newPetName} onChange={(e:any) => {setnewPetName(e.target.value);}}
                        />
-              <ErrorMessage component="div" name="petName" className="invalid-feedback" />
             </FormGroup>
           </Col>
 
@@ -207,24 +148,10 @@ interface Value2{
             <FormGroup>
               <Label for="petType" className="information">Type* : </Label>
                   <Field name="petType" 
-                       type="radio" 
-                       id="Dog"
-                       value='Dog' 
+                       type="text" 
+                       id="Type"
+                       placeholder='type' 
                   />        
-                  <Label className="choice">Dog</Label>
-                <Field name="petType" 
-                       type="radio" 
-                       id="Cat"
-                       value='Cat' 
-                  />        
-                  <Label className="choice">Cat</Label>
-                  <Field name="petType" 
-                       type="radio" 
-                       id="others"
-                       value='others' 
-                  />        
-                  <Label className="choice">others</Label>
-                  <ErrorMessage component="div" name="petType" className="invalid-feedback" />
             </FormGroup>
           </Col>
           <Col>
@@ -242,12 +169,6 @@ interface Value2{
                        value='Female' 
                   />        
                   <Label className="choice">Female</Label>
-                  <Field name="petGender" 
-                       type="radio" 
-                       id="others"
-                       value='others' 
-                  />        
-                  <Label className="choice">others</Label>
                   <ErrorMessage component="div" name="petGender" className="invalid-feedback" />
             </FormGroup>
           </Col>
@@ -260,7 +181,6 @@ interface Value2{
                        id="petWeight" 
                        placeholder='weight'
                        className="input_text1"
-                       /*value={newPetWeight} onChange={(e:any) => {setnewPetWeight(e.target.value);}}*/
                        />
             </FormGroup>
           </Col>
@@ -317,14 +237,12 @@ interface Value2{
                        placeholder='(location)'
                        className={`form-control ${touched.Location ? errors.Location ? 'is-invalid' : 'is-valid' : ''}`}
                        />
-              <ErrorMessage component="div" name="Location" className="invalid-feedback" />
             </FormGroup>
           </Col>
-          
-          <iframe width="600" height="450" 
-              src="https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=Space+Needle,Seattle+WA">
-          </iframe>
 
+          
+          <iframe width="600" height="450" src={link_google}></iframe>
+        
           <Col>
             <FormGroup>
               <Label for="Description" className="information">Description:</Label><p></p>
