@@ -18,6 +18,8 @@ import Navigation from '../../Navigation/Navigation';
 import homeService_receiver from "./homeService_receiver";
 
 const Home = () => {
+  
+  const [checked, setChecked] = React.useState(true);
   const[allPet,setAllPet] = useState<any[]>([]);
   const petInfo=() =>{
     return(
@@ -65,28 +67,18 @@ const Home = () => {
         <div id="filterAll">
             <div className="filter">
               <p>Type</p>
-              <input type="checkbox" value="dog" onChange={dog}/>
+              <input type="checkbox" value="dog"  onClick={dog}/>
               <label>Dog</label>
               <br/>
-              <input type="checkbox" value="cat" onChange={cat}/>
+              <input type="checkbox" value="cat" onClick={cat}/>
               <label>Cat</label>
               <br/>
-              <input type="checkbox" value="others" defaultChecked onChange={others}/>
+              <input type="checkbox" value="others" onClick={others}/>
               <label>Others</label>
-            </div>
-            
-            <div className="filter">
-              <p>Height</p>
-              <input type="checkbox"/>
-              <label>less than 20cm</label>
               <br/>
-              <input type="checkbox"/>
-              <label>20-50cm</label>
-              <br/>
-              <input type="checkbox"/>
-              <label>more than 50cm</label>
+              <input type="checkbox" value="all" onClick={petInfo}/>
+              <label>All</label>
             </div>
-            
           </div>
         <Container id="middle">
             {allPet.map((value) => {

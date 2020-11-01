@@ -16,8 +16,7 @@ import { Container, Card, CardImg, CardBody,
 /*import { CheckboxFilter, TermQuery, BoolMust, RangeQuery } from "searchkit";*/
 import Navigation2 from '../../Navigation/Navigation2';
 import homeService_page from "./homeService_page";
-import { If } from 'react-if';
-import { constants } from 'buffer';
+
 
 const fillter1 = document.getElementById('fillter0');
 
@@ -79,22 +78,10 @@ const Home = () => {
               <br/>
               <input type="checkbox" value="others" onChange={others}/>
               <label>Others</label>
-              
-              
-            </div>
-            
-            <div className="filter">
-              <p>Height</p>
-              <input type="checkbox"/>
-              <label>less than 20cm</label>
               <br/>
-              <input type="checkbox"/>
-              <label>20-50cm</label>
-              <br/>
-              <input type="checkbox"/>
-              <label>more than 50cm</label>
-            </div>
-            
+              <input type="checkbox" value="all" onChange={petInfo}/>
+              <label>All</label>
+            </div>       
           </div>
         <Container id="middle">
           {allPet.map((value) => {
