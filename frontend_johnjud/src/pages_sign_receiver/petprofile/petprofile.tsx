@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 import profileservice from './ProfileService';
 import Navigation from '../../Navigation/Navigation';
 import {Petinfo} from './Interface';
-import { NavLink} from 'react-router-dom';
+import { NavLink, useHistory} from 'react-router-dom';
 import { Button, Container} from 'reactstrap';
 import { MyCarousel } from './components/MyCarousel';
 import { BookmarkModal } from './components/BookmarkModal';
@@ -47,6 +47,7 @@ export const Petprofile = (props:any) => {
   const PetAddress = obj?.PetAddress;
     
   const link_google = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=${PetAddress}`
+  const history=useHistory()
   const makeroom=()=>{
     const a={
       userid1:localStorage.UserId,
