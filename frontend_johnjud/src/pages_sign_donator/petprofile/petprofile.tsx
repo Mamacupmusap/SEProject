@@ -30,7 +30,7 @@ export const Petprofile = (props:any) => {
     const petid = props.match.params.petid;
     const fetchProfileInfo=() =>{
       return(
-        profileservice.fetchProfileInfo(props.petid)
+        profileservice.fetchProfileInfo(petid)
         .then(res => {
           setObj(res)
         })
@@ -127,7 +127,7 @@ export const Petprofile = (props:any) => {
             <div id="petStatusPro">
               <img src={greenRight} width="24" height="24" alt={''}/><h1 id="petStatusPro2">กำลังหาบ้านให้น้อง</h1>
             </div>
-            <h5 id="petCodeDon">รหัสสำหรับนัดแลกเปลี่ยนสัตว์: รหัสสสส</h5>
+            <h5 id="petCodeDon">รหัสสำหรับนัดแลกเปลี่ยนสัตว์: {petid}</h5>
           </div>
           <div className="toppppp">
             {PetName}

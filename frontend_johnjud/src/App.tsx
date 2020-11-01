@@ -46,7 +46,7 @@ import article1_donator from './pages_sign_donator/article/article1'
 import article2_donator from './pages_sign_donator/article/article2'
 import article3_donator from './pages_sign_donator/article/article3'
 
-import chat_donator from './pages_sign_donator/chat/components/Chat/Chat';
+import chat_donator from './pages_sign_donator/chat/chatroom';
 import suggestion_donator from './pages_sign_donator/chat/suggest';
 import petprofile_donator from './pages_sign_donator/petprofile/petprofile'
 import petprofile1_donator from './pages_sign_donator/petprofile/petprofile1'
