@@ -1,10 +1,10 @@
 import {Petinfo} from './Interface';
 
-async function fetchProfileInfo(): Promise<Petinfo>{
-    const res = await fetch('http://localhost:3000/petinfo/5f817068327a81094416d049');
+async function fetchProfileInfo(petid:string): Promise<Petinfo>{
+    console.log(petid)
+    const res = await fetch(`http://localhost:2000/petinfo/${petid}`);
     const name = await res.json();
-    return name;
-}
+    return name;}
 
 async function fetchadoption(): Promise<Petinfo>{
     const res = await fetch('http://localhost:3000/petinfo/5f817068327a81094416d049');

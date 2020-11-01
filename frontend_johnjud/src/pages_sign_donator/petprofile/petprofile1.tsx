@@ -48,7 +48,7 @@ const update=() =>{
       console.log(result);
             if(result.accessToken) {
              localStorage.setItem("Token", result.accessToken)
-               return result
+             return result
     }
 })    
 }
@@ -68,7 +68,7 @@ const PetinfoSchema = Yup.object().shape({
     .required('Required'),
   Description: Yup.string(),
 });
-
+//
 interface Value2{
   petName: string;
   petpic: string;

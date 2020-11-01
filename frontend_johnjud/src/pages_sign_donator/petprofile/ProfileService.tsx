@@ -50,13 +50,12 @@ headers: {
 “id”: 201
 }
 */
-
-async function fetchProfileInfo(): Promise<Petinfo>{ 
-    const res = await fetch('http://localhost:3000/petinfo/two');
+async function fetchProfileInfo(petid:string): Promise<Petinfo>{
+    console.log(petid)
+    const res = await fetch(`http://localhost:2000/petinfo/${petid}`);
     const name = await res.json();
     return name;
 }
-
 async function fetchProfileInfo2(): Promise<any[]>{
     const res = await fetch('http://localhost:2000/petinfo/three/findpet/petadoption');
     const name = await res.json();

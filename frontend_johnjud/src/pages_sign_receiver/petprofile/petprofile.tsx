@@ -13,34 +13,37 @@ import User from './components/img/User.png';
 import greenRight from './components/img/check.png';
 import mail from './components/img/mail.png';
 
-export const Petprofile = () => {
-    const[obj,setObj] = useState<Petinfo>();
+export const Petprofile = (props:any) => {
+  const[obj,setObj] = useState<Petinfo>();
+  const petid = props.match.params.petid;
 
-    const fetchProfileInfo=() =>{
-      return(
-        profileservice.fetchadoption()
-        .then(res => {
-          setObj(res)
-        })
-      )
-    }
-  
-    useEffect(()=>{
-      fetchProfileInfo()
-    },[])
+  const fetchProfileInfo=() =>{
+    return(
+      profileservice.fetchProfileInfo(petid)
+      .then(res => {
+        setObj(res)
+      })
+    )
+  }
+
+  useEffect(()=>{
+    fetchProfileInfo()
+  },[])
     
-    const petname = obj?.PetName;
-    const petbreed = obj?.PetBreed;
-    const petgender = obj?.PetGender;
-    const pettype = obj?.type;
-    const petPicUrl = obj?.petPicUrl;
-    const regPetStatus = obj?.regPetStatus;
-    const adopPetStatus = obj?.adopPetStatus;
-    const petstatus = obj?.PetStatus;
-    const petlength = obj?.petLength;
-    const petheight = obj?.petHeight;
-    const userid = obj?.UserId;
-    const adopuserid = obj?.AdopUserId;
+  const PetName=  obj?.PetName;
+  const PetBreed = obj?.PetBreed;
+  const PetGender=  obj?.PetGender;
+  const PetType=  obj?.Type;
+  const PetPicUrl= obj?.PetPicUrl;
+  const PetStatus=  obj?.PetStatus;
+  const PetLength = obj?.PetLength;
+  const PetHeight=  obj?.PetHeight;
+  const PetCerURL = obj?.PetCerURL;
+  const TimeStampUpdate = obj?.TimeStampUpdate
+  const UserId=  obj?.PetStatus;
+  const AdopUserId = obj?.PetLength;
+  const CheckCode=  obj?.PetHeight;
+  const CodePet = obj?.PetCerURL;
     
     return(
     <div className='bodyPetpro'>
@@ -50,7 +53,7 @@ export const Petprofile = () => {
             <img src={greenRight} width="24" height="24"/><h1 id="petStatusPro2">กำลังหาบ้านให้น้อง</h1>
           </div> 
           <div className="toppppp">
-            {petname}
+            {PetName}
           </div>
           <hr id="lineHeader"></hr> 
         </div>
@@ -63,11 +66,11 @@ export const Petprofile = () => {
         </div>
         <Container className="infoText">
             <Container className="ColumnPro">
-                <h1 id="oyay">Type: {pettype}</h1>
-                <h1 id="oyay">Gender: {petgender}</h1>       
-                <h1 id="oyay">Length: {petlength}</h1>
-                <h1 id="oyay">Height: {petheight}</h1>
-                <h1 id="oyay">Breed: {petbreed}</h1>
+                <h1 id="oyay">Type: {PetType}</h1>
+                <h1 id="oyay">Gender: {PetGender}</h1>       
+                <h1 id="oyay">Length: {PetLength}</h1>
+                <h1 id="oyay">Height: {PetHeight}</h1>
+                <h1 id="oyay">Breed: {PetBreed}</h1>
                 <h1 id="oyay">Location:</h1>
                 <h1 id="oyay">bla bla</h1>
             </Container>
@@ -84,7 +87,7 @@ export const Petprofile = () => {
         
         <Container>
             <h1 id="TextDescrip">Description:</h1>
-            {petstatus}
+            {PetStatus}
             <hr id="lineHeader2"></hr>
         </Container>
         <Container>

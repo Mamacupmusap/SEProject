@@ -89,7 +89,7 @@ class App extends Component{
              <Route path="/article1" component={article1}/>
              <Route path="/article2" component={article2}/>
              <Route path="/article3" component={article3}/>
-             <Route path="/petprofile" component={petprofile}/>
+             <Route path="/petprofile/:petid" component={petprofile}/>
 
 
              <Route path="/receiver/home" component={home_receiver}/>
@@ -100,11 +100,10 @@ class App extends Component{
              <Route path="/receiver/article2" component={article2_receiver}/>
              <Route path="/receiver/article3" component={article3_receiver}/>
 
-            
             <Route path="/receiver/chat" component={chat_receiver}/>
             <Route path="/receiver/suggestion" component={suggestion_receiver}/>
             <Route path="/receiver/bookmark" component={Bookmark}/>
-            <Route path="/receiver/petprofile" component={petprofile_receiver}/>
+            <Route path="/receiver/petprofile/:petid" component={petprofile_receiver}/>
 
             <Route path="/receiver/userprofile/editprofile/changepassword" component={ProChangePasword}/>
             <Route path="/receiver/userprofile/editprofile/changeemail" component={ProChangeEmail}/>
@@ -127,7 +126,7 @@ class App extends Component{
 
             <Route path="/donator/chat" component={chat_donator}/>
             <Route path="/donator/suggestion" component={suggestion_donator}/>
-            <Route path="/donator/petprofile" component={petprofile_donator}/>
+            <Route path="/donator/petprofile/:petid" component={petprofile_donator}/>
             <Route path="/donator/petprofile1" component={petprofile1_donator}/>
 
             <Route path="/donator/userprofile/:userId/editprofile/changephone/OTP" component={ProfileOTP}/>

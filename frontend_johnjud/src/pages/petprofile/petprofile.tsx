@@ -14,61 +14,41 @@ import greenRight from './components/img/check.png';
 //import mail from './components/img/mail.png';
 import { ProfileModal} from './components/ProfileModal';
 import ContactModal from './components/ContactModal';
+import profileservice from './ProfileService'
 
 
-export const Petprofile = () => {
+export const Petprofile = (props:any) => {
   const[obj,setObj] = useState<Petinfo>();
-  /*({
-    petid: '',
-    PetName: '',
-    PetBreed: '',
-    PetGender: '',
-    Type: '',
-    PetPicURL: '',
-    PetStatus: '',
-    PetLength: 10,
-    PetHeight: 10,
-    PetCerURL: '',
-    TimeStampUpdate: new Date(Date.now()) ,
-    UserId: '',
-    AdopUserId: ''});*/
+  const petid = props.match.params.petid;
 
-    /*const fetchProfileInfo=() =>{
-      return(
-        profileservice.fetchProfileInfo()
-        .then(res => {
-          console.log(res);
-          setObj(res)
-          console.log(obj)
-        })
-      )
-    }
-  
-    useEffect(()=>{
-      fetchProfileInfo()},[])*/
-    const getObj = () =>
-    fetch('http://localhost:3000/petinfo/two')
-    
-    .then((res) => res.json())
+  const fetchProfileInfo=() =>{
+    return(
+      profileservice.fetchProfileInfo(petid)
+      .then(res => {
+        setObj(res)
+      })
+    )
+  }
 
-    useEffect(() => {
-    getObj().then((obj) => setObj(obj))
-    }, [])
+  useEffect(()=>{
+    fetchProfileInfo()
+  },[])
     
-    const PetName=  obj?.PetName;
-    const PetBreed = obj?.PetBreed;
-    const PetGender=  obj?.PetGender;
-    const PetType=  obj?.Type;
-    const PetPicUrl= obj?.PetPicUrl;
-    const PetStatus=  obj?.PetStatus;
-    const PetLength = obj?.PetLength;
-    const PetHeight=  obj?.PetHeight;
-    const PetCerURL = obj?.PetCerURL;
-    const TimeStampUpdate = obj?.TimeStampUpdate
-    const UserId=  obj?.PetStatus;
-    const AdopUserId = obj?.PetLength;
-    const CheckCode=  obj?.CheckCode;
-    const CodePet = obj?.CodePet;
+  const PetName=  obj?.PetName;
+  const PetBreed = obj?.PetBreed;
+  const PetGender=  obj?.PetGender;
+  const PetType=  obj?.Type;
+  const PetPicUrl= obj?.PetPicUrl;
+  const PetStatus=  obj?.PetStatus;
+  const PetLength = obj?.PetLength;
+  const PetHeight=  obj?.PetHeight;
+  const PetCerURL = obj?.PetCerURL;
+  const TimeStampUpdate = obj?.TimeStampUpdate
+  const UserId=  obj?.PetStatus;
+  const AdopUserId = obj?.PetLength;
+  const CheckCode=  obj?.PetHeight;
+  const CodePet = obj?.PetCerURL;
+    
 
     return(
     <div className='bodyPetpro'>

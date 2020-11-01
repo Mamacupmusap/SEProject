@@ -1,7 +1,7 @@
 import React, { Component, useEffect, useState } from 'react';
 import './petprofile.css';
 import 'bootstrap/dist/css/bootstrap.css';
-//import profileservice from './ProfileService';
+import profileservice from './ProfileService';
 import Navigation from '../../Navigation/Navigation3';
 import {Petinfo} from './Interface';
 import { NavLink} from 'react-router-dom';
@@ -25,28 +25,21 @@ interface Value2{
     petId: string
 }
 
-export const Petprofile = () => {
+export const Petprofile = (props:any) => {
     const[obj,setObj] = useState<Petinfo>();
-    /*const fetchProfileInfo=() =>{
+    const petid = props.match.params.petid;
+    const fetchProfileInfo=() =>{
       return(
-        profileservice.fetchProfileInfo()
+        profileservice.fetchProfileInfo(props.petid)
         .then(res => {
           setObj(res)
         })
       )
     }
+  
     useEffect(()=>{
       fetchProfileInfo()
-    },[])*/
-
-    const getObj = () =>
-    fetch('http://localhost:2000/petinfo/three')
-    .then((res) => res.json())
-
-    useEffect(() => {
-    getObj().then((obj) => setObj(obj))
-    }, [])
-
+    },[])
     const PetName=  obj?.PetName;
     const PetBreed = obj?.PetBreed;
     const PetGender=  obj?.PetGender;
@@ -92,6 +85,7 @@ export const Petprofile = () => {
           <div>hello</div>
       )
     };
+    
 
     return(
     <div className='bodyPetpro'>
