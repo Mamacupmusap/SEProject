@@ -1,31 +1,22 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Profile.css';
-//import ProfileService from '../ProfileService';
+import ProfileService from '../ProfileService';
 import profileservice from '../ProfileService';
-import { Link, useHistory } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import ProfilePic from '../ProfilePic.png';
 import Glasspic from '../Glasspic.jpg';
-import Navigation3 from '../../../Navigation/Navigation3'
+import Navigation3 from '../../../Navigation/Navigation'
 
 
 const ChangePassword=(props:any) => {
     const [Password, setPassword] = useState<string>('')
     const [ConfirmPassword, setConfirmPassword] = useState<string>('')
-    const history = useHistory()
+
     const userId = props.match.params.userId;
     const submit=() =>{
-        profileservice.updatePassword(Password,ConfirmPassword,localStorage.Token)
-        .then( res=>{
-            console.log(res)
-            if(res){
-                alert("chagne password success!")
-                history.push(`/donator/userprofile/${userId}/editprofile`)
-            }
-            else{
-                alert("error please try again")
-            }
-        })
-        
+        return(
+            profileservice.updatePassword(Password,ConfirmPassword,localStorage.Token)
+        )
     }
     return(
         <div>
@@ -34,9 +25,9 @@ const ChangePassword=(props:any) => {
             <Navigation3/>
             <div className = 'ChangePage'>
             <Link to='/donator/userprofile'>  
-                <img id='profilePic' src={ProfilePic} alt={''}/>
+                <img id='profilePic' src={ProfilePic}></img>
             </Link>
-            <img id='glasspic' src = {Glasspic} alt={''}/>
+            <img id='glasspic' src = {Glasspic}></img>
             <div className='BlockBehindProfilePic'>
                 <div className='profilename'>
                 <br/><br/>
@@ -45,12 +36,10 @@ const ChangePassword=(props:any) => {
             </div>
             <div className='ChangeBlock'>
                 <span id='ChangePassword'>New Password*: </span>
-                &nbsp;&nbsp;<input id='InputChangePassword' value={Password} onChange={(e) => {
-                    setPassword(e.target.value);}}/>
+                &nbsp;&nbsp;<input id='InputChangePassword' value={Password} onChange={(e) => {setPassword(e.target.value);}}></input>
                 <br/><br/>
                 <span id='ChangePassword'>confirm Password*: </span>
-                &nbsp;&nbsp;<input id='InputChangePassword' value={ConfirmPassword} onChange={(e) =>
-                    {setConfirmPassword(e.target.value);}}/>
+                &nbsp;&nbsp;<input id='InputChangePassword' value={ConfirmPassword} onChange={(e) => {setConfirmPassword(e.target.value);}}></input>
                 <button id='SubmitPasswordButton' onClick={submit}>Submit</button>
             </div>
         </div>

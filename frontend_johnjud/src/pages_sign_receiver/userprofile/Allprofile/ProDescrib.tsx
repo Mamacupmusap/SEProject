@@ -9,7 +9,7 @@ import LeftBlock from './LeftBlock';
 import { useEffect } from 'react';
 import profileservice from '../ProfileService'
 import {Userinfo} from '../Interface';
-import Navigation3 from '../../../Navigation/Navigation3'
+import Navigation3 from '../../../Navigation/Navigation'
 
 const Apps=(props:any) => {
   const[obj,setObj] = useState<Userinfo>();

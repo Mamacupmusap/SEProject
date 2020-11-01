@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Profile.css';
 import ProfilePic from '../ProfilePic.png';
 import TabProfile from '../TabProfile';
@@ -9,15 +9,15 @@ import DescriptionEdit from './EditDescription';
 import EditPassword from './EditPassword';
 import EditEmail from './EditEmail';
 import EditPhone from './EditPhone';
-import Navigation3 from '../../../Navigation/Navigation3'
+import Navigation3 from '../../../Navigation/Navigation'
 import Editimage from './EditImageProfile'
 
 
 const EditProfile=(props:any) =>{
-    /*const [selectFile, setSelectedFiles] = useState(undefined);
+    const [selectFile, setSelectedFiles] = useState(undefined);
     const uploadProfile=()=>{
 
-    }*/
+    }
     const userId = props.match.params.userId
 
     return(
@@ -27,12 +27,9 @@ const EditProfile=(props:any) =>{
             <Navigation3/>
             <div className = 'Profile'>
             <img id='profilePic' src={ProfilePic}></img>
-            <div className = "editimageProfile">
-             <Editimage/>
-            </div>
+            <Editimage/>
             
-            
-            <img id='glasspic' src = {Glasspic} alt={''}/>
+            <img id='glasspic' src = {Glasspic}></img>
             <div className='block'>
                <LeftBlockEdit userId={userId}/>
                 <div className='topblock'>
