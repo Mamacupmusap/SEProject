@@ -13,6 +13,8 @@ import User from './components/img/User.png';
 import greenRight from './components/img/check.png';
 import mail from './components/img/mail.png';
 import userEvent from '@testing-library/user-event';
+import {Userinfo} from './interface2';
+
 
 import { Formik,Form, Field, ErrorMessage , FormikHelpers } from 'formik';
 import submitCodeService from "./submitCodeService";
@@ -25,6 +27,12 @@ interface Value2{
 
 export const Petprofile = (props:any) => {
   const[obj,setObj] = useState<Petinfo>();
+  const[userinfo,setUserinfo] = useState<Userinfo>();
+  const[profileURL,setProfileURL] = useState<string|undefined>();
+  const[firstname,setFirstname] = useState<string|undefined>();
+  const[lastname,setLastname] = useState<string|undefined>();
+
+
   const petid = props.match.params.petid;
 
   const fetchProfileInfo=() =>{
@@ -35,6 +43,7 @@ export const Petprofile = (props:any) => {
       })
     )
   }
+
 
   useEffect(()=>{
     fetchProfileInfo()
@@ -56,6 +65,7 @@ export const Petprofile = (props:any) => {
   const PetAddress = obj?.PetAddress;
     
   const link_google = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=${PetAddress}`
+  
   const history=useHistory()
   const makeroom=()=>{
     const a={
@@ -64,14 +74,29 @@ export const Petprofile = (props:any) => {
     }
     profileservice.makeroomchat(a,localStorage.UserId,UserId)
     .then(a=>{
-      if(a=="exist"){
-        //history.push('http://localhost:2000/donator/chat')
-      }
-      else{
-        //history.push('http://localhost:2000/donator/chat')
-      }
+      const roomid = a.id
+      history.push(`/donator/chat/${localStorage.UserId}/${roomid}`)
     })
   }
+
+    const fetchProfileInfos=() =>{
+      return(
+        profileservice.fetchProfileInfos(UserId)
+        .then(res => {
+          setUserinfo(res)
+        })
+      )
+    }
+    const editprofileinfo=()=>{
+      setProfileURL(userinfo?.ImgURL)
+      setFirstname(userinfo?.FirstName)
+      setLastname(userinfo?.LastName)
+    }
+    useEffect(()=>{
+      fetchProfileInfos()
+      editprofileinfo()
+    },[UserId])
+
     return(
     <div className='bodyPetpro'>
         < Navigation />
@@ -85,7 +110,7 @@ export const Petprofile = (props:any) => {
           <hr id="lineHeader"/>
         </div>
         <div className="carousel">
-            < MyCarousel />
+            < MyCarousel PetURl={PetPicUrl}/>
         </div>
         <div className="informationn">
             Information
@@ -102,7 +127,7 @@ export const Petprofile = (props:any) => {
             </Container>
             <div id="ColumnSide">
                 <BookmarkModal id="testagain"/>
-                <CertModal id="testagain"/>
+                <CertModal id="testagain" certPic={PetCerURL}/>
             </div>
         </Container>
         <Container id="fuckj">
@@ -119,10 +144,10 @@ export const Petprofile = (props:any) => {
         <Container>
           <h1 id='TextDescrip'>Post by:</h1>
             <div id="PostbyText">
-              <img src={User} className="PostUserPic"/>
+              <img src={profileURL} className="PostUserPic"/>
               <div className="postInfo">
                 <div className="postInfo2">
-                  <h1 id="PostUser"> Tiffany Young </h1>
+                  <h1 id="PostUser"> {firstname} {lastname} </h1>
                   <NavLink to='/contactprofile' id='PostProfile'> Profile</NavLink>
                 </div>
                 <NavLink to='/receiver/chat'><Button id='whatitsbrown' onClick={makeroom}><img src={mail} id="mailIcon1" alt={''}/>contact</Button></NavLink>
@@ -157,7 +182,7 @@ export const Petprofile = (props:any) => {
                                                  placeholder="codePet"
                                                  style={{marginLeft:10}}/>
                                           <ErrorMessage component="div" name="codePet" className="invalid-feedback" />
-                                          <button type="submit" id="btnPetCode">Submit</button>
+                                          <button type="submit" id="btnPetCode" onClick={makeroom}>Submit</button>
                                       </FormGroup>
                                   </Col>
                               </Form>

@@ -18,6 +18,8 @@ const Chat= (props:any) =>{
     const[obj,setObj] = useState<any[]>([]);
     const [newChat, setnewChat] = useState<string>();
     const roomId = props.match.params.roomId;
+    const UserId = props.match.params.userId;
+
     const fetchChatroom=() =>{
       return(
         profileservice.fetchChatroom()
@@ -61,6 +63,8 @@ const Chat= (props:any) =>{
     console.log(roomId)
   return (
     <div>
+      {localStorage.UserId==UserId && 
+      <div>
       <Navigation3/>
       <div className="outerContainer">
         <div className="left_chat">
@@ -71,7 +75,7 @@ const Chat= (props:any) =>{
           {obj?.map(item=>(
             <span>
             <div className="chatPeople_group">
-              <a href={`http://localhost:3000/donator/chat/${item.id}/`}>{item.username1},{item.username2}</a>
+              <a href={`http://localhost:3000/donator/chat/${localStorage.UserId}/${item.id}/`}>{item.username1},{item.username2}</a>
             </div>
             </span>
             ))}
@@ -88,6 +92,9 @@ const Chat= (props:any) =>{
         {/* <TextContainer users='hi'/> */}
       </div> 
     </div>
+}
+    </div>
+    
     
   );
   }

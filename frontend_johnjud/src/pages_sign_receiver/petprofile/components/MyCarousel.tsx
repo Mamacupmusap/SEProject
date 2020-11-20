@@ -78,16 +78,7 @@ const items = [
     );
   }*/
   export const MyCarousel = (prop:any) => {
-    const[obj,setObj] = useState<Petinfo>();
-    const getObj = () =>
-    fetch('http://localhost:3000/petinfo/two')
-    
-    .then((res) => res.json())
-
-    useEffect(() => {
-    getObj().then((obj) => setObj(obj))
-    }, [])
-    const PetPicUrl= obj?.PetPicUrl;
+    const PetPicUrl= prop.PetURl;
 
     return (
       <img src={PetPicUrl}/>

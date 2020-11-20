@@ -47,6 +47,7 @@ const Messages = (props:any) => {
 
 return(
   <div className="allMss">
+
    {obj?.map(item=>(
     <div className="chatGroup">
       <img src={item.picUser} id="userImg" style={{width:30,height:30}}/>
