@@ -35,6 +35,7 @@ export interface Petinfo{
     TimeUpdate?:Date;
     Describe?:string;
     PetAddress?:string;
+    GenCode?:string;
 }
 
 

@@ -7,7 +7,8 @@ async function updateStatus(value: { petId: string; token:string}) {
         method: 'PATCH',
         headers: {'Authorization': `Bearer ${value.token}`},
         body: urlencoded,
-    });
+    })
+
     return await res.json()
 }
 
