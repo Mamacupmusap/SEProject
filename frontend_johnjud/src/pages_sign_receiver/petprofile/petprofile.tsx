@@ -18,6 +18,7 @@ import {Userinfo} from './interface2';
 
 import { Formik,Form, Field, ErrorMessage , FormikHelpers } from 'formik';
 import submitCodeService from "./submitCodeService";
+import {errorMonitor} from "events";
 
 interface Value2{
     codePet: string,
@@ -165,13 +166,16 @@ export const Petprofile = (props:any) => {
                               values: Value2,
                               { setSubmitting }: FormikHelpers<Value2>
                           ) => {
-                              console.log(values.token)
-                              console.log(values.petId)
-                              console.log(values.codePet)
+                              //console.log(values.token)
+                              //console.log(values.petId)
+                              //console.log(values.codePet)
                               const result = await submitCodeService.submitCode(values);
-                              console.log(result);
-                              //alert(values.codePet);
+                              console.log(result.error);
+                              if (result.error === 'Conflict' && PetStatus === 'ava') {
+                                  alert('Submit failed\n' + 'The code you entered is incorrect.')
+                              }
                               setSubmitting(false);
+                              window.location.reload();
                           }}
                       >
                           {({touched }) => (

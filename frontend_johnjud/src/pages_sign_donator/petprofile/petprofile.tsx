@@ -54,10 +54,22 @@ console.log(petid)
     const TimeUpdate = obj?.TimeUpdate;
     const Describe=  obj?.Describe;
     const PetAddress = obj?.PetAddress;
+    const genCode = obj?.GenCode;
 
     const link_google = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=${PetAddress}`
 
+    const isAva = () => {
+        console.log('ava')
+        console.log(PetStatus === 'ava')
+        //return PetStatus !== 'ava'
+        return PetStatus === 'ava'
+    }
+    useEffect(()=>{
+        isAva()
+    },[])
+
     const isPend = () => {
+        console.log('pend')
         console.log(PetStatus === 'pend')
         //return PetStatus !== 'pend'
         return PetStatus === 'pend'
@@ -67,21 +79,13 @@ console.log(petid)
     },[])
 
     const isDone = () => {
+        console.log('done')
         console.log(PetStatus === 'done')
         //return PetStatus !== 'done'
         return PetStatus === 'done'
     }
     useEffect(()=>{
         isDone()
-    },[])
-
-    const isAva = () => {
-        console.log(PetStatus === 'ava')
-        //return PetStatus !== 'ava'
-        return PetStatus === 'ava'
-    }
-    useEffect(()=>{
-        isAva()
     },[])
 
     return(
@@ -129,20 +133,16 @@ console.log(petid)
                     </Formik>
                 </div>)}
 
-                {isDone &&
+                {isDone() &&
                 (<div>
-                    <img src={check} alt='check'/><div className="status-text">กำลังหาบ้านให้น้อง</div>
-                    <img src={check_y} alt='check_y'/><div className="status-text2">น้องกำลังไปบ้านใหม่</div>
                     <img src={check_r} alt='check_r'/><div className="status-text3">น้องมีบ้านใหม่แล้ว</div>
                 </div>)}
 
             </div>
         </Container>
+          <br/>
           <div id="sideHehe">
-            <div id="petStatusPro">
-              <img src={greenRight} width="24" height="24" alt={''}/><h1 id="petStatusPro2">กำลังหาบ้านให้น้อง</h1>
-            </div>
-            <h5 id="petCodeDon">รหัสสำหรับนัดแลกเปลี่ยนสัตว์: {petid}</h5>
+            <h5 id="petCodeDon">รหัสสำหรับนัดแลกเปลี่ยนสัตว์: {genCode}</h5>
           </div>
           <div className="toppppp">
             {PetName}
