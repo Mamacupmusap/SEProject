@@ -182,7 +182,7 @@ export const Petprofile = (props:any) => {
                                                  placeholder="codePet"
                                                  style={{marginLeft:10}}/>
                                           <ErrorMessage component="div" name="codePet" className="invalid-feedback" />
-                                          <button type="submit" id="btnPetCode" onClick={makeroom}>Submit</button>
+                                          <button type="submit" id="btnPetCode">Submit</button>
                                       </FormGroup>
                                   </Col>
                               </Form>
