@@ -110,6 +110,17 @@ async function updatephone(newPhone:Petinfo): Promise<any|null> {
     });
 }
 
+async function DeleteInfo(a: any,useridz: string | null,petidz: string | null,token: string): Promise<any|null> {
+    const res = await fetch(`http://localhost:2000/petinfo/${useridz}/${petidz}/delete`,{
+        method: 'PATCH',
+        headers : {'Authorization': `Bearer ${token}`},
+        body: JSON.stringify(a),
+    });
+    const ress = await res.json();
+    console.log(ress)
+}
+
+
 export default {
     fetchProfileInfo,
     fetchProfileInfo2,
@@ -119,5 +130,6 @@ export default {
     updatedescription,
     updateemail,
     updatephone,
+    DeleteInfo,
 }
 

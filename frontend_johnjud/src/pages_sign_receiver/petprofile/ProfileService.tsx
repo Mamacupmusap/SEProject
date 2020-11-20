@@ -56,6 +56,16 @@ async function makeroomchat(a:any,userId1:string,userId2:string|undefined): Prom
     return ress
 }
 
+async function AddBookmark(b: any,useridx: string | null,petidx: string | null,token: string): Promise<any|null> {
+    const res = await fetch(`http://localhost:2000/bookmark/${useridx}/${petidx}/addfav`,{
+        method: 'POST',
+        headers : {'Authorization': `Bearer ${token}`},
+        body: JSON.stringify(b),
+    });
+    const ress = await res.json();
+    return ress
+}
+
 export default {
     fetchProfileInfo,
     fetchadoption,
@@ -65,5 +75,6 @@ export default {
     updatedescription,
     updateemail,
     makeroomchat,
+    AddBookmark,
 } 
 

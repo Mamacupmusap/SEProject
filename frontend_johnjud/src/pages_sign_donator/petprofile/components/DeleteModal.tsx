@@ -3,6 +3,7 @@ import './DeleteModal.css'
 import { Button, Modal, ModalBody } from 'reactstrap';
 import alert from './img/Warning.png'
 import { NavLink } from 'react-router-dom';
+import profileservice from '../ProfileService';
 
 
 export const DeleteModal = (props:any) => {
@@ -15,6 +16,19 @@ export const DeleteModal = (props:any) => {
 
   const toggle = () => setModal(!modal);
 
+  
+  const useridz = localStorage.getItem('UserId')
+  const petidz  = localStorage.getItem('pet_id')
+ 
+
+  const Delete_Info=() =>{
+    const a={
+      id: useridz,
+      petid: petidz
+    }  
+    profileservice.DeleteInfo(a,useridz,petidz,localStorage.Token)
+  }
+  
   return (
     <div>
       <Button color="link" onClick={toggle} id="deletePetPro" style={{color: '#C4C4C4'}}>delete</Button>
@@ -25,8 +39,8 @@ export const DeleteModal = (props:any) => {
         </ModalBody>
         <div className="proAllButt">
             <div id="proButt1">
-                <NavLink to='/donator/home'>
-                    <Button color="link" onClick={toggle} className="Probutton1">confirm</Button>
+                <NavLink to='/donator/home'>  
+                    <Button color="link" onClick={Delete_Info} className="Probutton1">confirm</Button>
                 </NavLink>
             </div>
             <div id="proButt2">
