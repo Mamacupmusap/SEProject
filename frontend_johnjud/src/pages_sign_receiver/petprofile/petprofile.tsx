@@ -35,6 +35,8 @@ export const Petprofile = (props:any) => {
 
   const petid = props.match.params.petid;
 
+  localStorage.setItem("petID", petid)
+
   const fetchProfileInfo=() =>{
     return(
       profileservice.fetchProfileInfo(petid)
@@ -44,6 +46,7 @@ export const Petprofile = (props:any) => {
     )
   }
 
+  
 
   useEffect(()=>{
     fetchProfileInfo()

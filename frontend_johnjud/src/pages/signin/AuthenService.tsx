@@ -54,6 +54,7 @@ function logoutUser(): void {
         localStorage.removeItem("Token");
         localStorage.removeItem("UserId");
         localStorage.removeItem("UserName");
+        localStorage.removeItem("pet_id");
     }
 }
 
