@@ -4,7 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css';
 //import profileservice from './ProfileService';
 import Navigation from '../../Navigation/Navigation2';
 import {Petinfo} from './Interface';
-//import { NavLink} from 'react-router-dom';
+import { NavLink} from 'react-router-dom';
 import { Container} from 'reactstrap';
 import { MyCarousel } from './components/MyCarousel';
 import { BookmarkModal } from './components/BookmarkModal';
@@ -15,10 +15,19 @@ import greenRight from './components/img/check.png';
 import { ProfileModal} from './components/ProfileModal';
 import ContactModal from './components/ContactModal';
 import profileservice from './ProfileService'
+import {Userinfo} from './interface3';
 
 export const Petprofile = (props:any) => {
   const[obj,setObj] = useState<Petinfo>();
+  const[userinfo,setUserinfo] = useState<Userinfo>();
+  const[profileURL,setProfileURL] = useState<string|undefined>();
+  const[firstname,setFirstname] = useState<string|undefined>();
+  const[lastname,setLastname] = useState<string|undefined>();
+  const[username,setUsername] = useState<string|undefined>();
+
   const petid = props.match.params.petid;
+
+  
 
   const fetchProfileInfo=() =>{
     return(
@@ -49,6 +58,27 @@ export const Petprofile = (props:any) => {
   const PetAddress = obj?.PetAddress;
 
   const link_google = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=${PetAddress}`
+
+  const fetchProfileInfos=() =>{
+    return(
+      profileservice.fetchProfileInfos(UserId)
+      .then(res => {
+        setUserinfo(res)
+      })
+    )
+  }
+  const editprofileinfo=()=>{
+    setProfileURL(userinfo?.ImgURL)
+    setUsername(userinfo?.UserName)
+    setFirstname(userinfo?.FirstName)
+    setLastname(userinfo?.LastName)
+  }
+  useEffect(()=>{
+    fetchProfileInfos()
+  },[UserId])
+  useEffect(()=>{
+    editprofileinfo()
+  },[userinfo])
 
     return(
     <div className='bodyPetpro'>
@@ -97,11 +127,12 @@ export const Petprofile = (props:any) => {
         <Container>
           <h1 id='TextDescrip'>Post by:</h1>
             <div id="PostbyTextNotSign">
-              <img src={User} className="PostUserPic" alt={"'"}/>
+            <img src={profileURL} className="PostUserPic" alt={'No picture'}/>
               <div className="postInfo">
                 <div className="postInfo2">
-                  <h1 id="PostUser"> Tiffany Young </h1>
-                  < ProfileModal/>
+                <h1 id="PostUser"> {username} {firstname} {lastname} </h1>
+                  <NavLink to ={`/receiver/userprofile/${UserId}`} id='PostProfile'> Profile</NavLink>
+              
                 </div>
                 <ContactModal/>    
               </div>

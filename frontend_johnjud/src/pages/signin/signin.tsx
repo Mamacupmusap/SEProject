@@ -5,7 +5,6 @@ import './signin.css';
 import { NavLink } from 'react-router-dom';
 import Navigation2 from '../../Navigation/Navigation2';
 
-
 const signin = () =>{
   return(
     <div>

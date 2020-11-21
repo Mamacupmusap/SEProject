@@ -1,4 +1,5 @@
 import {Petinfo} from './Interface';
+import {Userinfo} from './interface3';
 
 async function fetchProfileInfo(petid:string): Promise<Petinfo>{
     console.log(petid)
@@ -6,6 +7,10 @@ async function fetchProfileInfo(petid:string): Promise<Petinfo>{
     const name = await res.json();
     return name;}
 
+async function fetchProfileInfos(userId:string|undefined): Promise<Userinfo>{
+    const res = await fetch(`http://localhost:2000/User/${userId}`);
+    const name = await res.json();
+    return name;}
 
 async function fetchadoption(): Promise<any[]>{
     const res = await fetch('http://localhost:3000/petinfo/5f817068327a81094416d049t/');
@@ -69,5 +74,6 @@ export default {
     updatedescription,
     updateemail,
     updatephone,
+    fetchProfileInfos,
 }
 
