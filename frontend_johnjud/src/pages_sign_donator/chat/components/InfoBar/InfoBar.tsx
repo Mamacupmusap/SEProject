@@ -6,7 +6,7 @@ import { NavLink } from 'react-router-dom';
 const InfoBar = (prop:any) => (
   <div className="infoBar">
     <div className="leftInnerContainer">
-      <h3 id="roomName">{prop.room},{prop.room2}</h3>
+      <h3 id="roomName">{prop.username2}</h3>
     </div>
     <div className="rightInnerContainer">
       <NavLink to='/donator/suggestion' style={{color:'white'}} id="read_suggest">คำแนะนำเพิ่มเติม</NavLink>
