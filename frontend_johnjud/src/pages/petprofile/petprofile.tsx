@@ -131,8 +131,6 @@ export const Petprofile = (props:any) => {
               <div className="postInfo">
                 <div className="postInfo2">
                 <h1 id="PostUser"> {username} {firstname} {lastname} </h1>
-                  <NavLink to ={`/receiver/userprofile/${UserId}`} id='PostProfile'> Profile</NavLink>
-              
                 </div>
                 <ContactModal/>    
               </div>
