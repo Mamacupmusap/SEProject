@@ -99,7 +99,6 @@ console.log(petid)
 
                 {isPend() &&
                 (<div>
-                    <img src={check} alt='check'/><div className="status-text">กำลังหาบ้านให้น้อง</div>
                     <img src={check_y} alt='check_y'/><div className="status-text2">น้องกำลังไปบ้านใหม่</div>
                     <Formik
                         initialValues={{
@@ -116,6 +115,7 @@ console.log(petid)
                             const result = await changeStatusService.updateStatus(values);
                             console.log(result);
                             setSubmitting(false);
+                            window.location.reload();
                         }}
                     >
                         {({touched }) => (
