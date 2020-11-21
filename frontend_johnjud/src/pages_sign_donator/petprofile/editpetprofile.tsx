@@ -221,7 +221,7 @@ const Addpetprofile= (props:any) =>{
           </Col>
 
           <Col>
-              <Label for="PetPicURL" className="information">Pet's Picture : </Label>
+              <Label for="PetPicURL" className="information">Pet's Picture** : </Label>
               <input id="PetPicURL" name="PetPicURL" type="file" onChange={(event) => {
                 props.setFieldValue("PetPicURL", event.currentTarget.files![0]);
                 props.setFieldValue("fileName_img", event.currentTarget.files![0].name);
@@ -291,7 +291,7 @@ const Addpetprofile= (props:any) =>{
             </FormGroup>
           </Col>   
           <Col>
-              <Label for="PetCerURL" className="information">Animal Health Certificate : </Label>
+              <Label for="PetCerURL" className="information">Animal Health Certificate** : </Label>
               <input id="PetCerURL" name="PetCerURL" type="file" onChange={(event) => {
                 props.setFieldValue("PetCerURL", event.currentTarget.files![0]);
                 props.setFieldValue("fileName_cer", event.currentTarget.files![0].name);
@@ -320,6 +320,11 @@ const Addpetprofile= (props:any) =>{
                        className="input_text3"
                        />
             </FormGroup>
+          </Col>
+          
+          <Col>
+              <p style={{paddingTop:"0px", marginBottom:"0px", marginTop:"20px"}}>* Required</p>
+              <p style={{paddingTop:"0px", marginBottom:"5px"}}>** No input will keep the picture as the same before.</p>
           </Col>
 
           
