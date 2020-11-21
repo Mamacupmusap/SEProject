@@ -176,11 +176,9 @@ const Addpetprofile= (props:any) =>{
               TimeUpdate : values.TimeUpdate,
               Describe: values.Describe,
               PetAddress : values.PetAddress
-            }
+            }            
 
-            console.log(sendInfoPet);
             
-
             const res = await fetch('http://localhost:2000/petinfo/editPetInfo',{
               method:'PATCH',
               mode: 'cors',
