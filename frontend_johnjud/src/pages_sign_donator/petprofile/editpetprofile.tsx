@@ -212,7 +212,7 @@ const Addpetprofile= (props:any) =>{
         <div className="infopet">
           <Col>
             <FormGroup>
-              <Label for="PetName" className="information">Pet's Name*:</Label>
+              <Label for="PetName" className="information">Pet's Name* : </Label>
               <Field name="PetName" 
                        type="text" 
                        id="PetName" 
@@ -223,7 +223,7 @@ const Addpetprofile= (props:any) =>{
           </Col>
 
           <Col>
-              <Label for="PetPicURL" className="information">Pet picture :</Label>
+              <Label for="PetPicURL" className="information">Pet's Picture : </Label>
               <input id="PetPicURL" name="PetPicURL" type="file" onChange={(event) => {
                 props.setFieldValue("PetPicURL", event.currentTarget.files![0]);
                 props.setFieldValue("fileName_img", event.currentTarget.files![0].name);
@@ -232,26 +232,25 @@ const Addpetprofile= (props:any) =>{
 
           <Col>
             <FormGroup>
-              <Label for="PetGender" className="information">Gender* :</Label>
+              <Label for="PetGender" className="information">Gender* : </Label>
                   <Field name="PetGender" 
                        type="radio" 
                        id="Male"
                        value='Male' 
                   />        
-                  <Label className="choice">Male</Label>
+                  <Label className="choice">Male </Label>
                   <Field name="PetGender" 
                        type="radio" 
                        id="Female"
                        value='Female' 
                   />        
-                  <Label className="choice">Female</Label>
-                  
+                  <Label className="choice">Female </Label>
             </FormGroup>
           </Col>
     
           <Col>
             <FormGroup>
-              <Label for="PetLength" className="information">Length :</Label>
+              <Label for="PetLength" className="information">Length : </Label>
               <Field name="PetLength" 
                        type="text" 
                        id="PetLength" 
@@ -262,7 +261,7 @@ const Addpetprofile= (props:any) =>{
           </Col>
           <Col>
             <FormGroup>
-              <Label for="PetHeight" className="information">Height :</Label>
+              <Label for="PetHeight" className="information">Height : </Label>
               <Field name="PetHeight" 
                        type="text" 
                        id="PetHeight" 
@@ -273,7 +272,7 @@ const Addpetprofile= (props:any) =>{
 
           <Col>
             <FormGroup>
-              <Label for="PetBreed" className="information">Breed :</Label>
+              <Label for="PetBreed" className="information">Breed : </Label>
               <Field name="PetBreed" 
                        type="text" 
                        id="PetBreed" 
@@ -294,7 +293,7 @@ const Addpetprofile= (props:any) =>{
             </FormGroup>
           </Col>   
           <Col>
-              <Label for="PetCerURL" className="information">Animal Health Certificate :</Label>
+              <Label for="PetCerURL" className="information">Animal Health Certificate : </Label>
               <input id="PetCerURL" name="PetCerURL" type="file" onChange={(event) => {
                 props.setFieldValue("PetCerURL", event.currentTarget.files![0]);
                 props.setFieldValue("fileName_cer", event.currentTarget.files![0].name);
@@ -303,7 +302,7 @@ const Addpetprofile= (props:any) =>{
 
           <Col>
             <FormGroup>
-              <Label for="PetAddress" className="information">Location*:</Label><label id="location-please">please pin your delivery location on the map</label><p></p>
+              <Label for="PetAddress" className="information">Location* : </Label><label id="location-please">please pin your delivery location on the map</label><p></p>
               <Field name="PetAddress" 
                        type="text" 
                        id="PetAddress" 
@@ -315,7 +314,7 @@ const Addpetprofile= (props:any) =>{
         
           <Col>
             <FormGroup>
-              <Label for="Describe" className="information">Description:</Label><p></p>
+              <Label for="Describe" className="information">Description : </Label><p></p>
               <Field name="Describe" 
                        Type="text" 
                        id="Describe" 
