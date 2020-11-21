@@ -207,7 +207,10 @@ export const Petprofile = (props:any) => {
               <img src={profileURL} className="PostUserPic" alt={'No picture'}/>
               <div className="postInfo">
                 <div className="postInfo2">
-                  <h1 id="PostUser"> {username} -- {firstname} {lastname} </h1>
+                  <div className="Namee">
+                    <h1 id="PostUser"> {username} </h1>
+                    <h1 id="PostUser"> {firstname} {lastname} </h1>
+                  </div>
                   <NavLink to={`/receiver/userprofile/${UserId}`} id='PostProfile'> Profile</NavLink>
                 </div>
                 <Button id='whatitsbrown' onClick={makeroom}><img src={mail} id="mailIcon1" alt={''}/>contact</Button>
