@@ -6,7 +6,7 @@ import {chatroom} from './Interface';
 import Message from './components/Messages/Message';
 import InfoBar from './components/InfoBar/InfoBar';
 import Input from './components/Input/Input';
-import Navigation from '../../Navigation/Navigation';
+import Navigation3 from '../../Navigation/Navigation3';
 import './chat.css';
 import user1 from './components/Chat/img/user1.png';
 import user2 from './components/Chat/img/user2.png';
@@ -72,6 +72,7 @@ const Chat= (props:any) =>{
       const user2 = obj1?.username2;
 
 
+
     async function PostChat(chatinfo:chat): Promise<chat> {
     const res = await fetch(`http://localhost:2000/chat/${userid}/${roomId}/addmessage`,{
                   method: 'POST',
@@ -83,34 +84,22 @@ const Chat= (props:any) =>{
               const name = await res.json();
               return name;}
               const update=() =>{
-                const ss={
-                  roomid:roomId,
-                  User:UserId2,
-                }
-                profileservice.sendnoti(ss,UserId2,roomId)
-                .then(a=>{console.log(a)})
                  const newchat = {
                  message:newChat,
             }
       PostChat(newchat);
   }
+  
   const check=(user1:string, user2:string)=>{
     if(user1 == localStorage.UserId)
     {
       return user2
     }
-    else{
+    else if(user2 == localStorage.UserId){
       return user1
     }
   }
-  const checkname=(username1:string,username2:string)=>{
-    if(username1==obj2?.UserName){
-      return username1
-    }
-    else{
-      return username2
-    }
-  }
+console.log(obj2?.UserName)
     
     /*const message=obj?.message;
     const picUser=obj?.picUser;
@@ -122,13 +111,13 @@ const Chat= (props:any) =>{
     const userid2=obj?.userid2;
     const username1=obj?.username1;
     const username2=obj?.username2;*/
-    console.log(obj2?.UserName)
+    
   return (
     
     <div>
       {localStorage.UserId==UserId && 
       <div>
-      <Navigation/>
+      <Navigation3/>
       <div className="outerContainer">
         <div className="left_chat">
           <div className="head_left_chat">
@@ -138,7 +127,7 @@ const Chat= (props:any) =>{
           {obj?.map(item=>(
             <span>
             <div className="chatPeople_group">
-              <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{checkname(item.username1,item.username2)}</a>
+              <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{item.username2}</a>
             </div>
             </span>
             ))}

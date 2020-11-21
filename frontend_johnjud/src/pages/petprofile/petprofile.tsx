@@ -130,9 +130,11 @@ export const Petprofile = (props:any) => {
             <img src={profileURL} className="PostUserPic" alt={'No picture'}/>
               <div className="postInfoNot">
                 <div className="postInfo2Not">
-                  <h1 id="PostUserNot"> {username} {firstname} {lastname} </h1>
-                  <NavLink to ={`/receiver/userprofile/${UserId}`} id='PostProfile'> Profile</NavLink>
-              
+                  <div className="NameNot">
+                    <h1 id="PostUserNot"> {username}</h1>
+                    <h1 id="PostUserNot"> {firstname} {lastname}</h1>
+                  </div>
+                    <NavLink to ={`/receiver/userprofile/${UserId}`} id='PostProfile'> Profile</NavLink>
                 </div>
                 <ContactModal/>    
               </div>

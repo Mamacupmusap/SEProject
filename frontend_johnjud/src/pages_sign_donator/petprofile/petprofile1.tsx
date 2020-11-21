@@ -245,7 +245,7 @@ const Addpetprofile= () =>{
             </FormGroup>
           </Col>   
           <Col>
-            <Label for="PetCerURL" className="information">Animal Health Certificate : </Label>
+            <Label for="PetCerURL" className="information">Pet Health Certificate : </Label>
             <input id="PetCerURL" name="PetCerURL" type="file" onChange={(event) => {
                 props.setFieldValue("PetCerURL", event.currentTarget.files![0]);
                 props.setFieldValue("fileName_cer", event.currentTarget.files![0].name);

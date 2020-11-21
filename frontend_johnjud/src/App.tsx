@@ -134,7 +134,7 @@ class App extends Component{
             <Route path="/donator/article2" component={article2_donator}/>
             <Route path="/donator/article3" component={article3_donator}/>
             
-            <Route path="/donator/chat/:userId/:roomId" component={chat_donator}/>
+            <Route path="/donator/chat/:userId/:userId2/:roomId" component={chat_donator}/>
             <Route path="/donator/suggestion" component={suggestion_donator}/>
             <Route path="/donator/petprofile/:petid" component={petprofile_donator}/>
             <Route path="/donator/petprofile1" component={petprofile1_donator}/>

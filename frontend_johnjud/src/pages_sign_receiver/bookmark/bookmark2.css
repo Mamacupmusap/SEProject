@@ -39,10 +39,14 @@
     background-color: #f5f8fa;
     /*/background-color: #61dafb;*/
     margin: 28px;
-    box-shadow: 0 5px 10px 2px #c5c5c5;
+    box-shadow: 0 5px 5px 0px #c5c5c5;
     /*/border-bottom: 7px solid #f5f8fa;*/
-    height: 168px;
-    width: 184px;
+    height: 166px;
+    width: 186px;
+}
+
+#petNameBook {
+    font-size: 12px;
 }
 
 .pet-img {
