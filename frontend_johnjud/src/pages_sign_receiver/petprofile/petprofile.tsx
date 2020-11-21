@@ -107,7 +107,7 @@ export const Petprofile = (props:any) => {
     .then(a=>{
       console.log(a)
       const roomid = a.id
-      history.push(`/receiver/chat/${localStorage.UserId}/${roomid}`)
+      history.push(`/receiver/chat/${localStorage.UserId}/${UserId}/${roomid}`)
     })
   }
 

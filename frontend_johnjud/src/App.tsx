@@ -111,7 +111,7 @@ class App extends Component{
              <Route path="/receiver/article2" component={article2_receiver}/>
              <Route path="/receiver/article3" component={article3_receiver}/>
 
-            <Route path="/receiver/chat/:userId/:roomId" component={chat_receiver}/>
+            <Route path="/receiver/chat/:userId/:userId2/:roomId" component={chat_receiver}/>
             <Route path="/receiver/suggestion" component={suggestion_receiver}/>
             <Route path="/receiver/bookmark" component={Bookmark}/>
             <Route path="/receiver/petprofile/:petid" component={petprofile_receiver}/>
