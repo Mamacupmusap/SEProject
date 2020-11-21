@@ -237,14 +237,21 @@
   width: 500px;
 }
 
+.NameNot {
+  display: flex;
+  flex-direction: column;
+}
+
 .postInfoNot {
   display: flex;
   flex-direction: column;
+  width: 100%;
 }
 
 .postInfo2Not {
   display: flex;
   flex-direction: row;
+  justify-content: space-between;
 }
 
 #PostUserNot {
