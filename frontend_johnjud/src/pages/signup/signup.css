@@ -12,6 +12,17 @@
     flex-direction: row;
 }
 
+.ErrorFont{
+    font-size: 10px;
+    color: #C4C4C4;
+    padding-top: 2px;
+}
+
+.pageset{
+    display: flex;
+    flex-direction: row;
+}
+
 #button_next{
     background-color: #61b292;
     text-align: center;

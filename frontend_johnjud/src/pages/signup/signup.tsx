@@ -112,7 +112,9 @@ const Signup= () =>{
             </Col>
             <Col>
             <FormGroup>
-              <Label for="username" className="informationh">Username*</Label>
+              <div className="pageset">
+              <Label for="username" className="informationh">Username*</Label><p className='ErrorFont'>must be longer than or equal to 8 characters</p>
+              </div>
               <Field name="UserName" 
                        type="text" 
                        id="username"
@@ -125,7 +127,9 @@ const Signup= () =>{
           </Col>
          <Col>
             <FormGroup>
-              <Label for="password" className="informationh">Password*</Label>
+              <div className="pageset">
+              <Label for="password" className="informationh">Password*</Label><p className='ErrorFont'>must have at least one capital letter and longer than or equal to 8 characters</p>
+              </div>
               <Field name="Password" 
                        type="password" 
                        id="password" 
@@ -165,12 +169,12 @@ const Signup= () =>{
           </Col>
           <Col>
             <FormGroup>
-              <Label for="PhoneNo" className="informationh">Phone Number*</Label>
+              <Label for="PhoneNo" className="informationh">Phone Number*</Label> 
               <Field name="PhoneNo" 
                        type="tel" 
                        id="phone"
                        className="inp_text" 
-                       placeholder="phone number"
+                       placeholder="ex 0921234567"
                        required
                        />
               <ErrorMessage component="div" name="PhoneNo" className="invalid-feedback" />
