@@ -6,7 +6,7 @@ import {chatroom} from './Interface';
 import Message from './components/Messages/Message';
 import InfoBar from './components/InfoBar/InfoBar';
 import Input from './components/Input/Input';
-import Navigation from '../../Navigation/Navigation';
+import Navigation3 from '../../Navigation/Navigation3';
 import './chat.css';
 import user1 from './components/Chat/img/user1.png';
 import user2 from './components/Chat/img/user2.png';
@@ -114,7 +114,7 @@ const Chat= (props:any) =>{
     <div>
       {localStorage.UserId==UserId && 
       <div>
-      <Navigation/>
+      <Navigation3/>
       <div className="outerContainer">
         <div className="left_chat">
           <div className="head_left_chat">
