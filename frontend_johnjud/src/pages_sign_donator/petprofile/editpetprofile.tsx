@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import { NavLink } from "react-router-dom";
 import { Formik,Form, Field} from 'formik'
@@ -8,33 +8,83 @@ import { useHistory } from "react-router-dom";
 import { Container, FormGroup,Label, Col, Button}  from 'reactstrap';
 import './petprofile1.css'
 import Navigation3 from '../../Navigation/Navigation3'
+import profileservice from './ProfileService';
+import {Petinfo} from './Interface';
+import {PetinfoEdit} from './InterfaceForedit';
 
 
 interface Value2{
-  petid: string;
-  PetName: string;
-  PetBreed: string;
-  PetGender: string;
-  Type: string;
-  PetPicURL: string;
-  PetStatus: string;
-  PetLength: string;
-  PetHeight: string;
-  PetCerURL: string;
-  TimeStampUpdate: string;
-  UserId: string;
-  TimeUpdate : string;
-  Describe: string,
-  PetAddress : string;
+  petid?: string;
+  PetName?: string;
+  PetBreed?: string;
+  PetGender?: string;
+  Type?: string;
+  PetPicURL?: string;
+  PetStatus?: string;
+  PetLength?: number;
+  PetHeight?: number;
+  PetCerURL?: string;
+  TimeStampUpdate?: string;
+  UserId?: string;
+  TimeUpdate?: string;
+  Describe?: string,
+  PetAddress?: string;
 }
 
-const Addpetprofile= () =>{
+const Addpetprofile= (props:any) =>{
   let history = useHistory();
 
   const accessToken = localStorage.getItem('Token');
   console.log(accessToken)
+  const petid =  props.match.params.petid;
+  const [obj,setObj] = useState<Petinfo>()
+  const [userid,setUserid] = useState<string>()
+  const [petname,setPetname] = useState<string>()
+  const [gender,setGender] = useState<string>()
+  const [length,setLength] = useState<number>()
+  const [height,setHeight] = useState<number>()
+  const [breed,setBreed] = useState<string>()
+  const [type,setType] = useState<string>()
+  const [location,setLocation] = useState<string>()
+  const [description,setDescription] = useState<string>()
+  const [petpicURL,setPetpicURL] = useState<string>()
+  const [petcer,setPetcer] = useState<string>()
+
+
+
+
+  
+  const fetchProfileInfo=() =>{
+    return(
+      profileservice.fetchProfileInfo(petid)
+      .then(res => {
+        setObj(res)
+      })
+    )
+  }
+
+  useEffect(()=>{
+    fetchProfileInfo()
+  },[petid])
+  useEffect(()=>{
+    setUserid(obj?.UserId)
+    setPetname(obj?.PetName)
+    setGender(obj?.PetGender)
+    setLength(obj?.PetLength)
+    setHeight(obj?.PetHeight)
+    setBreed(obj?.PetBreed)
+    setType(obj?.Type)
+    setLocation(obj?.PetAddress)
+    setDescription(obj?.Describe)
+    setPetpicURL(obj?.PetPicUrl)
+    setPetcer(obj?.PetCerURL)
+
+  },[obj])
 
   return(
+    <div>
+      {localStorage.UserId == userid &&
+    
     <div>
       <Navigation3/>
       <Container id='contain'>  
@@ -42,20 +92,20 @@ const Addpetprofile= () =>{
         <Formik
             initialValues={{
               petid: '',
-              PetName: '',
-              PetBreed: '',
-              PetGender: '',
-              Type: '',
-              PetPicURL: '',
-              PetStatus: '',
-              PetLength: '',
-              PetHeight: '',
+              PetName: petname,
+              PetBreed: breed,
+              PetGender: gender,
+              Type: type,
+              PetPicURL: petpicURL,
+              PetStatus: petcer,
+              PetLength: length,
+              PetHeight: height,
               PetCerURL: '',
               TimeStampUpdate: '',
               UserId: '',
               TimeUpdate : '',
-              Describe: '',
-              PetAddress : ''
+              Describe: description,
+              PetAddress : location,
 
           }}
         
@@ -243,6 +293,8 @@ const Addpetprofile= () =>{
          />
         </div>
       </Container>
+    </div>
+          }
     </div>
   )
 }

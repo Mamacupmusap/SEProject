@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../Profile.css';
 //import ProfileService from '../ProfileService';
 import profileservice from '../ProfileService';
@@ -6,13 +6,14 @@ import { Link, useHistory } from 'react-router-dom';
 import ProfilePic from '../ProfilePic.png';
 import Glasspic from '../Glasspic.jpg';
 import Navigation3 from '../../../Navigation/Navigation'
-
+import {Userinfo} from '../Interface';
 
 const ChangePassword=(props:any) => {
     const [Password, setPassword] = useState<string>('')
     const [ConfirmPassword, setConfirmPassword] = useState<string>('')
     const history = useHistory()
     const userId = props.match.params.userId;
+    const[obj,setObj] = useState<Userinfo>();
     const submit=() =>{
         profileservice.updatePassword(Password,ConfirmPassword,localStorage.Token)
         .then( res=>{
@@ -27,6 +28,19 @@ const ChangePassword=(props:any) => {
         })
         
     }
+    const fetchProfileInfo=() =>{
+        return(
+          profileservice.fetchProfileInfo(userId)
+          .then(res => {
+            setObj(res)
+          })
+        )
+      }
+    
+      useEffect(()=>{
+        fetchProfileInfo()
+      },[])
+      const profileURL = obj?.ImgURL;
     return(
         <div>
             {localStorage.UserId == userId &&
@@ -36,7 +50,7 @@ const ChangePassword=(props:any) => {
             <Link to='/donator/userprofile'>  
                 <img id='profilePic' src={ProfilePic} alt={''}/>
             </Link>
-            <img id='glasspic' src = {Glasspic} alt={''}/>
+            <img id='glasspic' src = {profileURL} alt={''}/>
             <div className='BlockBehindProfilePic'>
                 <div className='profilename'>
                 <br/><br/>

@@ -30,7 +30,7 @@ const Leftblock=(prop:any) =>{
     const address = obj?.Address;
     const phone = obj?.PhoneNo;
     const email = obj?.Email;
- 
+ //ฟฟ
     return(
         <div className='leftblock'>
             <br/><br/><br/>

@@ -171,7 +171,7 @@ console.log(petid)
                   <CertModal id="testagain9"/>
             </div>
                 <div id="hehehuhu">
-                <NavLink to='/donator/editpetprofile' id="editPetLuv" style={{color: '#61b292'}}>edit</NavLink>
+                <NavLink to={`/donator/editpetprofile/${petid}`} id="editPetLuv" style={{color: '#61b292'}}>edit</NavLink>
                 < DeleteModal id="testagain9"/>
                 </div>
            

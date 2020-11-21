@@ -27,6 +27,7 @@ const ChangeEmail=(props:any) => {
     },[])
     
     const email = obj?.Email;
+    const profileURL = obj?.ImgURL;
     const [Password, setPassword] = useState<string>('')
     const [newEmail, setNewEmail] = useState<string>('');
     const history = useHistory();
@@ -51,7 +52,7 @@ const ChangeEmail=(props:any) => {
             <Navigation3/>
             <div className = 'ChangePage'>
             <Link to='/donator/userprofile'>  
-                <img id='profilePic' src={ProfilePic} alt={''}/>
+                <img id='profilePic' src={profileURL} alt={''}/>
             </Link>
             <img id='glasspic' src = {Glasspic}/>
             <div className='BlockBehindProfilePic'>

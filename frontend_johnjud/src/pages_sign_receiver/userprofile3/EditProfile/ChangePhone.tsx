@@ -27,6 +27,7 @@ const ChangePhone=(props:any) => {
     },[])
 
     const phone = obj?.PhoneNo;
+    const profileURL = obj?.ImgURL;
     const [newPhone,setNewPhone] = useState<string>('');
     const [Password, setPassword] = useState<string>('')
 
@@ -55,7 +56,7 @@ const ChangePhone=(props:any) => {
             <Navigation3/>
             <div className = 'ChangePage'>
             <Link to='/donator/userprofile'>  
-                <img id='profilePic' src={ProfilePic}></img>
+                <img id='profilePic' src={profileURL}></img>
             </Link>
             <img id='glasspic' src = {Glasspic}></img>
             <div className='BlockBehindProfilePic'>

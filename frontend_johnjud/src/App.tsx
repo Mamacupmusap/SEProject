@@ -138,7 +138,7 @@ class App extends Component{
             <Route path="/donator/suggestion" component={suggestion_donator}/>
             <Route path="/donator/petprofile/:petid" component={petprofile_donator}/>
             <Route path="/donator/petprofile1" component={petprofile1_donator}/>
-            <Route path="/donator/editpetprofile" component={editpetprofile_donator}/>
+            <Route path="/donator/editpetprofile/:petid" component={editpetprofile_donator}/>
 
             <Route path="/donator/userprofile/:userId/editprofile/changephone/OTP" component={ProfileOTP}/>
             <Route path="/donator/userprofile/:userId/editprofile/changepassword" component={ProChangePasword}/>
