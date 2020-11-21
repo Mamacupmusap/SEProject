@@ -201,7 +201,7 @@ export const Petprofile = (props:any) => {
             <h5 id="ihatepine" style={{fontSize:16}}>{Describe}</h5>
             <hr id="lineHeader2"/>
         </Container>
-        <Container>
+        <Container id="conRec">
           <h1 id='TextDescrip'>Post by:</h1>
             <div id="PostbyText">
               <img src={profileURL} className="PostUserPic" alt={'No picture'}/>
@@ -240,7 +240,7 @@ export const Petprofile = (props:any) => {
                                                  type="text"
                                                  id="codePet"
                                                  placeholder="codePet"
-                                                 style={{marginLeft:10}}/>
+                                                 />
                                           <ErrorMessage component="div" name="codePet" className="invalid-feedback" />
                                           <button type="submit" id="btnPetCode">Submit</button>
                                       </FormGroup>

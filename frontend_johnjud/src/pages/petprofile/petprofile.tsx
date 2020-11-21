@@ -124,13 +124,13 @@ export const Petprofile = (props:any) => {
             <h5 style={{textAlign:'start', fontSize:16}}>{Describe}</h5>
             <hr id="lineHeader2"/>
         </Container>
-        <Container>
+        <Container id="conNot">
           <h1 id='TextDescrip'>Post by:</h1>
             <div id="PostbyTextNotSign">
             <img src={profileURL} className="PostUserPic" alt={'No picture'}/>
-              <div className="postInfo">
-                <div className="postInfo2">
-                <h1 id="PostUser"> {username} {firstname} {lastname} </h1>
+              <div className="postInfoNot">
+                <div className="postInfo2Not">
+                  <h1 id="PostUserNot"> {username} {firstname} {lastname} </h1>
                   <NavLink to ={`/receiver/userprofile/${UserId}`} id='PostProfile'> Profile</NavLink>
               
                 </div>
