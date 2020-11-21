@@ -18,7 +18,7 @@ export const DeleteModal = (props:any) => {
 
   
   const useridz = localStorage.getItem('UserId')
-  const petidz  = localStorage.getItem('pet_id')
+  const petidz  = localStorage.getItem('petID')
  
 
   const Delete_Info=() =>{
