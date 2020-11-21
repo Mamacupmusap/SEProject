@@ -276,6 +276,9 @@ const Addpetprofile= () =>{
             </FormGroup>
           </Col>
 
+          <Col>
+              <p style={{paddingTop:"0px", marginBottom:"0px", marginTop:"20px"}}>* Required</p>
+          </Col>
           
           <Button id="save" type="submit" value='submit'>Save</Button>
 
