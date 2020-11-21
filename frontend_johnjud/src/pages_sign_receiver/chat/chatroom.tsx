@@ -83,6 +83,12 @@ const Chat= (props:any) =>{
               const name = await res.json();
               return name;}
               const update=() =>{
+                const ss={
+                  roomid:roomId,
+                  User:UserId2,
+                }
+                profileservice.sendnoti(ss,UserId2,roomId)
+                .then(a=>{console.log(a)})
                  const newchat = {
                  message:newChat,
             }
@@ -95,6 +101,14 @@ const Chat= (props:any) =>{
     }
     else{
       return user1
+    }
+  }
+  const checkname=(username1:string,username2:string)=>{
+    if(username1==obj2?.UserName){
+      return username1
+    }
+    else{
+      return username2
     }
   }
     
@@ -124,7 +138,7 @@ const Chat= (props:any) =>{
           {obj?.map(item=>(
             <span>
             <div className="chatPeople_group">
-              <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{item.username1},{item.username2}</a>
+              <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{checkname(item.username1,item.username2)}</a>
             </div>
             </span>
             ))}
