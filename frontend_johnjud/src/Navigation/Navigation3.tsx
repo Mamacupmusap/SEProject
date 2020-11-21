@@ -55,7 +55,7 @@ const Navigation = () => {
                <img className='manbox' src={manIcon2} alt='man'/>
             </div>
             <div className='right'>
-               switch to <br/> Donator mode
+               switch to <br/> Receiver mode
             </div>
             </Button>
             </NavLink>
