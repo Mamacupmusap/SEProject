@@ -34,7 +34,7 @@ const Home = () => {
                 <img src={head_dog} id='head_dog' alt=""/>
                 <div className="urgh">
                     <div>
-                        <h1 id="mypet">My pet</h1>
+                        <h1 id="mypet">My Pets</h1>
                         <button type='button' id='newpet'><NavLink to='/donator/petprofile1' style={{color: 'white'}}>Add new pet</NavLink></button>
                     </div>
 

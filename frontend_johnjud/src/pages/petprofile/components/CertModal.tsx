@@ -12,7 +12,7 @@ export const CertModal = (props:any) => {
       <Button color="link" onClick={toggle} id="doCer"><img src={greenRight} width="14" height="14" alt={''}/>certificate</Button>
       <Modal isOpen={modal} toggle={toggle} id="cerPopUp">
         <ModalBody className="Modalbody">
-          <h5>Health Certification</h5>
+          <h5>Pet Health Certification</h5>
             <img src={props.certPic} style={{width:250}} alt={''}/>
         </ModalBody>
         <div id="certButt"> 

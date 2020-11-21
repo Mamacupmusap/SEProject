@@ -43,7 +43,7 @@ const Bookmark = () => {
                         <a href={'./petprofile/'+value.petid}>
                         <div className="col-pet">
                             <img src={value.petPicUrl} alt={value.petPicUrl} className="pet-img" height="140px" width="100%"/>
-                            <strong>{value.PetName}</strong>
+                            <h1 id="petNameBook">{value.PetName}</h1>
                         </div>
                         </a>)
                 })}
