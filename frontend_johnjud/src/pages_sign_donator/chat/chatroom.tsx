@@ -72,6 +72,7 @@ const Chat= (props:any) =>{
       const user2 = obj1?.username2;
 
 
+
     async function PostChat(chatinfo:chat): Promise<chat> {
     const res = await fetch(`http://localhost:2000/chat/${userid}/${roomId}/addmessage`,{
                   method: 'POST',
@@ -88,15 +89,17 @@ const Chat= (props:any) =>{
             }
       PostChat(newchat);
   }
+  
   const check=(user1:string, user2:string)=>{
     if(user1 == localStorage.UserId)
     {
       return user2
     }
-    else{
+    else if(user2 == localStorage.UserId){
       return user1
     }
   }
+console.log(obj2?.UserName)
     
     /*const message=obj?.message;
     const picUser=obj?.picUser;
@@ -108,7 +111,7 @@ const Chat= (props:any) =>{
     const userid2=obj?.userid2;
     const username1=obj?.username1;
     const username2=obj?.username2;*/
-    console.log(obj2?.UserName)
+    
   return (
     
     <div>
@@ -124,7 +127,7 @@ const Chat= (props:any) =>{
           {obj?.map(item=>(
             <span>
             <div className="chatPeople_group">
-              <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{item.username1},{item.username2}</a>
+              <a href={`http://localhost:3000/donator/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{item.username2}</a>
             </div>
             </span>
             ))}
