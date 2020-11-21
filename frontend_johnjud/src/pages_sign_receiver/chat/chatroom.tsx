@@ -75,7 +75,7 @@ const Chat= (props:any) =>{
           {obj?.map(item=>(
             <span>
             <div className="chatPeople_group">
-              <a href={`http://localhost:3000/donator/chat/${localStorage.UserId}/${item.id}/`}>{item.username1},{item.username2}</a>
+              <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${item.id}/`}>{item.username1},{item.username2}</a>
             </div>
             </span>
             ))}

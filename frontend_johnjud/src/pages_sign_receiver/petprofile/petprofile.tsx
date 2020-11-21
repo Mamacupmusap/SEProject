@@ -32,6 +32,8 @@ export const Petprofile = (props:any) => {
   const[profileURL,setProfileURL] = useState<string|undefined>();
   const[firstname,setFirstname] = useState<string|undefined>();
   const[lastname,setLastname] = useState<string|undefined>();
+  const[username,setUsername] = useState<string|undefined>();
+
 
 
   const petid = props.match.params.petid;
@@ -76,10 +78,11 @@ export const Petprofile = (props:any) => {
       userid1:localStorage.UserId,
       userid2:UserId
     }
-    profileservice.makeroomchat(a,localStorage.UserId,UserId)
+    profileservice.makeroomchat(a,localStorage.UserId,UserId,localStorage.Token)
     .then(a=>{
+      console.log(a)
       const roomid = a.id
-      history.push(`/donator/chat/${localStorage.UserId}/${roomid}`)
+      history.push(`/receiver/chat/${localStorage.UserId}/${roomid}`)
     })
   }
 
@@ -93,14 +96,17 @@ export const Petprofile = (props:any) => {
     }
     const editprofileinfo=()=>{
       setProfileURL(userinfo?.ImgURL)
+      setUsername(userinfo?.UserName)
       setFirstname(userinfo?.FirstName)
       setLastname(userinfo?.LastName)
     }
     useEffect(()=>{
       fetchProfileInfos()
-      editprofileinfo()
     },[UserId])
-
+    useEffect(()=>{
+      editprofileinfo()
+    },[userinfo])
+  
     return(
     <div className='bodyPetpro'>
         < Navigation />
@@ -151,7 +157,7 @@ export const Petprofile = (props:any) => {
               <img src={profileURL} className="PostUserPic"/>
               <div className="postInfo">
                 <div className="postInfo2">
-                  <h1 id="PostUser"> {firstname} {lastname} </h1>
+                  <h1 id="PostUser"> {username} -- {firstname} {lastname} </h1>
                   <NavLink to='/contactprofile' id='PostProfile'> Profile</NavLink>
                 </div>
                 <NavLink to='/receiver/chat'><Button id='whatitsbrown' onClick={makeroom}><img src={mail} id="mailIcon1" alt={''}/>contact</Button></NavLink>

@@ -52,13 +52,15 @@ async function updateemail(newEmail:Petinfo): Promise<any|null> {
         body: JSON.stringify(newEmail),
     });
 }
-async function makeroomchat(a:any,userId1:string,userId2:string|undefined): Promise<any|null> {
-    const res = await fetch(`http://localhost:2000/createroom/${userId1}/${userId2}`,{
+async function makeroomchat(a:any,userId1:string,userId2:string|undefined,token:any): Promise<any|null> {
+    const res = await fetch(`http://localhost:2000/room/createroom/${userId1}/${userId2}`,{
         method: 'POST',
-        headers : {'Content-Type': 'application/json'},
+        headers : {'Authorization': `Bearer ${token}`},
         body: JSON.stringify(a),
     });
     const ress = await res.json();
+    console.log('aaaaaaaaaaaaaaaaaaaaaa')
+    console.log(ress)
     return ress
 }
 
