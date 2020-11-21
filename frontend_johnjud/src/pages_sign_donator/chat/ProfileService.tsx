@@ -1,5 +1,7 @@
 import {chat} from './Interface';
 import {chatroom} from './Interface';
+import {Userinfo} from './Interface';
+
 /*
 async function fetchProfileInfo(petid:string): Promise<chat>{
     console.log(petid)
@@ -12,8 +14,15 @@ async function fetchProfileInfo(petid:string): Promise<chat>{
         const res = await fetch(`http://localhost:2000/room/${userid}/getAllRoom`);
         const name = await res.json();
         return name;}
-
+async function fetchProfileInfo(userId:string): Promise<Userinfo>{
+    const res = await fetch(`http://localhost:2000/User/${userId}`);
+    const name = await res.json();
+    console.log(name)
+    return name;
+}
 export default {
     fetchChatroom,
+    fetchProfileInfo,
 } 
 
+//

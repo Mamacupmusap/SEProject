@@ -12,14 +12,22 @@ import user1 from './components/Chat/img/user1.png';
 import user2 from './components/Chat/img/user2.png';
 import profileservice from './ProfileService';
 import { attachProps } from "@ionic/react/dist/types/components/utils";
+import {Userinfo} from './Interface';
+
 
 const Chat= (props:any) =>{
     const accessToken = localStorage.getItem('Token');
     const[obj,setObj] = useState<any[]>([]);
     const[obj1,setObj1] = useState<chatroom>();
+    const[obj2,setObj2] = useState<Userinfo>();
+
     const [newChat, setnewChat] = useState<string>();
     const roomId = props.match.params.roomId;
+    const UserId2 = props.match.params.userId2;
     const UserId = props.match.params.userId;
+    
+    console.log(UserId)
+    console.log(UserId2)
 
     const fetchChatroom=() =>{
       return(
@@ -35,20 +43,30 @@ const Chat= (props:any) =>{
   },[])
     const userid = localStorage.UserId;
     
-    async function fetchChat(roomId:string): Promise<chatroom>{
-      const res1 = await fetch(`http://localhost:2000/room/${roomId}/getRoom`);
-      const name1 = await res1.json();
-      return name1;}
-      const fetchchat=(roomId:any) =>{
+    // async function fetchChat(roomId:string): Promise<chatroom>{
+    //   const res1 = await fetch(`http://localhost:2000/room/${roomId}/getRoom`);
+    //   const name1 = await res1.json();
+    //   return name1;}
+    //   const fetchchat=(roomId:any) =>{
+    //     return(
+    //       fetchChat(roomId)
+    //       .then(res1 => {
+    //         setObj1(res1)
+    //       })
+    //     )
+    //   }
+
+      const fetchuserinfo=() =>{
         return(
-          fetchChat(roomId)
+          profileservice.fetchProfileInfo(UserId2)
           .then(res1 => {
-            setObj1(res1)
+            console.log(res1)
+            setObj2(res1)
           })
         )
       }
       useEffect(()=>{
-        fetchchat(roomId)
+        fetchuserinfo()
       },[])
       const user1=  obj1?.username1;
       const user2 = obj1?.username2;
@@ -70,6 +88,15 @@ const Chat= (props:any) =>{
             }
       PostChat(newchat);
   }
+  const check=(user1:string, user2:string)=>{
+    if(user1 == localStorage.UserId)
+    {
+      return user2
+    }
+    else{
+      return user1
+    }
+  }
     
     /*const message=obj?.message;
     const picUser=obj?.picUser;
@@ -81,10 +108,7 @@ const Chat= (props:any) =>{
     const userid2=obj?.userid2;
     const username1=obj?.username1;
     const username2=obj?.username2;*/
-    console.log(roomId)
-    console.log(user1)
-    console.log(user2)
-    console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
+    console.log(obj2?.UserName)
   return (
     
     <div>
@@ -100,14 +124,14 @@ const Chat= (props:any) =>{
           {obj?.map(item=>(
             <span>
             <div className="chatPeople_group">
-              <a href={`http://localhost:3000/donator/chat/${localStorage.UserId}/${item.id}/`}>{item.username1},{item.username2}</a>
+              <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{item.username1},{item.username2}</a>
             </div>
             </span>
             ))}
           </div>
         </div>
         <div className="container_chat">
-            <InfoBar room= {user1} room2= {user2} />
+            <InfoBar username2={obj2?.UserName}/>
             <Message roomId={roomId}/>
             <form className="form">
               <textarea id='input' value={newChat} onChange={(e) => {setnewChat(e.target.value);}}/>

@@ -15,3 +15,19 @@ export interface chatroom{
     username1?: string;
     username2?: string;
 }
+export interface Userinfo{
+    id?:string;
+    UserName?: string;
+    ImgURL?:string;
+    FirstName?: string;
+    LastName?: string; 
+    Address?:string;
+    Birthday?: string;
+    Gender?: string;
+    PhoneNo?: string;
+    Email?: string;
+    Facebook?:string;
+    Location?: string;
+    AvgPoint?: number;
+    Description?: string;
+}
