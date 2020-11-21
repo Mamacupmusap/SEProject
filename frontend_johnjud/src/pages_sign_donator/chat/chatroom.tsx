@@ -16,6 +16,7 @@ import { attachProps } from "@ionic/react/dist/types/components/utils";
 const Chat= (props:any) =>{
     const accessToken = localStorage.getItem('Token');
     const[obj,setObj] = useState<any[]>([]);
+    const[obj1,setObj1] = useState<chatroom>();
     const [newChat, setnewChat] = useState<string>();
     const roomId = props.match.params.roomId;
     const UserId = props.match.params.userId;
@@ -33,6 +34,26 @@ const Chat= (props:any) =>{
     fetchChatroom()
   },[])
     const userid = localStorage.UserId;
+    
+    async function fetchChat(roomId:string): Promise<chatroom>{
+      const res1 = await fetch(`http://localhost:2000/room/${roomId}/getRoom`);
+      const name1 = await res1.json();
+      return name1;}
+      const fetchchat=(roomId:any) =>{
+        return(
+          fetchChat(roomId)
+          .then(res1 => {
+            setObj1(res1)
+          })
+        )
+      }
+      useEffect(()=>{
+        fetchchat(roomId)
+      },[])
+      const user1=  obj1?.username1;
+      const user2 = obj1?.username2;
+
+
     async function PostChat(chatinfo:chat): Promise<chat> {
     const res = await fetch(`http://localhost:2000/chat/${userid}/${roomId}/addmessage`,{
                   method: 'POST',
@@ -61,7 +82,11 @@ const Chat= (props:any) =>{
     const username1=obj?.username1;
     const username2=obj?.username2;*/
     console.log(roomId)
+    console.log(user1)
+    console.log(user2)
+    console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa')
   return (
+    
     <div>
       {localStorage.UserId==UserId && 
       <div>
@@ -82,7 +107,7 @@ const Chat= (props:any) =>{
           </div>
         </div>
         <div className="container_chat">
-            <InfoBar room="" />
+            <InfoBar room= {user1} room2= {user2} />
             <Message roomId={roomId}/>
             <form className="form">
               <textarea id='input' value={newChat} onChange={(e) => {setnewChat(e.target.value);}}/>
