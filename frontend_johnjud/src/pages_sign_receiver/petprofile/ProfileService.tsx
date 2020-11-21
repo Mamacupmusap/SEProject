@@ -69,9 +69,9 @@ async function AddBookmark(b: any,useridx: string | null,petidx: string | null,t
         body: JSON.stringify(b),
     });
     const ressbook = await res2.json();
-    alert(ressbook.message);
-    
-
+    if(ressbook.message!=undefined){
+        alert(ressbook.message)
+    }
 }
 
 export default {
