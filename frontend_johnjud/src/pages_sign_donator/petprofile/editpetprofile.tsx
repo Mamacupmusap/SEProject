@@ -19,16 +19,18 @@ interface Value2{
   PetBreed?: string;
   PetGender?: string;
   Type?: string;
-  PetPicURL?: string;
+  PetPicURL: string;
   PetStatus?: string;
   PetLength?: number;
   PetHeight?: number;
-  PetCerURL?: string;
+  PetCerURL: string;
   TimeStampUpdate?: string;
   UserId?: string;
   TimeUpdate?: string;
   Describe?: string,
   PetAddress?: string;
+  fileName_img : string;
+  fileName_cer : string;
 }
 
 const Addpetprofile= (props:any) =>{
@@ -96,7 +98,7 @@ const Addpetprofile= (props:any) =>{
               PetBreed: breed,
               PetGender: gender,
               Type: type,
-              PetPicURL: petpicURL,
+              PetPicURL: '',
               PetStatus: petcer,
               PetLength: length,
               PetHeight: height,
@@ -106,21 +108,53 @@ const Addpetprofile= (props:any) =>{
               TimeUpdate : '',
               Describe: description,
               PetAddress : location,
-
+              fileName_img : '',
+              fileName_cer : '',
           }}
         
           onSubmit={ async (values:Value2,actions) =>{
+            let resimgbb = null;
+            let resimgbb_cer = null;
+            
+            //upload pet img
+            if(values.PetPicURL!=''){
+              var formdata = new FormData();   
+              formdata.append("image", values.PetPicURL, values.fileName_img);
+
+              const response = await fetch("https://api.imgbb.com/1/upload?key=1949bda7eab7e16a8e613b0c302c4782", {
+                  method: 'POST',
+                  body: formdata,
+                  redirect: 'follow'
+                });
+              resimgbb = await response.json();
+              resimgbb = resimgbb.data.url;
+            }
+
+            //upload pet cer
+            if(values.PetCerURL!=''){
+              var formdata_cer = new FormData();                
+              formdata_cer.append("image", values.PetCerURL, values.fileName_cer);
+
+              const response_cer = await fetch("https://api.imgbb.com/1/upload?key=1949bda7eab7e16a8e613b0c302c4782", {
+                  method: 'POST',
+                  body: formdata_cer,
+                  redirect: 'follow'
+                });
+              resimgbb_cer = await response_cer.json();
+              resimgbb_cer = resimgbb_cer.data.url;
+            }            
+
             const sendInfoPet ={
               petid: localStorage.getItem('pet_id'),
               PetName: values.PetName,
               PetBreed: values.PetBreed,
               PetGender: values.PetGender,
               Type: values.Type,
-              PetPicURL: values.PetPicURL,
+              PetPicURL: resimgbb,
               PetStatus: values.PetStatus,
               PetLength: values.PetLength,
               PetHeight: values.PetHeight,
-              PetCerURL: values.PetCerURL,
+              PetCerURL: resimgbb_cer,
               TimeStampUpdate: values.TimeStampUpdate,
               UserId: values.UserId,
               TimeUpdate : values.TimeUpdate,
@@ -171,13 +205,11 @@ const Addpetprofile= (props:any) =>{
           </Col>
 
           <Col>
-            <FormGroup>
               <Label for="PetPicURL" className="information">Pet picture :</Label>
-              <Field name="PetPicURL" 
-                       type="file" 
-                       id="PetPicURL" 
-                       />
-            </FormGroup>
+              <input id="PetPicURL" name="PetPicURL" type="file" onChange={(event) => {
+                props.setFieldValue("PetPicURL", event.currentTarget.files![0]);
+                props.setFieldValue("fileName_img", event.currentTarget.files![0].name);
+              }} />
           </Col>
 
           <Col>
@@ -244,13 +276,11 @@ const Addpetprofile= (props:any) =>{
             </FormGroup>
           </Col>   
           <Col>
-            <FormGroup>
               <Label for="PetCerURL" className="information">Animal Health Certificate :</Label>
-              <Field name="PetCerURL" 
-                       type="file" 
-                       id="PetCerURL" 
-                       />
-            </FormGroup>
+              <input id="PetCerURL" name="PetCerURL" type="file" onChange={(event) => {
+                props.setFieldValue("PetCerURL", event.currentTarget.files![0]);
+                props.setFieldValue("fileName_cer", event.currentTarget.files![0].name);
+              }} />
           </Col>
 
           <Col>
