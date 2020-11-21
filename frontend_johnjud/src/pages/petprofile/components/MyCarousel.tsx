@@ -10,26 +10,12 @@ import {
 import ProfileService from '../ProfileService'
 import {Petinfo} from '../Interface'
 /*import Dog3 from './img/dog3.jpg';*/
-    
 
-  
-    
-  
-  export const MyCarousel = (prop:any) => {
-    const[obj,setObj] = useState<Petinfo>();
-    const getObj = () =>
-    fetch('http://localhost:3000/petinfo/two')
-    
-    .then((res) => res.json())
+export const MyCarousel = (prop:any) => {
+  const PetUrl= prop.PetURl;
+  return (
+      <img src={PetUrl} alt={'No picture'}/>
+  );
+}
 
-    useEffect(() => {
-    getObj().then((obj) => setObj(obj))
-    }, [])
-    const PetPicUrl= obj?.PetPicUrl;
-
-    return (
-      <img src={PetPicUrl}/>
-    );
-  }
-  
-  export default MyCarousel;
+export default MyCarousel;

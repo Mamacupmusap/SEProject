@@ -3,17 +3,8 @@ import { NavLink} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './home.css'
 import head_dog from './img/banner.png'
-import pet1 from './img/pet1.png'
-import pet2 from './img/pet2.png'
-import pet3 from './img/pet3.png'
-import pet4 from './img/pet4.png'
-import pet5 from './img/pet5.png'
-import pet6 from './img/pet6.png'
-import pet7 from './img/pet7.png'
-import pet8 from './img/pet8.png'
 import { Container, Card, CardImg, CardBody,
   CardTitle} from 'reactstrap';
-/*import { CheckboxFilter, TermQuery, BoolMust, RangeQuery } from "searchkit";*/
 import Navigation from '../../Navigation/Navigation';
 import homeService_receiver from "./homeService_receiver";
 
@@ -84,7 +75,7 @@ const Home = () => {
             {allPet.map((value) => {
               return (
                   <Card className="card">
-                    <CardImg src={value.petPicUrl} alt="" height="130px"/>
+                    <CardImg src={value.PetPicURL} alt="No picture" height="130px"/>
                     <CardBody className="cardBody">
                       <NavLink to={'/receiver/petprofile/' + value.petid}>
                         <CardTitle className="cardTitle">{value.PetName}</CardTitle>

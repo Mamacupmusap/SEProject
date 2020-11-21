@@ -9,16 +9,16 @@ import {Button,Container,FormGroup,Col,Label} from 'reactstrap';
 import { MyCarousel } from './components/MyCarousel';
 import { BookmarkModal } from './components/BookmarkModal';
 import {CertModal} from './components/CertModal';
-import User from './components/img/User.png';
 import greenRight from './components/img/check.png';
 import mail from './components/img/mail.png';
-import userEvent from '@testing-library/user-event';
 import {Userinfo} from './interface2';
 
 
 import { Formik,Form, Field, ErrorMessage , FormikHelpers } from 'formik';
 import submitCodeService from "./submitCodeService";
-import {errorMonitor} from "events";
+import check from "../../pages_sign_donator/petprofile/imgpic/check.png";
+import check_y from "../../pages_sign_donator/petprofile/imgpic/check_y.png";
+import check_r from "../../pages_sign_donator/petprofile/imgpic/check_r.png";
 
 interface Value2{
     codePet: string,
@@ -49,17 +49,15 @@ export const Petprofile = (props:any) => {
     )
   }
 
-  
-
   useEffect(()=>{
     fetchProfileInfo()
   },[])
     
-  const PetName=  obj?.PetName;
+  const PetName = obj?.PetName;
   const PetBreed = obj?.PetBreed;
   const PetGender=  obj?.PetGender;
   const PetType=  obj?.Type;
-  const PetPicUrl= obj?.PetPicUrl;
+  const PetPicUrl= obj?.PetPicURL;
   const PetStatus=  obj?.PetStatus;
   const PetLength = obj?.PetLength;
   const PetHeight=  obj?.PetHeight;
@@ -71,7 +69,34 @@ export const Petprofile = (props:any) => {
   const PetAddress = obj?.PetAddress;
     
   const link_google = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=${PetAddress}`
-  
+
+    const isAva = () => {
+        console.log('ava')
+        console.log(PetStatus === 'ava')
+        return PetStatus === 'ava'
+    }
+    useEffect(()=>{
+        isAva()
+    },[])
+
+    const isPend = () => {
+        console.log('pend')
+        console.log(PetStatus === 'pend')
+        return PetStatus === 'pend'
+    }
+    useEffect(()=>{
+        isPend()
+    },[])
+
+    const isDone = () => {
+        console.log('done')
+        console.log(PetStatus === 'done')
+        return PetStatus === 'done'
+    }
+    useEffect(()=>{
+        isDone()
+    },[])
+
   const history=useHistory()
   const makeroom=()=>{
     const a={
@@ -111,9 +136,22 @@ export const Petprofile = (props:any) => {
     <div className='bodyPetpro'>
         < Navigation />
         <div className="HeaderPetpro">
-          <div id="petStatusPro">
-            <img src={greenRight} width="24" height="24" alt={''}/><h1 id="petStatusPro2">กำลังหาบ้านให้น้อง</h1>
-          </div> 
+
+            {isAva() &&
+            (<div id="petStatusPro">
+                <img src={greenRight} width="24" height="24" alt={''}/><h1 id="petStatusPro2">กำลังหาบ้านให้น้อง</h1>
+            </div>)}
+
+            {isPend() &&
+            (<div id="petStatusPro">
+                <img src={check_y} width="24" height="24" alt={'check_y'}/><h1 id="nongpaibanmai">น้องกำลังไปบ้านใหม่</h1>
+            </div>)}
+
+            {isDone() &&
+            (<div id="petStatusPro">
+                <img src={check_r} width="24" height="24" alt={'check_y'}/><h1 id="nongmeebanmai">น้องมีบ้านใหม่แล้ว</h1>
+            </div>)}
+
           <div className="toppppp">
             {PetName}
           </div>
@@ -154,7 +192,7 @@ export const Petprofile = (props:any) => {
         <Container>
           <h1 id='TextDescrip'>Post by:</h1>
             <div id="PostbyText">
-              <img src={profileURL} className="PostUserPic"/>
+              <img src={profileURL} className="PostUserPic" alt={'No picture'}/>
               <div className="postInfo">
                 <div className="postInfo2">
                   <h1 id="PostUser"> {username} -- {firstname} {lastname} </h1>
@@ -172,9 +210,6 @@ export const Petprofile = (props:any) => {
                               values: Value2,
                               { setSubmitting }: FormikHelpers<Value2>
                           ) => {
-                              //console.log(values.token)
-                              //console.log(values.petId)
-                              //console.log(values.codePet)
                               const result = await submitCodeService.submitCode(values);
                               console.log(result.error);
                               if (result.error === 'Conflict' && PetStatus === 'ava') {

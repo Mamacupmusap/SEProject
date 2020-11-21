@@ -35,6 +35,16 @@
   font-size: 20px;
 }
 
+#nongpaibanmai {
+  color: #F2C94C;
+  font-size: 20px;
+}
+
+#nongmeebanmai {
+  color: #E84242;
+  font-size: 20px;
+}
+
 .toppppp {
   display: flex;
   flex-direction: row;

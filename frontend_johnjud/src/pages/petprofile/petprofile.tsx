@@ -16,7 +16,6 @@ import { ProfileModal} from './components/ProfileModal';
 import ContactModal from './components/ContactModal';
 import profileservice from './ProfileService'
 
-
 export const Petprofile = (props:any) => {
   const[obj,setObj] = useState<Petinfo>();
   const petid = props.match.params.petid;
@@ -38,7 +37,7 @@ export const Petprofile = (props:any) => {
   const PetBreed = obj?.PetBreed;
   const PetGender=  obj?.PetGender;
   const PetType=  obj?.Type;
-  const PetPicUrl= obj?.PetPicUrl;
+  const PetPicUrl= obj?.PetPicURL;
   const PetStatus=  obj?.PetStatus;
   const PetLength = obj?.PetLength;
   const PetHeight=  obj?.PetHeight;
@@ -48,7 +47,6 @@ export const Petprofile = (props:any) => {
   const TimeUpdate = obj?.TimeUpdate;
   const Describe=  obj?.Describe;
   const PetAddress = obj?.PetAddress;
-    
 
   const link_google = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=${PetAddress}`
 
@@ -65,7 +63,7 @@ export const Petprofile = (props:any) => {
           <hr id="lineHeader"/> 
         </div>
         <div className="carousel">
-            < MyCarousel />
+            < MyCarousel PetURl={PetPicUrl}/>
         </div>
         <div className="informationn">
             Information
@@ -82,7 +80,7 @@ export const Petprofile = (props:any) => {
             </Container>
             <div className="ColumnSide">
                 <BookmarkModal id="testagain"/>
-                <CertModal id="testagain"/>
+                <CertModal id="testagain" certPic={PetCerURL}/>
             </div>
         </Container>
         <Container  id='fuckjk'>

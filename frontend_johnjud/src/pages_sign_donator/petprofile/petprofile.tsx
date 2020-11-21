@@ -8,7 +8,6 @@ import { NavLink} from 'react-router-dom';
 import {Button, Container, Nav, Label, Col, FormGroup} from 'reactstrap';
 import { MyCarousel } from './components/MyCarousel';
 import {CertModal} from './components/CertModal';
-import greenRight from './components/img/check.png';
 import DeleteModal from './components/DeleteModal';
 import check_y from './imgpic/check_y.png'
 import check_r from './imgpic/check_r.png'
@@ -44,7 +43,7 @@ console.log(petid)
     const PetBreed = obj?.PetBreed;
     const PetGender=  obj?.PetGender;
     const PetType=  obj?.Type;
-    const PetPicUrl= obj?.PetPicUrl;
+    const PetPicUrl= obj?.PetPicURL;
     const PetStatus=  obj?.PetStatus;
     const PetLength = obj?.PetLength;
     const PetHeight=  obj?.PetHeight;
@@ -61,7 +60,6 @@ console.log(petid)
     const isAva = () => {
         console.log('ava')
         console.log(PetStatus === 'ava')
-        //return PetStatus !== 'ava'
         return PetStatus === 'ava'
     }
     useEffect(()=>{
@@ -71,7 +69,6 @@ console.log(petid)
     const isPend = () => {
         console.log('pend')
         console.log(PetStatus === 'pend')
-        //return PetStatus !== 'pend'
         return PetStatus === 'pend'
     }
     useEffect(()=>{
@@ -81,7 +78,6 @@ console.log(petid)
     const isDone = () => {
         console.log('done')
         console.log(PetStatus === 'done')
-        //return PetStatus !== 'done'
         return PetStatus === 'done'
     }
     useEffect(()=>{
@@ -117,7 +113,6 @@ console.log(petid)
                             console.log(values.petId)
                             const result = await changeStatusService.updateStatus(values);
                             console.log(result);
-                            //alert(values.codePet);
                             setSubmitting(false);
                         }}
                     >
@@ -151,7 +146,7 @@ console.log(petid)
         </div>
 
         <div className="carousel">
-            < MyCarousel />
+            < MyCarousel PetURl={PetPicUrl}/>
         </div>
         <div className="informationn">
             Information
@@ -168,7 +163,7 @@ console.log(petid)
 
             </Container>
             <div id="ColumnSideO">
-                  <CertModal id="testagain9"/>
+                <CertModal id="testagain" certPic={PetCerURL}/>
             </div>
                 <div id="hehehuhu">
                 <NavLink to={`/donator/editpetprofile/${petid}`} id="editPetLuv" style={{color: '#61b292'}}>edit</NavLink>

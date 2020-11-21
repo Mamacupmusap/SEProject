@@ -54,10 +54,6 @@ const Addpetprofile= (props:any) =>{
   const [petpicURL,setPetpicURL] = useState<string>()
   const [petcer,setPetcer] = useState<string>()
 
-
-
-
-  
   const fetchProfileInfo=() =>{
     return(
       profileservice.fetchProfileInfo(PETID)
@@ -80,7 +76,7 @@ const Addpetprofile= (props:any) =>{
     setType(obj?.Type)
     setLocation(obj?.PetAddress)
     setDescription(obj?.Describe)
-    setPetpicURL(obj?.PetPicUrl)
+    setPetpicURL(obj?.PetPicURL)
     setPetcer(obj?.PetCerURL)
   },[obj])
   return(
