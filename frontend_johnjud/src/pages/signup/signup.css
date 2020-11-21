@@ -24,12 +24,14 @@
     border-color: transparent;
 }
 
-
 .box_img{
     text-align: center;
 }
+
 #box{
     font-size: 14px;
+    background-color: #F5F8FA;
+    border: 0px;
 }
 
 .container{
@@ -132,9 +134,9 @@ label{
 
 .inp_text{
     border: none;
-    border: 1px solid #C4C4C4;
+    background-color: #F5F8FA;
     width: 300px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
 }
 
@@ -144,7 +146,7 @@ label{
 
 .inp_text1{
     border: none;
-    border: 1px solid #C4C4C4;
+    background-color: #F5F8FA;
     width: 300px;
     padding: 10px;
     border-radius: 10px;
@@ -169,11 +171,15 @@ label{
 
 .col-lg-6{
     border: none;
-    border: 1px solid #C4C4C4;
+    background-color: #F5F8FA;
     width: 350px;
     padding: 10px;
     border-radius: 10px;
     font-size: 15px;
+}
+
+.rounded-lg {
+    padding: 16px;
 }
 
 .text1{
@@ -232,6 +238,7 @@ label{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
 }
 
 #Address {

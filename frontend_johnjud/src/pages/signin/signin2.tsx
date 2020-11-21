@@ -85,7 +85,7 @@ const Signin = (props: SigninFormProb) => {
                                                         <Field name="username"
                                                                type="text"
                                                                id="username"
-                                                               //className={`form-control ${touched.username ? errors.username ? 'is-invalid' : 'is-valid' : ''}`}
+                                                               className={`form-control`}
                                                                placeholder="username"
                                                                />
                                                         <ErrorMessage component="div" name="username" className="invalid-feedback" />
@@ -97,12 +97,12 @@ const Signin = (props: SigninFormProb) => {
                                                         <Field name="password"
                                                                type="password"
                                                                id="password"
-                                                               //className={`form-control ${touched.password ? errors.password ? 'is-invalid' : 'is-valid' : ''}`}
+                                                               className={`form-control`}
                                                                placeholder="password"/>
                                                         <ErrorMessage component="div" name="password" className="invalid-feedback" />
                                                     </FormGroup>
                                                 </Col>
-                                                <Button type='submit'id='button_signin'>Sign In</Button>
+                                                <Button type='submit'id='button_signin'>Sign in</Button>
                                                 <div className='last_box'>
                                                     { signInErrorMessage}
                                                 </div>
