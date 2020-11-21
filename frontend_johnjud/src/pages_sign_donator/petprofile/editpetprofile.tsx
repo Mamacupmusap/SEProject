@@ -37,11 +37,7 @@ const Addpetprofile= (props:any) =>{
   let history = useHistory();
 
   const accessToken = localStorage.getItem('Token');
-  console.log(accessToken)
   const PETID =  props.match.params.petid;
-  console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAA')
-
-  console.log(PETID)
 
   const [obj,setObj] = useState<Petinfo>()
   const [userid,setUserid] = useState<string>()
@@ -66,7 +62,6 @@ const Addpetprofile= (props:any) =>{
     return(
       profileservice.fetchProfileInfo(PETID)
       .then(res => {
-        console.log(res)
         setObj(res)
       })
     )
@@ -88,8 +83,6 @@ const Addpetprofile= (props:any) =>{
     setPetpicURL(obj?.PetPicUrl)
     setPetcer(obj?.PetCerURL)
   },[obj])
-  console.log("Objjjjjjj is ")
-  console.log(obj)
   return(
     <div>
       {localStorage.UserId == userid &&
