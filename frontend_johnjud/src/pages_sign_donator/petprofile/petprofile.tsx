@@ -33,7 +33,9 @@ export const Petprofile = (props:any) => {
       )
     }
 
-localStorage.setItem('pet_id',petid)
+localStorage.setItem('petID',petid)
+localStorage.removeItem('EditpetInfo')
+
 console.log(petid)
 
     useEffect(()=>{
