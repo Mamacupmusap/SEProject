@@ -19,6 +19,7 @@ import submitCodeService from "./submitCodeService";
 import check from "../../pages_sign_donator/petprofile/imgpic/check.png";
 import check_y from "../../pages_sign_donator/petprofile/imgpic/check_y.png";
 import check_r from "../../pages_sign_donator/petprofile/imgpic/check_r.png";
+import { profile } from 'console';
 
 interface Value2{
     codePet: string,
@@ -107,8 +108,19 @@ export const Petprofile = (props:any) => {
     .then(a=>{
       console.log(a)
       const roomid = a.id
+      const s1={
+        roomid:roomid,
+        User:localStorage.UserId
+      }
+      profileservice.makenoti1(s1, localStorage.UserId, roomid)
+      const s2 ={
+        roomid:roomid,
+        User:UserId
+      }
+      profileservice.makenoti2(s2, UserId, roomid)
       history.push(`/receiver/chat/${localStorage.UserId}/${UserId}/${roomid}`)
     })
+    // profileservice.makenoti()
   }
 
     const fetchProfileInfos=() =>{

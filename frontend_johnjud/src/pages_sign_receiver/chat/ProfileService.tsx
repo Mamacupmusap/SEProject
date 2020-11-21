@@ -20,9 +20,21 @@ async function fetchProfileInfo(userId:string): Promise<Userinfo>{
     console.log(name)
     return name;
 }
+async function sendnoti(a:any,userId:string|undefined, roomid:string): Promise<any|null> {
+    const res = await fetch(`http://localhost:2000/chat/${userId}/${roomid}/updatenullnoti`,{
+        method: 'PATCH',
+        headers : {'Content-Type': 'application/json'},
+        body: JSON.stringify(a),
+    });
+    const ress = await res.json();
+    return ress
+}
+
+
 export default {
     fetchChatroom,
     fetchProfileInfo,
+    sendnoti,
 } 
 
 //
