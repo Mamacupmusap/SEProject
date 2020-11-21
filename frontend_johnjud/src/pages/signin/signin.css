@@ -56,9 +56,20 @@
   .container{
     width: fit-content;
   }
-  .button_signin{
+
+  #button_signin{
+    display: flex;
+    text-align: center;
     background-color: #61b292;
     border: #61b292;
+    margin: auto;
+    border-radius: 45px;
+  }
+
+  #button_signin1{
+    color: gray;
+    background-color: white;
+    border: solid gray 0.5px;
     display: flex;
     text-align: center;
     margin: auto;

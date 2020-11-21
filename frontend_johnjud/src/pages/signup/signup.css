@@ -15,9 +15,13 @@
 #button_next{
     background-color: #61b292;
     text-align: center;
-    margin-left: 35%;
+    /*margin-left: 35%;*/
     margin: auto;
-    margin-left: 36%;
+    /*margin-left: 36%;*/
+    display: flex;
+    align-self: center;
+    border-radius: 45px;
+    border-color: transparent;
 }
 
 
@@ -39,11 +43,6 @@
     letter-spacing: 0.271486px;
     display: flex;
     flex-direction: column;
-}
-
-
-input::placeholder{
-    font-size: 6px;
 }
 
 #Date{
@@ -76,7 +75,10 @@ input::placeholder{
 
 .textgender{
     font-size: 12px;
-    padding-top: 5%;
+}
+
+#gender{
+    width: 20px;
 }
 
 .mobile{
@@ -89,7 +91,7 @@ label{
 }
 
 .bigbox{
-    margin-top: 7%;
+    margin-top: 10%;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -108,11 +110,14 @@ label{
     background-color: #61b292;
     display: flex;
     text-align: center;
+    border-radius: 45px;
+    border-color: transparent;
 }
 
-/*.left{
-    float: left;
-}*/
+.left{
+    display: flex;
+    justify-content: center;
+}
 
 
 .rightOTP{
@@ -133,6 +138,10 @@ label{
     border-radius: 10px;
 }
 
+.inp_text::placeholder{
+    padding-left: 5px;
+}
+
 .inp_text1{
     border: none;
     border: 1px solid #C4C4C4;
@@ -142,11 +151,20 @@ label{
     font-size: 15px;
 }
 
+.inp_text1::placeholder{
+    padding-left: 5px;
+    font-size: 15px;
+}
+
+#nanii {
+    display: flex;
+    flex-direction: row;
+}
+
 .form-control {
     display: flex;
     flex-direction: row;
     padding-left: 0px;
-    width: 100%;
 }
 
 .col-lg-6{
@@ -185,6 +203,7 @@ label{
     width: 80%;
     height: 80%;
 }
+
 .box_white{
     padding: 10%;
 }
@@ -213,10 +232,8 @@ label{
     display: flex;
     flex-direction: row;
     justify-content: center;
-    min-inline-size: 15%;
 }
 
 #Address {
     width: 100%;
 }
-

@@ -21,7 +21,7 @@ const signin = () =>{
             <br/><br/>
             <Container className='textbox'>
              
-              <NavLink to='/signin2' className='botton_signin'><Button outline color='secondary'>Sign in with JohnJud account</Button></NavLink>
+              <NavLink to='/signin2'><Button id='button_signin1'>Sign in with JohnJud account</Button></NavLink>
               <br/>
               <p id="yesihavent">haven't register? <NavLink to='./signup'>sign up </NavLink></p>
             </Container>

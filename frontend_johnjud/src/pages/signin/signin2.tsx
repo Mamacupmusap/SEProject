@@ -64,7 +64,7 @@ const Signin = (props: SigninFormProb) => {
                                             //console.log(res);
                                             if(!result) {
                                                 //console.log('Wrong username or password');
-                                                setSignInErrorMessage('SignIn error: wrong username or password');
+                                                setSignInErrorMessage('Sign In error: wrong username or password');
                                             }else {
                                                 setSignInErrorMessage('')
                                                 //console.log('');
@@ -102,7 +102,7 @@ const Signin = (props: SigninFormProb) => {
                                                         <ErrorMessage component="div" name="password" className="invalid-feedback" />
                                                     </FormGroup>
                                                 </Col>
-                                                <Button type='submit'className='button_signin'>Sign In</Button>
+                                                <Button type='submit'id='button_signin'>Sign In</Button>
                                                 <div className='last_box'>
                                                     { signInErrorMessage}
                                                 </div>

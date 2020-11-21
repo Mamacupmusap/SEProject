@@ -191,6 +191,7 @@ const Signup= () =>{
             <FormGroup>
               <Label for="Gender" className="informationh">Gender</Label>
               <div id='box' className='form-control'>
+                <div id="nanii">
                 <div className="custom-control">
                   <Field name="Gender" 
                        type="radio" 
@@ -216,6 +217,7 @@ const Signup= () =>{
                   />
                   <label className="textgender">others</label>
                 </div>
+              </div>
               </div>
             </FormGroup>
           </Col>
