@@ -59,11 +59,11 @@ const ChangePassword=(props:any) => {
             </div>
             <div className='ChangeBlock'>
                 <span id='ChangePassword'>New Password*: </span>
-                &nbsp;&nbsp;<input id='InputChangePassword' value={Password} onChange={(e) => {
+                &nbsp;&nbsp;<input id='InputChangePassword' type="password" value={Password} onChange={(e) => {
                     setPassword(e.target.value);}}/>
                 <br/><br/>
                 <span id='ChangePassword'>confirm Password*: </span>
-                &nbsp;&nbsp;<input id='InputChangePassword' value={ConfirmPassword} onChange={(e) =>
+                &nbsp;&nbsp;<input id='InputChangePassword' type="password" value={ConfirmPassword} onChange={(e) =>
                     {setConfirmPassword(e.target.value);}}/>
                 <button id='SubmitPasswordButton' onClick={submit}>Submit</button>
             </div>
