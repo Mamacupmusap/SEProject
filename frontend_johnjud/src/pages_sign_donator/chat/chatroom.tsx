@@ -20,6 +20,7 @@ const Chat= (props:any) =>{
     const[obj,setObj] = useState<any[]>([]);
     const[obj1,setObj1] = useState<chatroom>();
     const[obj2,setObj2] = useState<Userinfo>();
+    const[obj3,setObj3] = useState<Userinfo>();
 
     const [newChat, setnewChat] = useState<string>();
     const roomId = props.match.params.roomId;
@@ -68,11 +69,19 @@ const Chat= (props:any) =>{
       useEffect(()=>{
         fetchuserinfo()
       },[])
-      const user1=  obj1?.username1;
-      const user2 = obj1?.username2;
-
-
-
+     const fetchuserinfo2=() =>{
+        return(
+           profileservice.fetchProfileInfo(userid)
+           .then(res2 => {
+             console.log(res2)
+             setObj3(res2)
+           })
+         )
+       }
+       useEffect(()=>{
+       fetchuserinfo2()
+       },[])
+       const user=obj3?.UserName
     async function PostChat(chatinfo:chat): Promise<chat> {
     const res = await fetch(`http://localhost:2000/chat/${userid}/${roomId}/addmessage`,{
                   method: 'POST',
@@ -99,7 +108,19 @@ const Chat= (props:any) =>{
       return user1
     }
   }
+  const check2=(user1:string, user2:string)=>{
+    if(user1 == user)
+    {
+      return user2
+    }
+    else if(user2 == user){
+      return user1
+    }
+  }
+  
 console.log(obj2?.UserName)
+console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
+console.log(user)
     
     /*const message=obj?.message;
     const picUser=obj?.picUser;
@@ -127,7 +148,7 @@ console.log(obj2?.UserName)
           {obj?.map(item=>(
             <span>
             <div className="chatPeople_group">
-              <a href={`http://localhost:3000/donator/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{item.username2}</a>
+              <a href={`http://localhost:3000/donator/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{check2(item.username1,item.username2)}</a>
             </div>
             </span>
             ))}
