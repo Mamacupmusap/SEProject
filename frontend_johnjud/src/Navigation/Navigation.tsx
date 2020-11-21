@@ -61,7 +61,7 @@ const Navigation = () => {
             </Button>
             </NavLink>
 
-            <div id='chat'><NavLink to='/receiver/chat'><img src={chatIcon} alt='chat'/></NavLink></div>
+            <div id='chat'><NavLink to= {`/receiver/chat/${userIdlocal}/chatroom`}><img src={chatIcon} alt='chat'/></NavLink></div>
 
             <div id="alert">
                <img src={alertIcon} alt='alert'/>
