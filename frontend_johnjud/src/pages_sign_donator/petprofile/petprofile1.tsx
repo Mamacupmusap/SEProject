@@ -63,7 +63,13 @@ const Addpetprofile= () =>{
           }}
         
           onSubmit={ async (values:Value2,actions) =>{
+            let resimgbb_cer = null;
+
             //upload pet img
+            if(values.PetPicURL==''){
+              alert("Please upload pet image!");
+            }
+
             var formdata = new FormData();   
             formdata.append("image", values.PetPicURL, values.fileName_img);
 
@@ -75,15 +81,18 @@ const Addpetprofile= () =>{
             const resimgbb = await response.json();            
 
             //upload pet cer
-            var formdata_cer = new FormData();   
-            formdata_cer.append("image", values.PetCerURL, values.fileName_cer);
+            if(values.PetCerURL!=''){
+              var formdata_cer = new FormData();   
+              formdata_cer.append("image", values.PetCerURL, values.fileName_cer);
 
-            const response_cer = await fetch("https://api.imgbb.com/1/upload?key=1949bda7eab7e16a8e613b0c302c4782", {
-                method: 'POST',
-                body: formdata_cer,
-                redirect: 'follow'
-              });
-            const resimgbb_cer = await response_cer.json();            
+              const response_cer = await fetch("https://api.imgbb.com/1/upload?key=1949bda7eab7e16a8e613b0c302c4782", {
+                  method: 'POST',
+                  body: formdata_cer,
+                  redirect: 'follow'
+                });
+                resimgbb_cer = await response_cer.json();
+                resimgbb_cer = resimgbb_cer.data.url;
+            }          
 
             const sendInfoPet ={
               petid: values.petid,
@@ -95,7 +104,7 @@ const Addpetprofile= () =>{
               PetStatus: values.PetStatus,
               PetLength: values.PetLength,
               PetHeight: values.PetHeight,
-              PetCerURL: resimgbb_cer.data.url,
+              PetCerURL: resimgbb_cer,
               TimeStampUpdate: values.TimeStampUpdate,
               UserId: values.UserId,
               TimeUpdate : values.TimeUpdate,
@@ -147,7 +156,7 @@ const Addpetprofile= () =>{
           </Col>
 
           <Col>
-            <Label for="PetPicURL" className="information">Pet picture :</Label>
+            <Label for="PetPicURL" className="information">Pet picture*:</Label>
               <input id="PetPicURL" name="PetPicURL" type="file" onChange={(event) => {
                 props.setFieldValue("PetPicURL", event.currentTarget.files![0]);
                 props.setFieldValue("fileName_img", event.currentTarget.files![0].name);
