@@ -111,6 +111,26 @@ const Addpetprofile= (props:any) =>{
           onSubmit={ async (values:Value2,actions) =>{
             let resimgbb = null;
             let resimgbb_cer = null;
+
+            //validate
+            let alert_msg = '';
+            if(values.PetName==''){
+              alert_msg = alert_msg+"Pet's Name\n";
+            }
+            if(values.PetGender==''){
+              alert_msg = alert_msg+"Gender\n";
+            }
+            if(values.Type==''){
+              alert_msg = alert_msg+"Type\n";
+            }
+            if(values.PetAddress==''){
+              alert_msg = alert_msg+"Location\n";
+            }
+            
+            if(alert_msg!=''){
+              alert("Please enter required data :\n"+alert_msg);
+              return;
+            }
             
             //upload pet img
             if(values.PetPicURL!=''){
@@ -141,7 +161,7 @@ const Addpetprofile= (props:any) =>{
             }            
 
             const sendInfoPet ={
-              petid: localStorage.getItem('pet_id'),
+              petid: localStorage.getItem('petID'),
               PetName: values.PetName,
               PetBreed: values.PetBreed,
               PetGender: values.PetGender,
@@ -157,6 +177,8 @@ const Addpetprofile= (props:any) =>{
               Describe: values.Describe,
               PetAddress : values.PetAddress
             }
+
+            console.log(sendInfoPet);
             
 
             const res = await fetch('http://localhost:2000/petinfo/editPetInfo',{

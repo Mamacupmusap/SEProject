@@ -65,11 +65,30 @@ const Addpetprofile= () =>{
           onSubmit={ async (values:Value2,actions) =>{
             let resimgbb_cer = null;
 
-            //upload pet img
+            //validate
+            let alert_msg = '';
+            if(values.PetName==''){
+              alert_msg = alert_msg+"Pet's Name\n";
+            }
             if(values.PetPicURL==''){
-              alert("Please upload pet image!");
+              alert_msg = alert_msg+"Pet's Picture\n";
+            }
+            if(values.PetGender==''){
+              alert_msg = alert_msg+"Gender\n";
+            }
+            if(values.Type==''){
+              alert_msg = alert_msg+"Type\n";
+            }
+            if(values.PetAddress==''){
+              alert_msg = alert_msg+"Location\n";
+            }
+            
+            if(alert_msg!=''){
+              alert("Please enter required data :\n"+alert_msg);
+              return;
             }
 
+            //upload pet img
             var formdata = new FormData();   
             formdata.append("image", values.PetPicURL, values.fileName_img);
 
