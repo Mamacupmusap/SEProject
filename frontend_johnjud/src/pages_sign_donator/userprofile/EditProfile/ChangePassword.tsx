@@ -16,6 +16,10 @@ const ChangePassword=(props:any) => {
     const userId = props.match.params.userId;
     const[obj,setObj] = useState<Userinfo>();
     const submit=() =>{
+        if(Password!=ConfirmPassword){
+            alert("Those passwords didn't match. Try again.");
+            return;
+        }
         profileservice.updatePassword(Password,ConfirmPassword,localStorage.Token)
         .then( res=>{
             console.log(res)

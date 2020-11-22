@@ -1,8 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
 import {Userinfo} from './Interface';
-import {OTPinfo} from './EditProfile/Interface';
-import {petnum} from './EditProfile/interface3';
 import {image} from './EditProfile/interface4';
 
 
@@ -114,8 +110,6 @@ async function updateOTP(OTPS:string,token:string): Promise<any|null> {
     return ress
 }
 async function updatePassword(password:string,confirmpassword:string,token:string): Promise<any|null> {
-    console.log(password)
-    console.log(confirmpassword)
     var urlencoded = new URLSearchParams();
     urlencoded.append("Password", password);
     urlencoded.append("ConfirmPassword", confirmpassword);
