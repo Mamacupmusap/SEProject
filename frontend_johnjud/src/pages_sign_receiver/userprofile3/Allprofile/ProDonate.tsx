@@ -38,7 +38,7 @@ export const Apps=(props:any) => {
     fetchProfileInfos()
   },[])
 
-  const petPro = obj.map(item=>(<span><PetBlock message = {item.PetName} img={item.PetPicURL} link={item.petid} /></span>))
+  const petPro = obj.map(item=>(<span><PetBlock message = {item.PetName} img={item.PetPicURL} link={`/donator/petprofile/`+item.petid} /></span>))
   const ProfilePic = Objs?.ImgURL
 
   return(   

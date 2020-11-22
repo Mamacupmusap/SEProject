@@ -14,7 +14,7 @@ type petblock = {
 
 const PetBlock=(prop: petblock) =>{
     return (
-        <Link to = {`/receiver/petprofile/${prop.link}`}>
+        <Link to = {prop.link}>
             <div className='CardPetBlock'>
                 <img className='ImgCardPetBlock' src={prop.img}/>
                 <div className='NamePetCard'><h4 style={{fontSize:14, marginTop:5}}>{prop.message}</h4></div>
