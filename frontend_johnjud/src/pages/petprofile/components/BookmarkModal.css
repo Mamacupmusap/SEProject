@@ -20,7 +20,7 @@
 }
 
 
-.Probutton1{
+#Probutton1{
     background-color: #61B292;
     color: white;
     border-radius: 45px;
@@ -28,7 +28,7 @@
     height: 38px;
 }
 
-.Probutton2{
+#Probutton2{
     background-color: #C4C4C4;
     color: white;
     border-radius: 45px;

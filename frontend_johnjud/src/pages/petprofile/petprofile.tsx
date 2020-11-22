@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './petprofile.css';
 import 'bootstrap/dist/css/bootstrap.css';
-//import profileservice from './ProfileService';
 import Navigation from '../../Navigation/Navigation2';
 import {Petinfo} from './Interface';
-import { NavLink} from 'react-router-dom';
 import { Container} from 'reactstrap';
 import { MyCarousel } from './components/MyCarousel';
 import { BookmarkModal } from './components/BookmarkModal';
 import {CertModal} from './components/CertModal';
-import User from './components/img/User.png';
 import greenRight from './components/img/check.png';
-//import mail from './components/img/mail.png';
 import { ProfileModal} from './components/ProfileModal';
 import ContactModal from './components/ContactModal';
 import profileservice from './ProfileService'
@@ -106,7 +102,7 @@ export const Petprofile = (props:any) => {
                 <h1 id="oyay">Length: {PetLength}</h1> 
                 <h1 id="oyay">Height: {PetHeight} </h1>
                 <h1 id="oyay">Breed: {PetBreed}</h1>
-                <h1 id="oyay">Location:{PetAddress}</h1>
+                <h1 id="oyay">Location: {PetAddress}</h1>
             </Container>
             <div className="ColumnSide">
                 <BookmarkModal id="testagain"/>
@@ -121,7 +117,7 @@ export const Petprofile = (props:any) => {
         
         <Container id="petBobo1">
             <h1 id="TextDescrip">Description:</h1>
-            <h5 style={{textAlign:'start', fontSize:16}}>{Describe}</h5>
+            <h5 style={{textAlign:'start', fontSize:14}}>{Describe}</h5>
             <hr id="lineHeader2"/>
         </Container>
         <Container id="conNot">
@@ -131,10 +127,9 @@ export const Petprofile = (props:any) => {
               <div className="postInfoNot">
                 <div className="postInfo2Not">
                   <div className="NameNot">
-                    <h1 id="PostUserNot"> {username}</h1>
                     <h1 id="PostUserNot"> {firstname} {lastname}</h1>
                   </div>
-                    <NavLink to ={`/receiver/userprofile/${UserId}`} id='PostProfile'> Profile</NavLink>
+                  <ProfileModal/>
                 </div>
                 <ContactModal/>    
               </div>

@@ -16,7 +16,7 @@ export const CertModal = (props:any) => {
           <img src={props.certPic} style={{width:250}} alt={'No picture'}/>
         </ModalBody>
         <div id="certButt"> 
-          <Button color="link" onClick={toggle} className="Certbutton">close</Button>
+          <Button color="link" onClick={toggle} id="Certbutton">close</Button>
         </div>
       </Modal>
     </div>

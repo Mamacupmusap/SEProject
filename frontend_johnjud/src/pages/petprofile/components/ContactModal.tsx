@@ -26,11 +26,11 @@ export const ContactModal = (props:any) => {
         <div className="proAllButt">
             <div id="proButt1">
                 <NavLink to='/signin'>
-                    <Button color="link" onClick={toggle} className="Probutton1">confirm</Button>
+                    <Button color="link" onClick={toggle} id="Probutton1">confirm</Button>
                 </NavLink>
             </div>
             <div id="proButt2">
-                <Button color="link" onClick={toggle} className="Probutton2">cancel</Button>
+                <Button color="link" onClick={toggle} id="Probutton2">cancel</Button>
             </div>
         </div>
       </Modal>
