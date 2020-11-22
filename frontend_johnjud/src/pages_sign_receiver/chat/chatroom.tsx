@@ -13,7 +13,7 @@ import user2 from './components/Chat/img/user2.png';
 import profileservice from './ProfileService';
 import { attachProps } from "@ionic/react/dist/types/components/utils";
 import {Userinfo} from './Interface';
-
+import Checkuser from './chekuser'
 
 const Chat= (props:any) =>{
     const accessToken = localStorage.getItem('Token');
@@ -117,12 +117,12 @@ const Chat= (props:any) =>{
  
   const [noti,setNoti] = useState<any>()
 
-  const checknoti=(roomid:string, user2:string|undefined)=>{
-    profileservice.getOnenoti(roomid,user2)
-    .then(a=>{
-      console.log(a)
-      setNoti(a)
-    })}
+  // const checknoti=(roomid:string, user2:string|undefined)=>{
+  //   profileservice.getOnenoti(roomid,user2)
+  //   .then(a=>{
+  //     console.log(a)
+  //     setNoti(a)
+  //   })}
   const nullcheck=(value:string|undefined)=>{
     if (value != null){
         return update;
@@ -144,10 +144,22 @@ const Chat= (props:any) =>{
           <div className="allPeople">
           {obj?.map(item=>(
             <span>
+              {/* {console.log("ttttttttttttttttttttttttttt")} */}
             <div className="chatPeople_group">
-              {/* {setFinduser(check(item.userid1,item.userid2))}  */}
-              <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${finduser}/${item.id}/`}>{check2(item.username1,item.username2)} </a>
-              {/* {checknoti(item.id,finduser)}  */}
+              {/* {console.log("Naaaaaaaa")} */}
+            {/* {notidata?.map(items=>(<span>
+              {console.log(items.roomid , item.id)}
+              {items.roomid == item.id &&
+              <div>test</div>
+              }
+            </span>))} */}
+              {/* {setFinduser(check(item.userid1,item.userid2))} */}
+              {/* {console.log(finduser)} */}
+              <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{check2(item.username1,item.username2)} </a>
+              {/* {checknoti(item.id,check(item.userid1,item.userid2))}  */}
+              {console.log('item.userid2  ,item.id')}
+              {console.log(item.userid2  ,item.id)}
+              <Checkuser user1={item.userid1} uesr2={item.userid2} roomid ={item.id} localuesr={localStorage.UserId}/>
             </div>
             </span>
             ))}

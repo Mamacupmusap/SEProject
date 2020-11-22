@@ -36,10 +36,19 @@ async function getnoti(userId:string): Promise<any[]>{
     return name;
 }
 
-async function getOnenoti(roomid:string,user2:string|undefined): Promise<Userinfo>{
-    const res = await fetch(`http://localhost:2000/chat/${user2}/${roomid}/getmynoti`);
-    const name = await res.json();
-    return name;
+async function getOnenoti(roomid:string, userId2:string): Promise<any>{
+
+    console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
+    console.log(roomid)
+    console.log('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy')
+    console.log(userId2)
+    console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz')
+
+    const res = await fetch(`http://localhost:2000/chat/${userId2}/${roomid}/getmynoti`);
+    const names = await res.json();
+    console.log("nameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
+    console.log(names)
+    return names;
 }
 export default {
     fetchChatroom,
