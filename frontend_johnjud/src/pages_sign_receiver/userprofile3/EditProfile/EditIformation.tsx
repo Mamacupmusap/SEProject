@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import '../Profile.css';
 import profileservice from '../ProfileService';
 import {Userinfo} from '../Interface';
-import { First } from 'react-bootstrap/esm/PageItem';
 
 
 const LeftBlockEdit=(prop:any) =>{
@@ -45,6 +44,9 @@ const LeftBlockEdit=(prop:any) =>{
     const address = obj.Address;
     const facebook = obj.Facebook;
 
+    const [isMale, setIsMale] = useState<boolean>();
+    const [isFemale, setIsFemale] = useState<boolean>();
+    const [isOthers, setIsOthers] = useState<boolean>();
     const [newFirstName, setNewFirstName] = useState<string>();
     const [newLastName, setNewLastName] = useState<string>();
     const [newBirthDay, setNewBirthDay] = useState<string>();
@@ -106,6 +108,19 @@ const LeftBlockEdit=(prop:any) =>{
       }
     },[birthday])
 
+    useEffect(()=>{
+      checkGender();
+    },[newGender])
+
+    const checkGender = ()=>{
+      if(newGender=="Male"){
+        setIsMale(true);
+      }else if(newGender=="Female"){
+        setIsFemale(true);
+      }else if(newGender=="Others"){
+        setIsOthers(true);
+      }
+    }  
 
     const update=() =>{
       let error_msg = '';
@@ -148,11 +163,11 @@ const LeftBlockEdit=(prop:any) =>{
             <p className='bold'>LastName:<input id='Input' value={newLastName} onChange={(e) => {setNewLastName(e.target.value);}}></input></p>
             <p className='bold'>Birthday:<input id='Input' type="date" value={newBirthDay} onChange={(e) => {setNewBirthDay(e.target.value);}}></input></p>
             <p className='bold'>Gender : 
-            <input type='radio' value='Male' name='gender' onChange={(e) => {setNewGender(e.target.value);}}></input>
+            <input type='radio' value='Male' name='gender' checked={isMale} onChange={(e) => {setNewGender(e.target.value);}}></input>
             <label>Male</label>
-            <input type='radio' value='Female' name='gender' onChange={(e) => {setNewGender(e.target.value);}}></input>
+            <input type='radio' value='Female' name='gender' checked={isFemale} onChange={(e) => {setNewGender(e.target.value);}}></input>
             <label>Female</label>
-            <input type='radio' value='Others' name='gender' onChange={(e) => {setNewGender(e.target.value);}}></input>
+            <input type='radio' value='Others' name='gender' checked={isOthers} onChange={(e) => {setNewGender(e.target.value);}}></input>
             <label>Others</label>
             </p>
             <p className='bold'>Address:<textarea id='AddressInput' value={newAddress} onChange={(e) => {setNewAddress(e.target.value);}}></textarea></p>
