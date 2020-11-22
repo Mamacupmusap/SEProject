@@ -1,7 +1,9 @@
 #doPro{
     color: #61b292;
-    font-size: 15px;
+    font-size: 14px;
     text-decoration: underline;
+    margin: 0px;
+    padding: 0px;
 }
 
 #alertPro {

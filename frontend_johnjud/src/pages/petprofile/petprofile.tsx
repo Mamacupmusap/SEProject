@@ -1,17 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import './petprofile.css';
 import 'bootstrap/dist/css/bootstrap.css';
-//import profileservice from './ProfileService';
 import Navigation from '../../Navigation/Navigation2';
 import {Petinfo} from './Interface';
-import { NavLink} from 'react-router-dom';
 import { Container} from 'reactstrap';
 import { MyCarousel } from './components/MyCarousel';
 import { BookmarkModal } from './components/BookmarkModal';
 import {CertModal} from './components/CertModal';
-import User from './components/img/User.png';
 import greenRight from './components/img/check.png';
-//import mail from './components/img/mail.png';
 import { ProfileModal} from './components/ProfileModal';
 import ContactModal from './components/ContactModal';
 import profileservice from './ProfileService'
@@ -131,7 +127,6 @@ export const Petprofile = (props:any) => {
               <div className="postInfoNot">
                 <div className="postInfo2Not">
                   <div className="NameNot">
-                    <h1 id="PostUserNot"> {username}</h1>
                     <h1 id="PostUserNot"> {firstname} {lastname}</h1>
                   </div>
                   <ProfileModal/>

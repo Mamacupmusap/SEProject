@@ -1,11 +1,11 @@
-import React, { Component, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './petprofile.css';
 import 'bootstrap/dist/css/bootstrap.css';
 import profileservice from './ProfileService';
 import Navigation from '../../Navigation/Navigation';
 import {Petinfo} from './Interface';
 import { NavLink, useHistory} from 'react-router-dom';
-import {Button,Container,FormGroup,Col,Label} from 'reactstrap';
+import {Button,Container,FormGroup,Col} from 'reactstrap';
 import { MyCarousel } from './components/MyCarousel';
 import { BookmarkModal } from './components/BookmarkModal';
 import {CertModal} from './components/CertModal';
@@ -16,7 +16,6 @@ import {Userinfo} from './interface2';
 
 import { Formik,Form, Field, ErrorMessage , FormikHelpers } from 'formik';
 import submitCodeService from "./submitCodeService";
-import check from "../../pages_sign_donator/petprofile/imgpic/check.png";
 import check_y from "../../pages_sign_donator/petprofile/imgpic/check_y.png";
 import check_r from "../../pages_sign_donator/petprofile/imgpic/check_r.png";
 import { profile } from 'console';
@@ -208,7 +207,6 @@ export const Petprofile = (props:any) => {
               <div className="postInfo">
                 <div className="postInfo2">
                   <div className="Namee">
-                    <h1 id="PostUser"> {username} </h1>
                     <h1 id="PostUser"> {firstname} {lastname} </h1>
                   </div>
                   <NavLink to={`/receiver/userprofile/${UserId}`} id='PostProfile'> Profile</NavLink>
