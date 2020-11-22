@@ -295,7 +295,7 @@
     left: 40%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
-    top:110%;
+    top:115%;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
     padding:30px;
 }
@@ -319,7 +319,7 @@
     height : 100px;
     position: absolute;
     left: 40%;
-    top: 125%;
+    top: 135%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
     padding: 10px;
@@ -346,7 +346,7 @@
     height : 100px;
     position: absolute;
     left: 40%;
-    top: 140%;
+    top: 155%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
     padding: 10px;
