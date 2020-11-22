@@ -117,6 +117,11 @@ const Chat= (props:any) =>{
       return user1
     }
   }
+  const checknoti=(noti:boolean)=>{
+    if(noti == true){
+      return "**new**"
+    }
+  }
   
 console.log(obj2?.UserName)
 console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
@@ -148,7 +153,7 @@ console.log(user)
           {obj?.map(item=>(
             <span>
             <div className="chatPeople_group">
-              <a href={`http://localhost:3000/donator/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{check2(item.username1,item.username2)}</a>
+          <a href={`http://localhost:3000/donator/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{check2(item.username1,item.username2) } {checknoti(item.noti)}</a>
             </div>
             </span>
             ))}

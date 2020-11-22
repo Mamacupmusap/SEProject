@@ -26,9 +26,6 @@ const Chat= (props:any) =>{
     const roomId = props.match.params.roomId;
     const UserId2 = props.match.params.userId2;
     const UserId = props.match.params.userId;
-    
-    console.log(UserId)
-    console.log(UserId2)
 
     const fetchChatroom=() =>{
       return(
@@ -123,25 +120,18 @@ const Chat= (props:any) =>{
   const checknoti=(roomid:string, user2:string|undefined)=>{
     profileservice.getOnenoti(roomid,user2)
     .then(a=>{
-      console.log("sssssssssssssssssssss")
       console.log(a)
       setNoti(a)
-    })
-    // if(noti.NotiDate!=null && noti.readAt==null){
-    //   return 'test'
-    // }
-    // else{
-    //   return ''
-    // }
-
+    })}
+  const nullcheck=(value:string|undefined)=>{
+    if (value != null){
+        return update;
+    }
   }
-  // useEffect(()=>{
-  //   checknoti('5fb8b37f9fb35165d0e2903c','3146de11-ecf7-436b-a116-cd46e3094db0')
-  //   },[])
+
     
   const [finduser,setFinduser] = useState<string>()
   return (
-    
     <div>
       {localStorage.UserId==UserId && 
       <div>
@@ -154,17 +144,8 @@ const Chat= (props:any) =>{
           <div className="allPeople">
           {obj?.map(item=>(
             <span>
-              {console.log("ttttttttttttttttttttttttttt")}
             <div className="chatPeople_group">
-              {console.log("Naaaaaaaa")}
-            {/* {notidata?.map(items=>(<span>
-              {console.log(items.roomid , item.id)}
-              {items.roomid == item.id &&
-              <div>test</div>
-              }
-            </span>))} */}
-              {/* {setFinduser(check(item.userid1,item.userid2))} */}
-              {console.log(finduser)}
+              {/* {setFinduser(check(item.userid1,item.userid2))}  */}
               <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${finduser}/${item.id}/`}>{check2(item.username1,item.username2)} </a>
               {/* {checknoti(item.id,finduser)}  */}
             </div>
@@ -177,7 +158,7 @@ const Chat= (props:any) =>{
             <Message roomId={roomId}/>
             <form className="form">
               <textarea id='input' value={newChat} onChange={(e) => {setnewChat(e.target.value);}}/>
-              <button className="sendButton" onClick={update}>Send</button>
+              <button className="sendButton" onClick={nullcheck(newChat)}>Send</button>
             </form>
           </div>
         {/* <TextContainer users='hi'/> */}
