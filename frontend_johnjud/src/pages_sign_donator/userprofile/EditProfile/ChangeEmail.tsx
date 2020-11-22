@@ -40,7 +40,7 @@ const ChangeEmail=(props:any) => {
                 history.push(`/donator/userprofile/${userId}/editprofile`)
             }
             else{
-                alert("Error")
+                alert("Change Email Failed!")
             }
         })
     }

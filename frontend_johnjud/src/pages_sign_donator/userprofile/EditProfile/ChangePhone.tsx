@@ -36,11 +36,11 @@ const ChangePhone=(props:any) => {
         ProfileService.updatephone(newPhone,localStorage.Token)
         .then(a => {
             if(a){
-                alert("please verify OTP")
+                // alert("please verify OTP")
                 history.push(`/donator/userprofile/${userId}/editprofile/changephone/OTP`)
             }
             else{
-                alert("please try new phone")
+                alert("Please try new phone no!")
             }
         })
         

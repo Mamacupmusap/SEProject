@@ -37,7 +37,7 @@ async function updateinfo(newInfoProfile:Petinfo): Promise<any|null> {
     const Updateinfo:Petinfo = await res.json();
     console.log(Updateinfo)
     if (Updateinfo.PetName !== undefined){
-        return alert("Update information Sucess")
+        return alert("Update Information Success")
     }
     else{
         return alert("Please fill all information except facebook")

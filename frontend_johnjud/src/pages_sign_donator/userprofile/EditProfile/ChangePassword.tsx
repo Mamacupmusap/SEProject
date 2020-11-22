@@ -24,11 +24,11 @@ const ChangePassword=(props:any) => {
         .then( res=>{
             console.log(res)
             if(res){
-                alert("chagne password success!")
+                alert("Change Password Success!")
                 history.push(`/donator/userprofile/${userId}/editprofile`)
             }
             else{
-                alert("error please try again")
+                alert("Change Password Failed!")
             }
         })
         

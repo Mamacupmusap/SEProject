@@ -59,10 +59,10 @@ async function updateinfo(newInfoProfile:Userinfo,userId:string): Promise<any|nu
     const Updateinfo:Userinfo = await res.json();
     console.log(Updateinfo)
     if (Updateinfo.FirstName !== undefined){
-        return alert("Update information Sucess")
+        return alert("Update Information Success!")
     }
     else{
-        return alert("Error please try again")
+        return alert("Update Information Failed!")
     }
 }
 
