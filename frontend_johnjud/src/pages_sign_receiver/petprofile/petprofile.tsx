@@ -207,7 +207,7 @@ export const Petprofile = (props:any) => {
               <div className="postInfo">
                 <div className="postInfo2">
                   <div className="Namee">
-                    <h1 id="PostUser"> {firstname} {lastname} </h1>
+                    <h1 id="PostUser"> {username}</h1>
                   </div>
                   <NavLink to={`/receiver/userprofile/${UserId}`} id='PostProfile'> Profile</NavLink>
                 </div>
