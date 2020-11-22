@@ -26,6 +26,7 @@ const ChangePhone=(props:any) => {
       fetchProfileInfo()
     },[])
 
+    const phoneNo = obj?.PhoneNo;
     const profileURL = obj?.ImgURL;
     const username = obj?.UserName;
     const [newPhone,setNewPhone] = useState<string>('');
@@ -70,6 +71,7 @@ const ChangePhone=(props:any) => {
                 <br/><br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                 <br/><br/>
+                <p style={{marginLeft:242}}>Current Phone Number : {phoneNo}</p>
                 <button id='SubmitPhoneButton' onClick={update}>Submit</button>
             </div>
 

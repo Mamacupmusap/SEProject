@@ -3,7 +3,6 @@ import '../Profile.css';
 import ProfileService from '../ProfileService';
 import profileservice from '../ProfileService';
 import { Link, useHistory } from 'react-router-dom';
-// import ProfilePic from '../ProfilePic.png';
 import Glasspic from '../Glasspic.jpg';
 import {Userinfo} from '../Interface';
 import Navigation3 from '../../../Navigation/Navigation3'
@@ -11,7 +10,6 @@ import Navigation3 from '../../../Navigation/Navigation3'
 const ChangeEmail=(props:any) => {
     const[obj,setObj] = useState<Userinfo>();
     const userId = props.match.params.userId;
-
 
     const fetchProfileInfo=() =>{
       return(
@@ -64,7 +62,8 @@ const ChangeEmail=(props:any) => {
             <div className='ChangeBlock'>
                 <span id='ChangeEmail'>New Email : </span>
                 <input id='InputChangeEmail' value={newEmail} onChange={(e) => {setNewEmail(e.target.value);}}/>
-                <br/><br/>
+                <br/><br/><br/><br/>
+                <p style={{marginLeft:242}}>Current Email : {email}</p>
                 <button id='SubmitEmailButton' onClick={update}>Submit</button>
             </div>
             </div>
