@@ -28,6 +28,7 @@ const DescriptionEdit=(prop:any) =>{
             Description:newDescription,
         }
         ProfileService.updatedescription(newdescription,prop.userId);
+        alert("update description status: OK!");
     }
     const initNewdescription = () =>{
       setNewDescription(description)
