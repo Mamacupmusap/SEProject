@@ -34,7 +34,7 @@ const Apps=(props:any) => {
   // console.log(obj?.UserName)
 
   return(   
-    <div>
+    <div className='All_in_one_userpro'>
     
     <div>
       <Navigation3/>
@@ -59,7 +59,7 @@ const Apps=(props:any) => {
           
           <div className = 'bottomblock'>
             <br></br>
-            <h4 className='h4'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Description</h4>
+            <h4 className='h4'> Description</h4>
             <header id='Description'>
             </header>
             <p id='para'>

@@ -29,16 +29,16 @@ class Upload extends Component {
 
     render() {
         return (
-            <div className="Up">
+            
                 <form>
-                    <div className="">
+                    <div className="uploadpic">
                         <input type="file" className="ChooseProfile_pic" 
                         onChange={(e)=>this.handleFile(e)} />
                     </div>
                     <br />
                     <Button className='buttonUploadprofile' onClick={(e)=>this.handleUpload(e)}>Upload</Button>
                 </form>
-            </div>
+            
         );
     }
 }

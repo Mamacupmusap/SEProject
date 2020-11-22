@@ -39,10 +39,11 @@ const Apps=(props:any) => {
     <div>
       <Navigation3/>
       <div className = 'Profile'>
+     
         <Link to={`/receiver/userprofile/${userId}`}>  
           <img id='profilePic' src={ProfilePic}></img>
         </Link>
-
+   
         {userId == localStorage.UserId &&
         <Link to={`/receiver/userprofile/${userId}/editprofile`}>
           <button className='EditProfile'>Edit Profile</button>

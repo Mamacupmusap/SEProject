@@ -156,7 +156,7 @@ const LeftBlockEdit=(prop:any) =>{
         <div className='EditInformationBlock'>
             <br/><br/><br/>
             <div className='profilename'>
-            <h1><u>{username}</u></h1>
+            <h1 style={{fontSize:20,textAlign:"center"}}><u>{username}</u></h1>
             <br/>
             <div className='Info'><h5>
             <p className='bold'>FirstName:<input id='Input' value={newFirstName} onChange={(e) => {setNewFirstName(e.target.value);}}></input></p>

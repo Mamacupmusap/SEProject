@@ -42,7 +42,7 @@ const DescriptionEdit=(prop:any) =>{
     return(
         <div className='DescriptionEditBlock'>
             <br/>
-            <h4 className='h4'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Description</h4>
+            <h4 className='h4'> Description</h4>
             <textarea id='DescriptionInput' value={newDescription} onChange={(e) => {setNewDescription(e.target.value);}}>
             </textarea>
             <button id='DescriptionButton' onClick={update}>
