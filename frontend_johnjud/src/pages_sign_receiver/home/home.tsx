@@ -55,12 +55,12 @@ const Home = () => {
     <div id="bodyblahblah">
       <img src={head_dog} id='head_dog' alt=""/>
       <div className="urgh">
-        <div className="filter2">
-              <button onClick={petInfo} className="button2" >All</button>
+        <div className="filterRec">
+              <button onClick={petInfo} className="button2">All</button>
               <button onClick={dog} className="button2">Dog</button>
               <button onClick={cat} className="button2">Cat</button>
               <button onClick={others} className="button2">Others</button>
-              <div className="underfilter"></div>
+              <div className="underfilterRec"></div>
         </div>   
         <Container id="middle">
             {allPet.map((value) => {
