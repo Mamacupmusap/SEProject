@@ -159,10 +159,10 @@ const LeftBlockEdit=(prop:any) =>{
             <h1 style={{fontSize:20,textAlign:"center"}}><u>{username}</u></h1>
             <br/>
             <div className='Info'><h5>
-            <p className='bold'>FirstName:<input id='Input' value={newFirstName} onChange={(e) => {setNewFirstName(e.target.value);}}></input></p>
-            <p className='bold'>LastName:<input id='Input' value={newLastName} onChange={(e) => {setNewLastName(e.target.value);}}></input></p>
-            <p className='bold'>Birthday:<input id='Input' type="date" value={newBirthDay} onChange={(e) => {setNewBirthDay(e.target.value);}}></input></p>
-            <p className='bold'>Gender : 
+            <p className='bold'>FirstName: <input id='Input' value={newFirstName} onChange={(e) => {setNewFirstName(e.target.value);}}></input></p>
+            <p className='bold'>LastName: <input id='Input' value={newLastName} onChange={(e) => {setNewLastName(e.target.value);}}></input></p>
+            <p className='bold'>Birthday: <input id='Input' type="date" value={newBirthDay} onChange={(e) => {setNewBirthDay(e.target.value);}}></input></p>
+            <p className='bold'>Gender: 
             <input type='radio' value='Male' name='gender' checked={isMale} onChange={(e) => {setNewGender(e.target.value);}}></input>
             <label>Male</label>
             <input type='radio' value='Female' name='gender' checked={isFemale} onChange={(e) => {setNewGender(e.target.value);}}></input>
@@ -170,7 +170,7 @@ const LeftBlockEdit=(prop:any) =>{
             <input type='radio' value='Others' name='gender' checked={isOthers} onChange={(e) => {setNewGender(e.target.value);}}></input>
             <label>Others</label>
             </p>
-            <p className='bold'>Address:<textarea id='AddressInput' value={newAddress} onChange={(e) => {setNewAddress(e.target.value);}}></textarea></p>
+            <p className='bold'>Address: <textarea id='AddressInput' value={newAddress} onChange={(e) => {setNewAddress(e.target.value);}}></textarea></p>
             <button id='ButtonUpdate' onClick={update} >Update</button>
             </h5>
             </div>
