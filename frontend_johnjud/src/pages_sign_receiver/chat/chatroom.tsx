@@ -13,7 +13,10 @@ import user2 from './components/Chat/img/user2.png';
 import profileservice from './ProfileService';
 import { attachProps } from "@ionic/react/dist/types/components/utils";
 import {Userinfo} from './Interface';
-import Checkuser from './chekuser'
+import Checkuser from './chekuser';
+import { Link, useHistory } from 'react-router-dom';
+
+
 
 const Chat= (props:any) =>{
     const accessToken = localStorage.getItem('Token');
@@ -128,7 +131,7 @@ const Chat= (props:any) =>{
     }
   }
  
-  const [noti,setNoti] = useState<any>()
+  const [temp,setTemp] = useState<any>()
 
   // const checknoti=(roomid:string, user2:string|undefined)=>{
   //   profileservice.getOnenoti(roomid,user2)
@@ -141,8 +144,18 @@ const Chat= (props:any) =>{
         return update;
     }
   }
+  const history = useHistory()
 
+  const readmessage=()=>{
+    const a={
+      User:UserId,
+      roomid:roomId
+    }
+    profileservice.sendnoti2(a,UserId,roomId)
+    // history.push(`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(userid1,userid2)}/${id}/`)
     
+  }
+  
   const [finduser,setFinduser] = useState<string>()
   return (
     <div>
@@ -168,7 +181,9 @@ const Chat= (props:any) =>{
             </span>))} */}
               {/* {setFinduser(check(item.userid1,item.userid2))} */}
               {/* {console.log(finduser)} */}
-              <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{check2(item.username1,item.username2)} </a>
+              
+              <a onClick={readmessage} href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/` }>{check2(item.username1,item.username2)} </a>
+    
               {/* {checknoti(item.id,check(item.userid1,item.userid2))}  */}
               {/* {console.log('item.userid2  ,item.id')}
               {console.log(item.userid2  ,item.id)} */}
