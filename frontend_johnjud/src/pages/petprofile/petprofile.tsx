@@ -127,7 +127,7 @@ export const Petprofile = (props:any) => {
               <div className="postInfoNot">
                 <div className="postInfo2Not">
                   <div className="NameNot">
-                    <h1 id="PostUserNot"> {firstname} {lastname}</h1>
+                    <h1 id="PostUserNot"> {username}</h1>
                   </div>
                   <ProfileModal/>
                 </div>

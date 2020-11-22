@@ -182,7 +182,7 @@ const Chat= (props:any) =>{
               {/* {setFinduser(check(item.userid1,item.userid2))} */}
               {/* {console.log(finduser)} */}
               
-              <a onClick={readmessage} href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/` }>{check2(item.username1,item.username2)} </a>
+              <a onClick={readmessage} href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/` } id="pplLeftRec">{check2(item.username1,item.username2)} </a>
     
               {/* {checknoti(item.id,check(item.userid1,item.userid2))}  */}
               {/* {console.log('item.userid2  ,item.id')}
@@ -199,7 +199,7 @@ const Chat= (props:any) =>{
             <InfoBar username2={obj2?.UserName}/>
             <Message roomId={roomId}/>
             <form className="form">
-              <textarea id='input' value={newChat} onChange={(e) => {setnewChat(e.target.value);}}/>
+              <textarea id='input' value={newChat} onChange={(e) => {setnewChat(e.target.value);}} style={{width:"100%"}}/>
               <button className="sendButton" onClick={nullcheck(newChat)}>Send</button>
             </form>
           </div>
