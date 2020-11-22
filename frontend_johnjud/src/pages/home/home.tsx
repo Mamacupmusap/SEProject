@@ -8,11 +8,11 @@ import Navigation2 from '../../Navigation/Navigation2';
 import homeService_page from "./homeService_page";
 
 
+
 const fillter1 = document.getElementById('fillter0');
 
-const Home = () => {
+const Home = (): JSX.Element => {
   const[allPet,setAllPet] = useState<any[]>([]);
-  const [Fillter1, setFillter] = useState<string>('');
   const petInfo=() =>{
     return(
         homeService_page.fetchAllPet()
@@ -45,34 +45,25 @@ const Home = () => {
           })
     )
   }
-
   useEffect(()=>{
     petInfo().then()
   },[])
-
+  
   return(
   <div>
     <Navigation2/>
     <div id="bodyblahblah">
       <img src={head_dog} id='head_dog' alt=""/>
       <div className="urgh">
-        <div id="filterAll">
             
-            <div className="filter">
-              <p>Type</p>
-              <input type="checkbox" value="dog" onChange={dog}/>
-              <label>Dog</label>
-              <br/>
-              <input type="checkbox" value="cat" onChange={cat}/>
-              <label>Cat</label>
-              <br/>
-              <input type="checkbox" value="others" onChange={others}/>
-              <label>Others</label>
-              <br/>
-              <input type="checkbox" value="all" onChange={petInfo}/>
-              <label>All</label>
+            <div className="filter2">
+              <button onClick={petInfo} className="button2">All</button>
+              <button onClick={dog} className="button2">Dog</button>
+              <button onClick={cat} className="button2">Cat</button>
+              <button onClick={others} className="button2">Others</button>
+              <div className="underfilter"></div>
             </div>       
-          </div>
+
         <Container id="middle">
           {allPet.map((value) => {
             return (
@@ -84,6 +75,7 @@ const Home = () => {
                     </NavLink>
                   </CardBody>
                 </Card>
+              
               )
           })}
         </Container>

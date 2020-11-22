@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState,} from 'react';
 import { NavLink} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './home.css'
@@ -7,6 +7,7 @@ import { Container, Card, CardImg, CardBody,
   CardTitle} from 'reactstrap';
 import Navigation from '../../Navigation/Navigation';
 import homeService_receiver from "./homeService_receiver";
+
 
 const Home = () => {
   
@@ -44,7 +45,6 @@ const Home = () => {
           })
     )
   }
-  
   useEffect(()=>{
     petInfo().then()
   },[])
@@ -55,22 +55,13 @@ const Home = () => {
     <div id="bodyblahblah">
       <img src={head_dog} id='head_dog' alt=""/>
       <div className="urgh">
-        <div id="filterAll">
-            <div className="filter">
-              <p>Type</p>
-              <input type="checkbox" value="dog"  onClick={dog}/>
-              <label>Dog</label>
-              <br/>
-              <input type="checkbox" value="cat" onClick={cat}/>
-              <label>Cat</label>
-              <br/>
-              <input type="checkbox" value="others" onClick={others}/>
-              <label>Others</label>
-              <br/>
-              <input type="checkbox" value="all" onClick={petInfo}/>
-              <label>All</label>
-            </div>
-          </div>
+        <div className="filter2">
+              <button onClick={petInfo} className="button2" >All</button>
+              <button onClick={dog} className="button2">Dog</button>
+              <button onClick={cat} className="button2">Cat</button>
+              <button onClick={others} className="button2">Others</button>
+              <div className="underfilter"></div>
+        </div>   
         <Container id="middle">
             {allPet.map((value) => {
               return (
