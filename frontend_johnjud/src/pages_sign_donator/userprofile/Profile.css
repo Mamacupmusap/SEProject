@@ -292,10 +292,10 @@
     height : 100px;
     position: absolute;
     left: 40%;
-    top: 121%;
+    top: 100%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
-    padding: 10px;
+
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
     padding:30px;
 }
@@ -374,6 +374,8 @@
     height : 800px;
 }
 
+
+
 .BlockBehindProfilePic{
     z-index: 1;
     background-color:#FFFFFF;  
@@ -386,7 +388,6 @@
     border-color: rgb(214, 213, 211);
     padding: 10px;
     box-shadow: 0 4px 2px 0 rgba(0, 0, 0, 0.2);
-    font-size: 16px;
     font-family: Prompt;
     padding-left:25px;
     padding-top: 100px;

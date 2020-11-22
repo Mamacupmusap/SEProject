@@ -5,7 +5,7 @@
     z-index: 0;
 }
 
-#profilePic{
+.profilePic{
     z-index: 2;
     border-radius: 40px;
     box-shadow: 0 4px 8px 0 rgba(22, 21, 21, 0.2);
@@ -14,7 +14,6 @@
     left:18%;
     width : 200px;
     height : 200px;
-    text-align: center;
 }
 .leftblock{
     z-index: 1;
@@ -139,8 +138,7 @@
 }
 
 .profilename{
-    font-size: 35px;
-    padding-left: 20px;
+    font-size:20px;
     font-weight: bold;
 }
 .bold{
@@ -263,7 +261,7 @@
     height : 100px;
     position: absolute;
     left: 40%;
-    top: 121%;
+    top: 102%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
     padding: 10px;
@@ -290,7 +288,7 @@
     height : 100px;
     position: absolute;
     left: 40%;
-    top: 140%;
+    top: 115%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
     padding: 10px;
@@ -310,6 +308,9 @@
     left: 280px;
 }
 
+
+
+
 .EditPhoneBlock{
     display: inline-block;
     background-color:#FFFFFF;  
@@ -317,7 +318,7 @@
     height : 100px;
     position: absolute;
     left: 40%;
-    top: 160%;
+    top: 128%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
     padding: 10px;
@@ -349,10 +350,10 @@
     z-index: 1;
     background-color:#FFFFFF;  
     width : 300px;
-    height : 200px;
+    height : 255px;
     position: absolute;
-    left: 12%;
-    top: 31%;
+    left: 17%;
+    top: 20%;
     border: 0.5px solid;
     border-color: rgb(214, 213, 211);
     padding: 10px;

@@ -49,8 +49,8 @@ const ChangeEmail=(props:any) => {
             <div>
             <Navigation3/>
             <div className = 'ChangePage'>
-            <Link to='/donator/userprofile'>  
-                <img id='profilePic' src={profileURL} alt={''}/>
+            <Link to={`/donator/userprofile/${userId}`}>  
+                <img className='profilePic' src={profileURL} alt={''}/>
             </Link>
             <img id='glasspic' src = {Glasspic}/>
             <div className='BlockBehindProfilePic'>

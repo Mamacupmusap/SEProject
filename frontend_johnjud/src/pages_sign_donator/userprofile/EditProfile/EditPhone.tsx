@@ -32,7 +32,7 @@ const EditPassword=(prop:any)=>{
                         Change Phone
                     </button>
                 </Link>
-                <p style={{}}>Current Phone : {Phone}</p>
+                <p style={{fontSize:12,color:"grey"}}>Current Phone : {Phone}</p>
             </h4>
         </div>
     )

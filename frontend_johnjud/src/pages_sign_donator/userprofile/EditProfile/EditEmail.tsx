@@ -33,7 +33,7 @@ const EditPassword=(prop:any)=>{
                         Change Email
                     </button>
                 </Link>
-                <p>Current Email : {Email}</p>
+                <p style={{fontSize:12,color:"grey"}}>Current Email : {Email}</p>
             </h4>
         </div>
     )

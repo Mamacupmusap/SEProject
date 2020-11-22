@@ -52,7 +52,7 @@ const ChangePassword=(props:any) => {
             <div>
             <Navigation3/>
             <div className = 'ChangePage'>
-            <Link to='/donator/userprofile'>  
+            <Link to={`/donator/userprofile/${userId}`}>  
                 <img id='profilePic' src={profileURL} alt={''}/>
             </Link>
             <img id='glasspic' src = {Glasspic} alt={''}/>

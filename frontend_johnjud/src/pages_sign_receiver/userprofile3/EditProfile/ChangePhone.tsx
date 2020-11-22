@@ -55,8 +55,8 @@ const ChangePhone=(props:any) => {
             
             <Navigation3/>
             <div className = 'ChangePage'>
-            <Link to='/donator/userprofile'>  
-                <img id='profilePic' src={profileURL}></img>
+            <Link to={`/donator/userprofile/${userId}`}>  
+                <img className='profilePic' src={profileURL}></img>
             </Link>
             <img id='glasspic' src = {Glasspic}></img>
             <div className='BlockBehindProfilePic'>
