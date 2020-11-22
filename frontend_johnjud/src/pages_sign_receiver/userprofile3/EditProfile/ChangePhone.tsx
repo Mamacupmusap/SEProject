@@ -26,10 +26,9 @@ const ChangePhone=(props:any) => {
       fetchProfileInfo()
     },[])
 
-    const phone = obj?.PhoneNo;
     const profileURL = obj?.ImgURL;
+    const username = obj?.UserName;
     const [newPhone,setNewPhone] = useState<string>('');
-    const [Password, setPassword] = useState<string>('')
 
 
     const update=() =>{
@@ -62,7 +61,7 @@ const ChangePhone=(props:any) => {
             <div className='BlockBehindProfilePic'>
                 <div className='profilename'>
                 <br/><br/>
-                    <h1><u> username </u></h1>
+                    <h1><u> {username} </u></h1>
                 </div>
             </div>
             <div className='ChangeBlock'>
