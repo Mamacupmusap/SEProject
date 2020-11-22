@@ -60,8 +60,8 @@ const Navigation = () => {
                </div>
             </Button>
             </NavLink>
-
-            <div id='chat'><NavLink to= {`/receiver/chat/${userIdlocal}/chatroom`}><img src={chatIcon} alt='chat'/></NavLink></div>
+            {/* http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/ */}
+            <div id='chat'><NavLink to= {`/receiver/chat/${userIdlocal}/user2/chat`}><img src={chatIcon} alt='chat'/></NavLink></div>
 
             <div id="alert">
                <img src={alertIcon} alt='alert'/>

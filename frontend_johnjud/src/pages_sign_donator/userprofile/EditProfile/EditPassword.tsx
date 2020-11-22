@@ -8,10 +8,10 @@ const EditPassword=(prop:any)=>{
     const userId = prop.userId
     return(
         <div className='EditPasswordBlock'>
-            <h4 className='h4'><span>&nbsp;&nbsp;password</span>
+            <h4 className='h4'><span>&nbsp;&nbsp;Password</span>
             <Link to={`/donator/userprofile/${userId}/editprofile/changepassword`}>
                 <button id ='EditPasswordButton'>
-                    change password
+                    Change Password
                 </button>
             </Link>
 

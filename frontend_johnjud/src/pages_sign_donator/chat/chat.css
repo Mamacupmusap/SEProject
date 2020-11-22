@@ -108,3 +108,13 @@
     width: 20%;
     border-bottom-right-radius: 8px;
   }
+  
+  .allPeople {
+    height: 85%;
+    overflow: auto;
+  }
+
+  #pplLeftDon {
+    margin-left: 15px;
+    font-size: 14px;
+  }

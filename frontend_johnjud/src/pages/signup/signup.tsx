@@ -10,7 +10,6 @@ import { Container, FormGroup,Label,Button, Col}  from 'reactstrap';
 import jjicon from './component/logojj.png'
 import './signup.css'
 import Navigation2 from '../../Navigation/Navigation2';
-import Messages from '../../pages_sign_donator/chat/components/Messages/Messages';
 
 
 interface Value2{
@@ -112,7 +111,9 @@ const Signup= () =>{
             </Col>
             <Col>
             <FormGroup>
-              <Label for="username" className="informationh">Username*</Label>
+              <div className="pageset">
+              <Label for="username" className="informationh">Username*</Label><p className='ErrorFont'>must be longer than or equal to 8 characters</p>
+              </div>
               <Field name="UserName" 
                        type="text" 
                        id="username"
@@ -125,7 +126,9 @@ const Signup= () =>{
           </Col>
          <Col>
             <FormGroup>
-              <Label for="password" className="informationh">Password*</Label>
+              <div className="pageset">
+              <Label for="password" className="informationh">Password*</Label><p className='ErrorFont'>must have at least one capital letter and longer than or equal to 8 characters</p>
+              </div>
               <Field name="Password" 
                        type="password" 
                        id="password" 
@@ -165,12 +168,12 @@ const Signup= () =>{
           </Col>
           <Col>
             <FormGroup>
-              <Label for="PhoneNo" className="informationh">Phone Number*</Label>
+              <Label for="PhoneNo" className="informationh">Phone Number*</Label> 
               <Field name="PhoneNo" 
                        type="tel" 
                        id="phone"
                        className="inp_text" 
-                       placeholder="phone number"
+                       placeholder="ex 0921234567"
                        required
                        />
               <ErrorMessage component="div" name="PhoneNo" className="invalid-feedback" />
@@ -196,7 +199,7 @@ const Signup= () =>{
                   <Field name="Gender" 
                        type="radio" 
                        id="gender"
-                       value='male' 
+                       value='Male' 
                        required
                   />
                   <label className="textgender">Male</label>
@@ -205,7 +208,7 @@ const Signup= () =>{
                   <Field name="Gender" 
                        type="radio" 
                        id="gender"
-                       value='female' 
+                       value='Female' 
                   />
                   <label className="textgender">Female</label>
                 </div>
@@ -213,7 +216,7 @@ const Signup= () =>{
                   <Field name="Gender" 
                        type="radio" 
                        id="gender"
-                       value='others' 
+                       value='Others' 
                   />
                   <label className="textgender">others</label>
                 </div>

@@ -37,11 +37,7 @@ const Addpetprofile= (props:any) =>{
   let history = useHistory();
 
   const accessToken = localStorage.getItem('Token');
-  console.log(accessToken)
   const PETID =  props.match.params.petid;
-  console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAA')
-
-  console.log(PETID)
 
   const [obj,setObj] = useState<Petinfo>()
   const [userid,setUserid] = useState<string>()
@@ -58,15 +54,10 @@ const Addpetprofile= (props:any) =>{
   const [petpicURL,setPetpicURL] = useState<string>()
   const [petcer,setPetcer] = useState<string>()
 
-
-
-
-  
   const fetchProfileInfo=() =>{
     return(
       profileservice.fetchProfileInfo(PETID)
       .then(res => {
-        console.log(res)
         setObj(res)
       })
     )
@@ -85,11 +76,9 @@ const Addpetprofile= (props:any) =>{
     setType(obj?.Type)
     setLocation(obj?.PetAddress)
     setDescription(obj?.Describe)
-    setPetpicURL(obj?.PetPicUrl)
+    setPetpicURL(obj?.PetPicURL)
     setPetcer(obj?.PetCerURL)
   },[obj])
-  console.log("Objjjjjjj is ")
-  console.log(obj)
   return(
     <div>
       {localStorage.UserId == userid &&
@@ -122,6 +111,26 @@ const Addpetprofile= (props:any) =>{
           onSubmit={ async (values:Value2,actions) =>{
             let resimgbb = null;
             let resimgbb_cer = null;
+
+            //validate
+            let alert_msg = '';
+            if(values.PetName==''){
+              alert_msg = alert_msg+"Pet's Name\n";
+            }
+            if(values.PetGender==''){
+              alert_msg = alert_msg+"Gender\n";
+            }
+            if(values.Type==''){
+              alert_msg = alert_msg+"Type\n";
+            }
+            if(values.PetAddress==''){
+              alert_msg = alert_msg+"Location\n";
+            }
+            
+            if(alert_msg!=''){
+              alert("Please enter required data :\n"+alert_msg);
+              return;
+            }
             
             //upload pet img
             if(values.PetPicURL!=''){
@@ -152,7 +161,7 @@ const Addpetprofile= (props:any) =>{
             }            
 
             const sendInfoPet ={
-              petid: localStorage.getItem('pet_id'),
+              petid: localStorage.getItem('petID'),
               PetName: values.PetName,
               PetBreed: values.PetBreed,
               PetGender: values.PetGender,
@@ -167,9 +176,9 @@ const Addpetprofile= (props:any) =>{
               TimeUpdate : values.TimeUpdate,
               Describe: values.Describe,
               PetAddress : values.PetAddress
-            }
-            
+            }            
 
+            
             const res = await fetch('http://localhost:2000/petinfo/editPetInfo',{
               method:'PATCH',
               mode: 'cors',
@@ -201,7 +210,7 @@ const Addpetprofile= (props:any) =>{
         <div className="infopet">
           <Col>
             <FormGroup>
-              <Label for="PetName" className="information">Pet's Name*:</Label>
+              <Label for="PetName" className="information">Pet's Name* : </Label>
               <Field name="PetName" 
                        type="text" 
                        id="PetName" 
@@ -212,7 +221,7 @@ const Addpetprofile= (props:any) =>{
           </Col>
 
           <Col>
-              <Label for="PetPicURL" className="information">Pet picture :</Label>
+              <Label for="PetPicURL" className="information">Pet's Picture** : </Label>
               <input id="PetPicURL" name="PetPicURL" type="file" onChange={(event) => {
                 props.setFieldValue("PetPicURL", event.currentTarget.files![0]);
                 props.setFieldValue("fileName_img", event.currentTarget.files![0].name);
@@ -221,26 +230,25 @@ const Addpetprofile= (props:any) =>{
 
           <Col>
             <FormGroup>
-              <Label for="PetGender" className="information">Gender* :</Label>
+              <Label for="PetGender" className="information">Gender* : </Label>
                   <Field name="PetGender" 
                        type="radio" 
                        id="Male"
                        value='Male' 
                   />        
-                  <Label className="choice">Male</Label>
+                  <Label className="choice">Male </Label>
                   <Field name="PetGender" 
                        type="radio" 
                        id="Female"
                        value='Female' 
                   />        
-                  <Label className="choice">Female</Label>
-                  
+                  <Label className="choice">Female </Label>
             </FormGroup>
           </Col>
     
           <Col>
             <FormGroup>
-              <Label for="PetLength" className="information">Length :</Label>
+              <Label for="PetLength" className="information">Length : </Label>
               <Field name="PetLength" 
                        type="text" 
                        id="PetLength" 
@@ -251,7 +259,7 @@ const Addpetprofile= (props:any) =>{
           </Col>
           <Col>
             <FormGroup>
-              <Label for="PetHeight" className="information">Height :</Label>
+              <Label for="PetHeight" className="information">Height : </Label>
               <Field name="PetHeight" 
                        type="text" 
                        id="PetHeight" 
@@ -262,7 +270,7 @@ const Addpetprofile= (props:any) =>{
 
           <Col>
             <FormGroup>
-              <Label for="PetBreed" className="information">Breed :</Label>
+              <Label for="PetBreed" className="information">Breed : </Label>
               <Field name="PetBreed" 
                        type="text" 
                        id="PetBreed" 
@@ -283,7 +291,7 @@ const Addpetprofile= (props:any) =>{
             </FormGroup>
           </Col>   
           <Col>
-              <Label for="PetCerURL" className="information">Animal Health Certificate :</Label>
+              <Label for="PetCerURL" className="information">Animal Health Certificate** : </Label>
               <input id="PetCerURL" name="PetCerURL" type="file" onChange={(event) => {
                 props.setFieldValue("PetCerURL", event.currentTarget.files![0]);
                 props.setFieldValue("fileName_cer", event.currentTarget.files![0].name);
@@ -292,7 +300,7 @@ const Addpetprofile= (props:any) =>{
 
           <Col>
             <FormGroup>
-              <Label for="PetAddress" className="information">Location*:</Label><label id="location-please">please pin your delivery location on the map</label><p></p>
+              <Label for="PetAddress" className="information">Location* : </Label><label id="location-please">please pin your delivery location on the map</label><p></p>
               <Field name="PetAddress" 
                        type="text" 
                        id="PetAddress" 
@@ -304,7 +312,7 @@ const Addpetprofile= (props:any) =>{
         
           <Col>
             <FormGroup>
-              <Label for="Describe" className="information">Description:</Label><p></p>
+              <Label for="Describe" className="information">Description : </Label><p></p>
               <Field name="Describe" 
                        Type="text" 
                        id="Describe" 
@@ -312,6 +320,11 @@ const Addpetprofile= (props:any) =>{
                        className="input_text3"
                        />
             </FormGroup>
+          </Col>
+          
+          <Col>
+              <p style={{paddingTop:"0px", marginBottom:"0px", marginTop:"20px"}}>* Required</p>
+              <p style={{paddingTop:"0px", marginBottom:"5px"}}>** No input will keep the picture as the same before.</p>
           </Col>
 
           

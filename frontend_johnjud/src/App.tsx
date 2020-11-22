@@ -71,6 +71,8 @@ import ProChangePaswords from './pages_sign_receiver/userprofile3/EditProfile/Ch
 import ProChangeEmails from './pages_sign_receiver/userprofile3/EditProfile/ChangeEmail';
 import ProChangePhones from './pages_sign_receiver/userprofile3/EditProfile/ChangePhone';
 import ProfileOTPs from './pages_sign_receiver/userprofile3/EditProfile/ProfileOTP'
+import ConfirmOTP from './pages_sign_receiver/userprofile3/EditProfile/ConfirmOTP';
+import ConfirmOTP_donator from './pages_sign_donator/userprofile/EditProfile/ConfirmOTP';
 
 //import AuthenService from "./pages/signin/AuthenService";
 
@@ -111,12 +113,13 @@ class App extends Component{
              <Route path="/receiver/article2" component={article2_receiver}/>
              <Route path="/receiver/article3" component={article3_receiver}/>
 
-            <Route path="/receiver/chat/:userId/:roomId" component={chat_receiver}/>
+            <Route path="/receiver/chat/:userId/:userId2/:roomId" component={chat_receiver}/>
             <Route path="/receiver/suggestion" component={suggestion_receiver}/>
             <Route path="/receiver/bookmark" component={Bookmark}/>
             <Route path="/receiver/petprofile/:petid" component={petprofile_receiver}/>
 
-            <Route path="/donator/userprofile/:userId/editprofile/changephone/OTP" component={ProfileOTPs}/>
+            {/* <Route path="/donator/userprofile/:userId/editprofile/changephone/OTP" component={ProfileOTPs}/> */}
+            <Route path="/receiver/userprofile/:userId/editprofile/changephone/OTP" component={ConfirmOTP}/>
             <Route path="/receiver/userprofile/:userId/editprofile/changepassword" component={ProChangePaswords}/>
             <Route path="/receiver/userprofile/:userId/editprofile/changeemail" component={ProChangeEmails}/>
             <Route path="/receiver/userprofile/:userId/editprofile/changephone" component={ProChangePhones}/>
@@ -134,13 +137,14 @@ class App extends Component{
             <Route path="/donator/article2" component={article2_donator}/>
             <Route path="/donator/article3" component={article3_donator}/>
             
-            <Route path="/donator/chat/:userId/:roomId" component={chat_donator}/>
+            <Route path="/donator/chat/:userId/:userId2/:roomId" component={chat_donator}/>
             <Route path="/donator/suggestion" component={suggestion_donator}/>
             <Route path="/donator/petprofile/:petid" component={petprofile_donator}/>
             <Route path="/donator/petprofile1" component={petprofile1_donator}/>
             <Route path="/donator/editpetprofile/:petid" component={editpetprofile_donator}/>
 
-            <Route path="/donator/userprofile/:userId/editprofile/changephone/OTP" component={ProfileOTP}/>
+            {/* <Route path="/donator/userprofile/:userId/editprofile/changephone/OTP" component={ProfileOTP}/> */}
+            <Route path="/donator/userprofile/:userId/editprofile/changephone/OTP" component={ConfirmOTP_donator}/>
             <Route path="/donator/userprofile/:userId/editprofile/changepassword" component={ProChangePasword}/>
             <Route path="/donator/userprofile/:userId/editprofile/changeemail" component={ProChangeEmail}/>
             <Route path="/donator/userprofile/:userId/editprofile/changephone" component={ProChangePhone}/>

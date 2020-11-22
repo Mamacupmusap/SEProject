@@ -48,16 +48,13 @@ const EditProfile=(props:any) =>{
             <div className='block'>
                <LeftBlockEdit userId={userId}/>
                 <div className='topblock'>
-                    <TabProfile/>
+                    <TabProfile userId ={userId}/>
                 </div>
                 <div>
                     <DescriptionEdit userId={userId}/>
                     <EditPassword userId={userId}/>
                     <EditEmail userId={userId}/>
                     <EditPhone userId={userId}/>
-                    <Link to={`/receiver/userprofile/${userId}`}>  
-                        <button id='DoneButton'>Done</button>
-                    </Link>
                 </div>
             </div>
             </div>

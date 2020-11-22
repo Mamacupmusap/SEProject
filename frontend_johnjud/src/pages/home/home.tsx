@@ -68,10 +68,10 @@ const Home = (): JSX.Element => {
           {allPet.map((value) => {
             return (
                 <Card className="card">
-                  <CardImg src={value.petPicUrl} alt="" height="130px"/>
+                  <CardImg src={value.PetPicURL} alt="No picture" height="130px"/>
                   <CardBody className="cardBody">
                     <NavLink to={'/petprofile/' + value.petid}>
-                      <CardTitle className="cardTitle">{value.PetName}</CardTitle>
+                      <CardTitle className="cardTitle" style={{fontSize:14}}>{value.PetName}</CardTitle>
                     </NavLink>
                   </CardBody>
                 </Card>

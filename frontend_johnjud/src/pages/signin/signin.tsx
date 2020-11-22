@@ -5,7 +5,6 @@ import './signin.css';
 import { NavLink } from 'react-router-dom';
 import Navigation2 from '../../Navigation/Navigation2';
 
-
 const signin = () =>{
   return(
     <div>
@@ -23,7 +22,7 @@ const signin = () =>{
              
               <NavLink to='/signin2'><Button id='button_signin1'>Sign in with JohnJud account</Button></NavLink>
               <br/>
-              <p id="yesihavent">haven't register? <NavLink to='./signup'>sign up </NavLink></p>
+              <p id="yesihavent">haven't create account? <NavLink to='./signup'> sign up </NavLink></p>
             </Container>
           </Container>
         </div>

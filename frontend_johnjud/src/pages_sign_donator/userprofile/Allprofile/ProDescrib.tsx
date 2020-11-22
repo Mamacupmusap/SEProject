@@ -40,7 +40,7 @@ const Apps=(props:any) => {
       <Navigation3/>
       <div className = 'Profile'>
         <Link to={`/donator/userprofile/${userId}`}>  
-          <img id='profilePic' src={ProfilePic}></img>
+          <img id='profilePic' src={ProfilePic} alt={'No picture'}/>
         </Link>
 
         {userId == localStorage.UserId &&
@@ -48,7 +48,7 @@ const Apps=(props:any) => {
           <button className='EditProfile'>Edit Profile</button>
         </Link>
         }
-        <img id='glasspic' src = {Glasspic}></img>
+        <img id='glasspic' src = {Glasspic} alt={'No picture'}/>
         
         <div className = 'block'>
         <LeftBlock userId ={userId}/>
@@ -58,6 +58,8 @@ const Apps=(props:any) => {
           </div>
           
           <div className = 'bottomblock'>
+            <br></br>
+            <h4 className='h4'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Description</h4>
             <header id='Description'>
             </header>
             <p id='para'>

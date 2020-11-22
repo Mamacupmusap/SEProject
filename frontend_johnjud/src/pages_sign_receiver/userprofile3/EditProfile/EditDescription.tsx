@@ -28,6 +28,7 @@ const DescriptionEdit=(prop:any) =>{
             Description:newDescription,
         }
         ProfileService.updatedescription(newdescription,prop.userId);
+        alert("Update Description Success!");
     }
     const initNewdescription = () =>{
       setNewDescription(description)
@@ -45,7 +46,7 @@ const DescriptionEdit=(prop:any) =>{
             <textarea id='DescriptionInput' value={newDescription} onChange={(e) => {setNewDescription(e.target.value);}}>
             </textarea>
             <button id='DescriptionButton' onClick={update}>
-                update
+                Update
             </button>
         </div>
     )

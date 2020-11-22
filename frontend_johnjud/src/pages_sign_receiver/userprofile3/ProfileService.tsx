@@ -40,7 +40,7 @@ async function fetchdonation(userId:string): Promise<any[]>{
     const res = await fetch(`http://localhost:2000/User/${userId}/getpetdonateddetail`);
     const name = await res.json();
     return name;
-}
+}//
 async function fetchdonationnum(userId:string): Promise<number>{
     const res = await fetch(`http://localhost:2000/User/${userId}/getpetdonatedcount`);
     const name = await res.json();
@@ -48,7 +48,10 @@ async function fetchdonationnum(userId:string): Promise<number>{
 }
 
 async function updateinfo(newInfoProfile:Userinfo,userId:string): Promise<any|null> {
-    const res = await fetch(`http://localhost:2000/User/${userId}`,{
+    console.log("ssssssssssssssssssssssssssss")
+
+    console.log(newInfoProfile)
+    const res = await fetch(`http://localhost:2000/User/${userId}/setting/infosetting`,{
         method: 'PATCH',//PUT POST
         headers : {'Content-Type': 'application/json'},
         body: JSON.stringify(newInfoProfile),
@@ -56,15 +59,15 @@ async function updateinfo(newInfoProfile:Userinfo,userId:string): Promise<any|nu
     const Updateinfo:Userinfo = await res.json();
     console.log(Updateinfo)
     if (Updateinfo.FirstName !== undefined){
-        return alert("Update information Sucess")
+        return alert("Update Information Success!")
     }
     else{
-        return alert("Please fill all information except facebook")
+        return alert("Update Information Failed!")
     }
 }
 
 async function updatedescription(newDescription:Userinfo,userId:string): Promise<any|null> {
-    const res = await fetch(`http://localhost:2000/User/${userId}`,{
+    const res = await fetch(`http://localhost:2000/User/${userId}/setting/description`,{
         method: 'PATCH',
         headers : {'Content-Type': 'application/json'},
         body: JSON.stringify(newDescription),

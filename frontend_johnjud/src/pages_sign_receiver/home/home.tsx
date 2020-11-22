@@ -5,7 +5,6 @@ import './home.css'
 import head_dog from './img/banner.png'
 import { Container, Card, CardImg, CardBody,
   CardTitle} from 'reactstrap';
-/*import { CheckboxFilter, TermQuery, BoolMust, RangeQuery } from "searchkit";*/
 import Navigation from '../../Navigation/Navigation';
 import homeService_receiver from "./homeService_receiver";
 
@@ -67,10 +66,10 @@ const Home = () => {
             {allPet.map((value) => {
               return (
                   <Card className="card">
-                    <CardImg src={value.petPicUrl} alt="" height="130px"/>
+                    <CardImg src={value.PetPicURL} alt="No picture" height="130px"/>
                     <CardBody className="cardBody">
                       <NavLink to={'/receiver/petprofile/' + value.petid}>
-                        <CardTitle className="cardTitle">{value.PetName}</CardTitle>
+                        <CardTitle className="cardTitle" style={{fontSize:14}}>{value.PetName}</CardTitle>
                       </NavLink>
                     </CardBody>
                   </Card>)

@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import './CertModal.css'
 import { Button, Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import Cert from './img/cert.png' ;
-import close from './img/close.png';
 import greenRight from './img/check.png'
 
 export const CertModal = (props:any) => {
@@ -11,14 +9,14 @@ export const CertModal = (props:any) => {
 
   return (
     <div>
-      <Button color="link" onClick={toggle} id="doCer"><img src={greenRight} width="14" height="14"/>certificate</Button>
+      <Button color="link" onClick={toggle} id="doCer"><img src={greenRight} width="14" height="14" alt={''}/>certificate</Button>
       <Modal isOpen={modal} toggle={toggle} id="cerPopUp">
         <ModalBody className="Modalbody">
-          <h5>Health Certification</h5>
-          <img src={props.certPic} style={{width:250}}/>
+          <h5>Pet Health Certification</h5>
+          <img src={props.certPic} style={{width:250}} alt={'No picture'}/>
         </ModalBody>
         <div id="certButt"> 
-          <Button color="link" onClick={toggle} className="Certbutton">close</Button>
+          <Button color="link" onClick={toggle} id="Certbutton">close</Button>
         </div>
       </Modal>
     </div>

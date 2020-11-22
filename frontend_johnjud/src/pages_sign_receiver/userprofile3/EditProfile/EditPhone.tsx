@@ -8,10 +8,10 @@ const EditPassword=(prop:any)=>{
     const userId = prop.userId
     return(
         <div className='EditPhoneBlock'>
-            <h4 className='h4'><span>&nbsp;&nbsp;phone</span>
+            <h4 className='h4'><span>&nbsp;&nbsp;Phone</span>
             <Link to={`/receiver/userprofile/${userId}/editprofile/changephone`}>
                 <button id ='EditPhoneButton'>
-                    change phone
+                    Change Phone
                 </button>
             </Link>
             </h4>

@@ -39,7 +39,7 @@ const Apps=(props:any) => {
     fetchProfileInfos()
   },[])
 
-  const petPro = obj.map(item=>(<span><PetBlock message = {item.PetName} img={item.petPicUrl} link={item._id}/></span>))
+  const petPro = obj.map(item=>(<span><PetBlock message = {item.PetName} img={item.PetPicURL} link={item.petid}/></span>))
   const ProfilePic = Objs?.ImgURL
 
   return(   
@@ -65,8 +65,9 @@ const Apps=(props:any) => {
           
           <TabProfile userId ={userId}/>
         </div>
-        
         <div className = 'bottomblock'>
+          <br></br>
+          <h4 className='h4'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pet Adoption</h4>
           <header id='Description'>
           </header>
           <p id='para'>

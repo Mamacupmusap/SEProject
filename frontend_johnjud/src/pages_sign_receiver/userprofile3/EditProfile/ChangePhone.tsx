@@ -26,10 +26,9 @@ const ChangePhone=(props:any) => {
       fetchProfileInfo()
     },[])
 
-    const phone = obj?.PhoneNo;
     const profileURL = obj?.ImgURL;
+    const username = obj?.UserName;
     const [newPhone,setNewPhone] = useState<string>('');
-    const [Password, setPassword] = useState<string>('')
 
 
     const update=() =>{
@@ -37,11 +36,11 @@ const ChangePhone=(props:any) => {
         ProfileService.updatephone(newPhone,localStorage.Token)
         .then(a => {
             if(a){
-                alert("please verify OTP")
+                // alert("please verify OTP")
                 history.push(`/receiver/userprofile/${userId}/editprofile/changephone/OTP`)
             }
             else{
-                alert("please try new phone")
+                alert("Please try new phone no!")
             }
         })
         
@@ -62,11 +61,11 @@ const ChangePhone=(props:any) => {
             <div className='BlockBehindProfilePic'>
                 <div className='profilename'>
                 <br/><br/>
-                    <h1><u> username </u></h1>
+                    <h1><u> {username} </u></h1>
                 </div>
             </div>
             <div className='ChangeBlock'>
-                <span id='ChangePhone'>New Phone Number*: </span>
+                <span id='ChangePhone'>New Phone Number : </span>
                 <input id='InputChangePhone'  value={newPhone} onChange={(e) => {setNewPhone(e.target.value);}}></input>
                 <br/><br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

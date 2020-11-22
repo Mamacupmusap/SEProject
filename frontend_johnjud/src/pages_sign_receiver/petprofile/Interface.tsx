@@ -4,9 +4,9 @@ export interface Petinfo{
     PetBreed?: string;
     PetGender?: string; 
     Type?: string;
-    PetPicUrl?: string;
+    PetPicURL?: string;
     DelPicURL?: string;
-    PetStatus?:string;
+    PetStatus?: string;
     PetLength?: number;
     PetHeight?: number;
     PetCerURL?: string;

@@ -39,7 +39,7 @@ const EditProfile=(props:any) =>{
             <Navigation3/>
             <div className = 'Profile'>
             <img id='profilePic' src={ProfilePic}></img>
-            <div className = "editimageProfile">
+            <div className = "editimageProfile" style={{height:20}}>
              <Editimage/>
             </div>
             
@@ -48,16 +48,13 @@ const EditProfile=(props:any) =>{
             <div className='block'>
                <LeftBlockEdit userId={userId}/>
                 <div className='topblock'>
-                    <TabProfile/>
+                    <TabProfile userId ={userId}/>
                 </div>
                 <div>
                     <DescriptionEdit userId={userId}/>
                     <EditPassword userId={userId}/>
                     <EditEmail userId={userId}/>
                     <EditPhone userId={userId}/>
-                    <Link to={`/donator/userprofile/${userId}`}>  
-                        <button id='DoneButton'>Done</button>
-                    </Link>
                 </div>
             </div>
             </div>

@@ -2,7 +2,6 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Button,Container,FormGroup,Col,Label} from 'reactstrap';
 import './signin.css';
-import { NavLink } from 'react-router-dom';
 import { Formik,Form, Field, ErrorMessage , FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import Navigation2 from '../../Navigation/Navigation2';
@@ -12,11 +11,9 @@ import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 
 
-//example<//
 type SigninFormProb = {
     signinCallback: () => void
 }
-//example>//
 
 const RegisterSchema = Yup.object().shape({
     username: Yup.string()
@@ -77,7 +74,7 @@ const Signin = (props: SigninFormProb) => {
                                         }}
                                         validationSchema={RegisterSchema}
                                     >
-                                        {({ errors, touched }) => (
+                                        {() => (
                                             <Form>
                                                 <Col>
                                                     <FormGroup>
@@ -85,7 +82,7 @@ const Signin = (props: SigninFormProb) => {
                                                         <Field name="username"
                                                                type="text"
                                                                id="username"
-                                                               className={`form-control ${touched.username ? errors.username ? 'is-invalid' : 'is-valid' : ''}`}
+                                                               className={`form-control`}
                                                                placeholder="username"
                                                                />
                                                         <ErrorMessage component="div" name="username" className="invalid-feedback" />
@@ -97,12 +94,12 @@ const Signin = (props: SigninFormProb) => {
                                                         <Field name="password"
                                                                type="password"
                                                                id="password"
-                                                               className={`form-control ${touched.password ? errors.password ? 'is-invalid' : 'is-valid' : ''}`}
+                                                               className={`form-control`}
                                                                placeholder="password"/>
                                                         <ErrorMessage component="div" name="password" className="invalid-feedback" />
                                                     </FormGroup>
                                                 </Col>
-                                                <Button type='submit'id='button_signin'>Sign In</Button>
+                                                <Button type='submit'id='button_signin'>Sign in</Button>
                                                 <div className='last_box'>
                                                     { signInErrorMessage}
                                                 </div>

@@ -3,11 +3,23 @@
 }
 
 .button_next{
-    background-color: #61b292;
+    background-color: #d8dad9;
     float: right;
+    font-size: 16px;
 }
 
 .btnxxx{
+    display: flex;
+    flex-direction: row;
+}
+
+.ErrorFont{
+    font-size: 12px;
+    color: #C4C4C4;
+    padding-top: 2px;
+}
+
+.pageset{
     display: flex;
     flex-direction: row;
 }
@@ -24,12 +36,14 @@
     border-color: transparent;
 }
 
-
 .box_img{
     text-align: center;
 }
+
 #box{
     font-size: 14px;
+    background-color: #F5F8FA;
+    border: 0px;
 }
 
 .container{
@@ -39,7 +53,7 @@
 }
 
 .informationh {
-    font-size: 13px;
+    font-size: 14px;
     letter-spacing: 0.271486px;
     display: flex;
     flex-direction: column;
@@ -82,8 +96,8 @@
 }
 
 .mobile{
-  width: 400px;
-  height: 400px
+  width: 30%;
+  height: 30%;
 }
 
 label{
@@ -104,14 +118,16 @@ label{
 }
 
 #submit{
+    font-size: 16px;
     float: left;
     margin-left: 10px;
-    margin-top: 2px;
+    margin-top: 4px;
     background-color: #61b292;
     display: flex;
     text-align: center;
     border-radius: 45px;
     border-color: transparent;
+    
 }
 
 .left{
@@ -132,28 +148,29 @@ label{
 
 .inp_text{
     border: none;
-    border: 1px solid #C4C4C4;
+    background-color: #F5F8FA;
     width: 300px;
-    padding: 5px;
+    padding: 10px;
     border-radius: 10px;
 }
 
 .inp_text::placeholder{
     padding-left: 5px;
+    font-size: 12px;
 }
 
 .inp_text1{
     border: none;
-    border: 1px solid #C4C4C4;
+    background-color: #F5F8FA;
     width: 300px;
     padding: 10px;
     border-radius: 10px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 .inp_text1::placeholder{
     padding-left: 5px;
-    font-size: 15px;
+    font-size: 20px;
 }
 
 #nanii {
@@ -169,11 +186,15 @@ label{
 
 .col-lg-6{
     border: none;
-    border: 1px solid #C4C4C4;
+    background-color: #F5F8FA;
     width: 350px;
     padding: 10px;
     border-radius: 10px;
     font-size: 15px;
+}
+
+.rounded-lg {
+    padding: 16px;
 }
 
 .text1{
@@ -183,15 +204,14 @@ label{
 }
 
 .text2{
-    font-size: 16px;
     line-height: normal;
-    width: 50%;
+    width: 90%;
     display: flex;
     flex-wrap: wrap;
 }
 
 .text3{
-    font-size: 12px;
+    font-size: 14px;
     padding-top: 4%;
     padding-bottom: 3%;
 }
@@ -232,6 +252,7 @@ label{
     display: flex;
     flex-direction: row;
     justify-content: center;
+    
 }
 
 #Address {

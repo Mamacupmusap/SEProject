@@ -51,12 +51,10 @@ return(
    {obj?.map(item=>(
     <div className="chatGroup">
       <img src={item.picUser} id="userImg" style={{width:30,height:30}}/>
-       <div className="chatBubble"> 
-            <div className="chatPeople_group">
-              <h2 id="messageText">
+       <div className="chatBubbleDon"> 
+              <h2 id="messageTextDon">
                       {item.message}
               </h2>
-            </div>
         </div>
         </div>
   ))}
