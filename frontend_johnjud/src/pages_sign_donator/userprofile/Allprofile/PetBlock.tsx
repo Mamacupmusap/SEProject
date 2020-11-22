@@ -17,7 +17,7 @@ const PetBlock=(prop: petblock) =>{
         <Link to = {"/petpet"+prop.link}>
             <div className='CardPetBlock'>
                 <img className='ImgCardPetBlock' src={prop.img}/>
-                <div className='NamePetCard'><h4>{prop.message}</h4></div>
+                <div className='NamePetCard'><h4 style={{fontSize:14}}>{prop.message}</h4></div>
             </div>
         </Link>
     )
