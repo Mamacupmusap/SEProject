@@ -147,10 +147,12 @@ const LeftBlockEdit=(prop:any) =>{
             <p className='bold'>LastName:<input id='Input' value={newLastName} onChange={(e) => {setNewLastName(e.target.value);}}></input></p>
             <p className='bold'>Birthday:<input id='Input' type="date" value={newBirthDay} onChange={(e) => {setNewBirthDay(e.target.value);}}></input></p>
             <p className='bold'>Gender : 
-            <input type='radio' value='male' onChange={(e) => {setNewGender(e.target.value);}}></input>
+            <input type='radio' value='Male' name='gender' onChange={(e) => {setNewGender(e.target.value);}}></input>
             <label>Male</label>
-            <input type='radio' value='female' onChange={(e) => {setNewGender(e.target.value);}}></input>
+            <input type='radio' value='Female' name='gender' onChange={(e) => {setNewGender(e.target.value);}}></input>
             <label>Female</label>
+            <input type='radio' value='Others' name='gender' onChange={(e) => {setNewGender(e.target.value);}}></input>
+            <label>Others</label>
             </p>
             <p className='bold'>Address:<textarea id='AddressInput' value={newAddress} onChange={(e) => {setNewAddress(e.target.value);}}></textarea></p>
             <button id='ButtonUpdate' onClick={update} >update</button>
