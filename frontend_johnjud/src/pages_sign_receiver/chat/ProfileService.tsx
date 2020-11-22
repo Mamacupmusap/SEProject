@@ -31,6 +31,17 @@ async function sendnoti(a:any,userId:string|undefined, roomid:string): Promise<a
     const ress = await res.json();
     return ress
 }
+async function sendnoti2(a:any,userId:string|undefined, roomid:string): Promise<any|null> {
+    // console.log('userId')
+    // console.log(userId)
+    const res = await fetch(`http://localhost:2000/chat/${userId}/${roomid}/updatereaddate`,{
+        method: 'PATCH',
+        headers : {'Content-Type': 'application/json'},
+        body: JSON.stringify(a),
+    });
+    const ress = await res.json();
+    return ress
+}
 async function getnoti(userId:string): Promise<any[]>{
     
     const res = await fetch(`http://localhost:2000/chat/${userId}/getAllnoti`);
@@ -59,6 +70,7 @@ export default {
     sendnoti,
     getnoti,
     getOnenoti,
+    sendnoti2,
 } 
 
 //
