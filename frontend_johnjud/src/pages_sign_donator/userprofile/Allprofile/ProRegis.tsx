@@ -61,6 +61,8 @@ const Apps=(props:any) => {
             <TabProfile userId ={userId}/>
           </div>
           <div className = 'bottomblock'>
+            <br></br>
+            <h4 className='h4'> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Pet Registeration</h4>
             <header id='Description'>
             </header>
             <p id='para'>
