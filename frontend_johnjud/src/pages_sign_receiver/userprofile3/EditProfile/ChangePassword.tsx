@@ -54,15 +54,15 @@ const ChangePassword=(props:any) => {
             <div className='BlockBehindProfilePic'>
                 <div className='profilename'>
                 <br/><br/>
-                    <h1><u> username </u></h1>
+                    <h1><u> {localStorage.getItem('UserName')} </u></h1>
                 </div>
             </div>
             <div className='ChangeBlock'>
-                <span id='ChangePassword'>New Password*: </span>
+                <span id='ChangePassword'>New Password : </span>
                 &nbsp;&nbsp;<input id='InputChangePassword' type="password" value={Password} onChange={(e) => {
                     setPassword(e.target.value);}}/>
                 <br/><br/>
-                <span id='ChangePassword'>confirm Password*: </span>
+                <span id='ChangePassword'>Confirm Password : </span>
                 &nbsp;&nbsp;<input id='InputChangePassword' type="password" value={ConfirmPassword} onChange={(e) =>
                     {setConfirmPassword(e.target.value);}}/>
                 <button id='SubmitPasswordButton' onClick={submit}>Submit</button>

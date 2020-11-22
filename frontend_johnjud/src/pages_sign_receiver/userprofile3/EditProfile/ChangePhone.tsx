@@ -65,7 +65,7 @@ const ChangePhone=(props:any) => {
                 </div>
             </div>
             <div className='ChangeBlock'>
-                <span id='ChangePhone'>New Phone Number*: </span>
+                <span id='ChangePhone'>New Phone Number : </span>
                 <input id='InputChangePhone'  value={newPhone} onChange={(e) => {setNewPhone(e.target.value);}}></input>
                 <br/><br/>
                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

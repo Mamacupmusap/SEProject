@@ -156,7 +156,7 @@ const LeftBlockEdit=(prop:any) =>{
             <label>Others</label>
             </p>
             <p className='bold'>Address:<textarea id='AddressInput' value={newAddress} onChange={(e) => {setNewAddress(e.target.value);}}></textarea></p>
-            <button id='ButtonUpdate' onClick={update} >update</button>
+            <button id='ButtonUpdate' onClick={update} >Update</button>
             </h5>
             </div>
             </div>

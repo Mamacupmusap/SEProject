@@ -58,11 +58,11 @@ const ChangeEmail=(props:any) => {
             <div className='BlockBehindProfilePic'>
                 <div className='profilename'>
                 <br/><br/>
-                    <h1><u> username </u></h1>
+                    <h1><u> {localStorage.getItem('UserName')} </u></h1>
                 </div>
             </div>
             <div className='ChangeBlock'>
-                <span id='ChangeEmail'>New Email: </span>
+                <span id='ChangeEmail'>New Email : </span>
                 <input id='InputChangeEmail' value={newEmail} onChange={(e) => {setNewEmail(e.target.value);}}/>
                 <br/><br/>
                 <button id='SubmitEmailButton' onClick={update}>Submit</button>

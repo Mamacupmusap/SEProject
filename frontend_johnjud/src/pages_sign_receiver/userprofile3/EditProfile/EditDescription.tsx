@@ -45,7 +45,7 @@ const DescriptionEdit=(prop:any) =>{
             <textarea id='DescriptionInput' value={newDescription} onChange={(e) => {setNewDescription(e.target.value);}}>
             </textarea>
             <button id='DescriptionButton' onClick={update}>
-                update
+                Update
             </button>
         </div>
     )
