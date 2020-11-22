@@ -56,7 +56,7 @@ const Home = (): JSX.Element => {
       <img src={head_dog} id='head_dog' alt=""/>
       <div className="urgh">
             
-            <div className="filter2">
+            <div className="filterDon">
               <button onClick={petInfo} className="button2">All</button>
               <button onClick={dog} className="button2">Dog</button>
               <button onClick={cat} className="button2">Cat</button>
