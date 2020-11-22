@@ -117,8 +117,6 @@ async function updateOTP(OTPS:string,token:string): Promise<any|null> {
     return ress
 }
 async function updatePassword(password:string,confirmpassword:string,token:string): Promise<any|null> {
-    console.log(password)
-    console.log(confirmpassword)
     var urlencoded = new URLSearchParams();
     urlencoded.append("Password", password);
     urlencoded.append("ConfirmPassword", confirmpassword);
@@ -127,8 +125,10 @@ async function updatePassword(password:string,confirmpassword:string,token:strin
         headers : {'Authorization': `Bearer ${token}`},
         body: urlencoded,
     });
-    const ress= await res.json();
-    console.log( ress.success)
+    const ress= await res.json();  
+    if(ress.message){
+        alert(ress.message);
+    }
     return  ress.success
 }
 

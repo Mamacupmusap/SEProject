@@ -119,7 +119,9 @@ async function updatePassword(password:string,confirmpassword:string,token:strin
         body: urlencoded,
     });
     const ress= await res.json();
-    console.log( ress.success)
+    if(ress.message){
+        alert(ress.message);
+    }
     return  ress.success
 }
 
