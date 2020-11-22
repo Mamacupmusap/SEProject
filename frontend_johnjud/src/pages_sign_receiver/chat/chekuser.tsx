@@ -2,7 +2,7 @@ import { abort } from 'process';
 import React,{ useEffect, useState } from 'react';
 import profileservice from './ProfileService';
 import notipicture from './noti.png';
-
+import './chat.css';
 const Checkuser = (prop:any) =>{
 
     const [a2,setA2] = useState<string>('')
@@ -44,7 +44,7 @@ const Checkuser = (prop:any) =>{
                 {console.log('noti.notidate , noti.readAt')}
                 {console.log(noti.NotiDate , noti.readAt)}
                 {noti.NotiDate !== undefined && noti.readAt==undefined ?
-                <div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <img className='notipic' src={notipicture}></img></div>
+                <div><img className='notipic' src={notipicture}></img></div>
                 :<div> </div>
                     
                 }</div>
