@@ -12,7 +12,7 @@ const Article = () => {
         <div>
             <img src={ArticleBG} alt="ArticleBG" width="100%"/>
         </div><br/>
-        
+        <div className='article_body'>
         <NavLink to='/article1'>
           <div className="article-alert">
               <p className="article-link-text">How to take a good care of your kitten </p>
@@ -28,6 +28,7 @@ const Article = () => {
               <p className="article-link-text">Should my pet be tested for COVID-19?</p>
           </div>
         </NavLink>
+        </div>
       </div>
     );
 }

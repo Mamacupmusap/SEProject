@@ -73,6 +73,8 @@ async function AddBookmark(b: any,useridx: string | null,petidx: string | null,t
     const ressbook = await res2.json();
     if(ressbook.message!=undefined){
         alert(ressbook.message)
+    }else{
+        alert('This Pet added to your Bookmarks')
     }
 }
 async function makenoti1(a:any,userId:string,roomid:string): Promise<any|null> {
