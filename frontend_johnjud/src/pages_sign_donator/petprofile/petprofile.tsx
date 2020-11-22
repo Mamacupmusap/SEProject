@@ -161,7 +161,7 @@ console.log(petid)
                 <h1 id="oyay">Length: {PetLength}</h1>     
                 <h1 id="oyay">Height: {PetHeight} </h1>
                 <h1 id="oyay">Breed: {PetBreed}</h1>
-                <h1 id="oyay">Location:{PetAddress}</h1>
+                <h1 id="oyay">Location: {PetAddress}</h1>
 
             </Container>
             <div id="ColumnSideO">
@@ -181,7 +181,7 @@ console.log(petid)
         
         <Container id="scam">
             <h1 id="TextDescrip">Description:</h1>
-            <h5 id="ihatepine" style={{fontSize:16}}>{Describe}</h5>
+            <h5 id="ihatepine" style={{fontSize:14}}>{Describe}</h5>
             <hr id="lineHeader2"/>
         </Container>
     </div>

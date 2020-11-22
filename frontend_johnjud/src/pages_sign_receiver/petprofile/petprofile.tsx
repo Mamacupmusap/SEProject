@@ -198,7 +198,7 @@ export const Petprofile = (props:any) => {
         
         <Container id="petBobo">
             <h1 id="TextDescrip">Description:</h1>
-            <h5 id="ihatepine" style={{fontSize:16}}>{Describe}</h5>
+            <h5 id="ihatepine" style={{fontSize:14}}>{Describe}</h5>
             <hr id="lineHeader2"/>
         </Container>
         <Container id="conRec">

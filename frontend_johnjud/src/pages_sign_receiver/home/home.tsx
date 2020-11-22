@@ -78,7 +78,7 @@ const Home = () => {
                     <CardImg src={value.PetPicURL} alt="No picture" height="130px"/>
                     <CardBody className="cardBody">
                       <NavLink to={'/receiver/petprofile/' + value.petid}>
-                        <CardTitle className="cardTitle">{value.PetName}</CardTitle>
+                        <CardTitle className="cardTitle" style={{fontSize:14}}>{value.PetName}</CardTitle>
                       </NavLink>
                     </CardBody>
                   </Card>)

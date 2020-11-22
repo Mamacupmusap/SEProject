@@ -65,17 +65,17 @@
 #infoText {
   display: flex;
   flex-direction:row;
-  font-size: 16px;
+  font-size: 14px;
 }
 
 #oyay {
-  font-size: 16px;
+  font-size: 14px;
   margin-top: 8px;
   margin-bottom: 8px;
 }
 
 #TextDescrip {
-  font-size: 16px;
+  font-size: 14px;
   margin-bottom: 32px;
   margin-top: 32px;
   display: flex;
@@ -130,7 +130,7 @@
 }
 
 #PostProfile{
-  font-size: 16px;
+  font-size: 14px;
   color:green;
   text-decoration: underline;
   height: 22px;
@@ -153,7 +153,7 @@
 }
 
 #PostUser {
-  font-size: 16px;
+  font-size: 14px;
   margin-left: 16px;
   margin-right: 16px;
   /*height: 22px;*/
