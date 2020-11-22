@@ -1,43 +1,36 @@
+
 .body1 {
-    background-color: #F5F8FA;
-    /*background-color: #61dafb;*/
-    height: 17cm;
-    padding-left: 150px;
-    line-height: normal;
-}
-
-.container1 {
-    margin-left: 4cm;
+    max-width: 100%;
     background-color: white;
-    height: 17cm;
-    width: 25cm;
-}
-
-.headText{
-    background-color: #968474;
-    color: #F5F8FA;
-    margin-right: 7cm;
-    padding-top: 10px;
-    padding-left: 15px;
-    padding-bottom: 5px;
-    border-top: 25px solid #ffffff;
-    border-bottom: 7px solid #968474;
-    font-size: xx-large;
+    height: 100%;
+    width: 80%;
+    line-height: normal;
 }
 
 .imageCSS {
     margin-top: 0.5cm;
     margin-left: 2.5cm;
     width: 80%;
+    max-width: 100%;
+    text-align: center;
+}
+
+.headText{
+    background-color: #968474;
+    color: #F5F8FA;
+
+    padding-top: 10px;
+    padding-left: 15px;
+    padding-bottom: 10px;
+    border-top: 25px solid #ffffff;
+    font-size: 20px;
+    max-width: 100%;
 }
 
 .text-article {
     margin-top: 0.5cm;
     margin-left: 2.5cm;
     margin-right: 2.5cm;
-    font-size: 12px;
-}
-
-.body,.headText,.text-article {
-    font-family: 'Prompt', sans-serif;
+    font-size: 14px;
+    max-width: 100%;
 }
