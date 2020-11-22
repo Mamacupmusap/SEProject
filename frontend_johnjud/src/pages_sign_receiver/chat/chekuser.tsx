@@ -4,62 +4,43 @@ import profileservice from './ProfileService';
 
 
 const Checkuser = (prop:any) =>{
-    const a=()=>{
-        if(prop.user1 == prop.localuser)
-        {
-          setA2(prop.user2)
-        }
-        else{
-          setA2(prop.user1)
-        }
-    }
+
     const [a2,setA2] = useState<string>('')
     const [noti,setNoti] = useState<any>()
     
     const checknoti=()=>{
-        // console.log('qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq')
-        // console.log(a2)
-        console.log(prop.roomid)
+        // console.log("ssssssssssssssssssssssssssssssssssssssssssssssssssssssss")
+        // console.log(prop.roomid)
+        // console.log(prop.prop.localuse)
         profileservice.getOnenoti(prop.roomid,prop.localuser)
         .then(a=>{
+        //   console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaa')
           console.log(a)
           setNoti(a)
         })
      }
-     const aa=()=>{
-        profileservice.getOnenoti(prop.roomid,'554e96f1-c69f-446e-b36a-f6f4d8fc7179')
-     }
+
+
+
      useEffect(()=>{
-        a()
-       },[])
-     useEffect(()=>{
+        console.log("ssssssssssssssssssssssssssssssssssssssssssssssssssssssss")
+        console.log(prop.roomid)
+        console.log(prop.localuser)
          if((prop.localuser!==undefined) && prop.roomid!==undefined){
              checknoti()
          }
         },[prop.localuser])
 
-    // const shownoti=() =>{
-    //     console.log('ssssssssssssssssssssss')
-    //     console.log(noti)
 
-        
-    //     if(noti.roomid !== undefined && noti.readAt==undefined){
-    //         return <div>test</div>
-    //       }
-    //     else{
-    //         return 
-    //       }
-    // }
-    // console.log('annnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn')
-    // console.log(noti)
     return(
         
         <div>
-            
+            {console.log('noti')}
+
+            {console.log(noti)}
+
             {noti &&
                 <div>
-                {console.log('sssssssssssssssssssssssssssssssssssssssssss')}
-
                 {console.log('noti.notidate , noti.readAt')}
                 {console.log(noti.NotiDate , noti.readAt)}
                 {noti.NotiDate !== undefined && noti.readAt==undefined ?

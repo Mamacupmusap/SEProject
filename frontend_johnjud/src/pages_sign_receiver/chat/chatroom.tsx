@@ -172,7 +172,9 @@ const Chat= (props:any) =>{
               {/* {checknoti(item.id,check(item.userid1,item.userid2))}  */}
               {/* {console.log('item.userid2  ,item.id')}
               {console.log(item.userid2  ,item.id)} */}
-              <Checkuser user1={item.userid1} uesr2={item.userid2} roomid ={item.id} localuesr={localStorage.UserId}/>
+              {console.log('localStorage.UserId')}
+              {console.log(localStorage.UserId)}
+              <Checkuser user1={item.userid1} uesr2={item.userid2} roomid ={item.id} localuser={localStorage.UserId}/>
             </div>
             </span>
             ))}
