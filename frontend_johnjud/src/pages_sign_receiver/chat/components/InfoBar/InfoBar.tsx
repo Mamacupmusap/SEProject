@@ -9,7 +9,7 @@ const InfoBar = (prop:any) => (
       <h3 id="roomName">{prop.username2}</h3>
     </div>
     <div className="rightInnerContainer">
-      <NavLink to='/donator/suggestion' style={{color:'white'}} id="read_suggest">คำแนะนำเพิ่มเติม</NavLink>
+      <NavLink to='/receiver/suggestion' style={{color:'white'}} id="read_suggest">คำแนะนำเพิ่มเติม</NavLink>
     </div>
   </div>
 );
