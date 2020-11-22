@@ -22,7 +22,7 @@ const signin = () =>{
              
               <NavLink to='/signin2'><Button id='button_signin1'>Sign in with JohnJud account</Button></NavLink>
               <br/>
-              <p id="yesihavent">haven't register? <NavLink to='./signup'>sign up </NavLink></p>
+              <p id="yesihavent">haven't create account? <NavLink to='./signup'> sign up </NavLink></p>
             </Container>
           </Container>
         </div>

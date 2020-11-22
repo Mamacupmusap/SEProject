@@ -2,7 +2,6 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.css';
 import {Button,Container,FormGroup,Col,Label} from 'reactstrap';
 import './signin.css';
-import { NavLink } from 'react-router-dom';
 import { Formik,Form, Field, ErrorMessage , FormikHelpers } from 'formik';
 import * as Yup from 'yup';
 import Navigation2 from '../../Navigation/Navigation2';
@@ -12,11 +11,9 @@ import {useState} from 'react';
 import {useHistory} from 'react-router-dom';
 
 
-//example<//
 type SigninFormProb = {
     signinCallback: () => void
 }
-//example>//
 
 const RegisterSchema = Yup.object().shape({
     username: Yup.string()
@@ -77,7 +74,7 @@ const Signin = (props: SigninFormProb) => {
                                         }}
                                         validationSchema={RegisterSchema}
                                     >
-                                        {({ errors, touched }) => (
+                                        {() => (
                                             <Form>
                                                 <Col>
                                                     <FormGroup>

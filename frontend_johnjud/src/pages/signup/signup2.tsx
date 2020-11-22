@@ -3,7 +3,6 @@ import 'bootstrap/dist/css/bootstrap.css';
 import {Button,Container,FormGroup, Col}  from 'reactstrap';
 import { Formik,Form, Field} from 'formik'
 import { useHistory } from "react-router-dom";
-//import jjicon from './component/logojj.png'
 import mobile from './component/mobile.png'
 import Navigation2 from '../../Navigation/Navigation2';
 
@@ -12,22 +11,6 @@ interface ValueOTP{
   id:string;
   FeedbackOTP:string;
 }
-
-//PATCH to verify OTP and return true to next page
-//all done! database update 
-
-//1) OTP ที่ใส่ = OTP ที่เก็บไหม
-//2) ถ้าถูกก็ patch 
-
-/*
-async function verifyOTP(verify_OTP:Value2): Promise<any|null> {
-  const res = await fetch('http://localhost:2000/signup/v2/verify-phone',{
-      method: 'PATCH',
-      headers : {'Content-Type': 'application/json'},
-      body: JSON.stringify(verify_OTP),
-  });
-}
-*/
 
 
 const Signup2 = () =>{ 
@@ -40,8 +23,7 @@ const Signup2 = () =>{
            <div className='rightOTP'>
             <div className='text_rightOTP'>
               <div className='text2'>
-                <p style={{fontSize:16}}>OTP has been sent via SMS to your registered number</p>
-                <p style={{fontSize:16}}>(+66 xx-xxx-xxxx)</p>
+                <p style={{fontSize:14}}>OTP has been sent via SMS to your registered number (+66 xx-xxx-xxxx)</p>
                 <p id='text3'>please enter your OTP</p>
               </div>
               <div className='otp'>
@@ -83,7 +65,7 @@ const Signup2 = () =>{
                 }
               }       
                 render={props =>  
-                <Form id="nanacup">
+                <Form>
                   <Col>
                     <FormGroup id="mamacup">
                     <Field name="FeedbackOTP" 

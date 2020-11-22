@@ -18,8 +18,8 @@ const Signup3 = () =>{
             </div>
             <div className='rightOTP'>
                 <div className='text_rightOTP text2'>
-                  <p style={{fontSize:20}}>OTP was successfully verified. </p>
-                  <NavLink to='/signin2'><p style={{fontSize:16, color:'#61B292'}}> return to Login ...</p></NavLink>
+                  <p style={{fontSize:14}}>OTP was successfully verified. </p>
+                  <NavLink to='/signin'><p style={{fontSize:12, color:'#61B292'}}> return to sign in ...</p></NavLink>
                 </div>
             </div>
         </Container>

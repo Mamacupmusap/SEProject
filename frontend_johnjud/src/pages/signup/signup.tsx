@@ -10,7 +10,6 @@ import { Container, FormGroup,Label,Button, Col}  from 'reactstrap';
 import jjicon from './component/logojj.png'
 import './signup.css'
 import Navigation2 from '../../Navigation/Navigation2';
-import Messages from '../../pages_sign_donator/chat/components/Messages/Messages';
 
 
 interface Value2{

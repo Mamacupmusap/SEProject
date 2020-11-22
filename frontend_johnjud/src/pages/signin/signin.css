@@ -79,10 +79,10 @@
   }
 
   #yesihavent {
-    display: flex;
     justify-content: center;
     flex-wrap: wrap;
     line-height: normal;
+    font-size: 12px;
   }
 
   .textbox{
