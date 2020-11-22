@@ -117,22 +117,29 @@ const Chat= (props:any) =>{
       return user1
     }
   }
-  
-console.log(obj2?.UserName)
-console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
-console.log(user)
+ 
+  const [noti,setNoti] = useState<any>()
+
+  const checknoti=(roomid:string, user2:string|undefined)=>{
+    profileservice.getOnenoti(roomid,user2)
+    .then(a=>{
+      console.log("sssssssssssssssssssss")
+      console.log(a)
+      setNoti(a)
+    })
+    // if(noti.NotiDate!=null && noti.readAt==null){
+    //   return 'test'
+    // }
+    // else{
+    //   return ''
+    // }
+
+  }
+  // useEffect(()=>{
+  //   checknoti('5fb8b37f9fb35165d0e2903c','3146de11-ecf7-436b-a116-cd46e3094db0')
+  //   },[])
     
-    /*const message=obj?.message;
-    const picUser=obj?.picUser;
-    const ownerName=obj?.ownerName;
-    const createAt=obj?.createAt;
-    const ownerId=obj?.ownerId;
-    const roomId=obj?.roomId;
-    const userid1=obj?.userid1;
-    const userid2=obj?.userid2;
-    const username1=obj?.username1;
-    const username2=obj?.username2;*/
-    
+  const [finduser,setFinduser] = useState<string>()
   return (
     
     <div>
@@ -147,8 +154,19 @@ console.log(user)
           <div className="allPeople">
           {obj?.map(item=>(
             <span>
+              {console.log("ttttttttttttttttttttttttttt")}
             <div className="chatPeople_group">
-              <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{check2(item.username1,item.username2)}</a>
+              {console.log("Naaaaaaaa")}
+            {/* {notidata?.map(items=>(<span>
+              {console.log(items.roomid , item.id)}
+              {items.roomid == item.id &&
+              <div>test</div>
+              }
+            </span>))} */}
+              {/* {setFinduser(check(item.userid1,item.userid2))} */}
+              {console.log(finduser)}
+              <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${finduser}/${item.id}/`}>{check2(item.username1,item.username2)} </a>
+              {/* {checknoti(item.id,finduser)}  */}
             </div>
             </span>
             ))}

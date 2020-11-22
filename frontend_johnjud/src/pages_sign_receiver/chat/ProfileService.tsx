@@ -29,12 +29,24 @@ async function sendnoti(a:any,userId:string|undefined, roomid:string): Promise<a
     const ress = await res.json();
     return ress
 }
+async function getnoti(userId:string): Promise<any[]>{
+    const res = await fetch(`http://localhost:2000/chat/${userId}/getAllnoti`);
+    const name = await res.json();
+    console.log(name)
+    return name;
+}
 
-
+async function getOnenoti(roomid:string,user2:string|undefined): Promise<Userinfo>{
+    const res = await fetch(`http://localhost:2000/chat/${user2}/${roomid}/getmynoti`);
+    const name = await res.json();
+    return name;
+}
 export default {
     fetchChatroom,
     fetchProfileInfo,
     sendnoti,
+    getnoti,
+    getOnenoti,
 } 
 
 //
