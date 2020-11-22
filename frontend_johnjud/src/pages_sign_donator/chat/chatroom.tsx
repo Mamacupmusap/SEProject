@@ -6,13 +6,16 @@ import {chatroom} from './Interface';
 import Message from './components/Messages/Message';
 import InfoBar from './components/InfoBar/InfoBar';
 import Input from './components/Input/Input';
-import Navigation3 from '../../Navigation/Navigation3';
+import Navigation from '../../Navigation/Navigation3';
 import './chat.css';
 import user1 from './components/Chat/img/user1.png';
 import user2 from './components/Chat/img/user2.png';
 import profileservice from './ProfileService';
 import { attachProps } from "@ionic/react/dist/types/components/utils";
 import {Userinfo} from './Interface';
+import Checkuser from './chekuser';
+import { Link, useHistory } from 'react-router-dom';
+
 
 
 const Chat= (props:any) =>{
@@ -26,9 +29,6 @@ const Chat= (props:any) =>{
     const roomId = props.match.params.roomId;
     const UserId2 = props.match.params.userId2;
     const UserId = props.match.params.userId;
-    
-    console.log(UserId)
-    console.log(UserId2)
 
     const fetchChatroom=() =>{
       return(
@@ -91,12 +91,25 @@ const Chat= (props:any) =>{
                   body: JSON.stringify(chatinfo),
               });
               const name = await res.json();
-              return name;}
-              const update=() =>{
-                 const newchat = {
-                 message:newChat,
+              return name;
             }
+    const newnoti=()=>{
+      const a={
+        User:UserId2,
+        roomid:roomId
+      }
+      profileservice.sendnoti(a,UserId2,roomId)
+    }        
+      
+    console.log('UserId2')
+    console.log(UserId2)
+    
+    const update=() =>{
+      const newchat = {
+        message:newChat,
+        }
       PostChat(newchat);
+      newnoti()
   }
   
   const check=(user1:string, user2:string)=>{
@@ -117,33 +130,38 @@ const Chat= (props:any) =>{
       return user1
     }
   }
-  const checknoti=(noti:boolean)=>{
-    if(noti == true){
-      return "**new**"
+ 
+  const [temp,setTemp] = useState<any>()
+
+  // const checknoti=(roomid:string, user2:string|undefined)=>{
+  //   profileservice.getOnenoti(roomid,user2)
+  //   .then(a=>{
+  //     console.log(a)
+  //     setNoti(a)
+  //   })}
+  const nullcheck=(value:string|undefined)=>{
+    if (value != null){
+        return update;
     }
   }
+  const history = useHistory()
+
+  const readmessage=()=>{
+    const a={
+      User:UserId,
+      roomid:roomId
+    }
+    profileservice.sendnoti2(a,UserId,roomId)
+    // history.push(`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(userid1,userid2)}/${id}/`)
+    
+  }
   
-console.log(obj2?.UserName)
-console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA')
-console.log(user)
-    
-    /*const message=obj?.message;
-    const picUser=obj?.picUser;
-    const ownerName=obj?.ownerName;
-    const createAt=obj?.createAt;
-    const ownerId=obj?.ownerId;
-    const roomId=obj?.roomId;
-    const userid1=obj?.userid1;
-    const userid2=obj?.userid2;
-    const username1=obj?.username1;
-    const username2=obj?.username2;*/
-    
+  const [finduser,setFinduser] = useState<string>()
   return (
-    
     <div>
       {localStorage.UserId==UserId && 
       <div>
-      <Navigation3/>
+      <Navigation/>
       <div className="outerContainer">
         <div className="left_chat">
           <div className="head_left_chat">
@@ -152,8 +170,26 @@ console.log(user)
           <div className="allPeople">
           {obj?.map(item=>(
             <span>
+              {/* {console.log("ttttttttttttttttttttttttttt")} */}
             <div className="chatPeople_group">
-          <a href={`http://localhost:3000/donator/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{check2(item.username1,item.username2) } {checknoti(item.noti)}</a>
+              {/* {console.log("Naaaaaaaa")} */}
+            {/* {notidata?.map(items=>(<span>
+              {console.log(items.roomid , item.id)}
+              {items.roomid == item.id &&
+              <div>test</div>
+              }
+            </span>))} */}
+              {/* {setFinduser(check(item.userid1,item.userid2))} */}
+              {/* {console.log(finduser)} */}
+              
+              <a onClick={readmessage} href={`http://localhost:3000/donator/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/` }>{check2(item.username1,item.username2)} </a>
+    
+              {/* {checknoti(item.id,check(item.userid1,item.userid2))}  */}
+              {/* {console.log('item.userid2  ,item.id')}
+              {console.log(item.userid2  ,item.id)} */}
+              {console.log('localStorage.UserId')}
+              {console.log(localStorage.UserId)}
+              <Checkuser user1={item.userid1} uesr2={item.userid2} roomid ={item.id} localuser={localStorage.UserId}/>
             </div>
             </span>
             ))}
@@ -164,7 +200,7 @@ console.log(user)
             <Message roomId={roomId}/>
             <form className="form">
               <textarea id='input' value={newChat} onChange={(e) => {setnewChat(e.target.value);}}/>
-              <button className="sendButton" onClick={update}>Send</button>
+              <button className="sendButton" onClick={nullcheck(newChat)}>Send</button>
             </form>
           </div>
         {/* <TextContainer users='hi'/> */}
