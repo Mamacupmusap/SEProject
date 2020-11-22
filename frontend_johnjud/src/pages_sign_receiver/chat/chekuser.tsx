@@ -20,7 +20,7 @@ const Checkuser = (prop:any) =>{
         // console.log('qqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqqq')
         // console.log(a2)
         console.log(prop.roomid)
-        profileservice.getOnenoti(prop.roomid,a2)
+        profileservice.getOnenoti(prop.roomid,prop.localuser)
         .then(a=>{
           console.log(a)
           setNoti(a)
@@ -33,10 +33,10 @@ const Checkuser = (prop:any) =>{
         a()
        },[])
      useEffect(()=>{
-         if((a2==prop.user2 || a2 == prop.user1) && prop.roomid!==undefined){
+         if((prop.localuser!==undefined) && prop.roomid!==undefined){
              checknoti()
          }
-        },[a2])
+        },[prop.localuser])
 
     // const shownoti=() =>{
     //     console.log('ssssssssssssssssssssss')
@@ -55,8 +55,11 @@ const Checkuser = (prop:any) =>{
     return(
         
         <div>
+            
             {noti &&
                 <div>
+                {console.log('sssssssssssssssssssssssssssssssssssssssssss')}
+
                 {console.log('noti.notidate , noti.readAt')}
                 {console.log(noti.NotiDate , noti.readAt)}
                 {noti.NotiDate !== undefined && noti.readAt==undefined ?

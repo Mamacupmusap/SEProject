@@ -21,6 +21,8 @@ async function fetchProfileInfo(userId:string): Promise<Userinfo>{
     return name;
 }
 async function sendnoti(a:any,userId:string|undefined, roomid:string): Promise<any|null> {
+    // console.log('userId')
+    // console.log(userId)
     const res = await fetch(`http://localhost:2000/chat/${userId}/${roomid}/updatenullnoti`,{
         method: 'PATCH',
         headers : {'Content-Type': 'application/json'},
@@ -30,6 +32,7 @@ async function sendnoti(a:any,userId:string|undefined, roomid:string): Promise<a
     return ress
 }
 async function getnoti(userId:string): Promise<any[]>{
+    
     const res = await fetch(`http://localhost:2000/chat/${userId}/getAllnoti`);
     const name = await res.json();
     console.log(name)

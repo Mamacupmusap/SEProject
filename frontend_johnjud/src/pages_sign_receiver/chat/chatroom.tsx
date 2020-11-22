@@ -88,12 +88,25 @@ const Chat= (props:any) =>{
                   body: JSON.stringify(chatinfo),
               });
               const name = await res.json();
-              return name;}
-              const update=() =>{
-                 const newchat = {
-                 message:newChat,
+              return name;
             }
+    const newnoti=()=>{
+      const a={
+        User:UserId2,
+        roomid:roomId
+      }
+      profileservice.sendnoti(a,UserId2,roomId)
+    }        
+      
+    console.log('UserId2')
+    console.log(UserId2)
+    
+    const update=() =>{
+      const newchat = {
+        message:newChat,
+        }
       PostChat(newchat);
+      newnoti()
   }
   
   const check=(user1:string, user2:string)=>{
@@ -157,8 +170,8 @@ const Chat= (props:any) =>{
               {/* {console.log(finduser)} */}
               <a href={`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/`}>{check2(item.username1,item.username2)} </a>
               {/* {checknoti(item.id,check(item.userid1,item.userid2))}  */}
-              {console.log('item.userid2  ,item.id')}
-              {console.log(item.userid2  ,item.id)}
+              {/* {console.log('item.userid2  ,item.id')}
+              {console.log(item.userid2  ,item.id)} */}
               <Checkuser user1={item.userid1} uesr2={item.userid2} roomid ={item.id} localuesr={localStorage.UserId}/>
             </div>
             </span>
