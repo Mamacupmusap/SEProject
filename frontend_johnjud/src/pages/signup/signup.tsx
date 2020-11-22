@@ -216,7 +216,7 @@ const Signup= () =>{
                   <Field name="Gender" 
                        type="radio" 
                        id="gender"
-                       value='others' 
+                       value='Others' 
                   />
                   <label className="textgender">others</label>
                 </div>
