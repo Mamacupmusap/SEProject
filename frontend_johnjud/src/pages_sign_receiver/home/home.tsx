@@ -1,21 +1,14 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState,} from 'react';
 import { NavLink} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.css';
 import './home.css'
 import head_dog from './img/banner.png'
-import pet1 from './img/pet1.png'
-import pet2 from './img/pet2.png'
-import pet3 from './img/pet3.png'
-import pet4 from './img/pet4.png'
-import pet5 from './img/pet5.png'
-import pet6 from './img/pet6.png'
-import pet7 from './img/pet7.png'
-import pet8 from './img/pet8.png'
 import { Container, Card, CardImg, CardBody,
   CardTitle} from 'reactstrap';
 /*import { CheckboxFilter, TermQuery, BoolMust, RangeQuery } from "searchkit";*/
 import Navigation from '../../Navigation/Navigation';
 import homeService_receiver from "./homeService_receiver";
+
 
 const Home = () => {
   
@@ -53,7 +46,6 @@ const Home = () => {
           })
     )
   }
-  
   useEffect(()=>{
     petInfo().then()
   },[])
@@ -64,22 +56,13 @@ const Home = () => {
     <div id="bodyblahblah">
       <img src={head_dog} id='head_dog' alt=""/>
       <div className="urgh">
-        <div id="filterAll">
-            <div className="filter">
-              <p>Type</p>
-              <input type="checkbox" value="dog"  onClick={dog}/>
-              <label>Dog</label>
-              <br/>
-              <input type="checkbox" value="cat" onClick={cat}/>
-              <label>Cat</label>
-              <br/>
-              <input type="checkbox" value="others" onClick={others}/>
-              <label>Others</label>
-              <br/>
-              <input type="checkbox" value="all" onClick={petInfo}/>
-              <label>All</label>
-            </div>
-          </div>
+        <div className="filter2">
+              <button onClick={petInfo} className="button2" >All</button>
+              <button onClick={dog} className="button2">Dog</button>
+              <button onClick={cat} className="button2">Cat</button>
+              <button onClick={others} className="button2">Others</button>
+              <div className="underfilter"></div>
+        </div>   
         <Container id="middle">
             {allPet.map((value) => {
               return (

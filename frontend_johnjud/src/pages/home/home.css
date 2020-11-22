@@ -15,7 +15,7 @@
     font-size: 12px;
     display: flex;
     justify-content: space-between;
-    //align-items: center;
+    align-items: center;
     /*flex-wrap: wrap;*/
     margin-top: 32px;
     margin-left: 1px;
@@ -46,8 +46,8 @@ p {
     margin-bottom: 8px;
 }
 
-#middle{
-    //margin-right: 2%;
+middle{
+    margin-right: 2%;
     margin-left: 10%;
     display: flex;
     flex-direction: row;
@@ -58,16 +58,36 @@ p {
     /*align-items: flex-end;*/
 }
 
-.filter {
-    margin-top: 12px;
-    margin-left: 24px;
-    margin-right: 24px;
-    width: 130px;
-    background-color: white;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+
+.filter2{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 30%;
+    background-color: #c4c4c4;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+
+}
+.underfilter{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    flex: 100%;
+    height: 720px;
+    background-color: #e7e2e2;
+
 }
 
 .urgh {
     display: flex;
     flex-direction: row;
+}
+
+.button2 {
+    background-color: white;
+    width: 100%;
+    height: 80px;
+    border-color: transparent;
+    white-space: normal;
+    text-align: left;
 }
