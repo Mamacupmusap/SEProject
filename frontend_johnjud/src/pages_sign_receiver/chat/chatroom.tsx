@@ -184,7 +184,11 @@ const Chat= (props:any) =>{
         </div>
         <div className="container_chat">
             <InfoBar username2={obj2?.UserName}/>
+            {UserId2 !== "user2" &&
+            <div>
             <Message roomId={roomId}/>
+
+              </div>}
             <form className="form">
               <textarea id='input' value={newChat} onChange={(e) => {setnewChat(e.target.value);}} style={{width:"100%"}}/>
               {UserId2 !== "user2" &&
