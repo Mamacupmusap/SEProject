@@ -34,4 +34,5 @@
 
 .allMss {
   overflow: auto;
+  max-height: 70%;
 }

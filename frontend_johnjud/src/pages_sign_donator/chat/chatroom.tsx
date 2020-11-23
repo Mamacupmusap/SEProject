@@ -182,8 +182,6 @@ const Chat= (props:any) =>{
               {UserId2 !== "user2" &&
               <div>
             <Message roomId={roomId}/>
-                </div>}
-            
             <form className="form">
               <textarea id='input' value={newChat} onChange={(e) => {setnewChat(e.target.value);}} style={{width:"100%"}}/>
               {UserId2 !== "user2" &&
@@ -191,6 +189,9 @@ const Chat= (props:any) =>{
               <button className="sendButton" onClick={nullcheck(newChat)}>Send</button>
               </div>}
             </form>
+                </div>}
+            
+      
           </div>
         {/* <TextContainer users='hi'/> */}
       </div> 
