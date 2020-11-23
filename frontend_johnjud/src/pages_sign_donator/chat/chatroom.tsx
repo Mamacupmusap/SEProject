@@ -142,6 +142,9 @@ const Chat= (props:any) =>{
       User:UserId,
       roomid:roomId
     }
+    
+    window.location.reload();
+    window.location.reload();
     profileservice.sendnoti2(a,UserId,roomId)
     // history.push(`http://localhost:3000/receiver/chat/${localStorage.UserId}/${check(userid1,userid2)}/${id}/`)
     
