@@ -186,7 +186,10 @@ const Chat= (props:any) =>{
           </div>
         </div>
         <div className="container_chat">
+        {UserId2 !== "user2" &&
+        <div>
             <InfoBar username2={obj2?.UserName}/>
+            </div>}
             {UserId2 !== "user2" &&
             <div>
             <Message roomId={roomId}/>
