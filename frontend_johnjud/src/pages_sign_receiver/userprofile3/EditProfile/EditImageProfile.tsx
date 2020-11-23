@@ -30,10 +30,10 @@ class Upload extends Component {
     render() {
         return (
             <form id="uploadpic">
-                   
+                   <div>
                         <input type="file" className="ChooseProfile_pic" 
                         onChange={(e)=>this.handleFile(e)} style={{marginLeft:50}}/>
-                 
+                    </div>
                     <br />
                     <Button id='buttonUploadprofile' onClick={(e)=>this.handleUpload(e)}>Upload</Button>
                 </form>
