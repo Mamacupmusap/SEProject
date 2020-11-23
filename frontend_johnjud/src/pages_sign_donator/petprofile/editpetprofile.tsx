@@ -191,7 +191,7 @@ const Addpetprofile= (props:any) =>{
             })
             
             const res2 = await res.json();  
-            console.log(res2);
+            
             
 
             if(res2.success==true){

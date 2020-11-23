@@ -8,8 +8,8 @@ import { Row } from 'reactstrap';
 
 const Leftblock=(prop:any) =>{
   const[obj,setObj] = useState<Userinfo>();
-  // console.log("heeeeelllooooo")
-  // console.log(prop.userId)
+  // 
+  // 
   const fetchProfileInfo=() =>{
     return(
       profileservice.fetchProfileInfo(prop.userId)

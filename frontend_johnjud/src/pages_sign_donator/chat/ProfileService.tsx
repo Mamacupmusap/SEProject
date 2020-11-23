@@ -4,7 +4,7 @@ import {Userinfo} from './Interface';
 
 /*
 async function fetchProfileInfo(petid:string): Promise<chat>{
-    console.log(petid)
+    
     const res = await fetch(`http://localhost:2000/chat/${petid}`);
     const name = await res.json();
     return name;}*/
@@ -17,12 +17,12 @@ async function fetchProfileInfo(petid:string): Promise<chat>{
 async function fetchProfileInfo(userId:string): Promise<Userinfo>{
     const res = await fetch(`http://localhost:2000/User/${userId}`);
     const name = await res.json();
-    console.log(name)
+    
     return name;
 }
 async function sendnoti2(a:any,userId:string|undefined, roomid:string): Promise<any|null> {
-    // console.log('userId')
-    // console.log(userId)
+    // 
+    // 
     const res = await fetch(`http://localhost:2000/chat/${userId}/${roomid}/updatereaddate`,{
         method: 'PATCH',
         headers : {'Content-Type': 'application/json'},
@@ -33,21 +33,21 @@ async function sendnoti2(a:any,userId:string|undefined, roomid:string): Promise<
 }
 async function getOnenoti(roomid:string, userId2:string): Promise<any>{
 
-    console.log('xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx')
-    console.log(roomid)
-    console.log('yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy')
-    console.log(userId2)
-    console.log('zzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzzz')
+    
+    
+    
+    
+    
 
     const res = await fetch(`http://localhost:2000/chat/${userId2}/${roomid}/getmynoti`);
     const names = await res.json();
-    console.log("nameeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee")
-    console.log(names)
+    
+    
     return names;
 }
 async function sendnoti(a:any,userId:string|undefined, roomid:string): Promise<any|null> {
-    // console.log('userId')
-    // console.log(userId)
+    // 
+    // 
     const res = await fetch(`http://localhost:2000/chat/${userId}/${roomid}/updatenullnoti`,{
         method: 'PATCH',
         headers : {'Content-Type': 'application/json'},

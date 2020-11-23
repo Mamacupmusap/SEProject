@@ -9,13 +9,9 @@ const Checkuser = (prop:any) =>{
     const [noti,setNoti] = useState<any>()
     
     const checknoti=()=>{
-        // console.log("ssssssssssssssssssssssssssssssssssssssssssssssssssssssss")
-        // console.log(prop.roomid)
-        // console.log(prop.prop.localuse)
+
         profileservice.getOnenoti(prop.roomid,prop.localuser)
         .then(a=>{
-        //   console.log('aaaaaaaaaaaaaaaaaaaaaaaaaaaa')
-          console.log(a)
           setNoti(a)
         })
      }
@@ -23,9 +19,7 @@ const Checkuser = (prop:any) =>{
 
 
      useEffect(()=>{
-        console.log("ssssssssssssssssssssssssssssssssssssssssssssssssssssssss")
-        console.log(prop.roomid)
-        console.log(prop.localuser)
+
          if((prop.localuser!==undefined) && prop.roomid!==undefined){
              checknoti()
          }
@@ -35,14 +29,11 @@ const Checkuser = (prop:any) =>{
     return(
         
         <div>
-            {console.log('noti')}
 
-            {console.log(noti)}
 
             {noti &&
                 <div>
-                {console.log('noti.notidate , noti.readAt')}
-                {console.log(noti.NotiDate , noti.readAt)}
+
                 {noti.NotiDate !== undefined && noti.readAt==undefined ?
                 <div><img className='notipic' src={notipicture}></img></div>
                 :<div> </div>

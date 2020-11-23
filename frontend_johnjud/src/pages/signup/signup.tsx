@@ -74,9 +74,6 @@ const Signup= () =>{
             
             // fetch id to const 
             const res2 = await res.json();  
-            console.log(res2)
-            console.log(res2.message)
-            console.log(res2.id)
 
             if(res2.message!=undefined){
                 alert(res2.message)
@@ -84,8 +81,6 @@ const Signup= () =>{
 
 
             values.id = res2.id;
-            console.log(values.id);
-            console.log(sendInfo)
             localStorage.setItem('keyinfo', JSON.stringify(sendInfo))
             localStorage.setItem('id',res2.id)
 

@@ -50,7 +50,7 @@ const TapProfile = (props:any) => {
     fetchProfileInfoss()
 
   },[])
-  console.log(count)
+  
   return (
     <div>
         <div>

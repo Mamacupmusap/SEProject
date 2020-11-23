@@ -51,7 +51,7 @@ headers: {
 }
 */
 async function fetchProfileInfo(petid:string): Promise<Petinfo>{
-    console.log(petid)
+    
     const res = await fetch(`http://localhost:2000/petinfo/${petid}`);
     const name = await res.json();
     return name;
@@ -80,7 +80,7 @@ async function updateinfo(newInfoProfile:Petinfo): Promise<any|null> {
         body: JSON.stringify(newInfoProfile),
     });
     const Updateinfo:Petinfo = await res.json();
-    console.log(Updateinfo)
+    
     if (Updateinfo.PetName !== undefined){
         return alert("Update Information Success")
     }
@@ -117,7 +117,7 @@ async function DeleteInfo(a: any,useridz: string | null,petidz: string | null,to
         body: JSON.stringify(a),
     });
     const ress = await res.json();
-    console.log(ress)
+    
 }
 
 

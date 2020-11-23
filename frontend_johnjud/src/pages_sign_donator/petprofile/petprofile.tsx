@@ -36,7 +36,7 @@ export const Petprofile = (props:any) => {
 localStorage.setItem('petID',petid)
 localStorage.removeItem('EditpetInfo')
 
-console.log(petid)
+
 
     useEffect(()=>{
       fetchProfileInfo()
@@ -60,8 +60,8 @@ console.log(petid)
     const link_google = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=${PetAddress}`
 
     const isAva = () => {
-        console.log('ava')
-        console.log(PetStatus === 'ava')
+        
+        
         return PetStatus === 'ava'
     }
     useEffect(()=>{
@@ -69,8 +69,8 @@ console.log(petid)
     },[])
 
     const isPend = () => {
-        console.log('pend')
-        console.log(PetStatus === 'pend')
+        
+        
         return PetStatus === 'pend'
     }
     useEffect(()=>{
@@ -78,8 +78,8 @@ console.log(petid)
     },[])
 
     const isDone = () => {
-        console.log('done')
-        console.log(PetStatus === 'done')
+        
+        
         return PetStatus === 'done'
     }
     useEffect(()=>{
@@ -110,10 +110,10 @@ console.log(petid)
                             values: Value2,
                             { setSubmitting }: FormikHelpers<Value2>
                         ) => {
-                            console.log(values.token)
-                            console.log(values.petId)
+                            
+                            
                             const result = await changeStatusService.updateStatus(values);
-                            console.log(result);
+                            
                             setSubmitting(false);
                             window.location.reload();
                         }}

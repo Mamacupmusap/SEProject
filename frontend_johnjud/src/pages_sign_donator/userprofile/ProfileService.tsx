@@ -50,7 +50,7 @@ async function updateinfo(newInfoProfile:Userinfo,userId:string): Promise<any|nu
         body: JSON.stringify(newInfoProfile),
     });
     const Updateinfo:Userinfo = await res.json();
-    console.log(Updateinfo)
+    
     if (Updateinfo.FirstName !== undefined){
         return alert("Update Information Success")
     }
@@ -92,7 +92,7 @@ async function updatephone(newPhone:string, token:string): Promise<any|null> {
         //{PhoneNo: 0805161, accessToken:fkepwakfwkpfoa}
     });
     const updatephone = await res.json();
-    console.log(updatephone.success)
+    
     return updatephone.success
 }
 
@@ -106,7 +106,7 @@ async function updateOTP(OTPS:string,token:string): Promise<any|null> {
         body: urlencoded,
     });
     const ress= await res.json();
-    console.log(ress)
+    
     return ress
 }
 async function updatePassword(password:string,confirmpassword:string,token:string): Promise<any|null> {
@@ -140,19 +140,19 @@ async function updateProfileimage(image:any): Promise<any|null> {
     });
     const ress= await res.json();
     return ress
-    console.log(ress)
-    console.log(ress.data.display_url)
-    console.log(ress.data.delete_url)
+    
+    
+    
 }
 
 
 async function updateurlimage(display:string,deletes:string,userId:string,token:string): Promise<any|null> {
-    //console.log(token)
+    //
     var urlencoded = new URLSearchParams();
     urlencoded.append("display_url", display);
     urlencoded.append("delete_url", deletes);
-    // console.log(display)
-    // console.log(deletes)
+    // 
+    // 
 
     const res = await fetch(`http://localhost:2000/User/${userId}/setting/uploadIMG`,{
         method: 'PATCH',
@@ -160,7 +160,7 @@ async function updateurlimage(display:string,deletes:string,userId:string,token:
         body: urlencoded,
     });
     const ress= await res.json();
-    console.log(ress)
+    
 }
 
 export default {

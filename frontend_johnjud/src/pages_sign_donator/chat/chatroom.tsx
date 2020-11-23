@@ -61,7 +61,6 @@ const Chat= (props:any) =>{
         return(
           profileservice.fetchProfileInfo(UserId2)
           .then(res1 => {
-            console.log(res1)
             setObj2(res1)
           })
         )
@@ -73,7 +72,6 @@ const Chat= (props:any) =>{
         return(
            profileservice.fetchProfileInfo(userid)
            .then(res2 => {
-             console.log(res2)
              setObj3(res2)
            })
          )
@@ -101,8 +99,6 @@ const Chat= (props:any) =>{
       profileservice.sendnoti(a,UserId2,roomId)
     }        
       
-    console.log('UserId2')
-    console.log(UserId2)
     
     const update=() =>{
       const newchat = {
@@ -133,12 +129,7 @@ const Chat= (props:any) =>{
  
   const [temp,setTemp] = useState<any>()
 
-  // const checknoti=(roomid:string, user2:string|undefined)=>{
-  //   profileservice.getOnenoti(roomid,user2)
-  //   .then(a=>{
-  //     console.log(a)
-  //     setNoti(a)
-  //   })}
+  
   const nullcheck=(value:string|undefined)=>{
     if (value != null){
         return update;
@@ -170,25 +161,12 @@ const Chat= (props:any) =>{
           <div className="allPeople">
           {obj?.map(item=>(
             <span>
-              {/* {console.log("ttttttttttttttttttttttttttt")} */}
             <div className="chatPeople_group">
-              {/* {console.log("Naaaaaaaa")} */}
-            {/* {notidata?.map(items=>(<span>
-              {console.log(items.roomid , item.id)}
-              {items.roomid == item.id &&
-              <div>test</div>
-              }
-            </span>))} */}
-              {/* {setFinduser(check(item.userid1,item.userid2))} */}
-              {/* {console.log(finduser)} */}
+
               
               <a onClick={readmessage} href={`http://localhost:3000/donator/chat/${localStorage.UserId}/${check(item.userid1,item.userid2)}/${item.id}/` } id="pplLeftDon">{check2(item.username1,item.username2)} </a>
     
-              {/* {checknoti(item.id,check(item.userid1,item.userid2))}  */}
-              {/* {console.log('item.userid2  ,item.id')}
-              {console.log(item.userid2  ,item.id)} */}
-              {console.log('localStorage.UserId')}
-              {console.log(localStorage.UserId)}
+
               <Checkuser user1={item.userid1} uesr2={item.userid2} roomid ={item.id} localuser={localStorage.UserId}/>
             </div>
             </span>

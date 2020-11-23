@@ -58,13 +58,10 @@ const Signin = (props: SigninFormProb) => {
                                             { setSubmitting }: FormikHelpers<Value2>
                                         ) => {
                                             const result = await authnService.sendRequestSignIn(values);
-                                            //console.log(res);
                                             if(!result) {
-                                                //console.log('Wrong username or password');
                                                 setSignInErrorMessage('Sign In error: wrong username or password');
                                             }else {
                                                 setSignInErrorMessage('')
-                                                //console.log('');
                                                 if (props.signinCallback){
                                                     props.signinCallback();
                                                 }

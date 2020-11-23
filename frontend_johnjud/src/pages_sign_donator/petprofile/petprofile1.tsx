@@ -34,7 +34,7 @@ const Addpetprofile= () =>{
   let history = useHistory();
 
   const accessToken = localStorage.getItem('Token');
-  console.log(accessToken)
+  
 
   return(
     <div>
@@ -144,7 +144,7 @@ const Addpetprofile= () =>{
             })
             
             const res2 = await res.json();  
-            console.log(res2);
+            
             
 
             if(res2.success==true){

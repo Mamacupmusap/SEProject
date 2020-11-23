@@ -13,7 +13,7 @@ const EditPassword=(prop:any)=>{
       return(
         profileservice.fetchProfileInfo(prop.userId)
         .then(res => {
-          console.log(res);
+          
           setObj(res)
           console.log(obj)
         })

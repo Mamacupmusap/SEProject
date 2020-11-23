@@ -71,8 +71,8 @@ export const Petprofile = (props:any) => {
   const link_google = `https://www.google.com/maps/embed/v1/place?key=AIzaSyD2YzHpZurcTrS3PBA667hyc7OcncN4EGg&q=${PetAddress}`
 
     const isAva = () => {
-        console.log('ava')
-        console.log(PetStatus === 'ava')
+        
+        
         return PetStatus === 'ava'
     }
     useEffect(()=>{
@@ -80,8 +80,8 @@ export const Petprofile = (props:any) => {
     },[])
 
     const isPend = () => {
-        console.log('pend')
-        console.log(PetStatus === 'pend')
+        
+        
         return PetStatus === 'pend'
     }
     useEffect(()=>{
@@ -89,8 +89,8 @@ export const Petprofile = (props:any) => {
     },[])
 
     const isDone = () => {
-        console.log('done')
-        console.log(PetStatus === 'done')
+        
+        
         return PetStatus === 'done'
     }
     useEffect(()=>{
@@ -224,7 +224,7 @@ export const Petprofile = (props:any) => {
                               { setSubmitting }: FormikHelpers<Value2>
                           ) => {
                               const result = await submitCodeService.submitCode(values);
-                              console.log(result.error);
+                              
                               if (result.error === 'Conflict' && PetStatus === 'ava') {
                                   alert('Submit failed\n' + 'The code you entered is incorrect.')
                               }

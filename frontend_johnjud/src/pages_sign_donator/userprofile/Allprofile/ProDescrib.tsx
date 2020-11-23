@@ -30,8 +30,8 @@ const Apps=(props:any) => {
   const description = obj?.Description;
   const ProfilePic = obj?.ImgURL;
 
-  // console.log('aaaaa')
-  // console.log(obj?.UserName)
+  // 
+  // 
 
   return(   
     <div className='All_in_one_userpro'>

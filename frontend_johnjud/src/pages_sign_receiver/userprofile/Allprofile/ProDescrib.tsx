@@ -29,8 +29,8 @@ const Apps=(props:any) => {
   },[])
   
   const description = obj?.Description;
-  console.log('aaaaa')
-  console.log(obj?.UserName)
+  
+  
 
   return(   
     <div>

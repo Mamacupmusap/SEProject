@@ -20,22 +20,17 @@ async function sendRequestSignIn(value: { username: string; password: string; })
     };
     const result = await fetch('http://localhost:2000/signin', requestOptions)
         .then(response => response.json())
-    console.log(result)
     if(result.accessToken) {
         localStorage.setItem("Token", result.accessToken)
         localStorage.setItem("UserName", result.UserName) // ทำไว้รอ backend ว่าจะส่งค่าให้มั้ย
         localStorage.setItem("UserId", result.id) // ทำไว้รอ backend ว่าจะส่งค่าให้มั้ย
-        //console.log('get access token')
-        //console.log(result.accessToken)
         return result
     }else {
-        //console.log("can't login")
         return null
     }
 }
 
 function isUserSignIn(): boolean {
-    console.log(localStorage.Token !== undefined);
     return localStorage.Token !== undefined;
 }
 

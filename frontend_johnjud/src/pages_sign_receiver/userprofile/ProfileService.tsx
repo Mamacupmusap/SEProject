@@ -7,8 +7,8 @@ import {phoneinfo} from './EditProfile/interface3';
 
 
 async function fetchProfileInfo(userId:string): Promise<Userinfo>{
-    console.log('aaaaaaaaaaaaaaaaaa')
-    console.log(userId)
+    
+    
     const res = await fetch(`http://localhost:2000/User/${userId}`);
     const name = await res.json();
     return name;
@@ -39,7 +39,7 @@ async function updateinfo(newInfoProfile:Userinfo,userId:string): Promise<any|nu
         body: JSON.stringify(newInfoProfile),
     });
     const Updateinfo:Userinfo = await res.json();
-    console.log(Updateinfo)
+    
     if (Updateinfo.FirstName !== undefined){
         return alert("Update information Sucess")
     }
@@ -67,21 +67,21 @@ async function updateemail(newEmail:string,token:string): Promise<any|null> {
 }
 
 async function updatephone(newPhone:string, token:string): Promise<any|null> {
-    // console.log(newPhone)
-    // console.log(token)
+    // 
+    // 
     var urlencoded = new URLSearchParams();
     urlencoded.append("PhoneNo", newPhone);
-    // console.log('rlllll')
-    // console.log(urlencoded)
+    // 
+    // 
     const res = await fetch('http://localhost:2000/user/edit-user/change-phone/save-temp-phone',{
         method: 'PATCH',//PUT POST
         headers : {'Authorization': `Bearer ${token}`},
         body: urlencoded,
     });
     const updatephone = await res.json();
-    // console.log('sendback is')
-    // console.log(updatephone)
-    console.log(updatephone.success)
+    // 
+    // 
+    
     return updatephone.success
     /*
     if (updatephone.success !== true){
@@ -114,8 +114,8 @@ async function updateOTP(OTPS:string,token:string): Promise<any|null> {
     return ress
 }
 async function updatePassword(password:string,confirmpassword:string,token:string): Promise<any|null> {
-    console.log(password)
-    console.log(confirmpassword)
+    
+    
     var urlencoded = new URLSearchParams();
     urlencoded.append("Password", password);
     urlencoded.append("ConfirmPassword", confirmpassword);

@@ -52,8 +52,8 @@ interface ValueOTP{
 
                     // fetch id to const 
                     const res2 = await res.json();  
-                    console.log(res2)
-                    console.log(res2.success)
+                    
+                    
                     
                     if(res2.success==false){
                     alert('WRONG OTP!!!')

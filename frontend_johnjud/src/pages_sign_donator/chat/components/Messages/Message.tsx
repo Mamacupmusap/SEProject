@@ -13,7 +13,7 @@ const Messages = (props:any) => {
   async function fetchChat(roomId:string): Promise<any[]>{
     const res = await fetch(`http://localhost:2000/chat/${roomId}/getmessage`);
     const name = await res.json();
-    console.log(roomId);
+    
     return name;}
   const fetchchat=() =>{
     return(

@@ -27,7 +27,7 @@ const EditProfile=(props:any) =>{
         )
       }
       const ProfilePic = Obj?.ImgURL;
-      console.log(ProfilePic)
+      
       useEffect(()=>{
         fetchProfileInfo()
       },[])

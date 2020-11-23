@@ -2,7 +2,7 @@ import {Petinfo} from './Interface';
 import {Userinfo} from './interface2';
 
 async function fetchProfileInfo(petid:string): Promise<Petinfo>{
-    console.log(petid)
+    
     const res = await fetch(`http://localhost:2000/petinfo/${petid}`);
     const name = await res.json();
     return name;}
@@ -59,8 +59,8 @@ async function makeroomchat(a:any,userId1:string,userId2:string|undefined,token:
         body: JSON.stringify(a),
     });
     const ress = await res.json();
-    console.log('aaaaaaaaaaaaaaaaaaaaaa')
-    console.log(ress)
+    
+    
     return ress
 }
 
@@ -84,8 +84,8 @@ async function makenoti1(a:any,userId:string,roomid:string): Promise<any|null> {
         body: JSON.stringify(a),
     });
     const ress = await res.json();
-    console.log('aaaaaaaaaaaaaaaaaaaaaa')
-    console.log(ress)
+    
+    
     return ress
 }
 async function makenoti2(a:any,userId:string|undefined, roomid:string): Promise<any|null> {
@@ -95,8 +95,8 @@ async function makenoti2(a:any,userId:string|undefined, roomid:string): Promise<
         body: JSON.stringify(a),
     });
     const ress = await res.json();
-    console.log('aaaaaaaaaaaaaaaaaaaaaa')
-    console.log(ress)
+    
+    
     return ress
 }
 
