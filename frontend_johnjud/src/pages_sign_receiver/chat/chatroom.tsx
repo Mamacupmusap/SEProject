@@ -130,7 +130,6 @@ const Chat= (props:any) =>{
       return user1
     }
   }
- 
   const [temp,setTemp] = useState<any>()
 
   // const checknoti=(roomid:string, user2:string|undefined)=>{
@@ -200,7 +199,10 @@ const Chat= (props:any) =>{
             <Message roomId={roomId}/>
             <form className="form">
               <textarea id='input' value={newChat} onChange={(e) => {setnewChat(e.target.value);}} style={{width:"100%"}}/>
+              {UserId2 !== "user2" &&
+              <div>
               <button className="sendButton" onClick={nullcheck(newChat)}>Send</button>
+              </div>}
             </form>
           </div>
         {/* <TextContainer users='hi'/> */}
